@@ -16,7 +16,7 @@ jobs:
           TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           CHAT_ID: "@webstudio_chanel"
         run: |
-          BODY=$(cat .github/scripts/posts.json)
+          BODY=$(cat scripts/posts.json)
           JSON=$(echo "$BODY" | python3 -c "
 import json, sys, datetime
 posts = json.load(sys.stdin)
