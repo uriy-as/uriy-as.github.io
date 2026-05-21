@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://uriy-as.github.io/sitemap.xml
