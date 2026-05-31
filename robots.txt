@@ -1,1 +1,3 @@
-VXNlci1hZ2VudDogKgpBbGxvdzogLwpTaXRlbWFwOiBodHRwczovL3VyaXktYXMub3JnL3NpdGVtYXAueG1sCg==
+User-agent: *
+Allow: /
+Sitemap: https://uriy-as.org/sitemap.xml
