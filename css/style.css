@@ -838,6 +838,100 @@ body {
     }
 }
 
+/* ===== Telegram Promo ===== */
+.tg-promo {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.tg-promo__inner {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tg-promo h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.tg-promo p {
+    color: #aaa;
+    margin-bottom: 32px;
+    line-height: 1.7;
+}
+
+.tg-promo .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tg-promo .btn svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.tg-promo .btn--tg {
+    background: linear-gradient(135deg, #1da1f2, #0088cc);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(0, 136, 204, 0.3);
+}
+
+.tg-promo .btn--tg:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 28px rgba(0, 136, 204, 0.4);
+}
+
+/* ===== Share Buttons ===== */
+.share-btns {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+}
+
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+.share-btn--tg {
+    background: #0088cc;
+}
+
+.share-btn--tg:hover {
+    background: #006699;
+    transform: translateY(-2px);
+}
+
+.share-btn--email {
+    background: #6c63ff;
+}
+
+.share-btn--email:hover {
+    background: #5a52e0;
+    transform: translateY(-2px);
+}
+
+.share-btn svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
 @media (max-width: 480px) {
     .hero__content h1 {
         font-size: 1.6rem;
