@@ -740,11 +740,50 @@ body {
     margin-bottom: 32px;
 }
 
-.tg-widget iframe {
-    max-width: 100%;
-    border: none;
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+.tg-widget__posts {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.tg-widget__post {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    transition: box-shadow 0.3s ease;
+}
+
+.tg-widget__post:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.tg-widget__date {
+    font-size: 0.8rem;
+    color: #999;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.tg-widget__text {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.tg-widget .btn--tg {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #1da1f2, #0088cc);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(0, 136, 204, 0.3);
+}
+
+.tg-widget .btn--tg:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 28px rgba(0, 136, 204, 0.4);
 }
 
 /* ===== Admin Counter ===== */
