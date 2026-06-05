@@ -1,3 +1,10 @@
+:root {
+    --card-bg: #fafaff;
+    --border: #eee;
+    --muted: #666;
+    --accent: #6c63ff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -662,6 +669,82 @@ body {
     color: #fff;
     background: rgba(108, 99, 255, 0.15);
     transform: translateY(-2px);
+}
+
+/* ===== Floating Telegram Button ===== */
+.tg-float {
+    position: fixed;
+    bottom: 24px;
+    left: 24px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #1da1f2, #0088cc);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 20px rgba(0, 136, 204, 0.4);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: fadeUp 0.8s ease 1s both;
+}
+
+.tg-float:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 32px rgba(0, 136, 204, 0.5);
+}
+
+.tg-float svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+.tg-float span {
+    display: inline;
+}
+
+@media (max-width: 480px) {
+    .tg-float {
+        padding: 10px 14px;
+        bottom: 16px;
+        left: 16px;
+    }
+    .tg-float span {
+        display: none;
+    }
+}
+
+/* ===== Telegram Widget ===== */
+.tg-widget {
+    background: linear-gradient(135deg, #f5f7ff 0%, #fce4ec 100%);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.tg-widget h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #1a1a2e;
+}
+
+.tg-widget > .container > p {
+    color: #666;
+    margin-bottom: 32px;
+}
+
+.tg-widget iframe {
+    max-width: 100%;
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
 }
 
 /* ===== Admin Counter ===== */
