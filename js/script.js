@@ -102,13 +102,29 @@ counters.forEach(el => counterObserver.observe(el));
     }
 })();
 
-// Modal
+// Modal + Telegram notification
 const form = document.getElementById('contactForm');
 const modal = document.getElementById('modal');
 const modalClose = document.getElementById('modalClose');
 
+const TG_TOKEN = '8308743016:AAEwu53QB_rwy5Di40YON4NBZA4A6SbgRQ0';
+const TG_CHAT = '@webstudio_chanel';
+
+function tgSend(text) {
+    fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: TG_CHAT, text, parse_mode: 'HTML' })
+    }).catch(() => {});
+}
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    const fd = new FormData(form);
+    const name = fd.get('name') || 'не указано';
+    const email = fd.get('email') || 'не указан';
+    const msg = fd.get('message') || 'не указано';
+    tgSend(`📩 <b>Новая заявка с сайта!</b>\n\n👤 Имя: ${name}\n📧 Email: ${email}\n💬 Сообщение: ${msg}`);
     modal.classList.add('modal--open');
     form.reset();
 });
@@ -122,3 +138,13 @@ modal.addEventListener('click', (e) => {
         modal.classList.remove('modal--open');
     }
 });
+
+// Visit notification (throttled – 1 per 2 hours)
+(function() {
+    const last = localStorage.getItem('ws_visit_notified');
+    const now = Date.now();
+    if (!last || now - parseInt(last) > 7200000) {
+        tgSend(`👁 <b>Посещение сайта</b>\n${new Date().toLocaleString('ru-RU')}`);
+        localStorage.setItem('ws_visit_notified', now.toString());
+    }
+})();
