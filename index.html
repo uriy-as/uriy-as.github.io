@@ -351,6 +351,28 @@
         <span>Telegram</span>
     </a>
 
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-btn" id="chatBtn" aria-label="Чат">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span>Чат</span>
+        </button>
+        <div class="chat-popup" id="chatPopup">
+            <div class="chat-popup__header">
+                <h4>Чат с WebStudio</h4>
+                <button class="chat-popup__close" id="chatClose">&times;</button>
+            </div>
+            <div class="chat-popup__body" id="chatBody">
+                <div class="chat-msg chat-msg--bot">Здравствуйте! Напишите ваш вопрос, я отвечу в ближайшее время.</div>
+            </div>
+            <form class="chat-popup__form" id="chatForm">
+                <input type="text" placeholder="Ваше сообщение..." autocomplete="off" required>
+                <button type="submit">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
     <script src="js/script.js"></script>
     <noscript><div><img src="https://mc.yandex.ru/watch/109350815" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- Yandex.Metrica -->
