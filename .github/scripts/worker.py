@@ -1,8 +1,8 @@
 import requests
 import json
 import os
-import time
 import sys
+import base64
 
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
@@ -13,7 +13,7 @@ if not TELEGRAM_TOKEN or not GEMINI_API_KEY:
     sys.exit(1)
 
 TELEGRAM_API = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}"
-GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={GEMINI_API_KEY}"
+GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key={GEMINI_API_KEY}"
 
 OFFSET_FILE = "offset.txt"
 
@@ -41,13 +41,19 @@ def ask_gemini(text):
             candidates = data.get("candidates", [])
             if candidates:
                 parts = candidates[0].get("content", {}).get("parts", [])
-                if parts:
-                    return parts[0].get("text", "No response")
-            return "Empty response from Gemini"
+                texts = []
+                images = []
+                for part in parts:
+                    if "text" in part:
+                        texts.append(part["text"])
+                    if "inlineData" in part:
+                        images.append(part["inlineData"])
+                return texts, images
+            return ["Empty response from Gemini"], []
         else:
-            return f"Gemini error: {r.status_code} {r.text[:200]}"
+            return [f"Gemini error: {r.status_code} {r.text[:200]}"], []
     except Exception as e:
-        return f"Gemini request failed: {e}"
+        return [f"Gemini request failed: {e}"], []
 
 def send_message(chat_id, text):
     try:
@@ -60,9 +66,18 @@ def send_message(chat_id, text):
     except Exception as e:
         print(f"sendMessage failed: {e}")
 
-print(f"Starting bot worker (ADMIN_CHAT_ID={ADMIN_CHAT_ID})")
-print(f"Using offset file: {OFFSET_FILE}")
+def send_photo(chat_id, image_data, mime_type, caption=""):
+    try:
+        img_bytes = base64.b64decode(image_data)
+        files = {"photo": ("image." + mime_type.split("/")[-1], img_bytes, mime_type)}
+        data = {"chat_id": chat_id, "caption": caption[:1024]}
+        r = requests.post(f"{TELEGRAM_API}/sendPhoto", data=data, files=files, timeout=30)
+        if r.status_code != 200:
+            print(f"sendPhoto error: {r.status_code} {r.text[:200]}")
+    except Exception as e:
+        print(f"sendPhoto failed: {e}")
 
+print(f"Starting bot worker (ADMIN_CHAT_ID={ADMIN_CHAT_ID})")
 offset = get_offset()
 print(f"Current offset: {offset}")
 
@@ -92,9 +107,14 @@ try:
         print(f"Update {update_id}: from {user.get('first_name', '?')} (chat={chat_id}): {text[:100]}")
 
         if chat_id == int(ADMIN_CHAT_ID):
-            reply = ask_gemini(text)
+            texts, images = ask_gemini(text)
+            reply = "\n".join(texts)
             print(f"Gemini reply: {reply[:200]}")
-            send_message(chat_id, reply)
+            if images:
+                for img in images:
+                    send_photo(chat_id, img["data"], img.get("mimeType", "image/png"), reply[:1024])
+            if reply.strip():
+                send_message(chat_id, reply)
         else:
             print(f"Ignoring non-admin chat: {chat_id}")
 
