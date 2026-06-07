@@ -108,7 +108,7 @@ const modal = document.getElementById('modal');
 const modalClose = document.getElementById('modalClose');
 
 const TG_TOKEN = '8308743016:AAEwu53QB_rwy5Di40YON4NBZA4A6SbgRQ0';
-const TG_CHAT = '@webstudio_chanel';
+const TG_CHAT = '1994948658';
 
 function tgSend(text) {
     fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
