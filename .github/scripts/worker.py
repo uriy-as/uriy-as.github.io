@@ -46,11 +46,8 @@ def save_offset(offset):
 
 def ask_gemini(text):
     payload = {
-        "system_instruction": {
-            "parts": [{"text": SYSTEM_PROMPT}]
-        },
         "contents": [{
-            "parts": [{"text": text}]
+            "parts": [{"text": f"{SYSTEM_PROMPT}\n\nВопрос: {text}"}]
         }]
     }
     try:
