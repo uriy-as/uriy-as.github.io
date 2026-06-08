@@ -121,7 +121,7 @@ modal.addEventListener('click', (e) => {
         body.innerHTML += `<div class="chat-msg chat-msg--user">${escapeHtml(msg)}</div>`;
         body.scrollTop = body.scrollHeight;
 
-        body.innerHTML += `<div class="chat-msg chat-msg--bot"><em>Печатает...</em></div>`;
+        body.innerHTML += `<div class="chat-msg chat-msg--bot"><em>РџРµС‡Р°С‚Р°РµС‚...</em></div>`;
         body.scrollTop = body.scrollHeight;
 
         try {
@@ -134,9 +134,18 @@ modal.addEventListener('click', (e) => {
             const data = await r.json();
             body.removeChild(body.lastChild);
             body.innerHTML += `<div class="chat-msg chat-msg--bot">${escapeHtml(data.reply)}</div>`;
+
+            if (data.reply.includes('Р·Р°РїСЂРѕСЃ РїРµСЂРµРґР°РЅ')) {
+                fetch('https://Astap.pythonanywhere.com/api/lead', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: msg }),
+                    mode: 'cors'
+                }).catch(() => {});
+            }
         } catch(e) {
             body.removeChild(body.lastChild);
-            body.innerHTML += `<div class="chat-msg chat-msg--bot">Ошибка связи. Попробуйте позже.</div>`;
+            body.innerHTML += `<div class="chat-msg chat-msg--bot">РћС€РёР±РєР° СЃРІСЏР·Рё. РџРѕРїСЂРѕР±СѓР№С‚Рµ РїРѕР·Р¶Рµ.</div>`;
         }
         body.scrollTop = body.scrollHeight;
     });
