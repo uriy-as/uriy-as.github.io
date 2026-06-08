@@ -1085,7 +1085,7 @@ body {
     flex-shrink: 0;
 }
 
-edia (max-width: 480px) {
+@media (max-width: 480px) {
     .hero__content h1 {
         font-size: 1.6rem;
     }
