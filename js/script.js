@@ -60,6 +60,18 @@ const modalClose = document.getElementById('modalClose');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    const data = {
+        name: form.querySelector('[name="name"]').value,
+        email: form.querySelector('[name="email"]').value,
+        phone: form.querySelector('[name="phone"]').value,
+        message: form.querySelector('[name="message"]').value
+    };
+    fetch('https://Astap.pythonanywhere.com/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+        mode: 'cors'
+    }).catch(() => {});
     modal.classList.add('modal--open');
     form.reset();
 });
