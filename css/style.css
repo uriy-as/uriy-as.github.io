@@ -750,8 +750,7 @@ body {
 
 
 
-@media (max-width: 480px) {
-}
+
 
 /* ===== Telegram Widget ===== */
 .tg-widget {
@@ -1260,16 +1259,4 @@ body {
     height: 18px;
 }
 
-@media (max-width: 480px) {
-    .chat-widget {
-        bottom: 16px;
-        right: 16px;
-    }
-    .chat-popup {
-        width: calc(100vw - 32px);
-        right: 0;
-    }
-    .chat-btn span {
-        display: none;
-    }
-}
+
