@@ -74,63 +74,7 @@ modal.addEventListener('click', (e) => {
     }
 });
 
-// Chat widget
-const chatBtn = document.getElementById('chatBtn');
-const chatPopup = document.getElementById('chatPopup');
-const chatClose = document.getElementById('chatClose');
-const chatForm = document.getElementById('chatForm');
-const chatBody = document.getElementById('chatBody');
-const chatInput = chatForm?.querySelector('input');
-
-const TG_TOKEN = '8308743016:AAEwu53QB_rwy5Di40YON4NBZA4A6SbgRQ0';
-const TG_CHAT = '1994948658';
-
-function tgSend(text) {
-    fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: TG_CHAT, text, parse_mode: 'HTML' })
-    }).catch(() => {});
-}
-
-if (chatBtn) {
-    chatBtn.addEventListener('click', () => {
-        chatPopup.classList.toggle('chat-popup--open');
-    });
-}
-
-if (chatClose) {
-    chatClose.addEventListener('click', () => {
-        chatPopup.classList.remove('chat-popup--open');
-    });
-}
-
-if (chatForm) {
-    chatForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const text = chatInput.value.trim();
-        if (!text) return;
-
-        const userMsg = document.createElement('div');
-        userMsg.className = 'chat-msg chat-msg--user';
-        userMsg.textContent = text;
-        chatBody.appendChild(userMsg);
-
-        chatInput.value = '';
-
-        tgSend(`💬 <b>Сообщение с сайта</b>\n\n${text}`);
-
-        setTimeout(() => {
-            const botMsg = document.createElement('div');
-            botMsg.className = 'chat-msg chat-msg--sent';
-            botMsg.textContent = '✅ Отправлено! Я отвечу в ближайшее время.';
-            chatBody.appendChild(botMsg);
-            chatBody.scrollTop = chatBody.scrollHeight;
-        }, 600);
-
-        chatBody.scrollTop = chatBody.scrollHeight;
-    });
-}
+// Modal
 
 // Visit tracker — отправка на PA
 (function() {
