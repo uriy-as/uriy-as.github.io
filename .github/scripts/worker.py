@@ -13,7 +13,23 @@ if not TELEGRAM_TOKEN or not GEMINI_API_KEY:
     sys.exit(1)
 
 TELEGRAM_API = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}"
-GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent?key={GEMINI_API_KEY}"
+GEMINI_URL = f"https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key={GEMINI_API_KEY}"
+
+SYSTEM_PROMPT = """РўС‹ вЂ” РґСЂСѓР¶РµР»СЋР±РЅС‹Р№ Р°СЃСЃРёСЃС‚РµРЅС‚ СЃС‚СѓРґРёРё WebStudio. РћС‚РІРµС‡Р°Р№ РЅР° СЂСѓСЃСЃРєРѕРј СЏР·С‹РєРµ РєСЂР°С‚РєРѕ Рё РїРѕ РґРµР»Сѓ.
+
+Р§РµРј Р·Р°РЅРёРјР°РµС‚СЃСЏ WebStudio:
+вЂ” РЎРѕР·РґР°РЅРёРµ СЃР°Р№С‚РѕРІ РїРѕРґ РєР»СЋС‡ (Р»РµРЅРґРёРЅРіРё, РјРЅРѕРіРѕСЃС‚СЂР°РЅРёС‡РЅС‹Рµ, РёРЅС‚РµСЂРЅРµС‚-РјР°РіР°Р·РёРЅС‹)
+вЂ” Р Р°Р·СЂР°Р±РѕС‚РєР° Telegram-Р±РѕС‚РѕРІ СЃ РёСЃРєСѓСЃСЃС‚РІРµРЅРЅС‹Рј РёРЅС‚РµР»Р»РµРєС‚РѕРј
+вЂ” РќР°РїРёСЃР°РЅРёРµ РЅР°СѓС‡РЅРѕ-РїРѕРїСѓР»СЏСЂРЅС‹С… СЃС‚Р°С‚РµР№ РґР»СЏ Telegram-РєР°РЅР°Р»РѕРІ
+вЂ” SEO-РѕРїС‚РёРјРёР·Р°С†РёСЏ Рё РїРѕРґРґРµСЂР¶РєР° СЃР°Р№С‚РѕРІ
+
+РљРѕРЅС‚Р°РєС‚С‹:
+вЂ” РЎР°Р№С‚: https://uriy-as.org
+вЂ” РџРѕС‡С‚Р°: uriy.as59@yandex.com
+вЂ” Telegram-РєР°РЅР°Р»: @webstudio_chanel
+вЂ” РќР°РїРёСЃР°С‚СЊ Р°РґРјРёРЅСѓ: @uriy_as59
+
+Р•СЃР»Рё РІРѕРїСЂРѕСЃ СЃР»РѕР¶РЅС‹Р№ РёР»Рё С‚СЂРµР±СѓРµС‚ РѕР±СЃСѓР¶РґРµРЅРёСЏ РґРµС‚Р°Р»РµР№ вЂ” РїСЂРµРґР»РѕР¶Рё РєР»РёРµРЅС‚Сѓ РЅР°РїРёСЃР°С‚СЊ РЅР° РїРѕС‡С‚Сѓ РёР»Рё РІ Telegram @uriy_as59."""
 
 OFFSET_FILE = "offset.txt"
 
@@ -30,6 +46,9 @@ def save_offset(offset):
 
 def ask_gemini(text):
     payload = {
+        "system_instruction": {
+            "parts": [{"text": SYSTEM_PROMPT}]
+        },
         "contents": [{
             "parts": [{"text": text}]
         }]
@@ -106,17 +125,18 @@ try:
 
         print(f"Update {update_id}: from {user.get('first_name', '?')} (chat={chat_id}): {text[:100]}")
 
-        if chat_id == int(ADMIN_CHAT_ID):
-            texts, images = ask_gemini(text)
-            reply = "\n".join(texts)
-            print(f"Gemini reply: {reply[:200]}")
-            if images:
-                for img in images:
-                    send_photo(chat_id, img["data"], img.get("mimeType", "image/png"), reply[:1024])
-            if reply.strip():
-                send_message(chat_id, reply)
-        else:
-            print(f"Ignoring non-admin chat: {chat_id}")
+        texts, images = ask_gemini(text)
+        reply = "\n".join(texts)
+        print(f"Gemini reply: {reply[:200]}")
+        if images:
+            for img in images:
+                send_photo(chat_id, img["data"], img.get("mimeType", "image/png"), reply[:1024])
+        if reply.strip():
+            send_message(chat_id, reply)
+
+        if str(chat_id) != ADMIN_CHAT_ID:
+            username = user.get('username') or user.get('first_name', '?')
+            send_message(ADMIN_CHAT_ID, f"рџ’¬ Р’РѕРїСЂРѕСЃ РѕС‚ @{username}:\n\n{text}")
 
         offset = update_id + 1
 
