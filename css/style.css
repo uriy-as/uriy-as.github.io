@@ -722,11 +722,17 @@ body {
 
 @media (max-width: 480px) {
     .tg-float {
-        padding: 10px 14px;
-        bottom: 16px;
-        left: 16px;
+        display: none;
     }
-    .tg-float span {
+    .chat-widget {
+        bottom: 16px;
+        right: 16px;
+    }
+    .chat-popup {
+        width: calc(100vw - 32px);
+        right: 0;
+    }
+    .chat-btn span {
         display: none;
     }
 }
