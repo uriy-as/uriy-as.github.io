@@ -257,18 +257,18 @@
         <div class="container">
             <h2 class="section__title reveal">Свяжитесь с нами</h2>
             <p class="contact__subtitle reveal">Оставьте заявку, и мы обсудим ваш проект</p>
-            <form class="contact__form reveal" id="contactForm">
+            <form class="contact__form reveal" id="contactForm" autocomplete="off">
                 <div class="form__group">
-                    <input type="text" name="name" placeholder="Ваше имя" required>
+                    <input type="text" name="name" placeholder="Ваше имя" autocomplete="off" required>
                 </div>
                 <div class="form__group">
-                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="email" name="email" placeholder="Email" autocomplete="off" required>
                 </div>
                 <div class="form__group">
-                    <input type="tel" name="phone" placeholder="Ваш телефон / если требуется скорость">
+                    <input type="tel" name="phone" placeholder="Ваш телефон / если требуется скорость" autocomplete="off">
                 </div>
                 <div class="form__group">
-                    <textarea name="message" placeholder="Опишите ваш проект" rows="5" required></textarea>
+                    <textarea name="message" placeholder="Опишите ваш проект" rows="5" autocomplete="off" required></textarea>
                 </div>
                 <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
             </form>
