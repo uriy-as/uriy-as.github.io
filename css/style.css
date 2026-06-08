@@ -722,35 +722,63 @@ body {
 
 @media (max-width: 480px) {
     .tg-float {
-        display: none;
-    }
-    .chat-widget {
+        padding: 10px 14px;
         bottom: 16px;
-        right: 16px;
+        left: 16px;
     }
-    .chat-popup {
-        width: calc(100vw - 32px);
-        right: 0;
-    }
-    .chat-btn {
-        width: 52px;
-        height: 52px;
-        padding: 0;
-        border-radius: 50%;
-        justify-content: center;
-    }
-    .chat-btn span {
+    .tg-float span {
         display: none;
-    }
-    .chat-btn svg {
-        width: 24px;
-        height: 24px;
     }
 }
 
+.bot-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #6c63ff, #4834d4);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 20px rgba(108, 99, 255, 0.4);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: fadeUp 0.8s ease 1.5s both;
+}
 
+.bot-float:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 32px rgba(108, 99, 255, 0.5);
+}
 
+.bot-float svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
 
+.bot-float span {
+    display: inline;
+}
+
+@media (max-width: 480px) {
+    .bot-float {
+        padding: 10px 14px;
+        bottom: 16px;
+        right: 16px;
+    }
+    .bot-float span {
+        display: none;
+    }
+}
 
 /* ===== Telegram Widget ===== */
 .tg-widget {
@@ -989,6 +1017,8 @@ body {
     .section__title {
         font-size: 1.7rem;
     }
+    .footer__inner { flex-wrap: wrap; gap: 16px; }
+    .footer__left { flex-wrap: wrap; gap: 12px; }
 }
 
 /* ===== Telegram Promo ===== */
@@ -1259,4 +1289,16 @@ body {
     height: 18px;
 }
 
-
+@media (max-width: 480px) {
+    .chat-widget {
+        bottom: 16px;
+        right: 16px;
+    }
+    .chat-popup {
+        width: calc(100vw - 32px);
+        right: 0;
+    }
+    .chat-btn span {
+        display: none;
+    }
+}
