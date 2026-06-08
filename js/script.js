@@ -76,7 +76,7 @@ modal.addEventListener('click', (e) => {
 
 // Modal
 
-// Visit tracker — отправка на PA
+// Visit tracker
 (function() {
     const PA_URL = 'https://Astap.pythonanywhere.com/visit';
     const data = {
@@ -91,4 +91,59 @@ modal.addEventListener('click', (e) => {
             mode: 'cors'
         }).catch(() => {});
     } catch(e) {}
+})();
+
+// Chat widget
+(function() {
+    const btn = document.getElementById('chatBtn');
+    const popup = document.getElementById('chatPopup');
+    const close = document.getElementById('chatClose');
+    const body = document.getElementById('chatBody');
+    const form = document.getElementById('chatForm');
+    const input = form ? form.querySelector('input') : null;
+
+    if (!btn || !popup || !close || !body || !form || !input) return;
+
+    btn.addEventListener('click', () => {
+        popup.classList.toggle('chat-popup--open');
+    });
+
+    close.addEventListener('click', () => {
+        popup.classList.remove('chat-popup--open');
+    });
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const msg = input.value.trim();
+        if (!msg) return;
+
+        input.value = '';
+        body.innerHTML += `<div class="chat-msg chat-msg--user">${escapeHtml(msg)}</div>`;
+        body.scrollTop = body.scrollHeight;
+
+        body.innerHTML += `<div class="chat-msg chat-msg--bot"><em>Печатает...</em></div>`;
+        body.scrollTop = body.scrollHeight;
+
+        try {
+            const r = await fetch('https://Astap.pythonanywhere.com/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: msg }),
+                mode: 'cors'
+            });
+            const data = await r.json();
+            body.removeChild(body.lastChild);
+            body.innerHTML += `<div class="chat-msg chat-msg--bot">${escapeHtml(data.reply)}</div>`;
+        } catch(e) {
+            body.removeChild(body.lastChild);
+            body.innerHTML += `<div class="chat-msg chat-msg--bot">Ошибка связи. Попробуйте позже.</div>`;
+        }
+        body.scrollTop = body.scrollHeight;
+    });
+
+    function escapeHtml(text) {
+        const d = document.createElement('div');
+        d.textContent = text;
+        return d.innerHTML;
+    }
 })();
