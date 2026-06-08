@@ -730,25 +730,10 @@ body {
         display: none;
     }
 }
-.bot-float:hover {
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 8px 32px rgba(108, 99, 255, 0.5);
-}
 
-.bot-float svg {
-    width: 22px;
-    height: 22px;
-    flex-shrink: 0;
-}
 
-.bot-float span {
-    display: inline;
-}
 
 @media (max-width: 480px) {
-.bot-float span {
-        display: none;
-    }
 }
 
 /* ===== Telegram Widget ===== */
