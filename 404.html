@@ -6,120 +6,49 @@
     <meta name="google-site-verification" content="hU5JICV7gFg7as_jo2Dx-kWEUamlp_4iRQZKT-V5RPA" />
     <title>404 — Страница не найдена | WebStudio</title>
     <meta name="description" content="Страница не найдена. Вернитесь на главную WebStudio.">
-    <meta property="og:title" content="404 — Страница не найдена | WebStudio">
-    <meta property="og:description" content="Страница не найдена. Вернитесь на главную WebStudio.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://uriy-as.org/404.html">
-    <meta property="og:image" content="https://uriy-as.org/og-image.svg">
     <link rel="canonical" href="https://uriy-as.org/404.html">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        .error-page { min-height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 120px 2rem 60px; }
+        .error-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem; }
         .error-page h1 { font-size: 6rem; background: linear-gradient(135deg, #6c63ff, #ff6b9d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem; }
         .error-page p { color: var(--muted); font-size: 1.2rem; margin-bottom: 2rem; }
     </style>
 </head>
 <body>
-
-    <!-- Header -->
-    <header class="header" id="header">
-        <div class="container">
-            <div class="header__inner">
-                <a href="/" class="logo">Web<span>Studio</span></a>
-                <nav class="nav" id="nav">
-                    <a href="services.html">Услуги</a>
-                    <a href="/#about">О нас</a>
-                    <a href="articles.html">Статьи</a>
-                    <a href="/#contact">Контакты</a>
-                    <a href="https://t.me/NevChatAI_bot" target="_blank" class="nav__bot">AI-чат</a>
-                </nav>
-                <button class="burger" id="burger" aria-label="Меню">
-                    <span></span><span></span><span></span>
-                </button>
-            </div>
-        </div>
-    </header>
-
     <div class="error-page">
         <div>
-            <h1>404</h1>
-            <p>Страница не найдена</p>
-            <a href="/" class="btn btn--primary">На главную</a>
+            <h1>404</h>1>
+            <p data-i18n="error-404-title">Страница не найдена</p>
+            <a href="/" class="btn btn--primary" data-i18n="error-404-btn">На главную</a>
         </div>
     </div>
-
-    <!-- Contact -->
-    <section class="contact section" id="contact">
-        <div class="container">
-            <h2 class="section__title reveal">Свяжитесь с нами</h2>
-            <p class="contact__subtitle reveal">Оставьте заявку, и мы обсудим ваш проект</p>
-            <form class="contact__form reveal" id="contactForm" autocomplete="off">
-                <div class="form__group">
-                    <input type="text" name="name" placeholder="Ваше имя" autocomplete="off" required>
-                </div>
-                <div class="form__group">
-                    <input type="email" name="email" placeholder="Email" autocomplete="off" required>
-                </div>
-                <div class="form__group">
-                    <input type="tel" name="phone" placeholder="Ваш телефон / если требуется скорость" autocomplete="off">
-                </div>
-                <div class="form__group">
-                    <textarea name="message" placeholder="Опишите ваш проект" rows="5" autocomplete="off" required></textarea>
-                </div>
-                <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
-            </form>
-            <div class="contact__links reveal">
-                <a href="mailto:uriy.as59@yandex.com" class="contact__link">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
-                    uriy.as59@yandex.com
-                </a>
-                <a href="https://t.me/uriy_as59" target="_blank" class="contact__link" title="Написать в Telegram">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.26.76a1.73 1.73 0 0 0-1.76-.35L1.84 9.58a1.66 1.66 0 0 0 .05 3.08l4.88 1.9 2.94 8.86a1.38 1.38 0 0 0 .9.87 1.32 1.32 0 0 0 1.2-.21l4.23-3.46a1.8 1.8 0 0 1 2.05-.12l4.85 3.52a1.35 1.35 0 0 0 1.45.12 1.38 1.38 0 0 0 .78-1.15L23.7 2.47a1.73 1.73 0 0 0-1.44-1.71z"/></svg>
-                    Telegram
-                </a>
-            </div>
-            <div class="social__links reveal">
-                <a href="https://t.me/uriy_as59" target="_blank" class="social__link social__link--tg" aria-label="Telegram">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M22.26.76a1.73 1.73 0 0 0-1.76-.35L1.84 9.58a1.66 1.66 0 0 0 .05 3.08l4.88 1.9 2.94 8.86a1.38 1.38 0 0 0 .9.87 1.32 1.32 0 0 0 1.2-.21l4.23-3.46a1.8 1.8 0 0 1 2.05-.12l4.85 3.52a1.35 1.35 0 0 0 1.45.12 1.38 1.38 0 0 0 .78-1.15L23.7 2.47a1.73 1.73 0 0 0-1.44-1.71z"/></svg>
-                </a>
-                <a href="https://youtube.com/@webstudio" target="_blank" class="social__link social__link--yt" aria-label="YouTube">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a2.96 2.96 0 0 0-2.08-2.1C19.55 3.5 12 3.5 12 3.5s-7.55 0-9.42.6A2.96 2.96 0 0 0 .5 6.2 30.9 30.9 0 0 0 0 12a30.9 30.9 0 0 0 .5 5.8 2.96 2.96 0 0 0 2.08 2.1c1.87.6 9.42.6 9.42.6s7.55 0 9.42-.6a2.96 2.96 0 0 0 2.08-2.1 30.9 30.9 0 0 0 .5-5.8 30.9 30.9 0 0 0-.5-5.8zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modal -->
-    <div class="modal" id="modal">
-        <div class="modal__body">
-            <div class="modal__icon">&#10024;</div>
-            <p>Спасибо! Мы свяжемся с вами в ближайшее время.</p>
-            <button class="btn btn--primary" id="modalClose">Отлично</button>
-        </div>
-    </div>
-
     <a href="https://t.me/webstudio_chanel" target="_blank" class="tg-float" aria-label="Telegram">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.26.76a1.73 1.73 0 0 0-1.76-.35L1.84 9.58a1.66 1.66 0 0 0 .05 3.08l4.88 1.9 2.94 8.86a1.38 1.38 0 0 0 .9.87 1.32 1.32 0 0 0 1.2-.21l4.23-3.46a1.8 1.8 0 0 1 2.05-.12l4.85 3.52a1.35 1.35 0 0 0 1.45.12 1.38 1.38 0 0 0 .78-1.15L23.7 2.47a1.73 1.73 0 0 0-1.44-1.71z"/></svg>
-        <span>Telegram</span>
+        <span data-i18n="contact-tg">Telegram</span>
     </a>
 
-    <div class="chat-widget" id="chatWidget">
-        <button class="chat-btn" id="chatBtn" aria-label="AI-чат">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/><path d="M7 9h10v2H7zm0-3h10v2H7zm0 6h7v2H7z"/></svg>
-            <span>AI-чат</span>
+    <div class="lang-widget" id="langWidget">
+    <button class="lang-btn-floating" id="langBtnFloat" aria-label="Switch language">EN</button>
+</div>
+
+            <div class="chat-widget" id="chatWidget">
+        <button class="chat-btn" id="chatBtn" aria-label="Чат">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span data-i18n="chat-btn-text">Чат</span>
         </button>
         <div class="chat-popup" id="chatPopup">
             <div class="chat-popup__header">
-                <h4>Чат с WebStudio AI</h4>
+                <h4 data-i18n="chat-title">Чат с WebStudio</h>4>
                 <button class="chat-popup__close" id="chatClose">&times;</button>
             </div>
             <div class="chat-popup__body" id="chatBody">
-                <div class="chat-msg chat-msg--bot">Здравствуйте! Задайте ваш вопрос.</div>
+                <div class="chat-msg chat-msg--bot" data-i18n="chat-greeting">Здравствуйте! Напишите ваш вопрос, я отвечу в ближайшее время.</div>
+                <div class="chat-msg chat-msg--bot" data-i18n="chat-error" style="display:none;"></div>
             </div>
             <form class="chat-popup__form" id="chatForm">
-                <input type="text" placeholder="Ваше сообщение..." autocomplete="off" required>
+                <input type="text" placeholder="Ваше сообщение..." autocomplete="off" required data-i18n="chat-placeholder">
                 <button type="submit">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                 </button>
@@ -129,7 +58,5 @@
 
     <script src="js/script.js"></script>
     <noscript><div><img src="https://mc.yandex.ru/watch/109350815" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- Yandex.Metrica -->
-    <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109350815,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
 </body>
 </html>
