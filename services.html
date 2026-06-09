@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://uriy-as.org/services.html">
     <meta property="og:image" content="https://uriy-as.org/og-image.svg">
     <link rel="canonical" href="https://uriy-as.org/services.html">
-    <link rel="stylesheet" href='css/style.css?v=1556d11'>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script type="application/ld+json">
@@ -226,7 +226,7 @@
     </a>
 
     <div class="lang-widget" id="langWidget">
-    <button class="lang-btn-floating" id="langBtnFloat" aria-label="Switch language">EN</button>
+    <button class="lang-btn-floating" id="langBtnFloat" aria-label="Switch language" onclick="toggleLang()">EN</button>
 </div>
 
             <div class="chat-widget" id="chatWidget">
@@ -252,7 +252,8 @@
         </div>
     </div>
 
-    <script src='js/script.js?v=95e5a26'></script>
+    <script src="js/script.js?v=95e5a26"></script>
+    <script>function toggleLang(){var k='site_lang',c=localStorage.getItem(k)||'ru',n=c==='ru'?'en':'ru';localStorage.setItem(k,n);document.documentElement.lang=n;document.querySelectorAll('[data-i18n]').forEach(function(e){var t=e.getAttribute('data-i18n');if(window.translations&&window.translations[t]&&window.translations[t][n]){if(e.tagName==='INPUT'||e.tagName==='TEXTAREA'){e.placeholder=window.translations[t][n]}else{e.innerHTML=window.translations[t][n]}}});document.getElementById('langBtnFloat').textContent=n==='ru'?'EN':'RU'}</script>
     <noscript><div><img src="https://mc.yandex.ru/watch/109350815" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109350815,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
 </body>
