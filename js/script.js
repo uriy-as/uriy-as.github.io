@@ -296,6 +296,7 @@ modal.addEventListener('click', (e) => {
         'error-404-btn': { ru: 'На главную', en: 'Go home' }
     };
 
+    window.translations = translations;
     const btn = document.getElementById('langBtnFloat');
 
     function applyLang(l) {
