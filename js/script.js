@@ -262,7 +262,11 @@ modal.addEventListener('click', (e) => {
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.dataset.i18n;
             if (translations[key] && translations[key][l]) {
-                el.innerHTML = translations[key][l];
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    el.placeholder = translations[key][l];
+                } else {
+                    el.innerHTML = translations[key][l];
+                }
             }
         });
 
