@@ -250,6 +250,7 @@ modal.addEventListener('click', (e) => {
         'service-card-promo': { ru: 'Продвижение', en: 'Promotion' },
         'service-card-promo-desc': { ru: 'SEO, Яндекс.Метрика, раскрутка канала', en: 'SEO, Yandex Metrica, channel promotion' },
         'service-promo-msg': { ru: '💰 Цены указаны в USD. Возможна оплата в рублях, EUR, USDT, криптовалюте — по курсу на день сделки.<br>🎯 <strong>Скидка 30%</strong> для первых 5 заказчиков. Визитка от $105, бот от $42, статья от $21 — успейте!<br>📩 Свяжитесь с нами в Telegram: <a href="https://t.me/webstudio_chanel" style="color:var(--accent);">@webstudio_chanel</a>', en: '💰 Prices in USD. Payment in RUB, EUR, USDT, crypto — at the exchange rate on the deal date.<br>🎯 <strong>30% discount</strong> for the first 5 customers. Business card from $105, bot from $42, article from $21 — hurry up!<br>📩 Contact us on Telegram: <a href="https://t.me/webstudio_chanel" style="color:var(--accent);">@webstudio_chanel</a>' },
+        'price-from': { ru: 'от', en: 'from' },
         'price-project': { ru: 'за проект', en: 'per project' },
         'price-article': { ru: 'за статью', en: 'per article' },
         'price-month': { ru: 'за месяц', en: 'per month' },
