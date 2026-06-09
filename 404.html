@@ -7,7 +7,7 @@
     <title>404 — Страница не найдена | WebStudio</title>
     <meta name="description" content="Страница не найдена. Вернитесь на главную WebStudio.">
     <link rel="canonical" href="https://uriy-as.org/404.html">
-    <link rel="stylesheet" href='css/style.css?v=1556d11'>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
@@ -30,7 +30,7 @@
     </a>
 
     <div class="lang-widget" id="langWidget">
-    <button class="lang-btn-floating" id="langBtnFloat" aria-label="Switch language">EN</button>
+    <button class="lang-btn-floating" id="langBtnFloat" aria-label="Switch language" onclick="toggleLang()">EN</button>
 </div>
 
             <div class="chat-widget" id="chatWidget">
@@ -56,7 +56,8 @@
         </div>
     </div>
 
-    <script src='js/script.js?v=95e5a26'></script>
+    <script src="js/script.js?v=95e5a26"></script>
+    <script>function toggleLang(){var k='site_lang',c=localStorage.getItem(k)||'ru',n=c==='ru'?'en':'ru';localStorage.setItem(k,n);document.documentElement.lang=n;document.querySelectorAll('[data-i18n]').forEach(function(e){var t=e.getAttribute('data-i18n');if(window.translations&&window.translations[t]&&window.translations[t][n]){if(e.tagName==='INPUT'||e.tagName==='TEXTAREA'){e.placeholder=window.translations[t][n]}else{e.innerHTML=window.translations[t][n]}}});document.getElementById('langBtnFloat').textContent=n==='ru'?'EN':'RU'}</script>
     <noscript><div><img src="https://mc.yandex.ru/watch/109350815" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 </body>
 </html>
