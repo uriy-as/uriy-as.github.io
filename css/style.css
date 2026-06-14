@@ -127,22 +127,21 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #1a1a2e;
+    display: flex;
+    align-items: center;
     text-decoration: none;
     transition: transform 0.3s;
+    flex-shrink: 0;
 }
 
 .logo:hover {
     transform: scale(1.05);
 }
 
-.logo span {
-    background: linear-gradient(135deg, #6c63ff, #ff6b9d);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.logo__img {
+    height: 40px;
+    width: auto;
+    display: block;
 }
 
 .nav a {
@@ -679,7 +678,6 @@ body {
 
 .footer .logo {
     color: #fff;
-    font-size: 1.2rem;
 }
 
 .footer p {
