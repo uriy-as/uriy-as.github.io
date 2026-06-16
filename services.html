@@ -12,8 +12,20 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://uriy-as.org/services.html">
     <meta property="og:image" content="https://uriy-as.org/og-image.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Услуги — WebStudio">
+    <meta name="twitter:description" content="Сайты, боты, контент — под ключ.">
+    <meta name="twitter:image" content="https://uriy-as.org/og-image.svg">
     <link rel="canonical" href="https://uriy-as.org/services.html">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="alternate" hreflang="ru" href="https://uriy-as.org/">
+    <link rel="alternate" hreflang="en" href="https://uriy-as.org/en/">
+    <link rel="dns-prefetch" href="https://mc.yandex.ru">
+    <link rel="dns-prefetch" href="https://Astap.pythonanywhere.com">
+    <link rel="preconnect" href="https://mc.yandex.ru">
+    <link rel="preconnect" href="https://Astap.pythonanywhere.com" crossorigin>
+    <link rel="stylesheet" href="css/style.css?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script type="application/ld+json">
@@ -35,6 +47,23 @@
         "sameAs": [
             "https://t.me/webstudio_chanel",
             "https://youtube.com/@webstudio"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Услуги WebStudio",
+        "description": "Создание сайтов, Telegram-ботов, научных статей и продвижение.",
+        "url": "https://uriy-as.org/services.html",
+        "itemListElement": [
+            { "@type": "Service", "position": 1, "name": "Сайт-визитка", "description": "Компактный сайт для представления бизнеса", "offers": { "@type": "Offer", "price": "105", "priceCurrency": "USD" } },
+            { "@type": "Service", "position": 2, "name": "Сайт под ключ", "description": "Landing page, интернет-магазин, корпоративный сайт", "offers": { "@type": "Offer", "price": "350", "priceCurrency": "USD" } },
+            { "@type": "Service", "position": 3, "name": "Бот-визитка", "description": "Простой Telegram-бот для связи с клиентами", "offers": { "@type": "Offer", "price": "42", "priceCurrency": "USD" } },
+            { "@type": "Service", "position": 4, "name": "Telegram-бот на GPT", "description": "Чат-бот с нейросетью, приём заявок и оплат", "offers": { "@type": "Offer", "price": "150", "priceCurrency": "USD" } },
+            { "@type": "Service", "position": 5, "name": "Научные статьи", "description": "Тематический контент для Telegram и соцсетей", "offers": { "@type": "Offer", "price": "21", "priceCurrency": "USD" } },
+            { "@type": "Service", "position": 6, "name": "Продвижение", "description": "SEO, Яндекс.Метрика, раскрутка канала", "offers": { "@type": "Offer", "price": "100", "priceCurrency": "USD" } }
         ]
     }
     </script>
@@ -253,20 +282,7 @@
         </div>
     </div>
 
-    <script src="js/script.js?v=95e5a26"></script>
-    <script>
-    function toggleLang(){
-        var k='site_lang',c=localStorage.getItem(k)||'ru',n=c==='ru'?'en':'ru';
-        localStorage.setItem(k,n);document.documentElement.lang=n;
-        document.querySelectorAll('[data-i18n]').forEach(function(e){
-            if(!e.getAttribute('data-ru')){e.setAttribute('data-ru',e.tagName==='INPUT'||e.tagName==='TEXTAREA'?e.placeholder:e.innerHTML)}
-            var v=n==='en'?e.getAttribute('data-en'):e.getAttribute('data-ru');
-            if(!v)return;
-            if(e.tagName==='INPUT'||e.tagName==='TEXTAREA'){e.placeholder=v}else{e.innerHTML=v}
-        });
-        document.getElementById('langBtnFloat').textContent=n==='ru'?'EN':'RU';
-    }
-    </script>
+    <script defer src="js/script.js?v=95e5a26"></script>
     <noscript><div><img src="https://mc.yandex.ru/watch/109350815" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109350815,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
 </body>

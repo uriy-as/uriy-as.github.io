@@ -327,4 +327,9 @@ modal.addEventListener('click', (e) => {
     }
 
     applyLang(lang);
+
+    window.toggleLang = function() {
+        var newLang = lang === 'ru' ? 'en' : 'ru';
+        applyLang(newLang);
+    };
 })();

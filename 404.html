@@ -7,21 +7,31 @@
     <meta name="google-site-verification" content="hU5JICV7gFg7as_jo2Dx-kWEUamlp_4iRQZKT-V5RPA" />
     <title>404 — Страница не найдена | WebStudio</title>
     <meta name="description" content="Страница не найдена. Вернитесь на главную WebStudio.">
+    <meta property="og:title" content="404 — Страница не найдена | WebStudio">
+    <meta property="og:description" content="Страница не найдена. Вернитесь на главную WebStudio.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://uriy-as.org/404.html">
+    <meta property="og:image" content="https://uriy-as.org/og-image.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="404 — Страница не найдена | WebStudio">
+    <meta name="twitter:description" content="Страница не найдена. Вернитесь на главную WebStudio.">
     <link rel="canonical" href="https://uriy-as.org/404.html">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="alternate" hreflang="ru" href="https://uriy-as.org/">
+    <link rel="alternate" hreflang="en" href="https://uriy-as.org/en/">
+    <link rel="stylesheet" href="css/style.css?v=2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         .error-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem; }
-        .error-page h1 { font-size: 6rem; background: linear-gradient(135deg, #6c63ff, #ff6b9d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem; }
-        .error-page p { color: var(--muted); font-size: 1.2rem; margin-bottom: 2rem; }
+        .error-page h1 { font-size: 6rem; background: linear-gradient(135deg, #6c63ff, #ff6b9d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; }
+        .error-page h2 { color: var(--muted); font-size: 1.5rem; font-weight: 400; margin-bottom: 2rem; }
     </style>
 </head>
 <body>
     <div class="error-page">
         <div>
             <h1>404</h1>
-            <p data-i18n="error-404-title">Страница не найдена</p>
+            <h2 data-i18n="error-404-title" style="font-size:1.5rem;margin-bottom:2rem;color:var(--muted);font-weight:400;">Страница не найдена</h2>
             <a href="/" class="btn btn--primary" data-i18n="error-404-btn">На главную</a>
         </div>
     </div>
@@ -57,8 +67,7 @@
         </div>
     </div>
 
-    <script src="js/script.js?v=95e5a26"></script>
-    <script>function toggleLang(){var k='site_lang',c=localStorage.getItem(k)||'ru',n=c==='ru'?'en':'ru';localStorage.setItem(k,n);document.documentElement.lang=n;document.querySelectorAll('[data-i18n]').forEach(function(e){if(!e.getAttribute('data-ru')){e.setAttribute('data-ru',e.tagName==='INPUT'||e.tagName==='TEXTAREA'?e.placeholder:e.innerHTML)}var v=n==='en'?e.getAttribute('data-en'):e.getAttribute('data-ru');if(!v)return;if(e.tagName==='INPUT'||e.tagName==='TEXTAREA'){e.placeholder=v}else{e.innerHTML=v}});document.getElementById('langBtnFloat').textContent=n==='ru'?'EN':'RU'}</script>
+    <script defer src="js/script.js?v=95e5a26"></script>
     <noscript><div><img src="https://mc.yandex.ru/watch/109350815" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 </body>
 </html>
