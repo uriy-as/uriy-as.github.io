@@ -151,7 +151,7 @@ modal.addEventListener('click', (e) => {
             body.innerHTML += '<div class="chat-msg chat-msg--bot">' + escapeHtml(data.reply) + '</div>';
         } catch(e) {
             body.removeChild(body.lastChild);
-            var errMsg = 'Извините, сервер временно недоступен. Напишите нам в Telegram: <a href="https://t.me/webstudio_chanel" target="_blank" style="color:#6c63ff;">@webstudio_chanel</a>';
+            var errMsg = 'Извините, сервер временно недоступен. Напишите нам в Telegram: <a href="https://t.me/uriy_as59" target="_blank" style="color:#6c63ff;">@uriy_as59</a>';
             body.innerHTML += '<div class="chat-msg chat-msg--bot" style="font-size:0.85rem;">' + errMsg + '</div>';
         }
         body.scrollTop = body.scrollHeight;
@@ -244,7 +244,7 @@ modal.addEventListener('click', (e) => {
         'service-card-articles-desc': { ru: 'Тематический контент для Telegram и соцсетей', en: 'Thematic content for Telegram and social media' },
         'service-card-promo': { ru: 'Продвижение', en: 'Promotion' },
         'service-card-promo-desc': { ru: 'SEO, Яндекс.Метрика, раскрутка канала', en: 'SEO, Yandex Metrica, channel promotion' },
-        'service-promo-msg': { ru: '💰 Цены указаны в USD. Возможна оплата в рублях, EUR, USDT, криптовалюте — по курсу на день сделки.<br>🎯 <strong>Скидка 30%</strong> для первых 5 заказчиков. Визитка от $105, бот от $42, статья от $21 — успейте!<br>📩 Свяжитесь с нами в Telegram: <a href="https://t.me/webstudio_chanel" style="color:var(--accent);">@webstudio_chanel</a>', en: '💰 Prices in USD. Payment in RUB, EUR, USDT, crypto — at the exchange rate on the deal date.<br>🎯 <strong>30% discount</strong> for the first 5 customers. Business card from $105, bot from $42, article from $21 — hurry up!<br>📩 Contact us on Telegram: <a href="https://t.me/webstudio_chanel" style="color:var(--accent);">@webstudio_chanel</a>' },
+        'service-promo-msg': { ru: '💰 Цены указаны в USD. Возможна оплата в рублях, EUR, USDT, криптовалюте — по курсу на день сделки.<br>🎯 <strong>Скидка 30%</strong> для первых 5 заказчиков. Визитка от $105, бот от $42, статья от $21 — успейте!<br>📩 Свяжитесь с нами в Telegram: <a href="https://t.me/uriy_as59" style="color:var(--accent);">@uriy_as59</a>', en: '💰 Prices in USD. Payment in RUB, EUR, USDT, crypto — at the exchange rate on the deal date.<br>🎯 <strong>30% discount</strong> for the first 5 customers. Business card from $105, bot from $42, article from $21 — hurry up!<br>📩 Contact us on Telegram: <a href="https://t.me/uriy_as59" style="color:var(--accent);">@uriy_as59</a>' },
         'price-from': { ru: 'от', en: 'from' },
         'price-project': { ru: 'за проект', en: 'per project' },
         'price-article': { ru: 'за статью', en: 'per article' },
