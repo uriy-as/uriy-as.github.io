@@ -157,7 +157,7 @@ modal.addEventListener('click', (e) => {
             }
         } catch(e) {
             body.removeChild(body.lastChild);
-            body.innerHTML += `<div class="chat-msg chat-msg--bot">${document.querySelector('[data-i18n="chat-error"]').innerHTML}</div>`;
+            body.innerHTML += '<div class="chat-msg chat-msg--bot" style="font-size:0.85rem;">⚠️ Сервер временно недоступен. Напишите нам в Telegram: <a href="https://t.me/webstudio_chanel" target="_blank" style="color:#6c63ff;">@webstudio_chanel</a></div>';
         }
         body.scrollTop = body.scrollHeight;
     });
