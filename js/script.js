@@ -116,6 +116,35 @@ modal.addEventListener('click', (e) => {
 
     if (!btn || !popup || !close || !body || !form || !input) return;
 
+    const fallback = function(q) {
+        q = q.toLowerCase();
+        if (/цен[аы]|сто[ия]|прайс|price|price|skolko/i.test(q)) {
+            return 'Наши цены: сайт-визитка от $105, сайт под ключ от $350, Telegram-бот от $42, бот на GPT от $150, научная статья от $21, продвижение от $100/мес. Действует скидка 30% для первых 5 клиентов. Подробнее: uriy-as.org/services.html';
+        }
+        if (/услуг[иа]|service|what.*do|ч[её]м|делаете/i.test(q)) {
+            return 'Мы создаём сайты, Telegram-ботов (включая GPT), научные статьи для каналов, и занимаемся SEO-продвижением. Всё под ключ. Подробнее: uriy-as.org/services.html';
+        }
+        if (/бот|bot|telegram|tg/i.test(q)) {
+            return 'Разрабатываем Telegram-ботов: от простых ботов-визиток ($42) до полноценных GPT-ботов с приёмом оплат ($150). Бот может отвечать на вопросы, принимать заказы и вести рассылку.';
+        }
+        if (/контакт|связ|написат|phone|email|telefon/i.test(q)) {
+            return 'Связаться с нами: Telegram @webstudio_chanel, email uriy.as59@yandex.com, или через форму на сайте. Также работает наш Telegram-бот @NevWebStudio_bot.';
+        }
+        if (/сайт|site|landing|лендинг|визитк/i.test(q)) {
+            return 'Создаём сайты под ключ: от сайта-визитки (1-3 страницы, от $105) до полноценных интернет-магазинов (от $350). Адаптивный дизайн, SEO, форма связи — всё включено.';
+        }
+        if (/стать[яи]|article|контент|научн/i.test(q)) {
+            return 'Пишем научно-популярные статьи для Telegram-каналов: от 2000 знаков ($21) до 7000+ знаков. Темы: технологии, наука, бизнес. Пакет 10 статей — скидка 20%.';
+        }
+        if (/продвиж|seo|раскрутк|продвижение/i.test(q)) {
+            return 'Продвигаем сайты и Telegram-каналы: SEO-оптимизация, Яндекс.Вебмастер, Яндекс.Метрика, рассылка по каталогам, контент-план на месяц. от $100/мес.';
+        }
+        if (/привет|здравств|hello|hi|добрый/i.test(q)) {
+            return 'Здравствуйте! Я — виртуальный помощник WebStudio. Чем могу помочь? Расскажу об услугах, ценах, или соединю с живым специалистом.';
+        }
+        return null;
+    };
+
     btn.addEventListener('click', () => {
         popup.classList.toggle('chat-popup--open');
     });
@@ -130,40 +159,51 @@ modal.addEventListener('click', (e) => {
         if (!msg) return;
 
         input.value = '';
-        body.innerHTML += `<div class="chat-msg chat-msg--user">${escapeHtml(msg)}</div>`;
+        body.innerHTML += '<div class="chat-msg chat-msg--user">' + escapeHtml(msg) + '</div>';
         body.scrollTop = body.scrollHeight;
 
-        body.innerHTML += `<div class="chat-msg chat-msg--bot"><em>Печатает...</em></div>`;
+        body.innerHTML += '<div class="chat-msg chat-msg--bot"><em>Печатает...</em></div>';
         body.scrollTop = body.scrollHeight;
+
+        const localReply = fallback(msg);
+        if (localReply) {
+            body.removeChild(body.lastChild);
+            body.innerHTML += '<div class="chat-msg chat-msg--bot">' + localReply + '</div>';
+            body.scrollTop = body.scrollHeight;
+            return;
+        }
 
         try {
+            const ctrl = new AbortController();
+            setTimeout(function() { ctrl.abort(); }, 8000);
             const r = await fetch('https://Astap.pythonanywhere.com/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message: msg }),
-                mode: 'cors'
+                mode: 'cors',
+                signal: ctrl.signal
             });
             const data = await r.json();
             body.removeChild(body.lastChild);
-            body.innerHTML += `<div class="chat-msg chat-msg--bot">${escapeHtml(data.reply)}</div>`;
-
-            if (data.reply.includes('запрос передан')) {
+            body.innerHTML += '<div class="chat-msg chat-msg--bot">' + escapeHtml(data.reply) + '</div>';
+            if (data.reply.indexOf('запрос передан') !== -1) {
                 fetch('https://Astap.pythonanywhere.com/api/lead', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ message: msg }),
                     mode: 'cors'
-                }).catch(() => {});
+                }).catch(function() {});
             }
         } catch(e) {
             body.removeChild(body.lastChild);
-            body.innerHTML += '<div class="chat-msg chat-msg--bot" style="font-size:0.85rem;">⚠️ Сервер временно недоступен. Напишите нам в Telegram: <a href="https://t.me/webstudio_chanel" target="_blank" style="color:#6c63ff;">@webstudio_chanel</a></div>';
+            var errMsg = 'Извините, сервер временно недоступен. Напишите нам в Telegram: <a href="https://t.me/webstudio_chanel" target="_blank" style="color:#6c63ff;">@webstudio_chanel</a>';
+            body.innerHTML += '<div class="chat-msg chat-msg--bot" style="font-size:0.85rem;">' + errMsg + '</div>';
         }
         body.scrollTop = body.scrollHeight;
     });
 
     function escapeHtml(text) {
-        const d = document.createElement('div');
+        var d = document.createElement('div');
         d.textContent = text;
         return d.innerHTML;
     }
