@@ -93,7 +93,8 @@ modal.addEventListener('click', (e) => {
     const PA_URL = 'https://Astap.pythonanywhere.com/visit';
     const data = {
         page: window.location.pathname,
-        ref: document.referrer || ''
+        ref: document.referrer || '',
+        screen: (screen.width || '') + 'x' + (screen.height || '')
     };
     try {
         fetch(PA_URL, {
@@ -101,7 +102,7 @@ modal.addEventListener('click', (e) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
             mode: 'cors'
-        }).catch(() => {});
+        }).catch(function() {});
     } catch(e) {}
 })();
 
