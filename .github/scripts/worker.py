@@ -56,8 +56,9 @@ def commit_offset():
     r = subprocess.run(["git", "diff", "--cached", "--quiet"], capture_output=True)
     if r.returncode != 0:
         subprocess.run(["git", "commit", "-m", "Update offset"], capture_output=True)
-        r = subprocess.run(["git", "push"], capture_output=True, text=True, env={**os.environ, "GIT_ASKPASS": "echo", "GIT_USERNAME": "x-access-token", "GIT_PASSWORD": GH_TOKEN})
-        print(f"Commit result: {r.returncode} {r.stdout} {r.stderr}")
+        remote = f"https://x-access-token:{GH_TOKEN}@github.com/uriy-as/uriy-as.github.io"
+        r = subprocess.run(["git", "push", remote, "HEAD:main"], capture_output=True, text=True)
+        print(f"Commit result: {r.returncode} {r.stderr}")
 
 def ask_gemini(text):
     payload = {
