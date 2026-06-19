@@ -27,10 +27,11 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
           git add .github/scripts/offset.txt
-          git diff --cached --quiet || (
+          if git diff --cached --quiet; then
+            echo "No offset changes to commit"
+          else
             git config user.name "bot-worker"
             git config user.email "bot@uriy-as.org"
             git commit -m "Update offset"
-            echo "$GH_TOKEN" | gh auth login --with-token 2>/dev/null
-            gh api repos/uriy-as/uriy-as.github.io/git/refs/heads/main --method PATCH -f sha=$(git rev-parse HEAD) 2>/dev/null || git push
-          )
+            git push "https://x-access-token:${GH_TOKEN}@github.com/uriy-as/uriy-as.github.io.git" HEAD:main
+          fi
