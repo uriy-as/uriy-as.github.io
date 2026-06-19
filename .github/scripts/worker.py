@@ -32,7 +32,7 @@ SYSTEM_PROMPT = """Ты - дружелюбный ассистент студии
 
 Если вопрос сложный или требует обсуждения деталей - предложи клиенту написать на почту или в Telegram @uriy_as59."""
 
-OFFSET_FILE = ".github/scripts/offset.txt"
+OFFSET_FILE = "offset.txt"
 
 def get_offset():
     try:
