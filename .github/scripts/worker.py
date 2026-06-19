@@ -159,7 +159,6 @@ try:
 
     save_offset(offset)
     print(f"Saved offset: {offset}")
-    commit_offset()
 
 except Exception as e:
     print(f"Error: {e}")
