@@ -16,7 +16,7 @@ jobs:
           CHAT_ID: "@webstudio_chanel"
         run: |
           python3 << 'PYEOF'
-          import json, os, datetime
+          import json, os, datetime, urllib.request, urllib.error
           with open('.github/scripts/posts.json') as f:
               posts = json.load(f)
           day = datetime.datetime.now().weekday()
@@ -29,7 +29,6 @@ jobs:
           token = os.environ['TOKEN']
           chat_id = os.environ['CHAT_ID']
           data = json.dumps({'chat_id': chat_id, 'parse_mode': 'HTML', 'text': text})
-          import urllib.request
           req = urllib.request.Request(
               f'https://api.telegram.org/bot{token}/sendMessage',
               data=data.encode(),
