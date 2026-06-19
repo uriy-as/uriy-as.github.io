@@ -7,6 +7,7 @@ import base64
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 ADMIN_CHAT_ID = os.environ.get("ADMIN_CHAT_ID")
+GH_TOKEN = os.environ.get("GH_TOKEN")
 
 if not TELEGRAM_TOKEN or not GEMINI_API_KEY:
     print("Missing TELEGRAM_TOKEN or GEMINI_API_KEY")
@@ -15,23 +16,23 @@ if not TELEGRAM_TOKEN or not GEMINI_API_KEY:
 TELEGRAM_API = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}"
 GEMINI_URL = f"https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key={GEMINI_API_KEY}"
 
-SYSTEM_PROMPT = """Ты — дружелюбный ассистент студии WebStudio. Отвечай на русском языке кратко и по делу.
+SYSTEM_PROMPT = """Ты - дружелюбный ассистент студии WebStudio. Отвечай на русском языке кратко и по делу.
 
 Чем занимается WebStudio:
-— Создание сайтов под ключ (лендинги, многостраничные, интернет-магазины)
-— Разработка Telegram-ботов с искусственным интеллектом
-— Написание научно-популярных статей для Telegram-каналов
-— SEO-оптимизация и поддержка сайтов
+- Создание сайтов под ключ (лендинги, многостраничные, интернет-магазины)
+- Разработка Telegram-ботов с искусственным интеллектом
+- Написание научно-популярных статей для Telegram-каналов
+- SEO-оптимизация и поддержка сайтов
 
 Контакты:
-— Сайт: https://uriy-as.org
-— Почта: uriy.as59@yandex.com
-— Telegram-канал: @webstudio_chanel
-— Написать админу: @uriy_as59
+- Сайт: https://uriy-as.org
+- Почта: uriy.as59@yandex.com
+- Telegram-канал: @webstudio_chanel
+- Написать админу: @uriy_as59
 
-Если вопрос сложный или требует обсуждения деталей — предложи клиенту написать на почту или в Telegram @uriy_as59."""
+Если вопрос сложный или требует обсуждения деталей - предложи клиенту написать на почту или в Telegram @uriy_as59."""
 
-OFFSET_FILE = "offset.txt"
+OFFSET_FILE = ".github/scripts/offset.txt"
 
 def get_offset():
     try:
@@ -43,6 +44,20 @@ def get_offset():
 def save_offset(offset):
     with open(OFFSET_FILE, "w") as f:
         f.write(str(offset))
+
+def commit_offset():
+    if not GH_TOKEN:
+        print("No GH_TOKEN, skipping commit")
+        return
+    import subprocess
+    subprocess.run(["git", "config", "user.name", "bot-worker"], capture_output=True)
+    subprocess.run(["git", "config", "user.email", "bot@uriy-as.org"], capture_output=True)
+    subprocess.run(["git", "add", OFFSET_FILE], capture_output=True)
+    r = subprocess.run(["git", "diff", "--cached", "--quiet"], capture_output=True)
+    if r.returncode != 0:
+        subprocess.run(["git", "commit", "-m", "Update offset"], capture_output=True)
+        r = subprocess.run(["git", "push"], capture_output=True, text=True, env={**os.environ, "GIT_ASKPASS": "echo", "GIT_USERNAME": "x-access-token", "GIT_PASSWORD": GH_TOKEN})
+        print(f"Commit result: {r.returncode} {r.stdout} {r.stderr}")
 
 def ask_gemini(text):
     payload = {
@@ -133,12 +148,13 @@ try:
 
         if str(chat_id) != ADMIN_CHAT_ID:
             username = user.get('username') or user.get('first_name', '?')
-            send_message(ADMIN_CHAT_ID, f"💬 Вопрос от @{username}:\n\n{text}")
+            send_message(ADMIN_CHAT_ID, f"Вопрос от @{username}:\n\n{text}")
 
         offset = update_id + 1
 
     save_offset(offset)
     print(f"Saved offset: {offset}")
+    commit_offset()
 
 except Exception as e:
     print(f"Error: {e}")
