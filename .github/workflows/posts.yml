@@ -27,10 +27,10 @@ total = len(posts)
 idx = (week * 3 + day_offset) % total
 post = posts[idx]
 text = post[2] if isinstance(post, list) else post
-data = json.dumps({'chat_id': '', 'parse_mode': 'HTML', 'text': text})
+data = json.dumps({'chat_id': '$CHAT_ID', 'parse_mode': 'HTML', 'text': text})
 import urllib.request
 req = urllib.request.Request(
-    'https://api.telegram.org/bot${TOKEN}/sendMessage',
+    'https://api.telegram.org/bot$TOKEN/sendMessage',
     data=data.encode(),
     headers={'Content-Type': 'application/json'}
 )
