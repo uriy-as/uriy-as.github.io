@@ -46,6 +46,10 @@ def save_offset(offset):
         f.write(str(offset))
 
 def commit_offset():
+    if GH_TOKEN:
+        print(f"GH_TOKEN: len={len(GH_TOKEN)} first4={GH_TOKEN[:4]}")
+    else:
+        print("GH_TOKEN: EMPTY")
     if not GH_TOKEN:
         print("No GH_TOKEN, skipping commit")
         return
