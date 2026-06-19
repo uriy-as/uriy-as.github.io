@@ -23,3 +23,11 @@ jobs:
           cd .github/scripts
           pip install -r requirements.txt
           python worker.py
+      - name: Commit offset
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+        run: |
+          git config user.name "bot-worker"
+          git config user.email "bot@uriy-as.org"
+          git add .github/scripts/offset.txt
+          git diff --cached --quiet || (git commit -m "Update offset" && git push "https://x-access-token:${GH_TOKEN}@github.com/uriy-as/uriy-as.github.io.git" HEAD:main)
