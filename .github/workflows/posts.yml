@@ -35,6 +35,11 @@ jobs:
               data=data.encode(),
               headers={'Content-Type': 'application/json'}
           )
-          resp = urllib.request.urlopen(req)
-          print(f'Sent post {idx}: {post[1]}')
+          try:
+              resp = urllib.request.urlopen(req)
+              print(f'Sent post {idx}: {post[1]}')
+              print(f'Response: {resp.read().decode()}')
+          except urllib.error.HTTPError as e:
+              print(f'HTTP {e.code}: {e.read().decode()}')
+              raise
           PYEOF
