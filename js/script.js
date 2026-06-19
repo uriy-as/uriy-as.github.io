@@ -2,15 +2,17 @@
 const burger = document.getElementById('burger');
 const nav = document.getElementById('nav');
 
-burger.addEventListener('click', () => {
-    nav.classList.toggle('nav--open');
-});
-
-document.querySelectorAll('.nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        nav.classList.remove('nav--open');
+if (burger && nav) {
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('nav--open');
     });
-});
+
+    document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('nav--open');
+        });
+    });
+}
 
 // Scroll reveal
 const observer = new IntersectionObserver((entries) => {
@@ -58,7 +60,8 @@ const form = document.getElementById('contactForm');
 const modal = document.getElementById('modal');
 const modalClose = document.getElementById('modalClose');
 
-form.addEventListener('submit', (e) => {
+if (form && modal && modalClose) {
+    form.addEventListener('submit', (e) => {
     e.preventDefault();
     const data = {
         name: form.querySelector('[name="name"]').value,
@@ -74,17 +77,18 @@ form.addEventListener('submit', (e) => {
     }).catch(() => {});
     modal.classList.add('modal--open');
     form.reset();
-});
+    });
 
-modalClose.addEventListener('click', () => {
-    modal.classList.remove('modal--open');
-});
-
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
+    modalClose.addEventListener('click', () => {
         modal.classList.remove('modal--open');
-    }
-});
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('modal--open');
+        }
+    });
+}
 
 // Modal
 
