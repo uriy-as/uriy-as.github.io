@@ -1,0 +1,19 @@
+name: Daily Stats
+
+on:
+  schedule:
+    - cron: "30 5 * * *"  # 08:30 MSK (05:30 UTC)
+  workflow_dispatch:
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate and send daily stats
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          ADMIN_CHAT_ID: ${{ secrets.ADMIN_CHAT_ID }}
+        run: python .github/scripts/daily-stats.py
