@@ -2,15 +2,19 @@
 const burger = document.getElementById('burger');
 const nav = document.getElementById('nav');
 
-burger.addEventListener('click', () => {
-    nav.classList.toggle('nav--open');
-});
-
-document.querySelectorAll('.nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        nav.classList.remove('nav--open');
+if (burger && nav) {
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('nav--open');
     });
-});
+}
+
+if (nav) {
+    document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('nav--open');
+        });
+    });
+}
 
 // Scroll reveal
 const observer = new IntersectionObserver((entries) => {
@@ -58,41 +62,44 @@ const form = document.getElementById('contactForm');
 const modal = document.getElementById('modal');
 const modalClose = document.getElementById('modalClose');
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const data = {
-        name: form.querySelector('[name="name"]').value,
-        email: form.querySelector('[name="email"]').value,
-        phone: form.querySelector('[name="phone"]').value,
-        message: form.querySelector('[name="message"]').value
-    };
-    fetch('https://Astap.pythonanywhere.com/api/lead', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-        mode: 'cors'
-    }).catch(() => {});
-    var tgMsg = '📩 <b>Новая заявка!</b>\nИмя: ' + data.name + '\nEmail: ' + data.email;
-    if (data.phone) tgMsg += '\nТелефон: ' + data.phone;
-    if (data.message) tgMsg += '\nСообщение: ' + data.message;
-    tgMsg += '\n\nСтраница: ' + window.location.pathname;
-    var x = new XMLHttpRequest();
-    x.open('POST', 'https://api.telegram.org/bot8308743016:AAEwu53QB_rwy5Di40YON4NBZA4A6SbgRQ0/sendMessage', true);
-    x.setRequestHeader('Content-Type', 'application/json');
-    x.send(JSON.stringify({ chat_id: '1994948658', text: tgMsg, parse_mode: 'HTML', disable_notification: true }));
-    modal.classList.add('modal--open');
-    form.reset();
-});
+if (form && modal && modalClose) {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = {
+            name: form.querySelector('[name="name"]').value,
+            email: form.querySelector('[name="email"]').value,
+            phone: form.querySelector('[name="phone"]').value,
+            message: form.querySelector('[name="message"]').value
+        };
+        fetch('https://Astap.pythonanywhere.com/api/lead', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+            mode: 'cors'
+        }).catch(() => {});
+        var tgMsg = '📩 <b>Новая заявка!</b>\nИмя: ' + data.name + '\nEmail: ' + data.email;
+        if (data.phone) tgMsg += '\nТелефон: ' + data.phone;
+        if (data.message) tgMsg += '\nСообщение: ' + data.message;
+        tgMsg += '\n\nСтраница: ' + window.location.pathname;
+        var x = new XMLHttpRequest();
+        x.open('POST', 'https://api.telegram.org/bot8308743016:AAEwu53QB_rwy5Di40YON4NBZA4A6SbgRQ0/sendMessage', true);
+        x.setRequestHeader('Content-Type', 'application/json');
+        x.send(JSON.stringify({ chat_id: '1994948658', text: tgMsg, parse_mode: 'HTML', disable_notification: true }));
+        modal.classList.add('modal--open');
+        form.reset();
+    });
 
-modalClose.addEventListener('click', () => {
-    modal.classList.remove('modal--open');
-});
-
-modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
+    modalClose.addEventListener('click', () => {
         modal.classList.remove('modal--open');
-    }
-});
+    });
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('modal--open');
+        }
+    });
+}
+
 
 // Modal
 
@@ -337,3 +344,6 @@ modal.addEventListener('click', (e) => {
         applyLang(newLang);
     };
 })();
+
+
+
