@@ -2,19 +2,15 @@
 const burger = document.getElementById('burger');
 const nav = document.getElementById('nav');
 
-if (burger && nav) {
-    burger.addEventListener('click', () => {
-        nav.classList.toggle('nav--open');
-    });
-}
+burger.addEventListener('click', () => {
+    nav.classList.toggle('nav--open');
+});
 
-if (nav) {
-    document.querySelectorAll('.nav a').forEach(link => {
-        link.addEventListener('click', () => {
-            nav.classList.remove('nav--open');
-        });
+document.querySelectorAll('.nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        nav.classList.remove('nav--open');
     });
-}
+});
 
 // Scroll reveal
 const observer = new IntersectionObserver((entries) => {
@@ -57,7 +53,7 @@ const counterObserver = new IntersectionObserver((entries) => {
 
 counters.forEach(el => counterObserver.observe(el));
 
-// Modal
+// Modalif (form && modal && modalClose)
 const form = document.getElementById('contactForm');
 const modal = document.getElementById('modal');
 const modalClose = document.getElementById('modalClose');
@@ -100,8 +96,7 @@ if (form && modal && modalClose) {
     });
 }
 
-
-// Modal
+// Modalif (form && modal && modalClose)
 
 // Visit tracker
 (function() {
@@ -260,7 +255,7 @@ if (form && modal && modalClose) {
         'service-card-articles-desc': { ru: 'Тематический контент для Telegram и соцсетей', en: 'Thematic content for Telegram and social media' },
         'service-card-promo': { ru: 'Продвижение', en: 'Promotion' },
         'service-card-promo-desc': { ru: 'SEO, Яндекс.Метрика, раскрутка канала', en: 'SEO, Yandex Metrica, channel promotion' },
-        'service-promo-msg': { ru: '💰 Цены указаны в USD. Возможна оплата в рублях, EUR, USDT, криптовалюте — по курсу на день сделки.<br>🎯 <strong>Скидка 30%</strong> для первых 5 заказчиков. Визитка от $250, бот от $150, статья от $50 — успейте!<br>📩 Свяжитесь с нами в Telegram: <a href="https://t.me/uriy_as59" style="color:var(--accent);">@uriy_as59</a>', en: '💰 Prices in USD. Payment in RUB, EUR, USDT, crypto — at the exchange rate on the deal date.<br>🎯 <strong>30% discount</strong> for the first 5 customers. Business card from $250, bot from $150, article from $50 — hurry up!<br>📩 Contact us on Telegram: <a href="https://t.me/uriy_as59" style="color:var(--accent);">@uriy_as59</a>' },
+        'service-promo-msg': { ru: '💰 Цены указаны в USD. Возможна оплата в рублях, EUR, USDT, криптовалюте — по курсу на день сделки.<br>🎯 <strong>Скидка 30%</strong> для первых 5 заказчиков. Визитка от $105, бот от $42, статья от $21 — успейте!<br>📩 Свяжитесь с нами в Telegram: <a href="https://t.me/uriy_as59" style="color:var(--accent);">@uriy_as59</a>', en: '💰 Prices in USD. Payment in RUB, EUR, USDT, crypto — at the exchange rate on the deal date.<br>🎯 <strong>30% discount</strong> for the first 5 customers. Business card from $105, bot from $42, article from $21 — hurry up!<br>📩 Contact us on Telegram: <a href="https://t.me/uriy_as59" style="color:var(--accent);">@uriy_as59</a>' },
         'price-from': { ru: 'от', en: 'from' },
         'price-project': { ru: 'за проект', en: 'per project' },
         'price-article': { ru: 'за статью', en: 'per article' },
@@ -344,6 +339,3 @@ if (form && modal && modalClose) {
         applyLang(newLang);
     };
 })();
-
-
-
