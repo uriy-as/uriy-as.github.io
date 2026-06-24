@@ -170,7 +170,8 @@ if (form && modal && modalClose) {
 // Language switcher
 (function() {
     const LANG_KEY = 'site_lang';
-    let lang = localStorage.getItem(LANG_KEY) || 'ru';
+    let lang = 'ru';
+    try { lang = localStorage.getItem(LANG_KEY) || 'ru'; } catch(e) {}
 
     const translations = {
         'nav-services': { ru: 'Услуги', en: 'Services' },
@@ -299,7 +300,7 @@ if (form && modal && modalClose) {
 
     function applyLang(l) {
         lang = l;
-        localStorage.setItem(LANG_KEY, l);
+        try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
 
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.dataset.i18n;
