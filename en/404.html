@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <meta name="google-site-verification" content="hU5JICV7gFg7as_jo2Dx-kWEUamlp_4iRQZKT-V5RPA" />
+    <title>404 — Page not found | WebStudio</title>
+    <meta name="description" content="Page not found. Return to WebStudio homepage or check the URL.">
+    <meta name="robots" content="noindex, nofollow">
+    <meta property="og:title" content="404 — Page not found | WebStudio">
+    <meta property="og:description" content="Page not found. Return to WebStudio homepage or check the URL.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://uriy-as.org/en/404.html">
+    <meta property="og:image" content="https://uriy-as.org/og-image.svg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="WebStudio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="404 — Page not found | WebStudio">
+    <meta name="twitter:description" content="Page not found. Return to WebStudio homepage or check the URL.">
+    <meta name="twitter:image" content="https://uriy-as.org/og-image.svg">
+    <link rel="dns-prefetch" href="https://mc.yandex.ru">
+    <link rel="preconnect" href="https://mc.yandex.ru" crossorigin>
+    <link rel="stylesheet" href="css/style.css?v=4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .error-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 2rem; }
+        .error-page h1 { font-size: 6rem; background: linear-gradient(135deg, #6c63ff, #ff6b9d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; }
+        .error-page h2 { color: var(--muted); font-size: 1.5rem; font-weight: 400; margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+    <div class="error-page">
+        <div>
+            <h1>404</h1>
+            <h2 data-i18n="error-404-title" style="font-size:1.5rem;margin-bottom:2rem;color:var(--muted);font-weight:400;">Page not found</h2>
+            <a href="/" class="btn btn--primary" data-i18n="error-404-btn">Home</a>
+        </div>
+    </div>
+    <a href="https://t.me/uriy_as59" target="_blank" class="tg-float" aria-label="Telegram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.26.76a1.73 1.73 0 0 0-1.76-.35L1.84 9.58a1.66 1.66 0 0 0 .05 3.08l4.88 1.9 2.94 8.86a1.38 1.38 0 0 0 .9.87 1.32 1.32 0 0 0 1.2-.21l4.23-3.46a1.8 1.8 0 0 1 2.05-.12l4.85 3.52a1.35 1.35 0 0 0 1.45.12 1.38 1.38 0 0 0 .78-1.15L23.7 2.47a1.73 1.73 0 0 0-1.44-1.71z"/></svg>
+        <span data-i18n="contact-tg">Telegram</span>
+    </a>
+
+    <div class="lang-widget" id="langWidget">
+    <button class="lang-btn-floating" id="langBtnFloat" aria-label="Switch language" onclick="toggleLang()">RU</button>
+</div>
+
+            <div class="chat-widget" id="chatWidget">
+        <button class="chat-btn" id="chatBtn" aria-label="Chat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span data-i18n="chat-btn-text">Chat</span>
+        </button>
+        <div class="chat-popup" id="chatPopup">
+            <div class="chat-popup__header">
+                <h4 data-i18n="chat-title">Chat with WebStudio</h4>
+                <button class="chat-popup__close" id="chatClose">&times;</button>
+            </div>
+            <div class="chat-popup__body" id="chatBody">
+                <div class="chat-msg chat-msg--bot" data-i18n="chat-greeting">Hello! Write your question, I will answer shortly.</div>
+                <div class="chat-msg chat-msg--bot" data-i18n="chat-error" style="display:none;"></div>
+            </div>
+            <form class="chat-popup__form" id="chatForm">
+                <input type="text" placeholder="Your message..." autocomplete="off" required data-i18n="chat-placeholder">
+                <button type="submit">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script defer src="js/script.js?v=2a1f9c3"></script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/109350815" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- Yandex.Metrica -->
+    <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109350815,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
+</body>
+</html>

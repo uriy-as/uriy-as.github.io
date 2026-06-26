@@ -170,8 +170,8 @@ if (form && modal && modalClose) {
 // Language switcher
 (function() {
     const LANG_KEY = 'site_lang';
-    let lang = 'ru';
-    try { lang = localStorage.getItem(LANG_KEY) || 'ru'; } catch(e) {}
+    let lang = document.documentElement.lang || 'ru';
+    try { lang = localStorage.getItem(LANG_KEY) || lang; } catch(e) {}
 
     const translations = {
         'nav-services': { ru: 'Услуги', en: 'Services' },
