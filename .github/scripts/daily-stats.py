@@ -30,7 +30,7 @@ def tg_send(text):
 try:
     traffic = gh_api('traffic/views')
 except Exception as e:
-    tg_send(f'\u274c Daily Stats: error fetching traffic data\n{str(e)}')
+    tg_send(f'\u274c Ошибка статистики: не удалось получить данные\n{str(e)}')
     exit(1)
 
 yesterday = (datetime.now(timezone.utc) - timedelta(days=1)).strftime('%Y-%m-%d')
@@ -52,7 +52,7 @@ content = gh_api('traffic/popular/paths')[:5]
 content_lines = ''
 if content:
     for c in content:
-        content_lines += f'\n  \u2022 {c["path"]} \u2014 {c["count"]} views, {c["uniques"]} unique'
+        content_lines += f'\n  \u2022 {c["path"]} \u2014 {c["count"]} просмотров, {c["uniques"]} уникальных'
 
 # Clones data
 try:
@@ -65,16 +65,16 @@ except:
     total_clones = total_clone_unique = y_clones = y_clone_unique = 0
 
 lines = []
-lines.append(f'\U0001f4ca Stats for {yesterday}')
+lines.append(f'\U0001f4ca Статистика за {yesterday}')
 lines.append('')
-lines.append(f'\U0001f441 Views yesterday: {y_views} (unique: {y_unique})')
-lines.append(f'\U0001f4c8 Views total (14d): {total_views} (unique: {total_unique})')
+lines.append(f'\U0001f441 Просмотров вчера: {y_views} (уникальных: {y_unique})')
+lines.append(f'\U0001f4c8 Всего за 14 дней: {total_views} (уникальных: {total_unique})')
 if total_clones:
-    lines.append(f'\U0001f4be Clones yesterday: {y_clones} (unique: {y_clone_unique})')
-    lines.append(f'\U0001f4e6 Clones total (14d): {total_clones} (unique: {total_clone_unique})')
+    lines.append(f'\U0001f4be Клонов вчера: {y_clones} (уникальных: {y_clone_unique})')
+    lines.append(f'\U0001f4e6 Клонов за 14 дней: {total_clones} (уникальных: {total_clone_unique})')
 lines.append('')
-lines.append(f'\U0001f310 Top referrers:{ref_lines}')
+lines.append(f'\U0001f310 Откуда приходят:{ref_lines}')
 lines.append('')
-lines.append(f'\U0001f4cc Top pages:{content_lines}')
+lines.append(f'\U0001f4cc Популярные страницы:{content_lines}')
 
 tg_send('\n'.join(lines))
