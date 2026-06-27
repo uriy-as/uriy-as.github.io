@@ -8,7 +8,7 @@ URLS = [
     'https://uriy-as.github.io/services.html',
     'https://uriy-as.github.io/en/',
     'https://astap.pythonanywhere.com/',
-    'https://astap.pythonanywhere.com/api/chat',
+    'https://astap.pythonanywhere.com/stats',
 ]
 
 def tg_send(text):
