@@ -1,39 +1,190 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://uriy-as.org/</loc>
-    <lastmod>2026-06-26</lastmod>
-    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/"/>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://uriy-as.org/services.html</loc>
-    <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/services.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/services.html"/>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://uriy-as.org/articles.html</loc>
-    <lastmod>2026-06-26</lastmod>
-    <changefreq>weekly</changefreq>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/articles.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/articles.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/articles.html"/>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://uriy-as.org/en/</loc>
-    <lastmod>2026-06-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://uriy-as.org/en/services.html</loc>
-    <lastmod>2026-06-26</lastmod>
-    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/en/"/>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://uriy-as.org/en/articles.html</loc>
-    <lastmod>2026-06-26</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://uriy-as.org/en/services.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/services.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/en/services.html"/>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uriy-as.org/en/articles.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/articles.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/articles.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/en/articles.html"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://uriy-as.org/blog/seo-optimizatsiya-sayta.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/seo-optimizatsiya-sayta.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/blog/seo-optimization-guide.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/blog/seo-optimizatsiya-sayta.html" />
+  </url>
+  <url>
+    <loc>https://uriy-as.org/blog/telegram-bot-ili-sayt.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/telegram-bot-ili-sayt.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/blog/telegram-bot-vs-website.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/blog/telegram-bot-ili-sayt.html" />
+  </url>
+  <url>
+    <loc>https://uriy-as.org/blog/sayt-za-5-dney.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/sayt-za-5-dney.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/blog/website-in-5-days.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/blog/sayt-za-5-dney.html" />
+  </url>
+  <url>
+    <loc>https://uriy-as.org/blog/ai-boty-vozmozhnosti.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/ai-boty-vozmozhnosti.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/blog/ai-bots-capabilities.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/blog/ai-boty-vozmozhnosti.html" />
+  </url>
+  <url>
+    <loc>https://uriy-as.org/blog/nauchnye-stati-prodazhi.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/nauchnye-stati-prodazhi.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/blog/science-articles-sell.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/blog/nauchnye-stati-prodazhi.html" />
+  </url>
+  <url>
+    <loc>https://uriy-as.org/blog/5-priznakov-plohogo-sayta.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/5-priznakov-plohogo-sayta.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/blog/5-signs-bad-website.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/blog/5-priznakov-plohogo-sayta.html" />
+  </url>
+  <url>
+    <loc>https://uriy-as.org/blog/kak-vybrat-hosting.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/kak-vybrat-hosting.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/blog/how-to-choose-hosting.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/blog/kak-vybrat-hosting.html" />
+  </url>
+  <url>
+    <loc>https://uriy-as.org/blog/ssl-sertifikat.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/ssl-sertifikat.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/blog/ssl-certificate-guide.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/blog/ssl-sertifikat.html" />
+  </url>
+  <url>
+    <loc>https://uriy-as.org/blog/telegram-kanal-biznes-strategiya.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/telegram-kanal-biznes-strategiya.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/blog/telegram-channel-strategy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/blog/telegram-kanal-biznes-strategiya.html" />
+  </url>
+  <url>
+    <loc>https://uriy-as.org/blog/seo-dlya-nachinayushchikh.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/seo-dlya-nachinayushchikh.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/blog/seo-for-beginners.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/blog/seo-dlya-nachinayushchikh.html" />
+  </url>
+  <url>
+    <loc>https://uriy-as.org/blog/telegram-bot-avtomatizatsiya-prodazh.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/telegram-bot-avtomatizatsiya-prodazh.html" />
+
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/blog/telegram-bot-avtomatizatsiya-prodazh.html" />
+  </url>
+  <url>
+    <loc>https://uriy-as.org/blog/gpt-boty-obrazovanie-konsultatsii.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/gpt-boty-obrazovanie-konsultatsii.html" />
+
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/blog/gpt-boty-obrazovanie-konsultatsii.html" />
+  </url>
+  <url>
+    <loc>https://uriy-as.org/blog/kontent-marketing-telegram-klienty.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/kontent-marketing-telegram-klienty.html" />
+
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/blog/kontent-marketing-telegram-klienty.html" />
+  </url>
+  <url>
+    <loc>https://uriy-as.org/blog/5-oshibok-kontent-strategii-telegram.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/5-oshibok-kontent-strategii-telegram.html" />
+
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/blog/5-oshibok-kontent-strategii-telegram.html" />
+  </url>
+  <url>
+    <loc>https://uriy-as.org/blog/formatirovanie-statey-telegram.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/formatirovanie-statey-telegram.html" />
+
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/blog/formatirovanie-statey-telegram.html" />
+  </url>
+  <url>
+    <loc>https://uriy-as.org/blog/ekspertnye-stati-prodazhi.html</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/ekspertnye-stati-prodazhi.html" />
+
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/blog/ekspertnye-stati-prodazhi.html" />
   </url>
 </urlset>
