@@ -30,22 +30,23 @@ const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const el = entry.target;
+            if (!el.dataset.target) return;
             const target = +el.dataset.target;
             const duration = 1500;
-            const step = target / (duration / 16);
-            let current = 0;
+            const start = performance.now();
 
-            const update = () => {
-                current += step;
-                if (current < target) {
-                    el.textContent = Math.round(current) + '+';
+            const update = (now) => {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                el.textContent = Math.round(target * progress) + '+';
+                if (progress < 1) {
                     requestAnimationFrame(update);
                 } else {
                     el.textContent = target + '+';
                 }
             };
 
-            update();
+            requestAnimationFrame(update);
             counterObserver.unobserve(el);
         }
     });
@@ -57,22 +58,41 @@ counters.forEach(el => counterObserver.observe(el));
 const form = document.getElementById('contactForm');
 const modal = document.getElementById('modal');
 const modalClose = document.getElementById('modalClose');
+const modalIcon = document.getElementById('modalIcon');
+const modalText = document.getElementById('modalText');
+
+const modalSuccess = () => {
+    modalIcon.innerHTML = '&#10024;';
+    modalText.textContent = modalText.dataset.i18n === 'modal-thanks'
+        ? (document.documentElement.lang === 'en' ? 'Thank you! We will contact you shortly.' : 'Спасибо! Мы свяжемся с вами в ближайшее время.')
+        : modalText.dataset.i18n;
+};
+
+const modalError = () => {
+    modalIcon.innerHTML = '&#10060;';
+    modalText.textContent = document.documentElement.lang === 'en'
+        ? 'Server error. Try again later or write to Telegram.'
+        : 'Ошибка сервера. Попробуйте позже или напишите в Telegram.';
+};
 
 if (form && modal && modalClose) {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         const data = {
-            name: form.querySelector('[name="name"]').value,
-            email: form.querySelector('[name="email"]').value,
-            phone: form.querySelector('[name="phone"]').value,
-            message: form.querySelector('[name="message"]').value
+            name: form.querySelector('[name="name"]')?.value || '',
+            email: form.querySelector('[name="email"]')?.value || '',
+            phone: form.querySelector('[name="phone"]')?.value || '',
+            message: form.querySelector('[name="message"]')?.value || ''
         };
-        fetch('https://Astap.pythonanywhere.com/api/lead', {
+        fetch('https://astap.pythonanywhere.com/api/lead', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
             mode: 'cors'
-        }).catch(() => {});
+        }).then(r => {
+            if (r.ok) modalSuccess();
+            else modalError();
+        }).catch(() => modalError());
         modal.classList.add('modal--open');
         form.reset();
     });
@@ -92,7 +112,7 @@ if (form && modal && modalClose) {
 
 // Visit tracker
 (function() {
-    const PA_URL = 'https://Astap.pythonanywhere.com/visit';
+    const PA_URL = 'https://astap.pythonanywhere.com/visit';
     const data = {
         page: window.location.pathname,
         ref: document.referrer || '',
@@ -119,13 +139,78 @@ if (form && modal && modalClose) {
 
     if (!btn || !popup || !close || !body || !form || !input) return;
 
+    var greetingTimer = null;
+
+    function getGreeting() {
+        var lang = window.currentLang || 'ru';
+        return lang === 'en' ? 'Hello! Ask your question.' : 'Здравствуйте! Задайте ваш вопрос.';
+    }
+
+    function addGreeting() {
+        if (!body.querySelector('.chat-msg--greeting')) {
+            var gr = document.createElement('div');
+            gr.className = 'chat-msg chat-msg--bot chat-msg--greeting';
+            gr.textContent = getGreeting();
+            body.insertBefore(gr, body.firstChild);
+        }
+    }
+
     btn.addEventListener('click', () => {
+        var isOpen = popup.classList.contains('chat-popup--open');
         popup.classList.toggle('chat-popup--open');
+        if (!isOpen && !greetingTimer && !body.querySelector('.chat-msg--greeting')) {
+            greetingTimer = setTimeout(addGreeting, 7000);
+        }
+        if (isOpen && greetingTimer) {
+            clearTimeout(greetingTimer);
+            greetingTimer = null;
+        }
     });
 
     close.addEventListener('click', () => {
         popup.classList.remove('chat-popup--open');
     });
+
+    // Voice input
+    var micBtn = document.getElementById('chatMic');
+    var recognition = null;
+    var isRecording = false;
+    var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (SpeechRecognition && micBtn) {
+        recognition = new SpeechRecognition();
+        recognition.lang = 'ru-RU';
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+        recognition.onresult = function(ev) {
+            var transcript = ev.results[0][0].transcript;
+            input.value = transcript;
+            isRecording = false;
+            micBtn.classList.remove('chat-mic--active');
+            form.dispatchEvent(new Event('submit'));
+        };
+        recognition.onerror = function() {
+            isRecording = false;
+            micBtn.classList.remove('chat-mic--active');
+        };
+        recognition.onend = function() {
+            isRecording = false;
+            micBtn.classList.remove('chat-mic--active');
+        };
+        micBtn.addEventListener('click', function() {
+            if (isRecording) {
+                recognition.stop();
+                return;
+            }
+            recognition.lang = (window.currentLang || 'ru') === 'en' ? 'en-US' : 'ru-RU';
+            try {
+                recognition.start();
+                isRecording = true;
+                micBtn.classList.add('chat-mic--active');
+            } catch(e) {}
+        });
+    } else if (micBtn) {
+        micBtn.style.display = 'none';
+    }
 
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -133,29 +218,35 @@ if (form && modal && modalClose) {
         if (!msg) return;
 
         input.value = '';
-        body.innerHTML += '<div class="chat-msg chat-msg--user">' + escapeHtml(msg) + '</div>';
+        body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--user">' + escapeHtml(msg) + '</div>');
         body.scrollTop = body.scrollHeight;
 
-        body.innerHTML += '<div class="chat-msg chat-msg--bot"><em>Печатает...</em></div>';
+        body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot"><em>Печатает...</em></div>');
         body.scrollTop = body.scrollHeight;
 
         try {
             const ctrl = new AbortController();
             setTimeout(function() { ctrl.abort(); }, 15000);
-            const r = await fetch('https://Astap.pythonanywhere.com/api/chat', {
+            const r = await fetch('https://astap.pythonanywhere.com/api/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message: msg }),
+                body: JSON.stringify({ message: msg, lang: window.currentLang || 'ru' }),
                 mode: 'cors',
                 signal: ctrl.signal
             });
             const data = await r.json();
             body.removeChild(body.lastChild);
-            body.innerHTML += '<div class="chat-msg chat-msg--bot">' + escapeHtml(data.reply) + '</div>';
+            body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot">' + escapeHtml(data.reply) + '</div>');
+            if (window.speechSynthesis) {
+                var utter = new SpeechSynthesisUtterance(data.reply);
+                utter.lang = (window.currentLang || 'ru') === 'en' ? 'en-US' : 'ru-RU';
+                utter.rate = 1.0;
+                speechSynthesis.speak(utter);
+            }
         } catch(e) {
             body.removeChild(body.lastChild);
             var errMsg = 'Извините, сервер временно недоступен. Напишите нам в Telegram: <a href="https://t.me/uriy_as59" target="_blank" style="color:#6c63ff;">@uriy_as59</a>';
-            body.innerHTML += '<div class="chat-msg chat-msg--bot" style="font-size:0.85rem;">' + errMsg + '</div>';
+            body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot" style="font-size:0.85rem;">' + errMsg + '</div>');
         }
         body.scrollTop = body.scrollHeight;
     });
@@ -221,6 +312,12 @@ if (form && modal && modalClose) {
         'footer-bot': { ru: '@NevWebStudio_bot — бот ответит на все интересующие вопросы', en: '@NevWebStudio_bot — the bot will answer all your questions' },
         'modal-thanks': { ru: 'Спасибо! Мы свяжемся с вами в ближайшее время.', en: 'Thank you! We will contact you shortly.' },
         'modal-btn': { ru: 'Отлично', en: 'Great' },
+        'contact-alt-title': { ru: 'Выберите удобный канал', en: 'Choose your preferred channel' },
+        'contact-alt-desc': { ru: 'Свяжитесь через любой мессенджер', en: 'Reach us via any messenger' },
+        'contact-alt-tg': { ru: 'Telegram', en: 'Telegram' },
+        'contact-alt-bot': { ru: 'Telegram-бот', en: 'Telegram Bot' },
+        'contact-alt-whatsapp': { ru: 'WhatsApp', en: 'WhatsApp' },
+        'contact-alt-viber': { ru: 'Viber', en: 'Viber' },
         'tg-float-text': { ru: 'Telegram', en: 'Telegram' },
         'chat-btn-text': { ru: 'AI-чат', en: 'AI Chat' },
         'chat-title': { ru: 'Чат с WebStudio AI', en: 'Chat with WebStudio AI' },
@@ -292,7 +389,8 @@ if (form && modal && modalClose) {
         'svc-promo-l4': { ru: 'Рассылка по каталогам', en: 'Directory submission' },
         'svc-promo-l5': { ru: 'Контент-план на месяц', en: 'Monthly content plan' },
         'error-404-title': { ru: 'Страница не найдена', en: 'Page not found' },
-        'error-404-btn': { ru: 'На главную', en: 'Go home' }
+        'error-404-btn': { ru: 'На главную', en: 'Go home' },
+        'footer-privacy': { ru: 'Политика конфиденциальности', en: 'Privacy Policy' }
     };
 
     window.translations = translations;
@@ -300,6 +398,7 @@ if (form && modal && modalClose) {
 
     function applyLang(l) {
         lang = l;
+        window.currentLang = l;
         try { localStorage.setItem(LANG_KEY, l); } catch(e) {}
 
         document.querySelectorAll('[data-i18n]').forEach(el => {

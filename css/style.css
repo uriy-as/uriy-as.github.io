@@ -463,6 +463,22 @@ body {
     margin-top: 6px;
 }
 
+/* ===== Service Article Link ===== */
+.service__article-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: var(--accent, #6c63ff);
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+.service__article-link:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
 /* ===== Contact ===== */
 .contact {
     background: #fff;
@@ -539,6 +555,92 @@ body {
 .contact__link svg {
     width: 20px;
     height: 20px;
+}
+
+/* ===== Contact Alt Channels ===== */
+.contact__alt {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border, #eee);
+}
+
+.contact__alt h3 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+    color: var(--text, #333);
+}
+
+.contact__alt p {
+    color: var(--muted, #666);
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.contact__alt-grid {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.contact__alt-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.contact__alt-link svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.contact__alt-link--tg {
+    background: rgba(0, 136, 204, 0.08);
+    color: #0088cc;
+    border-color: rgba(0, 136, 204, 0.2);
+}
+.contact__alt-link--tg:hover {
+    background: rgba(0, 136, 204, 0.15);
+    transform: translateY(-2px);
+}
+
+.contact__alt-link--bot {
+    background: rgba(108, 99, 255, 0.08);
+    color: #6c63ff;
+    border-color: rgba(108, 99, 255, 0.2);
+}
+.contact__alt-link--bot:hover {
+    background: rgba(108, 99, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.contact__alt-link--wa {
+    background: rgba(37, 211, 102, 0.08);
+    color: #25D366;
+    border-color: rgba(37, 211, 102, 0.2);
+}
+.contact__alt-link--wa:hover {
+    background: rgba(37, 211, 102, 0.15);
+    transform: translateY(-2px);
+}
+
+.contact__alt-link--vb {
+    background: rgba(124, 79, 203, 0.08);
+    color: #7c4fcb;
+    border-color: rgba(124, 79, 203, 0.2);
+}
+.contact__alt-link--vb:hover {
+    background: rgba(124, 79, 203, 0.15);
+    transform: translateY(-2px);
 }
 
 /* ===== Social Links ===== */
@@ -1172,6 +1274,21 @@ body {
 .chat-popup__form button svg {
     width: 18px;
     height: 18px;
+}
+
+.chat-mic {
+    background: transparent !important;
+    color: #888 !important;
+    width: 36px !important;
+    height: 36px !important;
+}
+.chat-mic:hover {
+    color: #6c63ff !important;
+    background: rgba(108,99,255,0.08) !important;
+}
+.chat-mic--active {
+    color: #ff4444 !important;
+    animation: pulse 1s ease infinite;
 }
 
 @media (max-width: 480px) {
