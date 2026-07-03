@@ -209,12 +209,16 @@ if (form && modal && modalClose) {
         });
     }
 
-    if (micBtn && (window.SpeechRecognition || window.webkitSpeechRecognition)) {
+    if (micBtn) {
         var isRecording = false;
         micBtn.addEventListener('click', function(e) {
             e.preventDefault();
             if (isRecording) return;
             var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+            if (!SR) {
+                micBtn.style.display = 'none';
+                return;
+            }
             var recog = new SR();
             recog.lang = (window.currentLang || 'ru') === 'en' ? 'en-US' : 'ru-RU';
             recog.interimResults = false;
@@ -238,13 +242,9 @@ if (form && modal && modalClose) {
                 isRecording = true;
                 micBtn.classList.add('chat-mic--active');
             } catch(err) {
-                console.error('Voice error:', err);
                 isRecording = false;
-                micBtn.classList.remove('chat-mic--active');
             }
         });
-    } else if (micBtn) {
-        micBtn.style.display = 'none';
     }
 
     form.addEventListener('submit', function(e) {
@@ -321,7 +321,7 @@ if (form && modal && modalClose) {
         'contact-alt-viber': { ru: 'Viber', en: 'Viber' },
         'tg-float-text': { ru: 'Telegram', en: 'Telegram' },
         'chat-btn-text': { ru: 'AI-чат', en: 'AI Chat' },
-        'chat-title': { ru: 'Чат с WebStudio AI', en: 'Chat with WebStudio AI' },
+        'chat-title': { ru: 'AI-ассистент', en: 'AI Assistant' },
         'chat-greeting': { ru: 'Здравствуйте! Задайте ваш вопрос.', en: 'Hello! Ask your question.' },
         'chat-placeholder': { ru: 'Ваше сообщение...', en: 'Your message...' },
         'chat-error': { ru: 'Ошибка связи. Попробуйте позже.', en: 'Connection error. Try again later.' },
