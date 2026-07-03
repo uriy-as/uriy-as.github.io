@@ -201,9 +201,17 @@ if (form && modal && modalClose) {
                     var utter = new SpeechSynthesisUtterance(data.reply);
                     utter.lang = (window.currentLang || 'ru') === 'en' ? 'en-US' : 'ru-RU';
                     utter.rate = 1.0;
-                    setTimeout(function() {
-                        window.speechSynthesis.speak(utter);
-                    }, 50);
+                    // Chrome bug workaround: keep speech alive
+                    var keepAlive = setInterval(function() {
+                        if (!window.speechSynthesis.speaking) {
+                            clearInterval(keepAlive);
+                        } else {
+                            window.speechSynthesis.pause();
+                            window.speechSynthesis.resume();
+                        }
+                    }, 3000);
+                    utter.onend = function() { clearInterval(keepAlive); };
+                    setTimeout(function() { window.speechSynthesis.speak(utter); }, 100);
                 }
             } catch(e) {}
         }).catch(function() {
