@@ -175,9 +175,6 @@ if (form && modal && modalClose) {
 
     // Voice input
     var micBtn = document.getElementById('chatMic');
-    var recognition = null;
-    var isRecording = false;
-    var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
     function sendMessage(msg) {
         if (!msg) return;
@@ -212,39 +209,38 @@ if (form && modal && modalClose) {
         });
     }
 
-    if (SpeechRecognition && micBtn) {
-        recognition = new SpeechRecognition();
-        recognition.lang = 'ru-RU';
-        recognition.interimResults = false;
-        recognition.maxAlternatives = 1;
-        recognition.continuous = false;
-        recognition.onresult = function(ev) {
-            var transcript = ev.results[0][0].transcript;
-            isRecording = false;
-            micBtn.classList.remove('chat-mic--active');
-            sendMessage(transcript);
-        };
-        recognition.onerror = function(ev) {
-            isRecording = false;
-            micBtn.classList.remove('chat-mic--active');
-        };
-        recognition.onend = function() {
-            isRecording = false;
-            micBtn.classList.remove('chat-mic--active');
-        };
+    if (micBtn && (window.SpeechRecognition || window.webkitSpeechRecognition)) {
+        var isRecording = false;
         micBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            if (isRecording) {
-                recognition.abort();
-                return;
-            }
-            recognition.lang = (window.currentLang || 'ru') === 'en' ? 'en-US' : 'ru-RU';
+            if (isRecording) return;
+            var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+            var recog = new SR();
+            recog.lang = (window.currentLang || 'ru') === 'en' ? 'en-US' : 'ru-RU';
+            recog.interimResults = false;
+            recog.maxAlternatives = 1;
+            recog.onresult = function(ev) {
+                isRecording = false;
+                micBtn.classList.remove('chat-mic--active');
+                var t = ev.results[0][0].transcript;
+                sendMessage(t);
+            };
+            recog.onerror = function() {
+                isRecording = false;
+                micBtn.classList.remove('chat-mic--active');
+            };
+            recog.onend = function() {
+                isRecording = false;
+                micBtn.classList.remove('chat-mic--active');
+            };
             try {
-                recognition.start();
+                recog.start();
                 isRecording = true;
                 micBtn.classList.add('chat-mic--active');
             } catch(err) {
-                console.error('Voice start error:', err);
+                console.error('Voice error:', err);
+                isRecording = false;
+                micBtn.classList.remove('chat-mic--active');
             }
         });
     } else if (micBtn) {
