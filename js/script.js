@@ -169,8 +169,9 @@ if (form && modal && modalClose) {
         }
     });
 
-    close.addEventListener('click', () => {
+    close.addEventListener('click', function() {
         popup.classList.remove('chat-popup--open');
+        if (window.speechSynthesis) speechSynthesis.cancel();
     });
 
     // Voice input
