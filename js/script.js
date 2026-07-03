@@ -171,11 +171,7 @@ if (form && modal && modalClose) {
 
     close.addEventListener('click', function() {
         popup.classList.remove('chat-popup--open');
-        if (window.speechSynthesis) speechSynthesis.cancel();
     });
-
-    // Voice input
-    var micBtn = document.getElementById('chatMic');
 
     function sendMessage(msg) {
         if (!msg) return;
@@ -195,99 +191,10 @@ if (form && modal && modalClose) {
         }).then(function(r) { return r.json(); }).then(function(data) {
             body.removeChild(body.lastChild);
             body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot">' + escapeHtml(data.reply) + '</div>');
-            try {
-                if (window.speechSynthesis) {
-                    window.speechSynthesis.cancel();
-                    var utter = new SpeechSynthesisUtterance(data.reply);
-                    utter.lang = (window.currentLang || 'ru') === 'en' ? 'en-US' : 'ru-RU';
-                    utter.rate = 1.0;
-                    // Chrome bug workaround: keep speech alive
-                    var keepAlive = setInterval(function() {
-                        if (!window.speechSynthesis.speaking) {
-                            clearInterval(keepAlive);
-                        } else {
-                            window.speechSynthesis.pause();
-                            window.speechSynthesis.resume();
-                        }
-                    }, 3000);
-                    utter.onend = function() { clearInterval(keepAlive); };
-                    setTimeout(function() { window.speechSynthesis.speak(utter); }, 100);
-                }
-            } catch(e) {}
         }).catch(function() {
             body.removeChild(body.lastChild);
             var errMsg = 'Извините, сервер временно недоступен. Напишите нам в Telegram: <a href="https://t.me/uriy_as59" target="_blank" style="color:#6c63ff;">@uriy_as59</a>';
             body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot" style="font-size:0.85rem;">' + errMsg + '</div>');
-        });
-    }
-
-    if (micBtn) {
-        var isRecording = false;
-        var recog = null;
-        var micTimer = null;
-        micBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
-            if (!SR) {
-                micBtn.style.display = 'none';
-                return;
-            }
-            if (isRecording) {
-                if (recog) recog.abort();
-                if (micTimer) clearTimeout(micTimer);
-                isRecording = false;
-                micBtn.classList.remove('chat-mic--active');
-                var statusEl = document.getElementById('chatMicStatus');
-                if (statusEl) statusEl.remove();
-                return;
-            }
-            recog = new SR();
-            recog.lang = (window.currentLang || 'ru') === 'en' ? 'en-US' : 'ru-RU';
-            recog.interimResults = false;
-            recog.maxAlternatives = 1;
-            recog.continuous = false;
-            recog.onresult = function(ev) {
-                if (micTimer) clearTimeout(micTimer);
-                isRecording = false;
-                micBtn.classList.remove('chat-mic--active');
-                var statusEl = document.getElementById('chatMicStatus');
-                if (statusEl) statusEl.remove();
-                var t = ev.results[0][0].transcript;
-                sendMessage(t);
-            };
-            recog.onerror = function(ev) {
-                if (micTimer) clearTimeout(micTimer);
-                isRecording = false;
-                micBtn.classList.remove('chat-mic--active');
-                var statusEl = document.getElementById('chatMicStatus');
-                if (statusEl) statusEl.remove();
-            };
-            recog.onend = function() {
-                micBtn.classList.remove('chat-mic--active');
-                isRecording = false;
-            };
-            try {
-                recog.start();
-                isRecording = true;
-                micBtn.classList.add('chat-mic--active');
-                body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot" id="chatMicStatus" style="font-size:0.85rem;color:#888;"><em>' + ((window.currentLang || 'ru') === 'en' ? 'Speak now...' : 'Говорите...') + '</em></div>');
-                body.scrollTop = body.scrollHeight;
-                micTimer = setTimeout(function() {
-                    if (recog) recog.abort();
-                    isRecording = false;
-                    micBtn.classList.remove('chat-mic--active');
-                    var statusEl = document.getElementById('chatMicStatus');
-                    if (statusEl) statusEl.remove();
-                    body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot" style="font-size:0.85rem;color:#f44;"><em>' + ((window.currentLang || 'ru') === 'en' ? 'Voice timeout. Try again.' : 'Таймаут. Попробуйте ещё раз.') + '</em></div>');
-                    body.scrollTop = body.scrollHeight;
-                }, 10000);
-            } catch(err) {
-                isRecording = false;
-                var statusEl = document.getElementById('chatMicStatus');
-                if (statusEl) statusEl.remove();
-                body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot" style="font-size:0.85rem;color:#f44;"><em>' + ((window.currentLang || 'ru') === 'en' ? 'Microphone error: ' + err.message : 'Ошибка микрофона: ' + err.message) + '</em></div>');
-                body.scrollTop = body.scrollHeight;
-            }
         });
     }
 
