@@ -249,8 +249,6 @@ if (form && modal && modalClose) {
         e.preventDefault();
         sendMessage(input.value.trim());
     });
-        body.scrollTop = body.scrollHeight;
-    });
 
     function escapeHtml(text) {
         var d = document.createElement('div');
