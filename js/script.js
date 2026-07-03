@@ -197,10 +197,13 @@ if (form && modal && modalClose) {
             body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot">' + escapeHtml(data.reply) + '</div>');
             try {
                 if (window.speechSynthesis) {
+                    window.speechSynthesis.cancel();
                     var utter = new SpeechSynthesisUtterance(data.reply);
                     utter.lang = (window.currentLang || 'ru') === 'en' ? 'en-US' : 'ru-RU';
                     utter.rate = 1.0;
-                    speechSynthesis.speak(utter);
+                    setTimeout(function() {
+                        window.speechSynthesis.speak(utter);
+                    }, 50);
                 }
             } catch(e) {}
         }).catch(function() {
