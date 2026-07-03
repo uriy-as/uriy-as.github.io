@@ -1,16 +1,18 @@
 // Burger menu
-const burger = document.getElementById('burger');
-const nav = document.getElementById('nav');
-
-burger.addEventListener('click', () => {
-    nav.classList.toggle('nav--open');
-});
-
-document.querySelectorAll('.nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        nav.classList.remove('nav--open');
+(function() {
+    const burger = document.getElementById('burger');
+    const nav = document.getElementById('nav');
+    if (!burger || !nav) return;
+    burger.addEventListener('click', function() {
+        nav.classList.toggle('nav--open');
     });
-});
+    var links = nav.querySelectorAll('a');
+    for (var i = 0; i < links.length; i++) {
+        links[i].addEventListener('click', function() {
+            nav.classList.remove('nav--open');
+        });
+    }
+})();
 
 // Scroll reveal
 const observer = new IntersectionObserver((entries) => {
@@ -184,21 +186,25 @@ if (form && modal && modalClose) {
         body.scrollTop = body.scrollHeight;
         body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot"><em>Печатает...</em></div>');
         body.scrollTop = body.scrollHeight;
+        var ac = new AbortController();
+        setTimeout(function() { ac.abort(); }, 15000);
         fetch('https://astap.pythonanywhere.com/api/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message: msg, lang: window.currentLang || 'ru' }),
             mode: 'cors',
-            signal: AbortSignal.timeout(15000)
+            signal: ac.signal
         }).then(function(r) { return r.json(); }).then(function(data) {
             body.removeChild(body.lastChild);
             body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot">' + escapeHtml(data.reply) + '</div>');
-            if (window.speechSynthesis) {
-                var utter = new SpeechSynthesisUtterance(data.reply);
-                utter.lang = (window.currentLang || 'ru') === 'en' ? 'en-US' : 'ru-RU';
-                utter.rate = 1.0;
-                speechSynthesis.speak(utter);
-            }
+            try {
+                if (window.speechSynthesis) {
+                    var utter = new SpeechSynthesisUtterance(data.reply);
+                    utter.lang = (window.currentLang || 'ru') === 'en' ? 'en-US' : 'ru-RU';
+                    utter.rate = 1.0;
+                    speechSynthesis.speak(utter);
+                }
+            } catch(e) {}
         }).catch(function() {
             body.removeChild(body.lastChild);
             var errMsg = 'Извините, сервер временно недоступен. Напишите нам в Telegram: <a href="https://t.me/uriy_as59" target="_blank" style="color:#6c63ff;">@uriy_as59</a>';
