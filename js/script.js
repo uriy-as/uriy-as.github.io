@@ -176,65 +176,21 @@ if (form && modal && modalClose) {
     var recognition = null;
     var isRecording = false;
     var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (SpeechRecognition && micBtn) {
-        recognition = new SpeechRecognition();
-        recognition.lang = 'ru-RU';
-        recognition.interimResults = false;
-        recognition.maxAlternatives = 1;
-        recognition.onresult = function(ev) {
-            var transcript = ev.results[0][0].transcript;
-            input.value = transcript;
-            isRecording = false;
-            micBtn.classList.remove('chat-mic--active');
-            form.dispatchEvent(new Event('submit'));
-        };
-        recognition.onerror = function() {
-            isRecording = false;
-            micBtn.classList.remove('chat-mic--active');
-        };
-        recognition.onend = function() {
-            isRecording = false;
-            micBtn.classList.remove('chat-mic--active');
-        };
-        micBtn.addEventListener('click', function() {
-            if (isRecording) {
-                recognition.stop();
-                return;
-            }
-            recognition.lang = (window.currentLang || 'ru') === 'en' ? 'en-US' : 'ru-RU';
-            try {
-                recognition.start();
-                isRecording = true;
-                micBtn.classList.add('chat-mic--active');
-            } catch(e) {}
-        });
-    } else if (micBtn) {
-        micBtn.style.display = 'none';
-    }
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const msg = input.value.trim();
+    function sendMessage(msg) {
         if (!msg) return;
-
         input.value = '';
         body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--user">' + escapeHtml(msg) + '</div>');
         body.scrollTop = body.scrollHeight;
-
         body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot"><em>Печатает...</em></div>');
         body.scrollTop = body.scrollHeight;
-
-        try {
-            const ctrl = new AbortController();
-            setTimeout(function() { ctrl.abort(); }, 15000);
-            const r = await fetch('https://astap.pythonanywhere.com/api/chat', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message: msg, lang: window.currentLang || 'ru' }),
-                mode: 'cors',
-                signal: ctrl.signal
-            });
-            const data = await r.json();
+        fetch('https://astap.pythonanywhere.com/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: msg, lang: window.currentLang || 'ru' }),
+            mode: 'cors',
+            signal: AbortSignal.timeout(15000)
+        }).then(function(r) { return r.json(); }).then(function(data) {
             body.removeChild(body.lastChild);
             body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot">' + escapeHtml(data.reply) + '</div>');
             if (window.speechSynthesis) {
@@ -243,11 +199,56 @@ if (form && modal && modalClose) {
                 utter.rate = 1.0;
                 speechSynthesis.speak(utter);
             }
-        } catch(e) {
+        }).catch(function() {
             body.removeChild(body.lastChild);
             var errMsg = 'Извините, сервер временно недоступен. Напишите нам в Telegram: <a href="https://t.me/uriy_as59" target="_blank" style="color:#6c63ff;">@uriy_as59</a>';
             body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot" style="font-size:0.85rem;">' + errMsg + '</div>');
-        }
+        });
+    }
+
+    if (SpeechRecognition && micBtn) {
+        recognition = new SpeechRecognition();
+        recognition.lang = 'ru-RU';
+        recognition.interimResults = false;
+        recognition.maxAlternatives = 1;
+        recognition.continuous = false;
+        recognition.onresult = function(ev) {
+            var transcript = ev.results[0][0].transcript;
+            isRecording = false;
+            micBtn.classList.remove('chat-mic--active');
+            sendMessage(transcript);
+        };
+        recognition.onerror = function(ev) {
+            isRecording = false;
+            micBtn.classList.remove('chat-mic--active');
+        };
+        recognition.onend = function() {
+            isRecording = false;
+            micBtn.classList.remove('chat-mic--active');
+        };
+        micBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (isRecording) {
+                recognition.abort();
+                return;
+            }
+            recognition.lang = (window.currentLang || 'ru') === 'en' ? 'en-US' : 'ru-RU';
+            try {
+                recognition.start();
+                isRecording = true;
+                micBtn.classList.add('chat-mic--active');
+            } catch(err) {
+                console.error('Voice start error:', err);
+            }
+        });
+    } else if (micBtn) {
+        micBtn.style.display = 'none';
+    }
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        sendMessage(input.value.trim());
+    });
         body.scrollTop = body.scrollHeight;
     });
 
