@@ -212,36 +212,51 @@ if (form && modal && modalClose) {
 
     if (micBtn) {
         var isRecording = false;
+        var recog = null;
+        var micTimer = null;
         micBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            if (isRecording) return;
             var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
             if (!SR) {
                 micBtn.style.display = 'none';
                 return;
             }
-            var recog = new SR();
+            if (isRecording) {
+                if (recog) recog.abort();
+                if (micTimer) clearTimeout(micTimer);
+                isRecording = false;
+                micBtn.classList.remove('chat-mic--active');
+                return;
+            }
+            recog = new SR();
             recog.lang = (window.currentLang || 'ru') === 'en' ? 'en-US' : 'ru-RU';
             recog.interimResults = false;
             recog.maxAlternatives = 1;
             recog.onresult = function(ev) {
+                if (micTimer) clearTimeout(micTimer);
                 isRecording = false;
                 micBtn.classList.remove('chat-mic--active');
                 var t = ev.results[0][0].transcript;
                 sendMessage(t);
             };
             recog.onerror = function() {
+                if (micTimer) clearTimeout(micTimer);
                 isRecording = false;
                 micBtn.classList.remove('chat-mic--active');
             };
             recog.onend = function() {
-                isRecording = false;
                 micBtn.classList.remove('chat-mic--active');
+                isRecording = false;
             };
             try {
                 recog.start();
                 isRecording = true;
                 micBtn.classList.add('chat-mic--active');
+                micTimer = setTimeout(function() {
+                    if (recog) recog.abort();
+                    isRecording = false;
+                    micBtn.classList.remove('chat-mic--active');
+                }, 10000);
             } catch(err) {
                 isRecording = false;
             }
