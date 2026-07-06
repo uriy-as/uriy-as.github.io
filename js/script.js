@@ -25,37 +25,6 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Counter animation
-const counters = document.querySelectorAll('.stats__num');
-
-const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const el = entry.target;
-            if (!el.dataset.target) return;
-            const target = +el.dataset.target;
-            const duration = 1500;
-            const start = performance.now();
-
-            const update = (now) => {
-                const elapsed = now - start;
-                const progress = Math.min(elapsed / duration, 1);
-                el.textContent = Math.round(target * progress) + '+';
-                if (progress < 1) {
-                    requestAnimationFrame(update);
-                } else {
-                    el.textContent = target + '+';
-                }
-            };
-
-            requestAnimationFrame(update);
-            counterObserver.unobserve(el);
-        }
-    });
-}, { threshold: 0.5 });
-
-counters.forEach(el => counterObserver.observe(el));
-
 // Modal
 const form = document.getElementById('contactForm');
 const modal = document.getElementById('modal');
@@ -244,10 +213,6 @@ if (form && modal && modalClose) {
         'tg-widget-title': { ru: 'Последние посты канала', en: 'Latest Channel Posts' },
         'tg-widget-subtitle': { ru: 'Подпишитесь, чтобы не пропускать полезный контент', en: 'Subscribe so you don\'t miss useful content' },
         'tg-widget-all': { ru: 'Все посты в канале', en: 'All posts in channel' },
-        'stats-projects': { ru: 'Завершённых проектов', en: 'Completed Projects' },
-        'stats-clients': { ru: 'Активных клиентов', en: 'Active Clients' },
-        'stats-years': { ru: 'Лет на рынке', en: 'Years on Market' },
-        'stats-satisfaction': { ru: '% довольных клиентов', en: '% Satisfied Clients' },
         'tg-promo-title': { ru: 'Подпишитесь на наш Telegram-канал', en: 'Subscribe to our Telegram Channel' },
         'tg-promo-desc': { ru: 'Кейсы, статьи и инсайты по разработке сайтов, Telegram-ботов и контент-маркетингу. Публикуем полезный контент каждый понедельник, среду, пятницу и субботу в 08:10.', en: 'Cases, articles and insights on website development, Telegram bots and content marketing. We publish useful content every Monday, Wednesday, Friday and Saturday at 08:10.' },
         'tg-promo-btn': { ru: 'Подписаться в Telegram', en: 'Subscribe on Telegram' },

@@ -434,35 +434,6 @@ body {
     font-size: 0.95rem;
 }
 
-/* ===== Stats ===== */
-.stats {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    padding: 80px 0;
-}
-
-.stats__grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    text-align: center;
-}
-
-.stats__item h3 {
-    font-size: 2.8rem;
-    font-weight: 900;
-    background: linear-gradient(135deg, #6c63ff, #ff6b9d);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    line-height: 1.2;
-}
-
-.stats__item p {
-    color: #aaa;
-    font-size: 1rem;
-    margin-top: 6px;
-}
-
 /* ===== Service Article Link ===== */
 .service__article-link {
     display: inline-flex;
@@ -942,10 +913,6 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .stats__grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .nav {
         display: none;
         flex-direction: column;
@@ -1079,9 +1046,6 @@ body {
         font-size: 1.6rem;
     }
 
-    .stats__grid {
-        grid-template-columns: 1fr;
-    }
 }
 
 /* ===== Chat Widget ===== */
