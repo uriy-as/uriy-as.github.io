@@ -248,13 +248,13 @@
             <p class="contact__subtitle reveal" data-i18n="contact-subtitle">Оставьте заявку, и мы обсудим ваш проект</p>
             <form class="contact__form reveal" id="contactForm" action="https://Astap.pythonanywhere.com/api/lead" method="POST">
                 <div class="form__group">
-                    <input type="text" name="name"  required data-i18n="form-name">Ваше имя</div>
+                    <input type="text" name="name"  required><span class="form__label" data-i18n="form-name">Ваше имя</span></div>
                 <div class="form__group">
-                    <input type="email" name="email"  required data-i18n="form-email">Email</div>
+                    <input type="email" name="email"  required><span class="form__label" data-i18n="form-email">Email</span></div>
                 <div class="form__group">
-                    <input type="tel" name="phone"  data-i18n="form-phone">Ваш телефон / если требуется скорость</div>
+                    <input type="tel" name="phone" ><span class="form__label" data-i18n="form-phone">Ваш телефон / если требуется скорость</span></div>
                 <div class="form__group">
-                    <textarea name="message"  rows="5" required data-i18n="form-message">Опишите ваш проект</textarea>
+                    <textarea name="message"  rows="5" required></textarea><span class="form__label" data-i18n="form-message">Опишите ваш проект</span>
                 </div>
                 <button type="submit" class="btn btn--primary btn--full" data-i18n="form-submit">Отправить заявку</button>
             </form>
