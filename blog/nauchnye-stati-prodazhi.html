@@ -66,7 +66,13 @@
         .share-btn--tg:hover { background: #229ED9; }
         .share-btn--email { background: var(--card-bg); color: var(--text); }
         .share-btn--email:hover { border-color: var(--accent); }
-    </style>
+    
+        .related-articles { margin-top: 2rem; padding: 1.5rem; background: var(--card-bg, #f8f9fa); border-radius: 12px; border: 1px solid var(--border, #eee); }
+        .related-articles h3 { font-size: 1.1rem; margin-bottom: 1rem; color: var(--accent, #2563eb); }
+        .related-articles ul { list-style: none; padding: 0; margin: 0; }
+        .related-articles li { margin-bottom: 0.6rem; }
+        .related-articles li a { color: var(--accent, #2563eb); text-decoration: none; font-size: 0.95rem; }
+        .related-articles li a:hover { text-decoration: underline; }</style>
 </head>
 <body>
     <header class="header">
@@ -118,6 +124,14 @@
                     Email
                 </a>
             </div>
+            <div class="related-articles">
+                <h3>Читайте также</h3>
+                <ul>
+                    <li><a href="/blog/ekspertnye-stati-prodazhi.html">Экспертные статьи продают услуги</a></li>
+                    <li><a href="/blog/formatirovanie-statey-telegram.html">Форматирование статей в Telegram</a></li>
+                </ul>
+            </div>
+
             <p style="margin-top:1.5rem"><a href="/services.html" class="btn btn--primary btn--sm">Заказать научную статью</a></p>
         </div>
     </section>
