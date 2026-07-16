@@ -1,8 +1,10 @@
 param(
-    [string]$Token = "8308743016:AAEwu53QB_rwy5Di40YON4NBZA4A6SbgRQ0",
+    [string]$Token = $env:TG_BOT_TOKEN,
     [string]$ChatId = "@webstudio_chanel",
     [string]$StateFile = "C:\Users\Admin\.telegram-poster-state.json"
 )
+
+if (-not $Token) { Write-Host "FAIL: TG_BOT_TOKEN not set"; exit 1 }
 
 $PostsFile = "C:\Users\Admin\Documents\site\.github\scripts\posts.json"
 $ErrorActionPreference = "Stop"
