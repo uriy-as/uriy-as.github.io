@@ -947,6 +947,47 @@ body {
     .footer__left { flex-wrap: wrap; gap: 12px; }
 }
 
+/* ===== Stats ===== */
+.stats {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    padding: 80px 0;
+}
+
+.stats__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.stats__item h3 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #6c63ff, #ff6b9d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.2;
+}
+
+.stats__item p {
+    color: #aaa;
+    font-size: 1rem;
+    margin-top: 6px;
+}
+
+@media (max-width: 768px) {
+    .stats__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .stats__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* ===== Telegram Promo ===== */
 .tg-promo {
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
