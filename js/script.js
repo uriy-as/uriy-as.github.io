@@ -338,7 +338,8 @@ if (form && modal && modalClose) {
         'svc-promo-l5': { ru: 'Контент-план на месяц', en: 'Monthly content plan' },
         'error-404-title': { ru: 'Страница не найдена', en: 'Page not found' },
         'error-404-btn': { ru: 'На главную', en: 'Go home' },
-        'footer-privacy': { ru: 'Политика конфиденциальности', en: 'Privacy Policy' }
+        'footer-privacy': { ru: 'Политика конфиденциальности', en: 'Privacy Policy' },
+        'footer-stats': { ru: 'Статистика', en: 'Stats' }
     };
 
     window.translations = translations;
