@@ -13,13 +13,6 @@ h1 { font-size:1.4rem; margin-bottom:4px; color:#333; }
 .card { background:#fff; padding:14px 20px; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.1); flex:1; min-width:120px; text-align:center; }
 .card .num { font-size:1.6rem; font-weight:bold; color:#2563eb; }
 .card .label { font-size:0.8rem; color:#666; margin-top:2px; }
-.card.green .num { color:#16a34a; }
-.card.orange .num { color:#ea580c; }
-.status-bar { background:#fff3cd; border:1px solid #ffc107; border-radius:8px; padding:10px 16px; margin-bottom:16px; font-size:0.9rem; display:flex; align-items:center; gap:8px; }
-.status-bar.loading { background:#e8f4fd; border-color:#2196f3; }
-.status-bar.error { background:#fde8e8; border-color:#f44336; }
-.spinner { width:16px; height:16px; border:2px solid #2196f3; border-top-color:transparent; border-radius:50%; animation:spin 0.8s linear infinite; }
-@keyframes spin { to { transform:rotate(360deg); } }
 h2 { font-size:1.1rem; margin:20px 0 10px; color:#444; }
 table { width:100%; border-collapse:collapse; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.1); }
 th, td { padding:8px 12px; text-align:left; border-bottom:1px solid #eee; font-size:0.88rem; }
@@ -28,119 +21,26 @@ tr:hover { background:#f0f7ff; }
 a { color:#2563eb; text-decoration:none; }
 a:hover { text-decoration:underline; }
 .note { color:#888; font-size:0.8rem; margin-top:8px; }
-.retry-btn { margin-top:8px; padding:8px 20px; background:#2563eb; color:#fff; border:none; border-radius:6px; cursor:pointer; font-size:0.9rem; }
-.retry-btn:hover { background:#1d4ed8; }
-#retry-count { color:#888; font-size:0.8rem; margin-top:4px; }
 </style>
 </head>
 <body>
 <h1>&#x1f4ca; Статистика WebStudio</h1>
-<div class="status-bar loading" id="status">
-    <div class="spinner"></div>
-    <span id="status-text">Подключение к серверу...</span>
+<p class="meta">Данные за последние 14 дней (GitHub Traffic API) &middot; Обновлено: 18.07.2026 09:42 UTC</p>
+
+<div class="grid">
+    <div class="card"><div class="num">1</div><div class="label">Просмотров за 14 дней</div></div>
+    <div class="card"><div class="num">1</div><div class="label">Уникальных посетителей</div></div>
 </div>
-<div id="content"></div>
-
-<script>
-const API = 'https://astap.pythonanywhere.com/api/stats';
-const MAX_RETRIES = 30;
-let retries = 0;
-
-function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-
-function render(data) {
-    const now = new Date().toLocaleString('ru-RU');
-    const today = data.today_real;
-    const total = data.total_real;
-    const pages = data.pages || [];
-    const devices = data.devices || [];
-    const leads = data.leads_count || 0;
-
-    let html = '<p class="meta">Данные в реальном времени &middot; Обновлено: ' + now + '</p>';
-    
-    html += '<div class="grid">';
-    html += '<div class="card green"><div class="num">' + today + '</div><div class="label">Реальных сегодня</div></div>';
-    html += '<div class="card"><div class="num">' + total + '</div><div class="label">Реальных всего</div></div>';
-    html += '<div class="card"><div class="num">' + data.real_ips + '</div><div class="label">Уникальных IP</div></div>';
-    html += '<div class="card"><div class="num">' + data.days_recorded + '</div><div class="label">Дней в записи</div></div>';
-    html += '</div>';
-    
-    html += '<div class="grid">';
-    html += '<div class="card orange"><div class="num">' + data.total_raw + '</div><div class="label">Всего визитов (с тех.)</div></div>';
-    html += '<div class="card"><div class="num">' + data.today_raw + '</div><div class="label">Сегодня всего</div></div>';
-    html += '<div class="card"><div class="num">' + leads + '</div><div class="label">Заявок</div></div>';
-    html += '</div>';
-
-    if (pages.length) {
-        html += '<h2>&#x1f4cc; Посещения по страницам</h2><table><thead><tr><th>Страница</th><th>Визитов</th></tr></thead><tbody>';
-        for (let p of pages) {
-            html += '<tr><td>' + esc(p.path) + '</td><td>' + p.count + '</td></tr>';
-        }
-        html += '</tbody></table>';
-    }
-
-    if (devices.length) {
-        html += '<h2>&#x1f4f1; По устройствам</h2><table><thead><tr><th>Тип</th><th>Визитов</th></tr></thead><tbody>';
-        for (let d of devices) {
-            html += '<tr><td>' + esc(d.type) + '</td><td>' + d.count + '</td></tr>';
-        }
-        html += '</tbody></table>';
-    }
-
-    if (data.last_10 && data.last_10.length) {
-        html += '<h2>&#x1f4c4; Последние 10 визитов</h2><table><thead><tr><th>Дата</th><th>Страница</th><th>Устройство</th></tr></thead><tbody>';
-        for (let v of data.last_10) {
-            html += '<tr><td>' + esc(v.date) + '</td><td>' + esc(v.page) + '</td><td>' + esc(v.device) + '</td></tr>';
-        }
-        html += '</tbody></table>';
-    }
-
-    html += '<p class="note">&#x1f517; Полная статистика (с заявками): <a href="https://astap.pythonanywhere.com/stats" target="_blank">astap.pythonanywhere.com/stats</a></p>';
-
-    document.getElementById('content').innerHTML = html;
-    
-    // Cache for offline
-    try { localStorage.setItem('stats_cache', JSON.stringify(data)); } catch(e) {}
-}
-
-function showError(msg) {
-    const s = document.getElementById('status');
-    s.className = 'status-bar error';
-    document.getElementById('status-text').innerHTML = '&#x26a0;&#xfe0f; ' + msg;
-}
-
-async function load() {
-    try {
-        const resp = await fetch(API, { mode: 'cors', cache: 'no-store' });
-        if (!resp.ok) throw new Error('HTTP ' + resp.status);
-        const data = await resp.json();
-        const s = document.getElementById('status');
-        s.style.display = 'none';
-        render(data);
-    } catch(e) {
-        retries++;
-        if (retries >= MAX_RETRIES) {
-            showError('Сервер не отвечает. Попробуйте позже.');
-            document.getElementById('retry-count').textContent = 'Попыток: ' + retries;
-            // Fallback: try cached data
-            try {
-                const cached = localStorage.getItem('stats_cache');
-                if (cached) {
-                    document.getElementById('status').style.display = 'none';
-                    render(JSON.parse(cached));
-                    document.getElementById('retry-count').textContent = 'Показаны кэшированные данные от ' + new Date().toLocaleString('ru-RU');
-                }
-            } catch(e2) {}
-            return;
-        }
-        document.getElementById('status-text').textContent =
-            'Сервер просыпается... попытка ' + (retries + 1) + '/' + MAX_RETRIES;
-        setTimeout(load, 3000);
-    }
-}
-
-load();
-</script>
-<div id="retry-count"></div>
+<div class="grid">
+    <div class="card"><div class="num">1</div><div class="label">Просмотров вчера</div></div>
+    <div class="card"><div class="num">1</div><div class="label">Уникальных вчера</div></div>
+</div>
+<div class="grid">
+    <div class="card"><div class="num">577</div><div class="label">Клонов за 14 дней</div></div>
+    <div class="card"><div class="num">85</div><div class="label">Уникальных клонов</div></div>
+    <div class="card"><div class="num">60</div><div class="label">Клонов вчера</div></div>
+    <div class="card"><div class="num">18</div><div class="label">Уникальных клонов вчера</div></div>
+</div><h2>&#x1f310; Откуда приходят</h2><table><thead><tr><th>Источник</th><th>Переходов</th></tr></thead><tbody><tr><td>github.com</td><td>1</td></tr></tbody></table><h2>&#x1f4cc; Популярные страницы</h2><table><thead><tr><th>Страница</th><th>Просмотров</th><th>Уникальных</th></tr></thead><tbody><tr><td>/uriy-as/uriy-as.github.io</td><td>1</td><td>1</td></tr></tbody></table>
+<p class="note">&#x1f517; Подробная статистика в реальном времени: <a href="https://astap.pythonanywhere.com/stats" target="_blank">astap.pythonanywhere.com/stats</a></p>
 </body>
 </html>
