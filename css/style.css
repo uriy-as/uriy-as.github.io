@@ -1333,7 +1333,6 @@ body {
 }
 
 .chat-mic {
-    display: none !important;
 }
 
 @media (max-width: 480px) {
