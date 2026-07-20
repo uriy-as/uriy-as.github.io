@@ -169,15 +169,19 @@ if (form && modal && modalClose) {
         popup.classList.remove('chat-popup--open');
     });
 
-    function sendMessage(msg) {
+    function sendMessage(msg, retries) {
         if (!msg) return;
-        input.value = '';
-        body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--user">' + escapeHtml(msg) + '</div>');
-        body.scrollTop = body.scrollHeight;
+        retries = retries || 0;
+        if (retries === 0) {
+            input.value = '';
+            body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--user">' + escapeHtml(msg) + '</div>');
+            body.scrollTop = body.scrollHeight;
+        }
         body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot"><em>Печатает...</em></div>');
         body.scrollTop = body.scrollHeight;
         var ac = new AbortController();
-        setTimeout(function() { ac.abort(); }, 15000);
+        var timeout = retries > 0 ? 25000 : 15000;
+        setTimeout(function() { ac.abort(); }, timeout);
         fetch('https://astap.pythonanywhere.com/api/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -189,8 +193,14 @@ if (form && modal && modalClose) {
             body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot">' + escapeHtml(data.reply) + '</div>');
         }).catch(function() {
             body.removeChild(body.lastChild);
-            var errMsg = 'Извините, сервер временно недоступен. Напишите нам в Telegram: <a href="https://t.me/uriy_as59" target="_blank" style="color:#6c63ff;">@uriy_as59</a>';
-            body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot" style="font-size:0.85rem;">' + errMsg + '</div>');
+            if (retries < 5) {
+                body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot" style="font-size:0.85rem;color:#888;"><em>Пробуждаю сервер...</em></div>');
+                body.scrollTop = body.scrollHeight;
+                setTimeout(function() { body.removeChild(body.lastChild); sendMessage(msg, retries + 1); }, 3000);
+            } else {
+                var errMsg = 'Извините, сервер временно недоступен. Напишите нам в Telegram: <a href="https://t.me/uriy_as59" target="_blank" style="color:#6c63ff;">@uriy_as59</a>';
+                body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot" style="font-size:0.85rem;">' + errMsg + '</div>');
+            }
         });
     }
 
