@@ -225,6 +225,7 @@ if (form && modal && modalClose) {
     const translations = {
         'nav-services': { ru: 'Услуги', en: 'Services' },
         'nav-about': { ru: 'О нас', en: 'About' },
+        'nav-portfolio': { ru: 'Портфолио', en: 'Portfolio' },
         'nav-articles': { ru: 'Статьи', en: 'Articles' },
         'nav-contacts': { ru: 'Контакты', en: 'Contacts' },
         'nav-chat': { ru: 'AI-чат', en: 'AI Chat' },

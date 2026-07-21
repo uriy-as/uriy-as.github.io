@@ -46,6 +46,20 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://uriy-as.org/portfolio.html</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/portfolio.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/portfolio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/portfolio.html"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://uriy-as.org/en/portfolio.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/portfolio.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/portfolio.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/en/portfolio.html"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://uriy-as.org/blog/seo-optimizatsiya-sayta.html</loc>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>

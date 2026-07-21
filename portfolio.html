@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <meta name="google-site-verification" content="hU5JICV7gFg7as_jo2Dx-kWEUamlp_4iRQZKT-V5RPA" />
+    <title>Портфолио — WebStudio | Проекты, кейсы, работы</title>
+    <meta name="description" content="Реальные проекты WebStudio: сайты, Telegram-боты, контент. Примеры работ и кейсы.">
+    <meta property="og:title" content="Портфолио — WebStudio">
+    <meta property="og:description" content="Реальные проекты WebStudio: сайты, Telegram-боты, контент. Примеры работ и кейсы.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://uriy-as.org/portfolio.html">
+    <meta property="og:image" content="https://uriy-as.org/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="WebStudio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Портфолио — WebStudio">
+    <meta name="twitter:description" content="Реальные проекты WebStudio: сайты, Telegram-боты, контент. Примеры работ и кейсы.">
+    <meta name="twitter:image" content="https://uriy-as.org/og-image.png">
+    <link rel="canonical" href="https://uriy-as.org/portfolio.html">
+    <link rel="alternate" hreflang="x-default" href="https://uriy-as.org/portfolio.html">
+    <link rel="alternate" hreflang="ru" href="https://uriy-as.org/portfolio.html">
+    <link rel="alternate" hreflang="en" href="https://uriy-as.org/en/portfolio.html">
+    <link rel="dns-prefetch" href="https://Astap.pythonanywhere.com">
+    <link rel="preconnect" href="https://Astap.pythonanywhere.com" crossorigin>
+    <link rel="dns-prefetch" href="https://mc.yandex.ru">
+    <link rel="preconnect" href="https://mc.yandex.ru" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MY48PMFD5M"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-MY48PMFD5M')</script>
+    <link rel="stylesheet" href="css/style.css?v=4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "WebStudio",
+        "url": "https://uriy-as.org",
+        "logo": "https://uriy-as.org/images/logo.svg",
+        "email": "uriy.as59@yandex.com",
+        "description": "Создание сайтов, чат-ботов и Telegram-каналов",
+        "founder": { "@type": "Person", "name": "Uriy AS" },
+        "sameAs": [
+            "https://t.me/uriy_as59",
+            "https://youtube.com/@%D0%AE%D1%81%D1%82%D0%B0%D1%81-%D0%B34%D1%8B",
+            "https://medium.com/@uriy.as59"
+        ]
+    }
+    </script>
+    <style>
+        .page-hero { padding: 140px 0 60px; text-align: center; }
+        .page-hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .portfolio-grid { display: grid; gap: 2rem; padding-bottom: 80px; }
+        .portfolio-card { background: var(--card-bg); border-radius: 16px; padding: 2rem; border: 1px solid var(--border); }
+        .portfolio-card__icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        .portfolio-card h2 { font-size: 1.3rem; margin-bottom: 0.3rem; color: var(--accent); }
+        .portfolio-card__tag { display: inline-block; font-size: 0.75rem; padding: 2px 10px; border-radius: 20px; background: rgba(0,163,255,0.1); color: var(--accent); margin-bottom: 0.8rem; }
+        .portfolio-card p { color: var(--muted); line-height: 1.7; margin-bottom: 0.8rem; }
+        .portfolio-card .btn { margin-top: 0.5rem; }
+        .portfolio-card ul { padding-left: 1.2rem; color: var(--muted); line-height: 2; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="/" class="logo"><img src="images/logo.svg" alt="WebStudio" class="logo__img"></a>
+                <nav class="nav">
+                    <a href="services.html" data-i18n="nav-services" data-en="Services">Услуги</a>
+                    <a href="portfolio.html" data-i18n="nav-portfolio" data-en="Portfolio" style="color:var(--accent);">Портфолио</a>
+                    <a href="articles.html" data-i18n="nav-articles" data-en="Articles">Статьи</a>
+                    <a href="/#contact" data-i18n="nav-contacts" data-en="Contacts">Контакты</a>
+                    <a href="#" class="nav__bot" data-i18n="nav-chat" data-en="AI Chat" onclick="event.preventDefault();document.getElementById('chatBtn').click();this.blur();return false;">AI-чат</a>
+                </nav>
+                <button class="burger" id="burger" aria-label="Меню">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Наши проекты</h1>
+            <p style="color:var(--muted);max-width:600px;margin:0 auto;">Реальные работы: сайты, Telegram-боты, контент. Каждый проект — под ключ.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="portfolio-grid">
+
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-card__icon">🌐</div>
+                    <h2>WebStudio — Корпоративный сайт</h2>
+                    <span class="portfolio-card__tag">Сайт</span>
+                    <p>Многостраничный сайт веб-студии с i18n (русский/английский), AI-чатом, блогом на 16 статей, SEO-оптимизацией, статистикой в реальном времени.</p>
+                    <ul>
+                        <li>Адаптивный дизайн, тёмная тема</li>
+                        <li>Русский и английский языки</li>
+                        <li>Интеграция с AI-чатом (Cohere + HuggingFace)</li>
+                        <li>Блог с 16 тематическими статьями</li>
+                        <li>Яндекс.Метрика + Google Analytics</li>
+                        <li>Google Search Console, Yandex.Webmaster</li>
+                        <li>Статическая страница статистики с реальными данными</li>
+                        <li>Проиндексировано Google: 19+ страниц</li>
+                    </ul>
+                    <a href="https://uriy-as.org" target="_blank" class="btn btn--primary">Посетить сайт</a>
+                    <a href="https://github.com/uriy-as/site" target="_blank" class="btn btn--secondary" style="margin-left:8px;">Исходный код</a>
+                </div>
+
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-card__icon">🤖</div>
+                    <h2>@NevWebStudio_bot — AI Telegram-бот</h2>
+                    <span class="portfolio-card__tag">Telegram-бот</span>
+                    <p>Интеллектуальный чат-бот на Flask с поддержкой Cohere и HuggingFace. Работает 24/7 на PythonAnywhere.</p>
+                    <ul>
+                        <li>Обработка естественного языка (NLP)</li>
+                        <li>Авто-ретрай до 5 попыток при сне сервера</li>
+                        <li>Логирование всех диалогов в JSON</li>
+                        <li>Пиксель трекинга посещений сайта</li>
+                        <li>API endpoints: /api/chat, /api/stats, /api/lead, /api/pixel</li>
+                    </ul>
+                    <a href="https://t.me/NevWebStudio_bot" target="_blank" class="btn btn--primary">Открыть в Telegram</a>
+                </div>
+
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-card__icon">📢</div>
+                    <h2>@uriy_as59 — Telegram-канал</h2>
+                    <span class="portfolio-card__tag">Telegram-канал</span>
+                    <p>Научно-популярный Telegram-канал с 29+ публикациями. Контент-план, кросс-промо, автопостинг.</p>
+                    <ul>
+                        <li>29+ научно-популярных постов</li>
+                        <li>Автоматическая публикация по расписанию (пн/ср/пт/сб 8:10)</li>
+                        <li>Темы: SEO, AI, веб-разработка, контент-маркетинг</li>
+                        <li>TelegramPoster — скрипт для автопостинга</li>
+                        <li>Интеграция с сайтом: блок последних постов на главной</li>
+                    </ul>
+                    <a href="https://t.me/uriy_as59" target="_blank" class="btn btn--primary">Подписаться</a>
+                </div>
+
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-card__icon">📊</div>
+                    <h2>Страница статистики в реальном времени</h2>
+                    <span class="portfolio-card__tag">Веб-разработка</span>
+                    <p>Динамическая страница с данными о посещениях, устройствах, популярных страницах и заявках.</p>
+                    <ul>
+                        <li>Данные в реальном времени через fetch API</li>
+                        <li>Авто-ретрай до 30 раз при сне сервера</li>
+                        <li>Отображение: общие визиты, уникальные IP, устройства, топ страниц</li>
+                        <li>Автообновление stats.html через GitHub Actions + daily-stats.py</li>
+                    </ul>
+                    <a href="https://uriy-as.org/stats.html" target="_blank" class="btn btn--primary">Смотреть статистику</a>
+                </div>
+
+                <div class="portfolio-card reveal">
+                    <div class="portfolio-card__icon">✍️</div>
+                    <h2>Публикация на Medium</h2>
+                    <span class="portfolio-card__tag">Контент</span>
+                    <p>Статья «AI Bots in 2026: What They Can Actually Do for Your Business» опубликована на Medium.com.</p>
+                    <ul>
+                        <li>Тема: возможности AI-ботов для бизнеса</li>
+                        <li>Английский язык, международная аудитория</li>
+                        <li>Ссылки на сайт и Telegram-канал</li>
+                    </ul>
+                    <a href="https://medium.com/@uriy.as59/ai-bots-in-2026-what-they-can-actually-do-for-your-business-and-whats-still-hype-1b24f5ea5949" target="_blank" class="btn btn--primary">Читать на Medium</a>
+                </div>
+
+            </div>
+
+            <div style="margin-top:3rem;padding:2rem;background:var(--card-bg);border-radius:16px;border:1px solid var(--border);text-align:center;">
+                <p style="color:var(--muted);line-height:1.8;">
+                    ?? Хотите такой же проект для вашего бизнеса? <strong>Свяжитесь с нами</strong> — обсудим вашу задачу.<br>
+                    <a href="https://t.me/uriy_as59" style="color:var(--accent);">@uriy_as59</a> &nbsp;|&nbsp;
+                    <a href="https://t.me/NevWebStudio_bot" style="color:var(--accent);">@NevWebStudio_bot</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="tg-promo section">
+        <div class="container">
+            <div class="tg-promo__inner">
+                <h2 data-i18n="tg-promo-title" data-en="Subscribe to our Telegram Channel">Подпишитесь на наш Telegram-канал</h2>
+                <p data-i18n="tg-promo-desc" data-en="Cases, articles and insights on website development, Telegram bots and content marketing. We publish useful content every Monday, Wednesday, Friday and Saturday at 08:10.">Кейсы, статьи и инсайты по разработке сайтов, Telegram-ботов и контент-маркетингу. Публикуем полезный контент каждый понедельник, среду, пятницу и субботу в 08:10.</p>
+                <a href="https://t.me/uriy_as59" target="_blank" class="btn btn--tg" data-i18n="tg-promo-btn" data-en="Subscribe on Telegram">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.26.76a1.73 1.73 0 0 0-1.76-.35L1.84 9.58a1.66 1.66 0 0 0 .05 3.08l4.88 1.9 2.94 8.86a1.38 1.38 0 0 0 .9.87 1.32 1.32 0 0 0 1.2-.21l4.23-3.46a1.8 1.8 0 0 1 2.05-.12l4.85 3.52a1.35 1.35 0 0 0 1.45.12 1.38 1.38 0 0 0 .78-1.15L23.7 2.47a1.73 1.73 0 0 0-1.44-1.71z"/></svg>
+                    Подписаться в Telegram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__left">
+                    <a href="/" class="logo"><img src="images/logo.svg" alt="WebStudio" class="logo__img"></a>
+                    <p data-i18n="footer-copyright" data-en="© 2026 WebStudio. All rights reserved.">&copy; 2026 WebStudio. Все права защищены.</p>
+                    <p style="margin-top:8px;font-size:0.85rem;" data-i18n="footer-bot" data-en="@NevWebStudio_bot — the bot will answer all your questions"><a href="https://t.me/NevWebStudio_bot" target="_blank" style="color:var(--accent);">@NevWebStudio_bot</a> — бот ответит на все интересующие вопросы</p>
+                    <p style="margin-top:4px;font-size:0.8rem;"><a href="privacy.html" style="color:var(--muted);" data-i18n="footer-privacy">Политика конфиденциальности</a></p>
+                    <p style="margin-top:4px;font-size:0.8rem;"><a href="stats.html" style="color:var(--muted);" data-i18n="footer-stats" data-en="Stats">Статистика</a></p>
+                </div>
+                <div class="footer__social">
+                    <a href="https://t.me/uriy_as59" target="_blank" aria-label="Telegram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.26.76a1.73 1.73 0 0 0-1.76-.35L1.84 9.58a1.66 1.66 0 0 0 .05 3.08l4.88 1.9 2.94 8.86a1.38 1.38 0 0 0 .9.87 1.32 1.32 0 0 0 1.2-.21l4.23-3.46a1.8 1.8 0 0 1 2.05-.12l4.85 3.52a1.35 1.35 0 0 0 1.45.12 1.38 1.38 0 0 0 .78-1.15L23.7 2.47a1.73 1.73 0 0 0-1.44-1.71z"/></svg>
+                    </a>
+                    <a href="https://youtube.com/@%D0%AE%D1%81%D1%82%D0%B0%D1%81-%D0%B34%D1%8B" target="_blank" aria-label="YouTube">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a2.96 2.96 0 0 0-2.08-2.1C19.55 3.5 12 3.5 12 3.5s-7.55 0-9.42.6A2.96 2.96 0 0 0 .5 6.2 30.9 30.9 0 0 0 0 12a30.9 30.9 0 0 0 .5 5.8 2.96 2.96 0 0 0 2.08 2.1c1.87.6 9.42.6 9.42.6s7.55 0 9.42-.6a2.96 2.96 0 0 0 2.08-2.1 30.9 30.9 0 0 0 .5-5.8 30.9 30.9 0 0 0-.5-5.8zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://t.me/uriy_as59" target="_blank" class="tg-float" aria-label="Telegram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.26.76a1.73 1.73 0 0 0-1.76-.35L1.84 9.58a1.66 1.66 0 0 0 .05 3.08l4.88 1.9 2.94 8.86a1.38 1.38 0 0 0 .9.87 1.32 1.32 0 0 0 1.2-.21l4.23-3.46a1.8 1.8 0 0 1 2.05-.12l4.85 3.52a1.35 1.35 0 0 0 1.45.12 1.38 1.38 0 0 0 .78-1.15L23.7 2.47a1.73 1.73 0 0 0-1.44-1.71z"/></svg>
+        <span data-i18n="contact-tg" data-en="Telegram">Telegram</span>
+    </a>
+
+    <div class="lang-widget" id="langWidget">
+    <button class="lang-btn-floating" id="langBtnFloat" aria-label="Switch language" onclick="toggleLang()">EN</button>
+</div>
+
+            <div class="chat-widget" id="chatWidget">
+        <button class="chat-btn" id="chatBtn" aria-label="AI-чат">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/><path d="M7 9h10v2H7zm0-3h10v2H7zm0 6h7v2H7z"/></svg>
+            <span data-i18n="chat-btn-text" data-en="AI Chat">AI-чат</span>
+        </button>
+        <div class="chat-popup" id="chatPopup">
+            <div class="chat-popup__header">
+                <h4 data-i18n="chat-title" data-en="AI Assistant">AI-ассистент</h4>
+                <button class="chat-popup__close" id="chatClose">&times;</button>
+            </div>
+            <div class="chat-popup__body" id="chatBody">
+                <div class="chat-msg chat-msg--bot" data-i18n="chat-error" data-en="Connection error. Try again later." style="display:none;"></div>
+            </div>
+            <form class="chat-popup__form" id="chatForm">
+                <input type="text" placeholder="Ваше сообщение..." autocomplete="off" autocorrect="off" spellcheck="false" required data-i18n="chat-placeholder" data-en="Your message...">
+                                <button type="submit">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script defer src="js/script.js?v=5t3xt0n1y"></script>
+    <noscript><img src="https://Astap.pythonanywhere.com/pixel?page=/portfolio.html&ref=" style="position:absolute;left:-9999px" alt="" /></noscript>
+    <noscript><div><img src="https://mc.yandex.ru/watch/109350815" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109350815,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
+</body>
+</html>
