@@ -28,6 +28,7 @@
 - Email: uriy.as59@yandex.com
 
 ## Blog Articles
+- How much does a website cost in 2026: https://uriy-as.org/blog/skolko-stoit-sait.html
 - SEO optimization guide: https://uriy-as.org/blog/seo-optimizatsiya-sayta.html
 - Telegram bot vs website: https://uriy-as.org/blog/telegram-bot-ili-sayt.html
 - How to choose hosting: https://uriy-as.org/blog/kak-vybrat-hosting.html
