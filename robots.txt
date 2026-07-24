@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /privacy.html
 Crawl-delay: 10
+
 Sitemap: https://uriy-as.org/sitemap.xml
+Sitemap: https://uriy-as.org/llms.txt

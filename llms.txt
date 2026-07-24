@@ -1,0 +1,40 @@
+# WebStudio (uriy-as.org)
+
+> WebStudio is a Ukraine-based digital development studio creating websites, AI-powered Telegram bots, and science content for Telegram channels.
+
+## Services
+- Website development: landing pages, business card sites, online stores, corporate sites
+- AI Telegram bots: customer support, sales automation, lead collection
+- Science articles for Telegram channels
+- SEO promotion and content marketing
+
+## Tech Stack
+- HTML5, CSS3, JavaScript (vanilla)
+- Python Flask for backend/API
+- GitHub Pages for hosting
+- Schema.org JSON-LD (FAQPage, BreadcrumbList, Organization)
+- AI/LLM integration for chatbot
+
+## Pricing
+- Website from $250
+- Telegram bot from $130
+- Science articles from $50
+- SEO promotion from $70/month
+
+## Contact
+- Website: https://uriy-as.org
+- Telegram: https://t.me/uriy_as59
+- Bot: https://t.me/NevWebStudio_bot
+- Email: uriy.as59@yandex.com
+
+## Blog Articles
+- SEO optimization guide: https://uriy-as.org/blog/seo-optimizatsiya-sayta.html
+- Telegram bot vs website: https://uriy-as.org/blog/telegram-bot-ili-sayt.html
+- How to choose hosting: https://uriy-as.org/blog/kak-vybrat-hosting.html
+- AI bots capabilities: https://uriy-as.org/blog/ai-boty-vozmozhnosti.html
+- Telegram bot automation: https://uriy-as.org/blog/telegram-bot-avtomatizatsiya-prodazh.html
+- Website in 5 days: https://uriy-as.org/blog/sayt-za-5-dney.html
+- Formatting Telegram articles: https://uriy-as.org/blog/formatirovanie-statey-telegram.html
+- SSL certificate guide: https://uriy-as.org/blog/ssl-sertifikat.html
+- 5 mistakes in content strategy: https://uriy-as.org/blog/5-oshibok-kontent-strategii-telegram.html
+- 5 signs of bad website: https://uriy-as.org/blog/5-priznakov-plohogo-sayta.html
