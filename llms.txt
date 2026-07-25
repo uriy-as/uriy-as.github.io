@@ -28,6 +28,7 @@
 - Email: uriy.as59@yandex.com
 
 ## Blog Articles
+- Turnkey website development: https://uriy-as.org/blog/sozdanie-saytov-pod-klyuch.html
 - How to order a Telegram bot: https://uriy-as.org/blog/kak-zakazat-telegram-bota.html
 - How much does a website cost in 2026: https://uriy-as.org/blog/skolko-stoit-sait.html
 - SEO optimization guide: https://uriy-as.org/blog/seo-optimizatsiya-sayta.html
