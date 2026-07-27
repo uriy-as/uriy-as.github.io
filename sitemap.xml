@@ -401,4 +401,11 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/ekspertnye-stati-prodazhi.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/en/blog/expert-articles-sell-better-than-ads.html" />
   </url>
+  <url>
+    <loc>https://uriy-as.org/privacy.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/privacy.html"/>
+    <priority>0.3</priority>
+  </url>
 </urlset>
