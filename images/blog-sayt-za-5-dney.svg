@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#161b22;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="200" fill="url(#bg)" rx="12"/>
+  <rect x="0" y="0" width="6" height="200" fill="#22d3ee" rx="3"/>
+  <rect x="155" y="100" width="90" height="70" rx="8" fill="none" stroke="#22d3ee" stroke-width="3"/><line x1="155" y1="125" x2="245" y2="125" stroke="#22d3ee" stroke-width="2"/><circle cx="168" cy="113" r="4" fill="#f87171"/><circle cx="180" cy="113" r="4" fill="#fbbf24"/><circle cx="192" cy="113" r="4" fill="#4ade80"/><text x="167" y="155" font-family="monospace" font-size="12" fill="#22d3ee">&lt;/&gt;</text>
+  <text x="280" y="115" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#22d3ee">Сайт за 5 дней</text>
+  <text x="280" y="138" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#22d3ee"></text>
+  <text x="280" y="161" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#22d3ee"></text>
+</svg>

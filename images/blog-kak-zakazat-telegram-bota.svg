@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#161b22;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="200" fill="url(#bg)" rx="12"/>
+  <rect x="0" y="0" width="6" height="200" fill="#60a5fa" rx="3"/>
+  <rect x="150" y="95" width="100" height="110" rx="12" fill="none" stroke="#60a5fa" stroke-width="3"/><path d="M220 170l20 14-25-3" stroke="#60a5fa" stroke-width="2.5" fill="none"/><circle cx="200" cy="140" r="15" fill="none" stroke="#60a5fa" stroke-width="2"/><line x1="193" y1="135" x2="193" y2="145" stroke="#60a5fa" stroke-width="2"/><line x1="207" y1="135" x2="207" y2="145" stroke="#60a5fa" stroke-width="2"/><path d="M193 152q7 7 14 0" stroke="#60a5fa" stroke-width="1.5" fill="none"/>
+  <text x="280" y="115" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#60a5fa">Как заказать</text>
+  <text x="280" y="138" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#60a5fa">Telegram-бота</text>
+  <text x="280" y="161" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#60a5fa"></text>
+</svg>

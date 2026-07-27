@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <link rel="icon" type="image/svg+xml" href="/images/logo.svg">
     <meta name="google-site-verification" content="hU5JICV7gFg7as_jo2Dx-kWEUamlp_4iRQZKT-V5RPA" />
     <title>WebStudio — website development, chatbots and Telegram channels</title>
     <meta name="description" content="Website development, chatbots and scientific articles for Telegram. Individual approach, modern technologies, 24/7 support.">
@@ -34,7 +34,7 @@
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-MY48PMFD5M"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-MY48PMFD5M')</script>
-    <link rel="stylesheet" href="css/style.css?v=4">
+    <link rel="stylesheet" href="/css/style.css?v=4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script type="application/ld+json">
@@ -68,7 +68,7 @@
     <header class="header" id="header">
         <div class="container">
             <div class="header__inner">
-                <a href="/" class="logo"><img src="images/logo.svg" alt="WebStudio" class="logo__img"></a>
+                <a href="/" class="logo"><img src="/images/logo.svg" alt="WebStudio" class="logo__img"></a>
                 <nav class="nav" id="nav">
                     <a href="/en/services.html" data-i18n="nav-services">Services</a>
                     <a href="/en/portfolio.html" data-i18n="nav-portfolio" data-en="Portfolio">Portfolio</a>
@@ -285,13 +285,13 @@
             <p class="contact__subtitle reveal" data-i18n="contact-subtitle">Leave a request and we\'ll discuss your project</p>
             <form class="contact__form reveal" id="contactForm" action="https://Astap.pythonanywhere.com/api/lead" method="POST">
                 <div class="form__group">
-                    <input type="text" name="name"  required><span class="form__label" data-i18n="form-name">Your name</span></div>
+                    <input type="text" name="name" id="name" required><label class="form__label" for="name" data-i18n="form-name">Your name</label></div>
                 <div class="form__group">
-                    <input type="email" name="email"  required><span class="form__label" data-i18n="form-email">Email</span></div>
+                    <input type="email" name="email" id="email" required><label class="form__label" for="email" data-i18n="form-email">Email</label></div>
                 <div class="form__group">
-                    <input type="tel" name="phone" ><span class="form__label" data-i18n="form-phone">Your phone / if speed matters</span></div>
+                    <input type="tel" name="phone" id="phone"><label class="form__label" for="phone" data-i18n="form-phone">Your phone / if speed matters</label></div>
                 <div class="form__group">
-                    <textarea name="message"  rows="5" required></textarea><span class="form__label" data-i18n="form-message">Describe your project</span>
+                    <textarea name="message" id="message" rows="5" required></textarea><label class="form__label" for="message" data-i18n="form-message">Describe your project</label>
                 </div>
                 <button type="submit" class="btn btn--primary btn--full" data-i18n="form-submit">Send request</button>
             </form>
@@ -342,7 +342,7 @@
         <div class="container">
             <div class="footer__inner">
                 <div class="footer__left">
-                    <a href="/" class="logo"><img src="images/logo.svg" alt="WebStudio" class="logo__img"></a>
+                    <a href="/" class="logo"><img src="/images/logo.svg" alt="WebStudio" class="logo__img"></a>
                     <p data-i18n="footer-copyright">© 2026 WebStudio. All rights reserved.</p>
                     <p style="margin-top:8px;font-size:0.85rem;" data-i18n="footer-bot">@NevWebStudio_bot — the bot will answer all your questions</p>
                     <p style="margin-top:4px;font-size:0.8rem;"><a href="privacy.html" style="color:var(--muted);" data-i18n="footer-privacy">Privacy Policy</a></p>
@@ -392,7 +392,7 @@
                 <div class="chat-msg chat-msg--bot" data-i18n="chat-error" style="display:none;"></div>
             </div>
             <form class="chat-popup__form" id="chatForm">
-                <input type="text" placeholder="Your message..." autocomplete="off" autocorrect="off" spellcheck="false" required data-i18n="chat-placeholder">
+                <input type="text" placeholder="Your message..." autocomplete="off" autocorrect="off" spellcheck="false" required data-i18n="chat-placeholder" aria-label="Message for AI assistant">
                 <button type="submit">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                 </button>
@@ -400,7 +400,7 @@
         </div>
     </div>
 
-    <script defer src="js/script.js?v=5t3xt0n1y"></script>
+    <script defer src="/js/script.js?v=5t3xt0n1y"></script>
     <noscript><img src="https://Astap.pythonanywhere.com/pixel?page=/&ref=" style="position:absolute;left:-9999px" alt="" /></noscript>
     <noscript><div><img src="https://mc.yandex.ru/watch/109350815" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- Yandex.Metrica -->

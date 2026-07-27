@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200" viewBox="0 0 400 200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#161b22;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="200" fill="url(#bg)" rx="12"/>
+  <rect x="0" y="0" width="6" height="200" fill="#fbbf24" rx="3"/>
+  <circle cx="200" cy="140" r="35" fill="none" stroke="#fbbf24" stroke-width="3"/><text x="185" y="150" font-family="sans-serif" font-size="28" font-weight="bold" fill="#fbbf24">$</text>
+  <text x="280" y="115" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#fbbf24">Сколько стоит</text>
+  <text x="280" y="138" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#fbbf24">сайт</text>
+  <text x="280" y="161" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#fbbf24"></text>
+</svg>

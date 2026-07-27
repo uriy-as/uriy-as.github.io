@@ -285,13 +285,13 @@
             <p class="contact__subtitle reveal" data-i18n="contact-subtitle">Оставьте заявку, и мы обсудим ваш проект</p>
             <form class="contact__form reveal" id="contactForm" action="https://Astap.pythonanywhere.com/api/lead" method="POST">
                 <div class="form__group">
-                    <input type="text" name="name"  required><span class="form__label" data-i18n="form-name">Ваше имя</span></div>
+                    <input type="text" name="name" id="name" required><label class="form__label" for="name" data-i18n="form-name">Ваше имя</label></div>
                 <div class="form__group">
-                    <input type="email" name="email"  required><span class="form__label" data-i18n="form-email">Email</span></div>
+                    <input type="email" name="email" id="email" required><label class="form__label" for="email" data-i18n="form-email">Email</label></div>
                 <div class="form__group">
-                    <input type="tel" name="phone" ><span class="form__label" data-i18n="form-phone">Ваш телефон / если требуется скорость</span></div>
+                    <input type="tel" name="phone" id="phone"><label class="form__label" for="phone" data-i18n="form-phone">Ваш телефон / если требуется скорость</label></div>
                 <div class="form__group">
-                    <textarea name="message"  rows="5" required></textarea><span class="form__label" data-i18n="form-message">Опишите ваш проект</span>
+                    <textarea name="message" id="message" rows="5" required></textarea><label class="form__label" for="message" data-i18n="form-message">Опишите ваш проект</label>
                 </div>
                 <button type="submit" class="btn btn--primary btn--full" data-i18n="form-submit">Отправить заявку</button>
             </form>
@@ -392,7 +392,7 @@
                 <div class="chat-msg chat-msg--bot" data-i18n="chat-error" style="display:none;"></div>
             </div>
             <form class="chat-popup__form" id="chatForm">
-                <input type="text" placeholder="Ваше сообщение..." autocomplete="off" autocorrect="off" spellcheck="false" required data-i18n="chat-placeholder">
+                <input type="text" placeholder="Ваше сообщение..." autocomplete="off" autocorrect="off" spellcheck="false" required data-i18n="chat-placeholder" aria-label="Сообщение для AI-ассистента">
                 <button type="submit">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
                 </button>
