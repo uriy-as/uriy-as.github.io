@@ -413,4 +413,58 @@
     <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/privacy.html"/>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://uriy-as.org/blog/telegram-bot-s-ai-za-200.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/telegram-bot-s-ai-za-200.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/blog/telegram-bot-with-ai-for-200.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/blog/telegram-bot-s-ai-za-200.html"/>
+  </url>
+  <url>
+    <loc>https://uriy-as.org/en/blog/telegram-bot-with-ai-for-200.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/blog/telegram-bot-with-ai-for-200.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/telegram-bot-s-ai-za-200.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/en/blog/telegram-bot-with-ai-for-200.html"/>
+  </url>
+  <url>
+    <loc>https://uriy-as.org/blog/10-oshibok-sozdaniya-saita.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/10-oshibok-sozdaniya-saita.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/blog/10-website-mistakes.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/blog/10-oshibok-sozdaniya-saita.html"/>
+  </url>
+  <url>
+    <loc>https://uriy-as.org/en/blog/10-website-mistakes.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/blog/10-website-mistakes.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/10-oshibok-sozdaniya-saita.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/en/blog/10-website-mistakes.html"/>
+  </url>
+  <url>
+    <loc>https://uriy-as.org/blog/chat-bot-dlya-biznesa-kaysy.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/chat-bot-dlya-biznesa-kaysy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/blog/chatbot-for-business-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/blog/chat-bot-dlya-biznesa-kaysy.html"/>
+  </url>
+  <url>
+    <loc>https://uriy-as.org/en/blog/chatbot-for-business-cases.html</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://uriy-as.org/en/blog/chatbot-for-business-cases.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/chat-bot-dlya-biznesa-kaysy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/en/blog/chatbot-for-business-cases.html"/>
+  </url>
 </urlset>

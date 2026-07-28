@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/images/logo.svg">
+    <title>How to Build a Telegram Bot with AI for $200 — WebStudio</title>
+    <meta name="description" content="Step-by-step guide to building a Telegram bot with AI for $200: choosing a stack, GPT integration, hosting, deployment, and real cost breakdown.">
+    <meta property="og:title" content="How to Build a Telegram Bot with AI for $200 — WebStudio">
+    <meta property="og:description" content="Step-by-step guide to building a Telegram bot with AI for $200: choosing a stack, GPT integration, hosting, deployment, and real cost breakdown.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://uriy-as.org/en/blog/telegram-bot-with-ai-for-200.html">
+    <meta property="og:image" content="https://uriy-as.org/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="WebStudio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How to Build a Telegram Bot with AI for $200 — WebStudio">
+    <meta name="twitter:description" content="Step-by-step guide to building a Telegram bot with AI for $200: choosing a stack, GPT integration, hosting, deployment, and real cost breakdown.">
+    <meta name="twitter:image" content="https://uriy-as.org/og-image.png">
+    <link rel="canonical" href="https://uriy-as.org/en/blog/telegram-bot-with-ai-for-200.html">
+    <link rel="alternate" hreflang="x-default" href="https://uriy-as.org/en/blog/telegram-bot-with-ai-for-200.html">
+    <link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/telegram-bot-s-ai-za-200.html">
+    <link rel="alternate" hreflang="en" href="https://uriy-as.org/en/blog/telegram-bot-with-ai-for-200.html">
+    <link rel="dns-prefetch" href="https://Astap.pythonanywhere.com">
+    <link rel="preconnect" href="https://Astap.pythonanywhere.com" crossorigin>
+    <link rel="dns-prefetch" href="https://mc.yandex.ru">
+    <link rel="preconnect" href="https://mc.yandex.ru" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MY48PMFD5M"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-MY48PMFD5M')</script>
+    <link rel="stylesheet" href="/css/style.css?v=4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "How to Build a Telegram Bot with AI for $200",
+        "description": "Step-by-step guide to building a Telegram bot with AI for $200: choosing a stack, GPT integration, hosting, deployment, and real cost breakdown.",
+        "author": { "@type": "Organization", "name": "WebStudio", "url": "https://uriy-as.org" },
+        "publisher": { "@type": "Organization", "name": "WebStudio", "url": "https://uriy-as.org" },
+        "datePublished": "2026-07-28",
+        "dateModified": "2026-07-28",
+        "mainEntityOfPage": "https://uriy-as.org/en/blog/telegram-bot-with-ai-for-200.html"
+    }
+    </script>
+    <style>
+        .article-hero { padding: 140px 0 40px; text-align: center; }
+        .article-hero h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+        .article-content { max-width: 800px; margin: 0 auto; padding-bottom: 80px; line-height: 1.8; font-size: 1.05rem; }
+        .article-content p { margin-bottom: 1.2rem; color: var(--muted); }
+        .article-content h2 { font-size: 1.4rem; margin: 2rem 0 1rem; color: var(--accent); }
+        .article-content h3 { font-size: 1.15rem; margin: 1.5rem 0 0.8rem; }
+        .article-content ul, .article-content ol { margin-bottom: 1.2rem; padding-left: 1.5rem; color: var(--muted); }
+        .article-content li { margin-bottom: 0.5rem; }
+        .article-content .meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }
+        .article-back { display: inline-block; margin-bottom: 2rem; color: var(--accent); text-decoration: none; }
+        .article-back:hover { text-decoration: underline; }
+        .share-btns { display: flex; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap; }
+        .share-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem; border: 1px solid var(--border); transition: all 0.2s; }
+        .share-btn svg { width: 18px; height: 18px; }
+        .share-btn--tg { background: #2AABEE; color: #fff; border-color: #2AABEE; }
+        .share-btn--tg:hover { background: #229ED9; }
+        .share-btn--email { background: var(--card-bg); color: var(--text); }
+        .share-btn--email:hover { border-color: var(--accent); }
+    
+        .related-articles { margin-top: 2rem; padding: 1.5rem; background: var(--card-bg, #f8f9fa); border-radius: 12px; border: 1px solid var(--border, #eee); }
+        .related-articles h3 { font-size: 1.1rem; margin-bottom: 1rem; color: var(--accent, #2563eb); }
+        .related-articles ul { list-style: none; padding: 0; margin: 0; }
+        .related-articles li { margin-bottom: 0.6rem; }
+        .related-articles li a { color: var(--accent, #2563eb); text-decoration: none; font-size: 0.95rem; }
+        .related-articles li a:hover { text-decoration: underline; }
+    </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://uriy-as.org/en/" },
+            { "@type": "ListItem", "position": 2, "name": "Articles", "item": "https://uriy-as.org/en/articles.html" },
+            { "@type": "ListItem", "position": 3, "name": "How to Build a Telegram Bot with AI for $200" }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="/" class="logo"><img src="/images/logo.svg" alt="WebStudio" class="logo__img"></a>
+                <nav class="nav">
+                    <a href="/#services" data-i18n="nav-services">Services</a>
+                    <a href="/en/portfolio.html" data-i18n="nav-portfolio" data-en="Portfolio">Portfolio</a>
+                    <a href="/#about" data-i18n="nav-about">About</a>
+                    <a href="/en/articles.html" data-i18n="nav-articles">Articles</a>
+                    <a href="/#contact" data-i18n="nav-contacts">Contact</a>
+                    <a href="#" class="nav__bot" data-i18n="nav-chat" onclick="event.preventDefault();document.getElementById('chatBtn').click();this.blur();return false;">AI Chat</a>
+                </nav>
+                <button class="burger" id="burger" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="article-hero">
+        <div class="container">
+            <a href="/en/articles.html" class="article-back" data-i18n="article-back">← All articles</a>
+            <h1>How to Build a Telegram Bot with AI for $200</h1>
+            <div class="meta">July 28, 2026</div>
+        </div>
+    </section>
+
+    <section class="article-content">
+        <div class="container">
+            <img src="/images/blog-ai-bot-200-en.svg" alt="Telegram Bot + AI for $200" style="width:100%;border-radius:12px;margin-bottom:2rem;">
+            <h2>Why Telegram Bots with AI Are Booming in 2026</h2>
+            <p>Telegram bots powered by artificial intelligence have become one of the most effective and affordable tools for businesses. They handle customer support, process orders, generate content, and qualify leads — all without requiring your team to be online 24/7. The best part? You can build a fully functional AI-powered Telegram bot for as little as $200.</p>
+            <p>In this guide, we will walk you through every step — from choosing the right technology stack to deploying a production-ready bot. Whether you are a startup founder, a small business owner, or a freelance developer, this article will give you a clear roadmap to get your AI bot running without breaking the bank.</p>
+
+            <h2>What You Will Need Before You Start</h2>
+            <p>Before diving into the code, make sure you have the following in place:</p>
+            <ul>
+                <li>A Telegram account and the Telegram Desktop or mobile app installed</li>
+                <li>A basic understanding of Python or JavaScript (Node.js)</li>
+                <li>A code editor (VS Code, Sublime Text, or any editor you prefer)</li>
+                <li>A free account on OpenAI, Anthropic, or another LLM provider</li>
+                <li>A hosting platform account (we recommend PythonAnywhere, Railway, or Render)</li>
+            </ul>
+            <p>None of these require significant investment. Most services offer free tiers that are more than enough to start. You only pay once your bot gains traction and you need more compute power or API calls.</p>
+
+            <h2>Step 1: Create Your Telegram Bot via BotFather</h2>
+            <p>Every Telegram bot starts with BotFather — Telegram's built-in tool for creating and managing bots. Open Telegram, search for @BotFather, and start a conversation.</p>
+            <p>Send the command /newbot and follow the prompts. You will choose a username and a display name for your bot. Once created, BotFather gives you an API token. This token is the key that allows your code to control the bot. Keep it safe and never share it publicly.</p>
+            <p>For testing purposes, you can also configure basic settings with BotFather — set a description, an about text, and a profile picture. These small details matter when your bot is live and interacting with real users.</p>
+
+            <h2>Step 2: Choose Your Technology Stack</h2>
+            <p>The stack you choose determines your development speed, hosting costs, and long-term maintainability. Here are the two most popular options for building AI Telegram bots on a budget:</p>
+
+            <h3>Python (aiogram or python-telegram-bot)</h3>
+            <p>Python is the go-to language for AI-related projects. The aiogram library is fast, async-native, and lightweight. If you prefer a more mature ecosystem, python-telegram-bot offers extensive documentation and a large community. Both libraries are free and well-maintained.</p>
+            <p>Python is ideal if you plan to integrate OpenAI, Anthropic Claude, or open-source models like Llama. The ecosystem of AI libraries in Python is unmatched, and you can prototype a working bot in under an hour.</p>
+
+            <h3>JavaScript / Node.js (grammY or Telegraf)</h3>
+            <p>If your team is more comfortable with JavaScript, grammY is an excellent modern framework for Telegram bots in Node.js. It has a clean API, strong TypeScript support, and a growing community. Telegraf is another solid choice with more years of production use behind it.</p>
+            <p>Node.js bots work well when you want to integrate with webhooks and build a full-stack application around your bot. Hosting on platforms like Railway or Render is straightforward with Node.js.</p>
+
+            <h2>Step 3: Integrate an AI Model</h2>
+            <p>This is where the magic happens. You connect your bot to a large language model (LLM) so it can understand and respond to user messages intelligently.</p>
+            <p>The most common option is the OpenAI API (GPT-4o-mini or GPT-4o). GPT-4o-mini is extremely affordable — a typical conversation costs less than a fraction of a cent. For a bot handling a few hundred conversations per day, your monthly API bill will likely stay under $10–$15.</p>
+            <p>Alternatively, consider Anthropic's Claude API, which offers competitive pricing and excellent reasoning capabilities. For budget-conscious projects, open-source models hosted on services like Together AI or Groq can reduce costs even further.</p>
+            <p>The integration pattern is simple: when a user sends a message, your bot forwards it to the AI API along with a system prompt that defines the bot's behavior, tone, and knowledge. The AI responds, and your bot sends the response back to the user in Telegram.</p>
+
+            <h2>Step 4: Design the Conversation Flow</h2>
+            <p>A well-designed bot is more than just an API call wrapper. Think about the user experience from the start:</p>
+            <ul>
+                <li><strong>Welcome message:</strong> Greet users and explain what the bot can do. Keep it concise.</li>
+                <li><strong>System prompt:</strong> Define the bot's personality, scope, and limitations. A clear system prompt prevents the bot from going off-topic.</li>
+                <li><strong>Error handling:</strong> If the AI returns an error or the user sends something the bot cannot handle, provide a helpful fallback message.</li>
+                <li><strong>Context management:</strong> Decide how many previous messages to include in each API call. Maintaining context makes conversations feel natural.</li>
+                <li><strong>Rate limiting:</strong> Prevent abuse by limiting how many messages a user can send per minute or per day.</li>
+            </ul>
+            <p>For most business use cases, a system prompt of 200–500 words is sufficient. Describe the bot's role, the topics it covers, and any constraints it should follow. Test different prompts and refine based on real user interactions.</p>
+
+            <h2>Step 5: Deploy Your Bot for Under $50/Month</h2>
+            <p>Deployment is where many people overspend. You do not need a dedicated server or a powerful VPS to run a Telegram bot. Here are the most cost-effective hosting options:</p>
+
+            <h3>PythonAnywhere (from $0)</h3>
+            <p>PythonAnywhere offers a free tier that supports always-on tasks for Python bots. The free tier has limitations, but the Hacker plan at $5/month removes most restrictions. This is the cheapest option for Python-based bots.</p>
+
+            <h3>Railway (from $5/month)</h3>
+            <p>Railway supports both Python and Node.js. It offers a generous free trial and then charges based on usage. For a bot with moderate traffic, expect to pay $5–$15/month. Railway handles environment variables, deployments, and logs seamlessly.</p>
+
+            <h3>Render (from $0)</h3>
+            <p>Render has a free tier for background workers, which is perfect for long-polling Telegram bots. The free tier has a cold start delay, but for most use cases, this is acceptable. Paid plans start at $7/month.</p>
+
+            <h2>Real Cost Breakdown</h2>
+            <p>Let us look at the actual numbers for building and running an AI Telegram bot for one month:</p>
+            <ul>
+                <li><strong>Telegram Bot API:</strong> Free (no cost)</li>
+                <li><strong>AI API (GPT-4o-mini, ~10,000 messages/month):</strong> $5–$15</li>
+                <li><strong>Hosting (PythonAnywhere or Railway):</strong> $5–$15</li>
+                <li><strong>Domain (optional):</strong> $0–$12/year</li>
+            </ul>
+            <p>Total startup cost: $10–$30/month. The initial $200 budget covers over six months of running costs, with room for growth. If you are building the bot yourself, there are no development costs. Hiring a freelancer to set up a basic AI bot typically costs $100–$200, still within your budget.</p>
+
+            <h2>Common Mistakes to Avoid</h2>
+            <p>When building your first AI Telegram bot, avoid these pitfalls:</p>
+            <ul>
+                <li><strong>Overcomplicating the architecture:</strong> Start simple. A single-file bot can handle hundreds of users. Add complexity only when you need it.</li>
+                <li><strong>Ignoring the system prompt:</strong> The system prompt is the single most important part of your bot. Spend time crafting and testing it.</li>
+                <li><strong>Not handling errors:</strong> API calls can fail. Network requests can timeout. Always wrap your AI calls in try-except blocks and provide meaningful error messages.</li>
+                <li><strong>Sending API keys in messages:</strong> Never expose your OpenAI or Telegram bot token. Use environment variables for all sensitive data.</li>
+                <li><strong>Skipping user feedback:</strong> Add a simple feedback mechanism so users can report issues or suggest improvements.</li>
+            </ul>
+
+            <h2>Monetization: How to Make Money with Your Bot</h2>
+            <p>An AI Telegram bot is not just a technical project — it is a business opportunity. Here are proven monetization strategies:</p>
+            <ul>
+                <li><strong>Freemium model:</strong> Offer 10 free messages per day, then charge for unlimited access via Telegram Stars or a subscription link.</li>
+                <li><strong>Lead generation:</strong> Use the bot to qualify leads for your business. Offer free AI consultations and collect contact information.</li>
+                <li><strong>SaaS platform:</strong> Build a bot template and sell it to other businesses who want their own AI assistant.</li>
+                <li><strong>Affiliate integration:</strong> Recommend products or services within conversations and earn affiliate commissions.</li>
+            </ul>
+
+            <h2>Scaling Beyond the Basics</h2>
+            <p>Once your bot is live and gaining users, you may want to add more advanced features:</p>
+            <ul>
+                <li><strong>Database integration:</strong> Store user preferences, conversation history, and analytics using SQLite or PostgreSQL.</li>
+                <li><strong>Webhook mode:</strong> Switch from long-polling to webhooks for better performance and lower latency.</li>
+                <li><strong>Multi-language support:</strong> Detect the user's language and respond accordingly. OpenAI and Claude handle multilingual conversations natively.</li>
+                <li><strong>Admin panel:</strong> Build a simple web dashboard to monitor usage, manage users, and update the system prompt without restarting the bot.</li>
+                <li><strong>Payment integration:</strong> Accept payments directly in Telegram using the Payments API or link to Stripe.</li>
+            </ul>
+
+            <h2>Real-World Example: A Customer Support Bot</h2>
+            <p>Consider a local bakery that receives 50+ daily messages on Telegram asking about menu items, prices, and order status. Before the bot, a staff member spent two hours per day responding to these messages.</p>
+            <p>After deploying an AI-powered bot with a carefully crafted system prompt containing the menu, pricing, and ordering process, the bot handles 85% of inquiries automatically. The staff only steps in for complex orders or complaints. The bot cost $150 to develop and runs for $12/month. The saved labor time alone is worth over $500/month.</p>
+
+            <h2>Conclusion</h2>
+            <p>Building a Telegram bot with AI for $200 is not just possible — it is practical and increasingly common. The combination of affordable AI APIs, free bot frameworks, and low-cost hosting makes this one of the best entry points into AI-powered business automation.</p>
+            <p>Start with a simple use case, get it live, and iterate based on user feedback. The $200 budget gives you plenty of runway to experiment, learn, and refine your bot before committing to larger investments. The key is to start now — the businesses that adopt AI automation early will have a significant advantage over those that wait.</p>
+
+            <div class="share-btns">
+                <a href="https://t.me/uriy_as59" target="_blank" class="share-btn share-btn--tg" data-i18n="article-share-tg">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.26.76a1.73 1.73 0 0 0-1.76-.35L1.84 9.58a1.66 1.66 0 0 0 .05 3.08l4.88 1.9 2.94 8.86a1.38 1.38 0 0 0 .9.87 1.32 1.32 0 0 0 1.2-.21l4.23-3.46a1.8 1.8 0 0 1 2.05-.12l4.85 3.52a1.35 1.35 0 0 0 1.45.12 1.38 1.38 0 0 0 .78-1.15L23.7 2.47a1.73 1.73 0 0 0-1.44-1.71z"/></svg>
+                    Telegram
+                </a>
+                <a href="mailto:?subject=WebStudio%3A%20How%20to%20Build%20a%20Telegram%20Bot%20with%20AI%20for%20%24200&body=https://uriy-as.org/en/blog/telegram-bot-with-ai-for-200.html" class="share-btn share-btn--email" data-i18n="article-share-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+                    Email
+                </a>
+            </div>
+            <div class="related-articles">
+                <h3>Read also</h3>
+                <ul>
+                    <li><a href="/en/blog/chatbot-for-business-cases.html">Chatbot for Business: Real Cases and Results</a></li>
+                    <li><a href="/en/blog/10-website-mistakes.html">10 Website Mistakes That Are Killing Your Business</a></li>
+                    <li><a href="/en/blog/seo-for-beginners.html">SEO for Beginners: Where to Start</a></li>
+                </ul>
+            </div>
+
+            <p style="margin-top:1.5rem"><a href="/en/services.html" class="btn btn--primary btn--sm">Order a Telegram bot</a></p>
+        </div>
+    </section>
+
+    <section class="tg-promo section">
+        <div class="container">
+            <div class="tg-promo__inner">
+                <h2 data-i18n="tg-promo-title">Subscribe to our Telegram channel</h2>
+                <p data-i18n="tg-promo-desc">Cases, articles and insights on website development, Telegram bots and content marketing. We publish useful content every Monday, Wednesday, Friday and Saturday at 08:10.</p>
+                <a href="https://t.me/uriy_as59" target="_blank" class="btn btn--tg" data-i18n="tg-promo-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.26.76a1.73 1.73 0 0 0-1.76-.35L1.84 9.58a1.66 1.66 0 0 0 .05 3.08l4.88 1.9 2.94 8.86a1.38 1.38 0 0 0 .9.87 1.32 1.32 0 0 0 1.2-.21l4.23-3.46a1.8 1.8 0 0 1 2.05-.12l4.85 3.52a1.35 1.35 0 0 0 1.45.12 1.38 1.38 0 0 0 .78-1.15L23.7 2.47a1.73 1.73 0 0 0-1.44-1.71z"/></svg>
+                    Subscribe on Telegram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__left">
+                    <a href="/" class="logo"><img src="/images/logo.svg" alt="WebStudio" class="logo__img"></a>
+                    <p data-i18n="footer-copyright">© 2026 WebStudio. All rights reserved.</p>
+                    <p style="margin-top:8px;font-size:0.85rem;" data-i18n="footer-bot"><a href="https://t.me/NevWebStudio_bot" target="_blank" style="color:var(--accent);">@NevWebStudio_bot</a> — the bot will answer all your questions</p>
+                    <p style="margin-top:4px;font-size:0.8rem;"><a href="/privacy.html" style="color:var(--muted);" data-i18n="footer-privacy">Privacy Policy</a></p>
+                </div>
+                <div class="footer__social">
+                    <a href="https://t.me/uriy_as59" target="_blank" aria-label="Telegram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.26.76a1.73 1.73 0 0 0-1.76-.35L1.84 9.58a1.66 1.66 0 0 0 .05 3.08l4.88 1.9 2.94 8.86a1.38 1.38 0 0 0 .9.87 1.32 1.32 0 0 0 1.2-.21l4.23-3.46a1.8 1.8 0 0 1 2.05-.12l4.85 3.52a1.35 1.35 0 0 0 1.45.12 1.38 1.38 0 0 0 .78-1.15L23.7 2.47a1.73 1.73 0 0 0-1.44-1.71z"/></svg>
+                    </a>
+                    <a href="https://youtube.com/@%D0%AE%D1%81%D1%82%D0%B0%D1%81-%D0%B34%D1%8B" target="_blank" aria-label="YouTube">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a2.96 2.96 0 0 0-2.08-2.1C19.55 3.5 12 3.5 12 3.5s-7.55 0-9.42.6A2.96 2.96 0 0 0 .5 6.2 30.9 30.9 0 0 0 0 12a30.9 30.9 0 0 0 .5 5.8 2.96 2.96 0 0 0 2.08 2.1c1.87.6 9.42.6 9.42.6s7.55 0 9.42-.6a2.96 2.96 0 0 0 2.08-2.1 30.9 30.9 0 0 0 .5-5.8 30.9 30.9 0 0 0-.5-5.8zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://t.me/uriy_as59" target="_blank" class="tg-float" aria-label="Telegram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.26.76a1.73 1.73 0 0 0-1.76-.35L1.84 9.58a1.66 1.66 0 0 0 .05 3.08l4.88 1.9 2.94 8.86a1.38 1.38 0 0 0 .9.87 1.32 1.32 0 0 0 1.2-.21l4.23-3.46a1.8 1.8 0 0 1 2.05-.12l4.85 3.52a1.35 1.35 0 0 0 1.45.12 1.38 1.38 0 0 0 .78-1.15L23.7 2.47a1.73 1.73 0 0 0-1.44-1.71z"/></svg>
+        <span data-i18n="article-share-tg">Telegram</span>
+    </a>
+
+    <div class="lang-widget" id="langWidget">
+        <button class="lang-btn-floating" id="langBtnFloat" aria-label="Switch language" onclick="toggleLang()">RU</button>
+    </div>
+
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-btn" id="chatBtn" aria-label="Chat">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span data-i18n="chat-btn-text">Chat</span>
+        </button>
+        <div class="chat-popup" id="chatPopup">
+            <div class="chat-popup__header">
+                <h4 data-i18n="chat-title">AI Assistant</h4>
+                <button class="chat-popup__close" id="chatClose">&times;</button>
+            </div>
+            <div class="chat-popup__body" id="chatBody">
+                <div class="chat-msg chat-msg--bot" data-i18n="chat-error" style="display:none;"></div>
+            </div>
+            <form class="chat-popup__form" id="chatForm">
+                <input type="text" placeholder="Your message..." autocomplete="off" autocorrect="off" spellcheck="false" required data-i18n="chat-placeholder">
+                <button type="submit">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script defer src="/js/script.js?v=5t3xt0n1y"></script>
+    <noscript><img src="https://Astap.pythonanywhere.com/pixel?page=/en/blog/telegram-bot-with-ai-for-200.html&ref=" style="position:absolute;left:-9999px" alt="" /></noscript>
+    <noscript><div><img src="https://mc.yandex.ru/watch/109350815" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109350815,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
+</body>
+</html>

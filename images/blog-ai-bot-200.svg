@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea"/>
+      <stop offset="100%" style="stop-color:#764ba2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="60" y="50" width="1080" height="530" rx="20" fill="rgba(255,255,255,0.1)"/>
+  <text x="600" y="200" font-family="Inter,sans-serif" font-size="48" font-weight="800" fill="white" text-anchor="middle">Telegram Bot + AI</text>
+  <text x="600" y="270" font-family="Inter,sans-serif" font-size="36" font-weight="600" fill="rgba(255,255,255,0.9)" text-anchor="middle">за $200</text>
+  <text x="600" y="350" font-family="Inter,sans-serif" font-size="24" fill="rgba(255,255,255,0.7)" text-anchor="middle">Пошаговое руководство: стек, GPT, хостинг, деплой</text>
+  <text x="600" y="480" font-family="Inter,sans-serif" font-size="18" fill="rgba(255,255,255,0.5)" text-anchor="middle">uriy-as.org</text>
+</svg>
