@@ -1,1 +1,6 @@
-
+__pycache__/
+*.pyc
+generate_og.py
+.github/scripts/ga-key.json
+external-content/
+продолжим.md
