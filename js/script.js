@@ -80,7 +80,8 @@ if (form && modal && modalClose) {
             name: form.querySelector('[name="name"]')?.value || '',
             email: form.querySelector('[name="email"]')?.value || '',
             phone: form.querySelector('[name="phone"]')?.value || '',
-            message: form.querySelector('[name="message"]')?.value || ''
+            message: form.querySelector('[name="message"]')?.value || '',
+            website: form.querySelector('[name="website"]')?.value || ''
         };
         fetch('https://astap.pythonanywhere.com/api/lead', {
             method: 'POST',
