@@ -41,3 +41,4 @@
 - SSL certificate guide: https://uriy-as.org/blog/ssl-sertifikat.html
 - 5 mistakes in content strategy: https://uriy-as.org/blog/5-oshibok-kontent-strategii-telegram.html
 - 5 signs of bad website: https://uriy-as.org/blog/5-priznakov-plohogo-sayta.html
+- Website maintenance cost: https://uriy-as.org/blog/skolko-stoit-podderzhka-sayta.html

@@ -1,0 +1,5 @@
+Contact: mailto:contact@uriy-as.org
+Contact: https://t.me/uriy_as59
+Expires: 2027-08-02
+Preferred-Languages: ru, en
+Canonical: https://uriy-as.org/security.txt
