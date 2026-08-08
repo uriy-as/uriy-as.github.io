@@ -270,6 +270,8 @@ def cmd_lead_add(chat_id, args):
     send_message(chat_id, f"✅ Заявка #{max_id + 1} добавлена.")
 
 # --- Gemini ---
+FALLBACK_REPLY = ("Извините, сейчас я временно не могу ответить из-за технических неполадок. Пожалуйста, напишите нам на почту uriy.as59@yandex.com или в Telegram @uriy_as59.")
+
 def ask_gemini(text):
     payload = {
         "contents": [{
@@ -288,9 +290,9 @@ def ask_gemini(text):
                 return texts or ["Empty response from Gemini"], images
             return ["Empty response from Gemini"], []
         else:
-            return [f"Gemini error: {r.status_code} {r.text[:200]}"], []
+            return [FALLBACK_REPLY], []
     except Exception as e:
-        return [f"Gemini request failed: {e}"], []
+        return [FALLBACK_REPLY], []
 
 # --- Telegram ---
 def send_message(chat_id, text):
