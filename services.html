@@ -86,6 +86,11 @@
         .service-card .price small { font-size: 0.9rem; font-weight: 400; color: var(--muted); }
         .service-card ul { padding-left: 1.2rem; color: var(--muted); line-height: 2; }
         .service-card .btn { margin-top: 1rem; }
+        .btn--crypto { display:inline-flex; align-items:center; gap:6px; margin-top:0.6rem; padding:8px 16px; background:linear-gradient(135deg,#f7931a,#e8840c); color:#fff; border-radius:8px; font-size:0.85rem; font-weight:600; text-decoration:none; cursor:pointer; border:none; transition:opacity .2s; }
+        .btn--crypto:hover { opacity:0.85; color:#fff; text-decoration:none; }
+        .crypto-status { margin-top:1rem; padding:12px 16px; border-radius:8px; font-size:0.9rem; display:none; }
+        .crypto-status.success { display:block; background:#d4edda; border:1px solid #28a745; color:#155724; }
+        .crypto-status.error { display:block; background:#f8d7da; border:1px solid #dc3545; color:#721c24; }
     </style>
 
     <script type="application/ld+json">
@@ -140,6 +145,7 @@
                     </ul>
                     <a href="/articles.html#article-3" class="service__article-link">Читать: Сайт за 5 дней ></a>
                     <a href="/#contact" class="btn btn--primary" data-i18n="service-card-order" data-en="Order">Заказать</a>
+                    <button class="btn--crypto" onclick="payCrypto('Сайт-визитка', 250)">₿ Оплатить криптой $250</button>
                 </div>
 
                 <div class="service-card">
@@ -156,6 +162,7 @@
                     </ul>
                     <a href="/articles.html#article-6" class="service__article-link">Читать: 5 признаков плохого сайта ></a>
                     <a href="/#contact" class="btn btn--primary" data-i18n="service-card-order" data-en="Order">Заказать</a>
+                    <button class="btn--crypto" onclick="payCrypto('Сайт под ключ', 600)">₿ Оплатить криптой от $600</button>
                 </div>
 
                 <div class="service-card">
@@ -171,6 +178,7 @@
                     </ul>
                     <a href="/articles.html#article-2" class="service__article-link">Читать: Бот или сайт? ></a>
                     <a href="/#contact" class="btn btn--primary" data-i18n="service-card-order" data-en="Order">Заказать</a>
+                    <button class="btn--crypto" onclick="payCrypto('Бот-визитка', 130)">₿ Оплатить криптой $130</button>
                 </div>
 
                 <div class="service-card">
@@ -187,6 +195,7 @@
                     </ul>
                     <a href="/articles.html#article-4" class="service__article-link">Читать: AI-боты: что они умеют ></a>
                     <a href="/#contact" class="btn btn--primary" data-i18n="service-card-order" data-en="Order">Заказать</a>
+                    <button class="btn--crypto" onclick="payCrypto('Telegram-бот на GPT', 400)">₿ Оплатить криптой от $400</button>
                 </div>
 
                 <div class="service-card">
@@ -208,6 +217,7 @@
                     </ul>
                     <a href="/articles.html#article-5" class="service__article-link">Читать: Почему статьи продают ></a>
                     <a href="/#contact" class="btn btn--primary" data-i18n="service-card-order" data-en="Order">Заказать</a>
+                    <button class="btn--crypto" onclick="payCrypto('Научные статьи', 50)">₿ Оплатить криптой от $50</button>
                 </div>
 
                 <div class="service-card">
@@ -223,6 +233,7 @@
                     </ul>
                     <a href="/articles.html#article-10" class="service__article-link">Читать: SEO для начинающих ></a>
                     <a href="/#contact" class="btn btn--primary" data-i18n="service-card-order" data-en="Order">Заказать</a>
+                    <button class="btn--crypto" onclick="payCrypto('Продвижение', 70)">₿ Оплатить криптой от $70</button>
                 </div>
 
             </div>
@@ -305,6 +316,46 @@
     </div>
 
     <script defer src="js/script.js?v=5t3xt0n1y"></script>
+    <script>
+    async function payCrypto(service, amount) {
+        var btn = event.target;
+        btn.disabled = true;
+        btn.textContent = '...';
+        try {
+            var r = await fetch('https://astap.pythonanywhere.com/api/crypto-pay?service=' + encodeURIComponent(service) + '&amount=' + amount);
+            var d = await r.json();
+            if (d.url) {
+                window.location.href = d.url;
+            } else {
+                alert('Ошибка: ' + (d.error || 'Попробуйте позже'));
+                btn.disabled = false;
+                btn.textContent = '₿ Оплатить криптой';
+            }
+        } catch(e) {
+            alert('Сервер не отвечает. Попробуйте позже.');
+            btn.disabled = false;
+            btn.textContent = '₿ Оплатить криптой';
+        }
+    }
+    (function() {
+        var p = new URLSearchParams(window.location.search);
+        if (p.get('paid') === 'success') {
+            var d = document.createElement('div');
+            d.className = 'crypto-status success';
+            d.textContent = '✅ Оплата успешно получена! Мы свяжемся с вами в ближайшее время.';
+            var hero = document.querySelector('.page-hero .container');
+            if (hero) hero.appendChild(d);
+            history.replaceState(null, '', window.location.pathname);
+        } else if (p.get('paid') === 'failed') {
+            var d = document.createElement('div');
+            d.className = 'crypto-status error';
+            d.textContent = '❌ Оплата не завершена. Попробуйте ещё раз или свяжитесь с нами.';
+            var hero = document.querySelector('.page-hero .container');
+            if (hero) hero.appendChild(d);
+            history.replaceState(null, '', window.location.pathname);
+        }
+    })();
+    </script>
     <noscript><img src="https://Astap.pythonanywhere.com/pixel?page=/services.html&ref=" style="position:absolute;left:-9999px" alt="" /></noscript>
     <noscript><div><img src="https://mc.yandex.ru/watch/109350815" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- Yandex.Metrica -->
