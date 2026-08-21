@@ -76,24 +76,25 @@ const modalError = () => {
 if (form && modal && modalClose) {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        const data = {
-            name: form.querySelector('[name="name"]')?.value || '',
-            email: form.querySelector('[name="email"]')?.value || '',
-            phone: form.querySelector('[name="phone"]')?.value || '',
-            message: form.querySelector('[name="message"]')?.value || '',
-            website: form.querySelector('[name="website"]')?.value || ''
-        };
+        var name = form.querySelector('[name="name"]')?.value?.trim() || '';
+        var email = form.querySelector('[name="email"]')?.value?.trim() || '';
+        var phone = form.querySelector('[name="phone"]')?.value?.trim() || '';
+        var message = form.querySelector('[name="message"]')?.value?.trim() || '';
+        var website = form.querySelector('[name="website"]')?.value || '';
+        if (!name) { form.querySelector('[name="name"]').focus(); return; }
+        if (!message) { form.querySelector('[name="message"]').focus(); return; }
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { form.querySelector('[name="email"]').focus(); return; }
+        const data = { name: name, email: email, phone: phone, message: message, website: website };
         fetch('https://astap.pythonanywhere.com/api/lead', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
             mode: 'cors'
         }).then(r => {
-            if (r.ok) modalSuccess();
+            if (r.ok) { modalSuccess(); form.reset(); }
             else modalError();
-        }).catch(() => modalError());
-        modal.classList.add('modal--open');
-        form.reset();
+            modal.classList.add('modal--open');
+        }).catch(() => { modalError(); modal.classList.add('modal--open'); });
     });
 
     modalClose.addEventListener('click', () => {
@@ -170,6 +171,8 @@ if (form && modal && modalClose) {
         popup.classList.remove('chat-popup--open');
     });
 
+    var pending = false;
+
     function sendMessage(msg, retries) {
         if (!msg) return;
         retries = retries || 0;
@@ -178,7 +181,10 @@ if (form && modal && modalClose) {
             body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--user">' + escapeHtml(msg) + '</div>');
             body.scrollTop = body.scrollHeight;
         }
-        body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot"><em>Печатает...</em></div>');
+        var typingEl = document.createElement('div');
+        typingEl.className = 'chat-msg chat-msg--bot';
+        typingEl.innerHTML = '<em>Печатает...</em>';
+        body.appendChild(typingEl);
         body.scrollTop = body.scrollHeight;
         var ac = new AbortController();
         var timeout = retries > 0 ? 25000 : 15000;
@@ -190,24 +196,40 @@ if (form && modal && modalClose) {
             mode: 'cors',
             signal: ac.signal
         }).then(function(r) { return r.json(); }).then(function(data) {
-            body.removeChild(body.lastChild);
-            body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot">' + escapeHtml(data.reply) + '</div>');
+            typingEl.innerHTML = escapeHtml(data.reply);
+            pending = false;
+            input.disabled = false;
+            input.focus();
         }).catch(function() {
-            body.removeChild(body.lastChild);
+            body.removeChild(typingEl);
             if (retries < 5) {
-                body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot" style="font-size:0.85rem;color:#888;"><em>Пробуждаю сервер...</em></div>');
+                var wakeEl = document.createElement('div');
+                wakeEl.className = 'chat-msg chat-msg--bot';
+                wakeEl.style.cssText = 'font-size:0.85rem;color:#888;';
+                wakeEl.innerHTML = '<em>Пробуждаю сервер...</em>';
+                body.appendChild(wakeEl);
                 body.scrollTop = body.scrollHeight;
-                setTimeout(function() { body.removeChild(body.lastChild); sendMessage(msg, retries + 1); }, 3000);
+                setTimeout(function() {
+                    body.removeChild(wakeEl);
+                    sendMessage(msg, retries + 1);
+                }, 3000);
             } else {
                 var errMsg = 'Извините, сервер временно недоступен. Напишите нам в Telegram: <a href="https://t.me/uriy_as59" target="_blank" style="color:#6c63ff;">@uriy_as59</a>';
                 body.insertAdjacentHTML('beforeend', '<div class="chat-msg chat-msg--bot" style="font-size:0.85rem;">' + errMsg + '</div>');
+                pending = false;
+                input.disabled = false;
+                input.focus();
             }
         });
     }
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
-        sendMessage(input.value.trim());
+        var msg = input.value.trim();
+        if (!msg || pending) return;
+        pending = true;
+        input.disabled = true;
+        sendMessage(msg);
     });
 
     function escapeHtml(text) {
