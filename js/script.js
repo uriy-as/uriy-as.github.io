@@ -411,6 +411,11 @@ if (form && modal && modalClose) {
 
     window.toggleLang = function() {
         var newLang = lang === 'ru' ? 'en' : 'ru';
+        var path = window.location.pathname;
+        if (path === '/articles.html' || path === '/en/articles.html') {
+            window.location.href = newLang === 'en' ? '/en/articles.html' : '/articles.html';
+            return;
+        }
         applyLang(newLang);
     };
 })();
