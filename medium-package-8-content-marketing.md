@@ -16,8 +16,8 @@ SmallBusiness
 https://uriy-as.org/en/blog/content-marketing-telegram-clients.html
 
 ## COVER IMAGE
-Need to create one. Suggest: "images/medium-cover-content-marketing.png"
-Text on cover: "Content Marketing / Brings Clients / from Telegram". Accent color #28a7e8 (Telegram blue).
+Use: images/medium-cover-content-marketing.png (already created, 1200x630)
+Text on cover: "Content Marketing / Brings Clients / from Telegram — Without paying for ads".
 Drag into first position in the editor.
 
 ## CONTENT (paste below the title)
