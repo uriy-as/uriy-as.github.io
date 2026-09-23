@@ -34,6 +34,7 @@
 - `.github/scripts/flask_app.py` — бэкенд (PythonAnywhere)
 - `.github/scripts/daily-stats.py` — ежедневная статистика (генерирует stats.html и пушит в pages)
 - `habr-ai-bot-200.md` — черновик Habr-статьи «Telegram-бот с ИИ на Flask» (IRONIC STYLE, ready for rewrite + Text.ru check)
+- `C:\Users\Admin\Documents\opencode-errors-guide.md` — памятка по ошибкам опенкода + перезагрузка для новичка (создана 23.09)
 - `images/habr-cover-ai-bot.png` — обложка 1200×630, без uriy-as.org
 
 ## Что сделано сегодня (17.07.2026)
@@ -424,6 +425,15 @@
 6. **Habr**: только текст, написанный пользователем САМ без ИИ (3 отказа — Habr отклоняет ИИ-текст даже переписанный)
 7. **Крипто-кошелёк**: MEXC (KYC, бэкап); кнопки Plisio НЕ делать
 8. **vc.ru**: проверить клики по гиперссылкам (кабинет автора, период 16–21.09)
+
+## Что сделать завтра (24.09.2026)
+1. **ГЛАВНОЕ — разбор ошибок опенкода**: пройти `C:\Users\Admin\Documents\opencode-errors-guide.md` (создан 23.09, реальные данные из лога). Отрепетировать 2-3 сценария: (а) ByteString-ключ с кириллицей → проверка `check_key.py` + замена в auth.json + перезапуск; (б) rate limit 429 → пауза 1 мин; (в) перезапуск опенкода после «зависания». Записать вопросы и странности → дополнить памятку
+2. Dev.to: проверить просмотры #9 «5 Signs» и #8 (база 183, #8=20) через API ключом `X6ruf1e9STj6s7GpMETQPLpy`
+3. vc.ru: клики по гиперссылкам (кабинет автора, период закончился 21.09) + накопленные просмотры
+4. Medium: подача «10 Website Mistakes» (EN) в публикации (Better Programming/Towards Dev/Plain English) + аватар/bio
+5. Приготовиться к **01.10: vc.ru #4 «Сколько стоит поддержка сайта»** (`vcru-website-care.md`)
+6. Криптокошелёк: MEXC (KYC, бэкап). Кнопки Plisio НЕ делать
+7. Каталоги: Google Business Profile/2GIS/Clutch по `promotion-checklist.md`
 
 ## 🔴 СБОИ ПРОГРАММЫ (что делать — пользовательская памятка, 21.09)
 
