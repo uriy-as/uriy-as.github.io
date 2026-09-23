@@ -386,6 +386,16 @@
 6. **Новый сайт для клиентской базы**: каталоги (Google Business Profile/2GIS/Clutch) по `promotion-checklist.md`
 7. Проверить посещения сайта (API) + GSC-индексацию после BreadcrumbList
 
+## Сделано сегодня (23.09.2026)
+- ✅ **Сбой программы (ByteString) разобран и устранён** — это и был пункт 1 из плана 22.09:
+  - Ошибка: «Cannot convert argument to a ByteString because the character at index 7 has a value of 1089 which is greater than 255» (undici/Node, провайдер `opencode`, модель `big-pickle`)
+  - Причина: в `C:\Users\Admin\.local\share\opencode\auth.json` API-ключ начинался с **кириллической «с»** (U+0441 = 1089, визуально неотличима от латинской «c»). Индекс 7 = первый символ ключа (после «Bearer »)
+  - Исправлено: ключ заменён на чистый ASCII — `X6ruf1e9STj6s7GpMETQPLpy`, сессия работает. Проверены на чистоту (всё ASCII): opencode.jsonc, auth.json, account.json, env-переменные, десктоп-апп, models.json
+  - Инструмент проверки ключей: `C:\Users\Admin\AppData\Local\Temp\opencode\check_key.py`
+- ✅ **Пункт 2 — Dev.to статы**: 163 → **183** просмотра (+20). **#8 «Content Marketing» ожила: 0 → 20** (вторая «мёртвая» статья, которая очнулась). **#9 «5 Signs» (21.09) = 0** — норма, индексация 7–14 дней, разгон ~3–4 недели. Итог: 52/45/42/20/10/10/0/0/0
+- ✅ **Пункт 7 — Посещения**: 122 → **125** хитов, **46 IP** (+3), 34 дня, 6 лидов. Новый реальный визит 22.09 06:50 `/en/blog/telegram-channel-strategy.html`
+- ⏳ **НЕ сделано (нужен браузер/аккаунт пользователя)**: пункт 3 — vc.ru клики по ссылкам в кабинете; пункт 4 — Medium подача «10 Website Mistakes» + профиль; пункт 5 — MEXC; пункт 6 — каталоги (GBP/2GIS/Clutch)
+
 ## 🔴 СБОИ ПРОГРАММЫ (что делать — пользовательская памятка, 21.09)
 
 ### Когда сбои случаются чаще всего
