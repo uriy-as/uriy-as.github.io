@@ -452,6 +452,13 @@
   - ⚠️ Не восстановить: 6 старых лидов (29.08–19.09) — `page`/`ref` в них не сохранялись. Историю придётся смотреть по Метрике
   - ⚠️ Ограничение: Telegram не передаёт referrer — переходы из t.me покажутся как `direct`. Учитывать при анализе
   - ⚠️ `pip install flask requests` поставлен локально (Python 3.12.10) — для локальных тестов бэкенда
+- ⚠️ **ДЕПЛОЙ НА PA НЕ ПРОШЁЛ — причина внешняя, не в коде.** Workflow `deploy-flask.yml` запущен через API (run #8, id `36619628490`), упал на шаге `deploy-flask.py`:
+  - `requests.exceptions.HTTPError: 500 Server Error ... GET https://www.pythonanywhere.com/login/`
+  - **У PythonAnywhere авария всей платформы**: 500/502 + страница «PythonAnywhere is having some issues. Our ever-vigilant sysadmins have been notified and are on the case.» Проверено 3 раза подряд в 22:30
+  - Само приложение **живо**: `astap.pythonanywhere.com/api/stats` → 200. Поля `sources`/`lead_sources`/`lead_pages` в живом ответе пока отсутствуют — деплой не прошёл
+  - Панель PA с нашей сети недоступна и раньше («Провайдер блокирует TCP 443 на AWS IP») → локальный деплой не вариант, только GitHub Actions
+  - ✅ **Код готов и лежит в `main`** (коммит `63d77a5`) — как только PA оживёт, достаточно перезапустить `deploy-flask.yml`
+- 🚨 **НАЙДЕНА УТЕЧКА ПАРОЛЯ**: `.github/scripts/deploy_pa.py` (untracked, НЕ закоммичен) содержит пароль PythonAnywhere открытым текстом (`'password': 'melehina-1936'`, строка 34). Действия: не коммитить файл; после восстановления PA — сменить пароль и читать креды из env (`PA_USERNAME`/`PA_PASSWORD`), как уже сделано в `deploy-flask.py`. Опционально: удалить или почистить файл
 
 ## План на 30.09.2026
 1. **Двухуровневый оффер (решено 29.09)**
