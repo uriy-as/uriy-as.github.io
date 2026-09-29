@@ -84,7 +84,11 @@ if (form && modal && modalClose) {
         if (!name) { form.querySelector('[name="name"]').focus(); return; }
         if (!message) { form.querySelector('[name="message"]').focus(); return; }
         if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { form.querySelector('[name="email"]').focus(); return; }
-        const data = { name: name, email: email, phone: phone, message: message, website: website };
+        const data = {
+            name: name, email: email, phone: phone, message: message, website: website,
+            page: window.location.pathname,
+            ref: document.referrer || window.location.href
+        };
         fetch('https://astap.pythonanywhere.com/api/lead', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
