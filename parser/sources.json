@@ -1,0 +1,49 @@
+{
+  "threshold_pct": 5,
+  "delay_seconds": 2,
+  "timeout_seconds": 25,
+  "retries": 3,
+  "max_items": 25,
+  "respect_robots": true,
+  "telegram_token_env": ["TELEGRAM_TOKEN", "TELEGRAM_BOT_TOKEN", "TG_BOT_TOKEN"],
+  "telegram_chat_env": ["ADMIN_CHAT_ID", "TELEGRAM_CHAT_ID", "CHAT_ID"],
+  "sources": [
+    {
+      "name": "Zharkov.dev",
+      "url": "https://zharkov.dev/services/telegram-bots",
+      "selector": "ul > li",
+      "max_items": 12
+    },
+    {
+      "name": "PAS7 Studio",
+      "url": "https://pas7.com.ua/prices/uk/bot-development",
+      "selector": "section.scroll-mt-24 > *",
+      "max_items": 12
+    },
+    {
+      "name": "MaxWeb",
+      "url": "https://maxweb.com.ua/price",
+      "selector": ".pricing-grid .price-card",
+      "max_items": 12
+    },
+    {
+      "name": "Web-Lift",
+      "url": "https://web-lift.com/rozrobka-telegram-botiv/",
+      "selector": ".wlpr-offer, .wlpr-price, .wlt-promo-r, .wl-rel-grid > *",
+      "max_items": 12
+    },
+    {
+      "name": "SUDUS",
+      "url": "https://sudus.team/ru/prices",
+      "selector": ".estimator-result, .tz-tiers > *, tr",
+      "label_selector": "td:first-child",
+      "max_items": 12
+    },
+    {
+      "name": "Web24",
+      "url": "https://web24.com.ua/price-list/",
+      "selector": ".tilda",
+      "max_items": 12
+    }
+  ]
+}

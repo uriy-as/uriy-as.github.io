@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8">
+<title>Мониторинг цен — отчёт</title>
+<style>
+  :root { color-scheme: light; }
+  body { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 32px;
+         background: #f6f7f9; color: #1a1d21; }
+  .wrap { max-width: 1080px; margin: 0 auto; background: #fff; border-radius: 12px;
+           box-shadow: 0 1px 3px rgba(0,0,0,.1); overflow: hidden; }
+  header { background: #1a1d21; color: #fff; padding: 22px 28px; }
+  header h1 { margin: 0 0 4px; font-size: 20px; }
+  header p { margin: 0; opacity: .75; font-size: 13px; }
+  .stats { display: flex; gap: 28px; padding: 18px 28px; border-bottom: 1px solid #e8eaed; }
+  .stat b { display: block; font-size: 22px; }
+  .stat span { font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: .04em; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { padding: 9px 14px; text-align: left; border-bottom: 1px solid #f0f1f3; vertical-align: top; }
+  th { background: #fafbfc; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: #6b7280; }
+  .name { width: 150px; font-weight: 600; color: #374151; }
+  .label { color: #4b5563; }
+  .val { white-space: nowrap; font-variant-numeric: tabular-nums; font-weight: 600; }
+  .chg-cell { width: 90px; }
+  .chg { font-weight: 700; }
+  .up { color: #dc2626; }
+  .down { color: #16a34a; }
+  .same { color: #d1d5db; }
+  .err { color: #dc2626; }
+  footer { padding: 16px 28px; font-size: 12px; color: #9ca3af; border-top: 1px solid #e8eaed; }
+  s { color: #9ca3af; font-weight: 400; }
+</style></head>
+<body><div class="wrap">
+<header>
+  <h1>Мониторинг цен конкурентов</h1>
+  <p>Автоматический сбор публичных прайсов · порог алерта 5% · сгенерировано 29.09.2026 22:55</p>
+</header>
+<div class="stats">
+  <div class="stat"><b>6</b><span>источников собрано</span></div>
+  <div class="stat"><b>33</b><span>позиций с ценой</span></div>
+  <div class="stat"><b>5%</b><span>порог алерта</span></div>
+  <div class="stat"><b>0%</b><span>обхода авторизации</span></div>
+</div>
+<table><thead><tr><th>Источник</th><th>Услуга</th><th>Цена</th><th>Δ</th></tr></thead>
+<tbody>
+<tr><td class="name">Zharkov.dev</td><td class="label">Лендінг</td><td class="val">150 USD</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">Zharkov.dev</td><td class="label">Сайт</td><td class="val">300 USD</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">Zharkov.dev</td><td class="label">Інтернет-магазин</td><td class="val">800 USD</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">Zharkov.dev</td><td class="label">Telegram-бот</td><td class="val">150 USD</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">Zharkov.dev</td><td class="label">Telegram App</td><td class="val">350 USD</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">Zharkov.dev</td><td class="label">CRM-система</td><td class="val">100 USD</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">Zharkov.dev</td><td class="label">База лідів</td><td class="val">30 USD</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">Zharkov.dev</td><td class="label">Підтримка</td><td class="val">20 USD</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">PAS7 Studio</td><td class="label">Сценарії, ролі, платежі, адмінка, аналітика та інтеграції</td><td class="val">100 EUR</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">PAS7 Studio</td><td class="label">бір даних з потрібних платформ із контролем помилок і стабільною робот</td><td class="val">150 EUR</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">MaxWeb</td><td class="label">Landing Page Для продажу одного товару чи послуги</td><td class="val">15,000 UAH</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">MaxWeb</td><td class="label">Найчастіше обирають Сайт-візитка Для презентації компанії в Інтернеті</td><td class="val">20,000 UAH</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">MaxWeb</td><td class="label">Промо-сайт Для запуску нового бренду чи події</td><td class="val">25,000 UAH</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">MaxWeb</td><td class="label">Корпоративний сайт Повноцінний сайт для середнього бізнесу</td><td class="val">40,000 UAH</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">MaxWeb</td><td class="label">Мультимовний сайт Для виходу на міжнародний ринок (Європа)</td><td class="val">55,000 UAH</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">MaxWeb</td><td class="label">Сайт під ключ Комплексне рішення «Без турбот»</td><td class="val">75,000 UAH</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">MaxWeb</td><td class="label">Технічне SEO Підготовка сайту до просування в Google</td><td class="val">15,000 UAH</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">MaxWeb</td><td class="label">Технічна підтримка Стабільність та безпека вашого бізнесу</td><td class="val">5,000 UAH</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">Web-Lift</td><td class="label">Термін: 2–3 робочі дні Запустити бота</td><td class="val">90 USD</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">Web-Lift</td><td class="label">Лендінг + Telegram-бот → Заявки в бот і Google Таблицю</td><td class="val">150 USD</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">Web-Lift</td><td class="label">Магазин на Horoshop → Запуск магазину під ключ</td><td class="val">300 USD</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">Web-Lift</td><td class="label">Акція · −25% Заявки з сайту вже за 5 днів Лендінг + Telegram-бот + Goo</td><td class="val">150 USD</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">Web-Lift</td><td class="label">Термін: 5 робочих днів</td><td class="val">150 USD</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">SUDUS</td><td class="label">ОРИЕНТИРОВОЧНАЯ СТОИМОСТЬ обновляется вживую 18 000</td><td class="val">23,000 UAH</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">SUDUS</td><td class="label">Стоимость</td><td class="val">5,000 UAH</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">SUDUS</td><td class="label">Стоимость</td><td class="val">18,000 UAH</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">SUDUS</td><td class="label">Стоимость</td><td class="val">35,000 UAH</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">SUDUS</td><td class="label">Простые проекты Сайт-визитка, бизнес-сайт, сайт ресторана, Telegram-бо</td><td class="val">2,000 UAH</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">SUDUS</td><td class="label">Средние проекты Интернет-магазин, сайт-каталог, сайт клиники, система</td><td class="val">3,500 UAH</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">SUDUS</td><td class="label">Сложные проекты Портал, образовательная платформа, SaaS, ERP, медицинс</td><td class="val">4,000 UAH</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">Web24</td><td class="label">БЮДЖЕТНЫЙ САЙТ (для старта)</td><td class="val">10,000 UAH</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">Web24</td><td class="label">СРЕДНИЙ САЙТ для БИЗНЕСА</td><td class="val">32,000 UAH</td><td class="chg-cell"><span class="same">—</span></td></tr>
+<tr><td class="name">Web24</td><td class="label">ПРЕМИУМ САЙТ для КОМПАНИИ</td><td class="val">48,000 UAH</td><td class="chg-cell"><span class="same">—</span></td></tr>
+</tbody></table>
+<footer>Python 3 · requests + BeautifulSoup · соблюдение robots.txt · вежливый User-Agent · алерты в Telegram</footer>
+</div></body></html>
