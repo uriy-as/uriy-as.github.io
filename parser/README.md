@@ -21,7 +21,12 @@ python monitor.py                       # обычный запуск: обно�
 python monitor.py --dry-run --no-alert  # проверить, не меняя state.json и не слать алерты
 python monitor.py --only MaxWeb         # один источник
 python monitor.py --threshold 10        # другой порог, %
+python monitor.py --skip-local-only     # пропустить источники с "local_only": true
 ```
+
+**Про `local_only`.** Некоторые сайты (например, за Cloudflare) отдают `403` на запросы с
+серверов CI. Такие источники помечены `"local_only": true` — они собираются при запуске
+с твоего компьютера (полная картина для отчёта), но пропускаются в автоматическом прогоне.
 
 Переменные окружения для алертов (берутся по очереди): `TELEGRAM_TOKEN` / `TELEGRAM_BOT_TOKEN` / `TG_BOT_TOKEN`
 и `ADMIN_CHAT_ID` / `TELEGRAM_CHAT_ID` / `CHAT_ID`. Без них скрипт не падает — печатает сообщение, которое было бы отправлено.

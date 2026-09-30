@@ -18,6 +18,7 @@
       "name": "PAS7 Studio",
       "url": "https://pas7.com.ua/prices/uk/bot-development",
       "selector": "section.scroll-mt-24 > *",
+      "local_only": true,
       "max_items": 12
     },
     {

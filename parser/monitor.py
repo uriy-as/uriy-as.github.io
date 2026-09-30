@@ -419,6 +419,8 @@ def main():
     parser.add_argument('--threshold', type=float, default=None, help='порог изменения, %%')
     parser.add_argument('--no-alert', action='store_true', help='не слать алерты в Telegram')
     parser.add_argument('--always-alert', action='store_true', help='слать отчёт, даже если изменений нет')
+    parser.add_argument('--skip-local-only', action='store_true',
+                        help='пропустить источники, помеченные local_only (для запуска с CI)')
     parser.add_argument('--dry-run', action='store_true', help='собрать, но не менять state.json')
     parser.add_argument('--only', default=None, help='снять только источники через запятую')
     args = parser.parse_args()
@@ -429,6 +431,11 @@ def main():
     threshold = config.get('threshold_pct', 5)
 
     sources = config['sources']
+    if args.skip_local_only:
+        skipped = [s['name'] for s in sources if s.get('local_only')]
+        sources = [s for s in sources if not s.get('local_only')]
+        if skipped:
+            log(f'Пропущены источники только для локального запуска: {", ".join(skipped)}')
     if args.only:
         wanted = {name.strip() for name in args.only.split(',')}
         sources = [s for s in sources if s['name'] in wanted]
