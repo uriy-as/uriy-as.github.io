@@ -1,90 +1,132 @@
 ---
-title: "Web Development Prices in Ukraine 2026: 33 Real Numbers From 6 Studios"
+title: "Web Development Prices in Ukraine 2026: 54 Real Numbers From 6 Studios"
 published: true
 description: "I collected the actual listed prices from 6 Ukrainian web studios - landing pages, websites, Telegram bots, scraping and support. Here is where the market is transparent, where it is not, and what I think happens next."
 tags: webdev, freelancing, business, pricing
 canonical_url: https://uriy-as.org/en/blog/competitor-prices-2026.html
 ---
 
-# Web Development Prices in Ukraine 2026: 33 Real Numbers From 6 Studios
+# Web Development Prices in Ukraine 2026: 54 Real Numbers From 6 Studios
 
 Every week someone asks me the same question: **"How much does a website cost?"**
 
 The answers you get online are useless. They range from "$50 with Wix" to "$50,000 enterprise", and neither end tells you anything. Agencies publish price lists to look professional, then quote whatever the client can pay. Freelancers post "$100" and disappear into a template.
 
-So I did something boring instead: **I went and read the actual price lists of 6 Ukrainian web studios and bot developers.** 33 line items. Real numbers, not estimates.
+So I did something boring instead: **I went and read the actual price lists of 6 Ukrainian web studios and bot developers.** 54 line items. Real numbers, not estimates.
 
 Then I built a parser to keep watching them, so this is not a one-off opinion piece — it is a live snapshot I can re-check.
 
 ## The short version
 
-The same job costs between **3,700 UAH and 75,000 UAH**. That is a 20× spread, and it is not a quality difference.
+The same job costs between **5,000 UAH and 80,000 UAH**. That is a 16× spread, and it is not a quality difference.
 
 ## Landing pages
 
+## Landing pages and business card sites
+
 | Studio | What they offer | Price |
 |---|---|---|
-| Web-Lift | Bot launch, 2-3 working days | $90 ≈ 3,700 UAH |
-| PAS7 Studio | Telegram bot | €100 ≈ 4,500 UAH |
-| SUDUS | Entry package | 5,000 UAH |
-| Zharkov.dev | Landing page | $150 ≈ 6,200 UAH |
-| Web24 | Budget site "to get started" | 10,000 UAH |
-| MaxWeb | Landing page for a single product | 15,000 UAH |
+| SUDUS | Landing Page (одна страница) | 5,000 UAH |
+| Zharkov.dev | Лендінг | $150 ≈ 6,200 UAH |
+| SUDUS | Сайт-визитка | 8,000 UAH |
+| Web24 | БЮДЖЕТНЫЙ САЙТ (для старта) | 10,000 UAH |
+| MaxWeb | Landing Page | 15,000 UAH |
+| MaxWeb | Сайт-візитка | 20,000 UAH |
+| MaxWeb | Промо-сайт | 25,000 UAH |
+
+A landing page runs **5,000-15,000 UAH**. That is a 3× spread for what is, functionally, the same deliverable: one page, one form, one goal.
 
 A landing page runs **3,700-15,000 UAH**. That is a 4× spread for what is, functionally, the same deliverable: one page, one form, one goal.
 
 ## Full websites
 
+## Websites, e-commerce and complex projects
+
 | Studio | Tier | Price |
 |---|---|---|
-| Zharkov.dev | Website | $300 ≈ 12,300 UAH |
-| MaxWeb | Business card site | 20,000 UAH |
-| MaxWeb | Promo site for a new brand | 25,000 UAH |
-| Web24 | Mid-range business site | 32,000 UAH |
-| SUDUS | Top package | 35,000 UAH |
-| MaxWeb | Corporate site | 40,000 UAH |
-| Web24 | Premium company site | 48,000 UAH |
-| MaxWeb | Multilingual site | 55,000 UAH |
-| MaxWeb | Turnkey, "no hassle" | 75,000 UAH |
-| Zharkov.dev | Online store | from $800 ≈ 32,800 UAH |
+| Zharkov.dev | Сайт | $300 ≈ 12,300 UAH |
+| Web-Lift | Магазин на Horoshop | $300 ≈ 12,300 UAH |
+| SUDUS | Корпоративный сайт | 18,000 UAH |
+| SUDUS | Сайт ресторана или отеля | 20,000 UAH |
+| SUDUS | Сайт-каталог без оплаты | 22,000 UAH |
+| SUDUS | Сайт медицинской клиники | 25,000 UAH |
+| Web24 | СРЕДНИЙ САЙТ для БИЗНЕСА | 32,000 UAH |
+| Zharkov.dev | Інтернет-магазин | $800 ≈ 32,800 UAH |
+| SUDUS | Интернет-магазин | 35,000 UAH |
+| MaxWeb | Корпоративний сайт | 40,000 UAH |
+| Web24 | ПРЕМИУМ САЙТ для КОМПАНИИ | 48,000 UAH |
+| SUDUS | Образовательная платформа (LMS) | 50,000 UAH |
+| MaxWeb | Мультимовний сайт | 55,000 UAH |
+| SUDUS | Портал или сайт-агрегатор | 60,000 UAH |
+| MaxWeb | Сайт під ключ | 75,000 UAH |
+| SUDUS | SaaS веб-приложение | 80,000 UAH |
+
+Websites run **12,300-80,000 UAH** — nearly a 7× spread.
 
 Websites run **12,300-75,000 UAH** — a 6× spread.
 
-Notice something: the cheapest website in this table and the most expensive landing page in the previous one are within 2,300 UAH of each other. The categories overlap completely.
+Notice something: the cheapest website in this table and the most expensive landing page in the previous one are within 2,700 UAH of each other. The categories overlap completely.
 
 ## Telegram bots
 
-| Studio | What they promise | Price |
-|---|---|---|
-| Web-Lift | Launch a bot, 2-3 days | $90 ≈ 3,700 UAH |
-| PAS7 Studio | Scenarios, roles, payments, admin panel, analytics | €100 ≈ 4,500 UAH |
-| Zharkov.dev | Telegram bot | $150 ≈ 6,200 UAH |
-| Web-Lift | Landing + bot, leads into bot and Google Sheets, -25% sale | $150 ≈ 6,200 UAH |
-| Zharkov.dev | Telegram App | $350 ≈ 14,400 UAH |
+## Telegram: bots, Mini Apps and shops
 
-Bots start at **3,700 UAH**.
+| Studio | What they offer | Price |
+|---|---|---|
+| PAS7 Studio | Сценарії, ролі, платежі, адмінка, аналітика та інтеграції | €100 ≈ 4,500 UAH |
+| Zharkov.dev | Telegram-бот | $150 ≈ 6,200 UAH |
+| Web-Lift | Лендінг + Telegram-бот | $150 ≈ 6,200 UAH |
+| Web-Lift | Telegram-бот | $180 ≈ 7,400 UAH |
+| Zharkov.dev | Telegram App | $350 ≈ 14,400 UAH |
+| Web-Lift | Telegram Web App | $490 ≈ 20,100 UAH |
+| Web-Lift | Telegram-магазин | $720 ≈ 29,500 UAH |
+
+Bots start at **4,500 UAH**. A full Telegram shop is already near 30,000 UAH.
+
+Bots start at **4,500 UAH**.
 
 ## Scraping, data and support
 
+## Add-ons, SEO, CRM and support
+
+**About PAS7 Studio:** this studio does not publish service names as separate headings — its cards go straight to the price and the package contents, so the table shows the contents description exactly as written on their site. Dollars and euros are converted at roughly 41 UAH/$ and 45 UAH/€.
+
 | Studio | Service | Price |
 |---|---|---|
-| PAS7 Studio | Data collection from target platforms, with validation | €150 ≈ 6,800 UAH |
-| Zharkov.dev | Lead database | $30 ≈ 1,200 UAH |
-| Zharkov.dev | CRM system | $100 ≈ 4,100 UAH |
-| MaxWeb | Technical SEO | 15,000 UAH |
-| SUDUS | Support: simple projects | 2,000 UAH/mo |
-| SUDUS | Support: mid-range projects | 3,500 UAH/mo |
-| SUDUS | Support: complex projects | from 4,000 UAH/mo |
-| MaxWeb | Technical support | 5,000 UAH/mo |
-| Zharkov.dev | Support | from $20/mo ≈ 820 UAH |
+| SUDUS | Написание SEO-текстов | 250 UAH |
+| Zharkov.dev | Підтримка | $20 ≈ 800 UAH |
+| Web-Lift | Старт | $29 ≈ 1,200 UAH |
+| Zharkov.dev | База лідів | $30 ≈ 1,200 UAH |
+| SUDUS | Перенос сайта на новый хостинг | 1,500 UAH |
+| Web-Lift | Бізнес | $59 ≈ 2,400 UAH |
+| SUDUS | Локальное SEO (Google Business Profile) | 2,500 UAH |
+| SUDUS | Адаптация под мобильные | 3,500 UAH |
+| SUDUS | SEO-аудит сайта | 3,500 UAH |
+| SUDUS | Оптимизация скорости (Core Web Vitals) | 4,000 UAH |
+| SUDUS | Семантическое ядро и структура | 4,000 UAH |
+| Web-Lift | Магазин | $99 ≈ 4,100 UAH |
+| Zharkov.dev | CRM-система | $100 ≈ 4,100 UAH |
+| SUDUS | Редизайн лендинга | 4,500 UAH |
+| SUDUS | SEO-продвижение — базовый пакет | 4,500 UAH |
+| MaxWeb | Технічна підтримка | 5,000 UAH |
+| PAS7 Studio | Збір даних з потрібних платформ із контролем помилок і стабільною роботою | €150 ≈ 6,800 UAH |
+| SUDUS | SEO-продвижение — оптимальный пакет | 9,000 UAH |
+| SUDUS | Переезд с Tilda / Wix на свой сайт | 12,000 UAH |
+| MaxWeb | Технічне SEO | 15,000 UAH |
+| SUDUS | Редизайн корпоративного сайта | 15,000 UAH |
+| SUDUS | SEO-продвижение — премиум пакет | 18,000 UAH |
+| SUDUS | Редизайн интернет-магазина | 28,000 UAH |
+| SUDUS | CRM под ключ (стандартный пакет) | 50,000 UAH |
 
 Now this is where it gets interesting.
 
-## What these 33 numbers actually say
+Now this is where it gets interesting.
+
+## What these 54 numbers actually say
 
 ### 1. Clients pick a studio, not a price
 
-A 20× spread on identical work means price is not the deciding factor — because the person choosing cannot evaluate the difference. Both ends of the list describe the same job for the same kind of business.
+A 16× spread on identical work means price is not the deciding factor — because the person choosing cannot evaluate the difference. Both ends of the list describe the same job for the same kind of business.
 
 **If you compete on price, you are arguing with people who cannot tell that you are right.**
 
@@ -98,7 +140,7 @@ Transparency costs pennies. **Do not discount. Show.**
 
 ### 3. A cheap Telegram bot is already a dead price
 
-From 3,700 UAH. In 2026 you can assemble a bot on a no-code constructor without writing a line of code.
+From 4,500 UAH. In 2026 you can assemble a bot on a no-code constructor without writing a line of code.
 
 The constructors ate that market. You cannot sell "a bot" any more.
 
@@ -116,7 +158,7 @@ Demand is easy to predict: e-commerce, suppliers, dropshipping, real estate agen
 
 ### 5. Support costs less than a year of guarantee on the site
 
-820-5,000 UAH/month means **10,000-60,000 UAH per year**.
+800-5,000 UAH/month means **10,000-60,000 UAH per year**.
 
 If the site breaks, a full year of support revenue may not cover one day of emergency work. Almost none of these lists show a fixed SLA, a "we respond within two hours" clause, or a monthly report.
 
@@ -128,7 +170,7 @@ I am not going to pretend we are cheap. We are at the upper end. The reason is t
 
 Predicting prices is famously stupid. But the structure of this market makes a few things reasonably predictable:
 
-**1. The floor drops further.** The bottom of every category is under pressure from AI site builders and no-code. 3,700 UAH is not a floor, it is a ceiling for the cheapest tier, and it will keep sliding.
+**1. The floor drops further.** The bottom of every category is under pressure from AI site builders and no-code. 5,000 UAH is not a floor, it is a ceiling for the cheapest tier, and it will keep sliding.
 
 **2. The ceiling rises, but not for everyone.** Premium work gets more expensive as buyers get more sophisticated about what "working" means. But this only applies to studios that can prove it.
 
@@ -142,7 +184,7 @@ Predicting prices is famously stupid. But the structure of this market makes a f
 
 ## How I will check this
 
-I built a parser that re-checks all 33 positions on a schedule and alerts me when something moves more than 5%.
+I built a parser that re-checks all 54 positions on a schedule and alerts me when something moves more than 5%.
 
 Which means: **this article is a snapshot, not a trend line.** One measurement is not evidence of direction. When the second and third measurements land, I will publish the actual deltas — what was, what it became, and whether I was right.
 

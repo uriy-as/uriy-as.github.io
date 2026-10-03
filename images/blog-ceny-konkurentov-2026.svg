@@ -1,36 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" width="800" height="420" role="img" aria-label="Разброс цен на лендинг: от 3700 до 15000 гривен">
-  <rect width="800" height="420" fill="#f8fafc"/>
-  <text x="40" y="48" font-family="Inter,system-ui,sans-serif" font-size="21" font-weight="700" fill="#0f172a">Сколько стоит лендинг: разброс в 4 раза</text>
-  <text x="40" y="74" font-family="Inter,system-ui,sans-serif" font-size="14" fill="#64748b">6 публичных прайсов, срез на 30 сентября 2026, гривен</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="54 цены с 6 публичных прайсов веб-студий Украины: лендинги и сайты-визитки от 5000 до 25000 гривен">
+  <rect width="1200" height="630" fill="#f8fafc"/>
 
-  <line x1="230" y1="100" x2="230" y2="368" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="64" y="86" font-family="Inter,system-ui,sans-serif" font-size="34" font-weight="700" fill="#0f172a">54 цены с 6 публичных прайсов</text>
+  <text x="64" y="122" font-family="Inter,system-ui,sans-serif" font-size="18" fill="#64748b">Лендинги и сайты-визитки: срез на 3 октября 2026, гривен</text>
 
-  <g font-family="Inter,system-ui,sans-serif" font-size="14" fill="#334155">
-    <text x="40" y="126">Web-Lift</text>
-    <text x="40" y="176">PAS7 Studio</text>
-    <text x="40" y="226">Zharkov.dev</text>
-    <text x="40" y="276">SUDUS</text>
-    <text x="40" y="326">Web24</text>
-    <text x="40" y="376">MaxWeb</text>
+  <line x1="360" y1="160" x2="360" y2="536" stroke="#e2e8f0" stroke-width="1"/>
+
+  <g font-family="Inter,system-ui,sans-serif">
+    <g>
+      <text x="64" y="197" font-size="17" font-weight="600" fill="#0f172a">SUDUS</text>
+      <text x="64" y="216" font-size="13" fill="#64748b">Landing Page (одна страница)</text>
+      <rect x="360" y="178" width="140" height="30" rx="4" fill="#2563eb" opacity="0.85"/>
+      <text x="516" y="199" font-size="17" font-weight="700" fill="#0f172a">5 000 ₴</text>
+    </g>
+    <g>
+      <text x="64" y="249" font-size="17" font-weight="600" fill="#0f172a">Zharkov.dev</text>
+      <text x="64" y="268" font-size="13" fill="#64748b">Лендінг</text>
+      <rect x="360" y="230" width="174" height="30" rx="4" fill="#2563eb" opacity="0.85"/>
+      <text x="550" y="251" font-size="17" font-weight="700" fill="#0f172a">6 200 ₴</text>
+    </g>
+    <g>
+      <text x="64" y="301" font-size="17" font-weight="600" fill="#0f172a">SUDUS</text>
+      <text x="64" y="320" font-size="13" fill="#64748b">Сайт-визитка</text>
+      <rect x="360" y="282" width="224" height="30" rx="4" fill="#2563eb" opacity="0.85"/>
+      <text x="600" y="303" font-size="17" font-weight="700" fill="#0f172a">8 000 ₴</text>
+    </g>
+    <g>
+      <text x="64" y="353" font-size="17" font-weight="600" fill="#0f172a">Web24</text>
+      <text x="64" y="372" font-size="13" fill="#64748b">БЮДЖЕТНЫЙ САЙТ (для старта)</text>
+      <rect x="360" y="334" width="280" height="30" rx="4" fill="#2563eb" opacity="0.75"/>
+      <text x="656" y="355" font-size="17" font-weight="700" fill="#0f172a">10 000 ₴</text>
+    </g>
+    <g>
+      <text x="64" y="405" font-size="17" font-weight="600" fill="#0f172a">MaxWeb</text>
+      <text x="64" y="424" font-size="13" fill="#64748b">Landing Page</text>
+      <rect x="360" y="386" width="420" height="30" rx="4" fill="#2563eb" opacity="0.85"/>
+      <text x="796" y="407" font-size="17" font-weight="700" fill="#0f172a">15 000 ₴</text>
+    </g>
+    <g>
+      <text x="64" y="457" font-size="17" font-weight="600" fill="#0f172a">MaxWeb</text>
+      <text x="64" y="476" font-size="13" fill="#64748b">Сайт-візитка</text>
+      <rect x="360" y="438" width="560" height="30" rx="4" fill="#2563eb" opacity="0.85"/>
+      <text x="936" y="459" font-size="17" font-weight="700" fill="#0f172a">20 000 ₴</text>
+    </g>
+    <g>
+      <text x="64" y="509" font-size="17" font-weight="600" fill="#0f172a">MaxWeb</text>
+      <text x="64" y="528" font-size="13" fill="#64748b">Промо-сайт</text>
+      <rect x="360" y="490" width="700" height="30" rx="4" fill="#2563eb" opacity="0.6"/>
+      <text x="1076" y="511" font-size="17" font-weight="700" fill="#0f172a">25 000 ₴</text>
+    </g>
   </g>
 
-  <g fill="#2563eb">
-    <rect x="230" y="110" width="46" height="20" rx="3" opacity="0.85"/>
-    <rect x="230" y="160" width="56" height="20" rx="3" opacity="0.7"/>
-    <rect x="230" y="210" width="150" height="20" rx="3" opacity="0.85"/>
-    <rect x="230" y="260" width="50" height="20" rx="3" opacity="0.6"/>
-    <rect x="230" y="310" width="100" height="20" rx="3" opacity="0.75"/>
-    <rect x="230" y="360" width="150" height="20" rx="3" opacity="0.9"/>
-  </g>
-
-  <g font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="600" fill="#0f172a">
-    <text x="288" y="125">3 700 ₴</text>
-    <text x="298" y="175">4 500 ₴</text>
-    <text x="392" y="225">6 200 ₴</text>
-    <text x="292" y="275">5 000 ₴</text>
-    <text x="342" y="325">10 000 ₴</text>
-    <text x="392" y="375">15 000 ₴</text>
-  </g>
-
-  <text x="40" y="410" font-family="Inter,system-ui,sans-serif" font-size="12" fill="#94a3b8">Курс округлён: $1 ≈ 41 ₴, €1 ≈ 45 ₴. Данные собраны автоматически, ежедневно обновляются.</text>
+  <text x="64" y="592" font-family="Inter,system-ui,sans-serif" font-size="13" fill="#94a3b8">Курс округлён: $1 ≈ 41 ₴, €1 ≈ 45 ₴. Данные собраны автоматически и обновляются ежедневно.</text>
 </svg>

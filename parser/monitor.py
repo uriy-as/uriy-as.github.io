@@ -101,10 +101,10 @@ def robots_allows(url, user_agent):
         return True
 
 
-def fetch(url, timeout, retries, delay, respect_robots):
-    if respect_robots and not robots_allows(url, USER_AGENT):
+def fetch(url, timeout, retries, delay, respect_robots, user_agent=USER_AGENT):
+    if respect_robots and not robots_allows(url, user_agent):
         raise PermissionError(f'robots.txt запрещает доступ к {url}')
-    headers = {'User-Agent': USER_AGENT, 'Accept-Language': 'uk,ru,en;q=0.8'}
+    headers = {'User-Agent': user_agent, 'Accept-Language': 'uk,ru,en;q=0.8'}
     last_error = None
     for attempt in range(1, retries + 1):
         try:
@@ -165,17 +165,34 @@ def prepare_soup(html):
 CURRENCY_WORDS = re.compile(
     r'(?:\b(?:грн|uah|usd|eur|rub|руб|євро)\b)|[€$₴₽£]', re.IGNORECASE)
 FILLER_WORDS = {'від', 'от', 'з', 'від.', 'от.', 'from', 'starting', 'at', 'цена', 'price'}
+EDGE_CHARS = ' -—–·|,.:;«»"→←›»'
+JUNK_LABEL_RE = re.compile(
+    r'^(?:стоимость|ціна|цена|price|сумма|total|итого|всього)\s*$'
+    r'|^(?:термін|термин|срок|строк|term)\s*[:.]'
+    r'|^\d'
+    r'|^обновляется',
+    re.IGNORECASE)
 
 
 def clean_label(text):
-    text = re.sub(r'\s+', ' ', text).strip(' -—–·|,.:;«»"')
-    text = re.sub(r'^(?:от|від|з|starting at)\s*', '', text, flags=re.IGNORECASE).strip(' -—–·|,.:;')
-    text = re.sub(r'\s*(?:от|від)$', '', text, flags=re.IGNORECASE).strip(' -—–·|,.:;')
+    text = re.sub(r'\s+', ' ', text).strip(EDGE_CHARS)
+    text = re.sub(r'^(?:от|від|з|starting at)\b\s*', '', text, flags=re.IGNORECASE).strip(EDGE_CHARS)
+    text = re.sub(r'\s*\b(?:от|від)\b$', '', text, flags=re.IGNORECASE).strip(EDGE_CHARS)
     if text.lower() in FILLER_WORDS:
         return ''
     if len(re.sub(r'[^A-Za-zА-Яа-яІіЇїЄєҐґ]', '', CURRENCY_WORDS.sub(' ', text))) < 3:
         return ''
-    return text[:70].strip(' -—–·|,.:;')
+    return text[:120].strip(EDGE_CHARS)
+
+
+def is_valid_label(label):
+    """Отбрасывает мусорные названия: 'Стоимость', 'Термін: 5 днів', 'от 5 000 грн' и т.п."""
+    if not label:
+        return False
+    if JUNK_LABEL_RE.search(label):
+        return False
+    letters = re.sub(r'[^A-Za-zА-Яа-яІіЇїЄєҐґ]', '', label)
+    return len(letters) >= 3
 
 
 def build_label(text, match):
@@ -212,6 +229,8 @@ def extract_prices(soup, selector, limit, label_selector=None):
                 continue
             currency = normalize_currency(currency_raw)
             label = base_label or build_label(text, match)
+            if not is_valid_label(label):
+                continue
             key = (label.lower(), value, currency)
             if key in seen:
                 continue
@@ -228,8 +247,9 @@ def collect_source(source, config, dry_run):
     timeout = config.get('timeout_seconds', 25)
     retries = config.get('retries', 3)
     limit = source.get('max_items', config.get('max_items', 40))
+    user_agent = source.get('user_agent', USER_AGENT)
     log(f'  GET {url}')
-    html = fetch(url, timeout, retries, delay, config.get('respect_robots', True))
+    html = fetch(url, timeout, retries, delay, config.get('respect_robots', True), user_agent)
     prices = extract_prices(prepare_soup(html), source.get('selector'), limit, source.get('label_selector'))
     return {'url': url, 'ok': True, 'count': len(prices), 'prices': prices,
             'checked_at': now_iso(), 'http_bytes': len(html), 'dry_run': dry_run}

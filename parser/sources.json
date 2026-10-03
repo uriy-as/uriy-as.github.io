@@ -17,7 +17,7 @@
     {
       "name": "PAS7 Studio",
       "url": "https://pas7.com.ua/prices/uk/bot-development",
-      "selector": "section.scroll-mt-24 > *",
+      "selector": "section#pricing div.grid > div",
       "local_only": true,
       "max_items": 12
     },
@@ -25,20 +25,22 @@
       "name": "MaxWeb",
       "url": "https://maxweb.com.ua/price",
       "selector": ".pricing-grid .price-card",
+      "label_selector": "h3",
       "max_items": 12
     },
     {
       "name": "Web-Lift",
       "url": "https://web-lift.com/rozrobka-telegram-botiv/",
-      "selector": ".wlpr-offer, .wlpr-price, .wlt-promo-r, .wl-rel-grid > *",
+      "selector": ".wlt-price, .wls-price, .wl-rel-card",
+      "label_selector": ".pname, b",
       "max_items": 12
     },
     {
       "name": "SUDUS",
       "url": "https://sudus.team/ru/prices",
-      "selector": ".estimator-result, .tz-tiers > *, tr",
-      "label_selector": "td:first-child",
-      "max_items": 12
+      "selector": ".svc-row",
+      "label_selector": ".svc-row-name",
+      "max_items": 25
     },
     {
       "name": "Web24",
