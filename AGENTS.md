@@ -34,7 +34,7 @@
 - `.github/scripts/flask_app.py` — бэкенд (PythonAnywhere)
 - `.github/scripts/daily-stats.py` — ежедневная статистика (генерирует stats.html и пушит в pages)
 - `habr-ai-bot-200.md` — черновик Habr-статьи «Telegram-бот с ИИ на Flask» (IRONIC STYLE, ready for rewrite + Text.ru check)
-- `C:\Users\Admin\Documents\opencode-errors-guide.md` — памятка по ошибкам опенкода + перезагрузка для новичка (создана 23.09)
+- `docs/OPENCODE-TROUBLESHOOTING.md` — памятка по ошибкам OpenCode и перезагрузке, **каноническая версия в репозитории**. Копия для быстрого доступа: `C:\Users\Admin\Desktop\OpenCode-ошибки-и-перезагрузка.md`
 - `images/habr-cover-ai-bot.png` — обложка 1200×630, без uriy-as.org
 
 ## Что сделано сегодня (17.07.2026)
@@ -731,7 +731,7 @@
 8. **vc.ru**: проверить клики по гиперссылкам (кабинет автора, период 16–21.09)
 
 ## Что сделать завтра (24.09.2026)
-1. **ГЛАВНОЕ — разбор ошибок опенкода**: пройти `C:\Users\Admin\Documents\opencode-errors-guide.md` (создан 23.09, реальные данные из лога). Отрепетировать 2-3 сценария: (а) ByteString-ключ с кириллицей → проверка `check_key.py` + замена в auth.json + перезапуск; (б) rate limit 429 → пауза 1 мин; (в) перезапуск опенкода после «зависания». Записать вопросы и странности → дополнить памятку
+1. **ГЛАВНОЕ — разбор ошибок опенкода**: пройти `docs/OPENCODE-TROUBLESHOOTING.md` (обновлён 03.10.2026, данные пересчитаны по логу). Отрепетировать 2-3 сценария: (а) ByteString-ключ с кириллицей → проверка ключа командой из §2.1 гайда + замена в auth.json + перезапуск; (б) rate limit 429 → пауза 1 мин; (в) перезапуск опенкода после «зависания». Записать вопросы и странности → дополнить памятку
 2. Dev.to: проверить просмотры #9 «5 Signs» и #8 (база 183, #8=20) через API ключом `X6ruf1e9STj6s7GpMETQPLpy`
 3. vc.ru: клики по гиперссылкам (кабинет автора, период закончился 21.09) + накопленные просмотры
 4. Medium: подача «10 Website Mistakes» (EN) в публикации (Better Programming/Towards Dev/Plain English) + аватар/bio
@@ -747,7 +747,7 @@
 - `X6ruf1e9...` и `2KyEJeS7v...` — **Dev.to API-ключи** (из дашборда), для opencode НИКОГДА не работали (401). Используются только для статов Dev.to. Их отзыв на opencode не влияет
 - Ошибки «Invalid API key» 24–25.09: когда в auth.json лежал Dev.to-ключ, а десктоп читал auth.json
 - **Правило при «Invalid API key»**: НЕ менять ключи по памяти! Оба файла (auth.json И account.json) должны содержать `sk-1M8X...`. Других ключей для opencode НЕТ
-- Подробности: `C:\Users\Admin\Documents\opencode-errors-guide.md` (§6)
+- Подробности: `docs/OPENCODE-TROUBLESHOOTING.md` (§2.1 — ASCII-проверка ключа, §2.2 — Invalid API key, §1 — перезагрузка)
 
 ### Когда сбои случаются чаще всего
 1. **Сеть региона**: medium.com/vc.ru/api.dev.to недоступны без VPN (DNS-блок / Cloudflare 403). Если команда «молчит» или ошибка про сеть — это НЕ сбой программы
