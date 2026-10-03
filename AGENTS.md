@@ -923,3 +923,45 @@
 - Состояние счётчика по данным `/api/stats`: 158 хитов / 110 real / 70 IP / 43 дня, из них 104 — боты
 - Источники: direct 145, social 6, search 4, плюс 3 мусорных парсера (`visvo.com`, `picsearch.com`, `squishysquashysearch.com`), маскирующихся под поиск
 - 3 клика в GSC ≈ 4 поисковых визита в своём счётчике — **счётчик не врёт про поисковые показы**, ошибка в источниках, где боты и тесты не отделены
+## ЧТО СДЕЛАНО (03.10.2026) — SEO-ПОЧИНИКА ДЕНЕЖНЫХ СТРАНИЦ
+
+### Что было найдено в GSC
+Коммерческие запросы отдавала одна страница — и она была **заготовкой, а не статьёй**: 120 слов в EN, 83 в RU, по одному предложению на раздел. Позиции 51–73 закономерны для такого объёма. Вторая проблема: классы `price-table`, `data-note`, `forecast` использовались в теле, но **не были определены** в inline-CSS этих страниц — таблицы поехали бы при отрисовке.
+
+### EN `en/blog/telegram-bot-sales-automation.html`
+- 120 → **1750 слов**, h2: 6 → 9, h3: 0 → 8, добавлены 2 таблицы
+- Title: `Telegram Sales Bot: How to Automate Your Sales Funnel — WebStudio`
+- H1: `Telegram Sales Bot: How to Automate Sales and Lead Generation`
+- 4 внутренние коммерческие ссылки: `/en/services.html` (анкор «order a Telegram sales bot with funnel and CRM»), `how-to-order-telegram-bot`, `competitor-prices-2026`, Telegram
+- `dateModified` → `2026-10-03`, добавлена **FAQPage** schema (6 вопросов)
+- Плотность фраз: `telegram sales bot` 18, `telegram bot crm` 6, `sales funnel` 6, `telegram lead generation` 2, `telegram bot for sale` 1
+
+### RU `blog/telegram-bot-avtomatizatsiya-prodazh.html`
+- 83 → **1396 слов**, та же структура
+- Title: `Telegram-бот для продаж: лидогенерация, воронка и CRM — WebStudio`
+- 4 внутренние ссылки; битых нет (проверено, `/blog/kak-svyazatsya.html` из черновика убран — такой страницы нет, ведёт на `/services.html`)
+- `телеграм-бот для продаж` 7, `лидогенерация` 9, CRM 27
+
+### Цены — в гривне и долларах
+По требованию пользователя две отдельные колонки, данные из парсера от 03.10.2026 (курс $1 ≈ 41 ₴):
+| Студия | Что предлагают | ₴ | $ |
+|---|---|---|---|
+| Web-Lift | Старт | 1 200 ₴ | $29 |
+| Zharkov.dev | База лидов | 1 200 ₴ | $30 |
+| Zharkov.dev | CRM-система | 4 100 ₴ | $100 |
+| Zharkov.dev | Telegram-бот | 6 200 ₴ | $150 |
+| Web-Lift | Telegram-бот | 7 400 ₴ | $180 |
+| Web-Lift | Лендинг + Telegram-бот | 6 200 ₴ | $150 |
+| Zharkov.dev | Telegram App | 14 400 ₴ | $350 |
+| Web-Lift | Telegram Web App | 20 100 ₴ | $490 |
+| Web-Lift | Магазин в Telegram | 29 500 ₴ | $720 |
+
+Заголовки таблиц: EN `Price, ₴ | Price, $`, RU `Цена, ₴ | Цена, $`
+
+### Проверка
+Обе страницы: 0 непарных тегов, все CSS-классы определены, 3 валидных JSON-LD (Article / BreadcrumbList / FAQPage), битых внутренних ссылок нет. Визуально отрендерить не удалось — модель не читает изображения; полагаемся на структурную проверку.
+
+### Осталось чинить
+- `/blog/chat-bot-dlya-biznesa-kaysy.html` — 96 показов, позиция **95**
+- `/blog/kak-vybrat-hosting.html` — 80 показов, позиция **88.2**
+Обе RU-страницы с большим числом показов, но на дне выдачи. По той же логике: смотреть объём текста и коммерческие анкоры.
