@@ -295,7 +295,7 @@ if (form && modal && modalClose) {
         'contact-email': { ru: 'uriy.as59@yandex.com', en: 'uriy.as59@yandex.com' },
         'contact-tg': { ru: 'Telegram', en: 'Telegram' },
         'footer-copyright': { ru: '© 2026 WebStudio. Все права защищены.', en: '© 2026 WebStudio. All rights reserved.' },
-        'footer-bot': { ru: '@NevWebStudio_bot — бот ответит на все интересующие вопросы', en: '@NevWebStudio_bot — the bot will answer all your questions' },
+        'footer-bot': { ru: '<a href="https://t.me/uriy_as59" target="_blank" style="color:var(--accent);">@uriy_as59</a> — наш Telegram-канал: кейсы, разборы, задайте вопрос в комментариях', en: '<a href="https://t.me/uriy_as59" target="_blank" style="color:var(--accent);">@uriy_as59</a> &mdash; our Telegram channel: cases and breakdowns, ask questions in the comments' },
         'modal-thanks': { ru: 'Спасибо! Мы свяжемся с вами в ближайшее время.', en: 'Thank you! We will contact you shortly.' },
         'modal-btn': { ru: 'Отлично', en: 'Great' },
         'contact-alt-title': { ru: 'Выберите удобный канал', en: 'Choose your preferred channel' },

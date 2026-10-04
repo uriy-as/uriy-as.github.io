@@ -140,7 +140,7 @@ HEAD_COMMON = '''<!DOCTYPE html>
                 <div class="footer__left">
                     <a href="/" class="logo"><img src="/images/logo.svg" alt="WebStudio" class="logo__img"></a>
                     <p data-i18n="footer-copyright">{footer_copy}</p>
-                    <p style="margin-top:8px;font-size:0.85rem;" data-i18n="footer-bot"><a href="https://t.me/NevWebStudio_bot" target="_blank" style="color:var(--accent);">{footer_bot}</a> {footer_bot_text}</p>
+                    <p style="margin-top:8px;font-size:0.85rem;" data-i18n="footer-bot"><a href="https://t.me/uriy_as59" target="_blank" style="color:var(--accent);">{footer_bot}</a> {footer_bot_text}</p>
                     <p style="margin-top:4px;font-size:0.8rem;"><a href="/privacy.html" style="color:var(--muted);" data-i18n="footer-privacy">{footer_privacy}</a></p>
                 </div>
                 <div class="footer__social">
@@ -230,8 +230,8 @@ def ru_article(slug, title, date_str, description, content, cta_text, cta_url, d
         promo_desc="Кейсы, статьи и инсайты по разработке сайтов, Telegram-ботов и контент-маркетингу. Публикуем полезный контент каждый понедельник, среду, пятницу и субботу в 08:10.",
         promo_btn="Подписаться в Telegram",
         footer_copy="© 2026 WebStudio. Все права защищены.",
-        footer_bot="@NevWebStudio_bot",
-        footer_bot_text="— бот ответит на все интересующие вопросы",
+        footer_bot="@uriy_as59",
+        footer_bot_text="— наш Telegram-канал: кейсы, разборы, задайте вопрос в комментариях",
         footer_privacy="Политика конфиденциальности",
         tg_float="Telegram",
         lang_btn="EN",
@@ -294,8 +294,8 @@ def en_article(slug, ru_slug, title, date_str, description, content, cta_text, c
         promo_desc="Cases, articles and insights on website development, Telegram bots and content marketing. We publish useful content every Monday, Wednesday, Friday and Saturday at 08:10.",
         promo_btn="Subscribe on Telegram",
         footer_copy="© 2026 WebStudio. All rights reserved.",
-        footer_bot="@NevWebStudio_bot",
-        footer_bot_text="— the bot will answer all your questions",
+        footer_bot="@uriy_as59",
+        footer_bot_text="&mdash; our Telegram channel: cases and breakdowns, ask questions in the comments",
         footer_privacy="Privacy Policy",
         tg_float="Telegram",
         lang_btn="RU",
