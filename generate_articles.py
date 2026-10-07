@@ -6,6 +6,9 @@ import os, urllib.parse
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 
+RU_NOTE = 'Оригинал этой статьи — <a href="https://uriy-as.org">uriy-as.org</a>. Для подтверждения авторства обращайтесь к сайту или в <a href="https://t.me/uriy_as59" target="_blank" rel="noopener">Telegram</a>.'
+EN_NOTE = 'The original of this article is on <a href="https://uriy-as.org">uriy-as.org</a>. To verify the authorship, contact the site or us on <a href="https://t.me/uriy_as59" target="_blank" rel="noopener">Telegram</a>.'
+
 HEAD_COMMON = '''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
@@ -67,6 +70,8 @@ HEAD_COMMON = '''<!DOCTYPE html>
         .article-content .meta {{ font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; }}
         .article-back {{ display: inline-block; margin-bottom: 2rem; color: var(--accent); text-decoration: none; }}
         .article-back:hover {{ text-decoration: underline; }}
+        .article-source {{ font-size: 0.85rem; color: var(--muted); border-top: 1px dashed var(--border); padding-top: 1rem; margin-top: 1.5rem; }}
+        .article-source a {{ color: var(--accent); }}
         .share-btns {{ display: flex; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap; }}
         .share-btn {{ display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 8px; text-decoration: none; font-size: 0.9rem; border: 1px solid var(--border); transition: all 0.2s; }}
         .share-btn svg {{ width: 18px; height: 18px; }}
@@ -106,6 +111,8 @@ HEAD_COMMON = '''<!DOCTYPE html>
     <section class="article-content">
         <div class="container">
             {content}
+
+            {source_note}
 
             <div class="share-btns">
                 <a href="https://t.me/share/url?url=https://uriy-as.org{share_url}&text={share_text}" target="_blank" class="share-btn share-btn--tg" data-i18n="article-share-tg">
@@ -219,6 +226,7 @@ def ru_article(slug, title, date_str, description, content, cta_text, cta_url, d
         h1=title,
         date_str=date_str,
         content=content_html,
+        source_note='<p class="article-source">' + RU_NOTE + '</p>',
         share_url=path,
         share_text=urllib.parse.quote(title),
         share_tg="Telegram",
@@ -283,6 +291,7 @@ def en_article(slug, ru_slug, title, date_str, description, content, cta_text, c
         h1=title,
         date_str=date_str,
         content=content_html,
+        source_note='<p class="article-source">' + EN_NOTE + '</p>',
         share_url=path,
         share_text=urllib.parse.quote(title),
         share_tg="Telegram",

@@ -1367,3 +1367,16 @@ body {
         border-width: 3px;
     }
 }
+
+/* ===== Подпись оригинала статьи ===== */
+.article-source {
+    font-size: 0.85rem;
+    color: var(--muted);
+    border-top: 1px dashed var(--border);
+    padding-top: 1rem;
+    margin-top: 1.5rem;
+}
+
+.article-source a {
+    color: var(--accent);
+}
