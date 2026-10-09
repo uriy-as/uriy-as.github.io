@@ -116,6 +116,17 @@ if (form && modal && modalClose) {
 
 // Visit tracker
 (function() {
+    var KEY = 'pa_noTrack';
+    var qs = window.location.search || '';
+    if (qs.indexOf('notrack=1') !== -1) {
+        try { localStorage.setItem(KEY, '1'); } catch(e) {}
+    } else if (qs.indexOf('notrack=0') !== -1) {
+        try { localStorage.removeItem(KEY); } catch(e) {}
+    }
+    try {
+        if (localStorage.getItem(KEY) === '1') return;
+    } catch(e) {}
+    if (navigator.doNotTrack === '1' || window.doNotTrack === '1') return;
     const PA_URL = 'https://astap.pythonanywhere.com/visit';
     const data = {
         page: window.location.pathname,
