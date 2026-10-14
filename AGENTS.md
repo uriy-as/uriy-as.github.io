@@ -17,6 +17,7 @@
 - **Секреты GitHub Actions обновлены** (sealed-box): `GH_PAT` → новый PAT, `TELEGRAM_TOKEN` → токен @NevChatAI_bot.
 - **git remote → SSH** `git@github.com:uriy-as/site.git` (worktree и `Documents\site` **делят один `.git`**); сгенерирован ключ `~/.ssh/id_ed25519_uriyas` + `~/.ssh/config`, пользователь добавил ключ в GitHub → `ssh -T` = `Hi uriy-as!`, `ls-remote` OK.
 - **Найдено:** новый бот @NevChatAI_bot **не админ** канала @webstudio_chanel → `posts.yml` падает `403 bot is not a member of the channel chat`. Старый @NevWebStudio_bot был админом канала (его токен ещё жив/утёкший).
+- **Постинг в канал — авто-откат (обход).** `posts.yml` теперь пробует `TELEGRAM_TOKEN` (новый бот), а при 403 — `TELEGRAM_CHANNEL_TOKEN` (**новый секрет** = старый бот). Проверено `workflow_dispatch`: пост ушёл (`TELEGRAM_TOKEN failed: 403` → `Sent post via TELEGRAM_CHANNEL_TOKEN`). Когда @NevChatAI_bot станет админом канала — сам переключится на нового; тогда старый токен отозвать, секрет `TELEGRAM_CHANNEL_TOKEN` удалить.
 - **PA API v0:** файлы `GET/POST /api/v0/user/Astap/files/path/...` с `Authorization: Token`; reload — `POST .../webapps/Astap.pythonanywhere.com/reload/` (со слэшем).
 
 ### ✅ Закрыто 13.10.2026
