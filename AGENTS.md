@@ -1,15 +1,23 @@
 # ⚠️ ЗАПРЕТ — НЕ ТРОГАТЬ КОМП БЕЗ РАЗРЕШЕНИЯ ⚠️
 ## НИЧЕГО НЕ МЕНЯТЬ — НИ ФАЙЛОВ, НИ КОДА, НИ КОНФИГОВ — ПОКА НЕ СПРОШУ И НЕ СКАЖУ «ДА»
 
-## 🔔 НАПОМИНАНИЕ ПРИ ВКЛЮЧЕНИИ КОМПА (14.10.2026)
+## 🔔 НАПОМИНАНИЕ ПРИ ВКЛЮЧЕНИИ КОМПА (15.10.2026)
 
-### 🔴 План на 14.10 (главное)
-1. **Отозвать утёкшие ключи** (только вручную, нужен вход в аккаунты): GitHub PAT `ghp_3YTJ…` (Revoke + новый; убрать из `git remote`, перейти на SSH) и токен бота @NevWebStudio_bot (@BotFather `/revoke` → новый токен в WSGI на PA `os.environ["TG_BOT_TOKEN"]` + reload).
+### 🔴 План на 15.10 (главное)
+1. **Ротация ключей — В РАБОТЕ.** Сделано 14.10: секреты `GH_PAT`+`TELEGRAM_TOKEN` обновлены, бэкенд на новом боте @NevChatAI_bot, remote → SSH. **ОСТАЛОСЬ (вручную):** (а) добавить @NevChatAI_bot админом в канал @webstudio_chanel (иначе `posts.yml` = 403); (б) отозвать старые PAT `ghp_hVJBU4…`/`ghp_3YTJ…`; (в) отозвать старый токен @NevWebStudio_bot.
 2. **Freelancehunt:** верификация через Дію → первая ставка (iqsc.fund 3000 ₴, или B2B-контакты 1700 ₴ — минимум конкурентов).
 3. Остальное: **Bot Fight Mode** (не хватает права токену), **SEO**-свип (дубль `privacy.html` в sitemap), **FL.ru** (ждёт верификации), **Kabanchik.ua**.
-4. **Криптокошелёк — НЕ создан.** Trust Wallet → Create new wallet (12 слов — никому) → USDT **TRON/TRC-20** (адрес на `T`, 34 симв.) → тест 1–2 USDT → привязать к Plisio. Шаблон реквизитов готов.
-5. **Dev.to — очередь пуста** (все 8 `devto-*.md` уже опубликованы). Статы на 13.10: 10 статей, **253 просмотра, 0 реакций, 3 коммента**. Подготовить новую статью.
-6. **Трафик сайта** на 13.10: 1 заход (краулер, Мексика); сайт «спит», бэкенд жив.
+4. **Криптокошелёк — НЕ создан.** Trust Wallet → Create new wallet (12 слов — никому) → USDT **TRON/TRC-20** (адрес на `T`, 34 симв.) → тест 1–2 USDT → привязать к Plisio.
+5. **Dev.to — очередь пуста** (все 8 `devto-*.md` опубликованы). Статы: 10 статей, **253 просмотра, 0 реакций, 3 коммента**. Подготовить новую статью.
+6. **Трафик сайта** (14.10): 1 заход (краулер); сайт «спит», бэкенд жив.
+
+### ✅ Закрыто 14.10.2026
+- **Ротация ключей (частично).** Пользователь создал нового бота **@NevChatAI_bot** (`8674834844`) и новый PAT (`ghp_vYM…`, scopes repo+workflow).
+- **Бэкенд PA → @NevChatAI_bot:** WSGI `/var/www/astap_pythonanywhere_com_wsgi.py` обновлён через **PA API v0** (токен `ff78c1fb…`, `Authorization: Token`), hash совпал, reload `{"status":"OK"}`, тест-сообщение в админ-чат доставлено.
+- **Секреты GitHub Actions обновлены** (sealed-box): `GH_PAT` → новый PAT, `TELEGRAM_TOKEN` → токен @NevChatAI_bot.
+- **git remote → SSH** `git@github.com:uriy-as/site.git` (worktree и `Documents\site` **делят один `.git`**); сгенерирован ключ `~/.ssh/id_ed25519_uriyas` + `~/.ssh/config`, пользователь добавил ключ в GitHub → `ssh -T` = `Hi uriy-as!`, `ls-remote` OK.
+- **Найдено:** новый бот @NevChatAI_bot **не админ** канала @webstudio_chanel → `posts.yml` падает `403 bot is not a member of the channel chat`. Старый @NevWebStudio_bot был админом канала (его токен ещё жив/утёкший).
+- **PA API v0:** файлы `GET/POST /api/v0/user/Astap/files/path/...` с `Authorization: Token`; reload — `POST .../webapps/Astap.pythonanywhere.com/reload/` (со слэшем).
 
 ### ✅ Закрыто 13.10.2026
 - **Бэкенд PA снова поднят** (был «мёртвый» воркер). Симптом: `astap.pythonanywhere.com` не отвечал — даже `GET /` давал `499/504` (response-time 30–300 с), `reload` падал с `slow_startup_error`; сам сайт при этом жив (403 у curl — это Cloudflare-challenge). **Причина:** `warm_cloud_cache` и обработчики `/pixel`,`/visit` звали `is_cloud_ip` с обратным DNS (`socket.gethostbyaddr`); на PA резолвер «висит», потоки-зомби забивали единственный воркер; плюс при импорте шёл сетевой I/O (`send_tg`, старт прогрева). **Фикс:** `is_cloud_ip(..., ptr=False)` в прогреве и в `/pixel`,`/visit`; сеть убрана из импорта (уведомление и прогрев отложены, `cloud_warm.running=false`). Коммит `3a5d2cb` в `main`.
