@@ -8,7 +8,7 @@
 2. **Freelancehunt:** верификация через Дію → первая ставка (iqsc.fund 3000 ₴, или B2B-контакты 1700 ₴ — минимум конкурентов).
 3. Остальное: **Bot Fight Mode** (не хватает права токену), **SEO**-свип (дубль `privacy.html` в sitemap), **FL.ru** (ждёт верификации), **Kabanchik.ua**.
 4. **Криптокошелёк — НЕ создан.** Trust Wallet → Create new wallet (12 слов — никому) → USDT **TRON/TRC-20** (адрес на `T`, 34 симв.) → тест 1–2 USDT → привязать к Plisio.
-5. **Dev.to — очередь пуста** (все 8 `devto-*.md` опубликованы). Статы: 10 статей, **253 просмотра, 0 реакций, 3 коммента**. Подготовить новую статью.
+5. **Dev.to — очередь пополнена 14.10, сейчас снова пуста.** Добавлена статья **«Telegram Bot or Website in 2026»** (`devto-telegram-bot-vs-website.md`) → опубликована: `https://dev.to/astap/telegram-bot-or-website-in-2026-how-to-choose-and-when-you-need-both-3ggn`. Всего 11 статей. Готовить следующую.
 6. **Трафик сайта** (14.10): 1 заход (краулер); сайт «спит», бэкенд жив.
 
 ### ✅ Закрыто 14.10.2026
@@ -18,6 +18,7 @@
 - **git remote → SSH** `git@github.com:uriy-as/site.git` (worktree и `Documents\site` **делят один `.git`**); сгенерирован ключ `~/.ssh/id_ed25519_uriyas` + `~/.ssh/config`, пользователь добавил ключ в GitHub → `ssh -T` = `Hi uriy-as!`, `ls-remote` OK.
 - **Найдено:** новый бот @NevChatAI_bot **не админ** канала @webstudio_chanel → `posts.yml` падает `403 bot is not a member of the channel chat`. Старый @NevWebStudio_bot был админом канала (его токен ещё жив/утёкший).
 - **Постинг в канал — авто-откат (обход).** `posts.yml` теперь пробует `TELEGRAM_TOKEN` (новый бот), а при 403 — `TELEGRAM_CHANNEL_TOKEN` (**новый секрет** = старый бот). Проверено `workflow_dispatch`: пост ушёл (`TELEGRAM_TOKEN failed: 403` → `Sent post via TELEGRAM_CHANNEL_TOKEN`). Когда @NevChatAI_bot станет админом канала — сам переключится на нового; тогда старый токен отозвать, секрет `TELEGRAM_CHANNEL_TOKEN` удалить.
+- **Dev.to: очередь пополнена.** Добавлена статья «Telegram Bot or Website in 2026» → опубликована: `https://dev.to/astap/telegram-bot-or-website-in-2026-how-to-choose-and-when-you-need-both-3ggn` (state обновлён коммитом `6c1d2ab`).
 - **PA API v0:** файлы `GET/POST /api/v0/user/Astap/files/path/...` с `Authorization: Token`; reload — `POST .../webapps/Astap.pythonanywhere.com/reload/` (со слэшем).
 
 ### ✅ Закрыто 13.10.2026
