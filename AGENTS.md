@@ -4,11 +4,11 @@
 ## 🔔 НАПОМИНАНИЕ ПРИ ВКЛЮЧЕНИИ КОМПА (15.10.2026)
 
 ### 🔴 План на 15.10 (главное)
-1. **Ротация ключей — В РАБОТЕ.** Сделано 14.10: секреты `GH_PAT`+`TELEGRAM_TOKEN` обновлены, бэкенд на новом боте @NevChatAI_bot, remote → SSH. **ОСТАЛОСЬ (вручную):** (а) добавить @NevChatAI_bot админом в канал @webstudio_chanel (иначе `posts.yml` = 403); (б) отозвать старые PAT `ghp_hVJBU4…`/`ghp_3YTJ…`; (в) отозвать старый токен @NevWebStudio_bot.
+1. **Ротация ключей — В РАБОТЕ.** Сделано 14.10: секреты `GH_PAT`+`TELEGRAM_TOKEN` обновлены, бэкенд на новом боте @NevChatAI_bot, remote → SSH. **ОСТАЛОСЬ (вручную):** (а) добавить @NevChatAI_bot админом в канал @webstudio_chanel (иначе `posts.yml` = 403); (б) отозвать старые PAT `ghp_hVJBU4…`/`ghp_3YTJ…`; (в) отозвать старый токен @NevWebStudio_bot; (г) отключить с админом инертную задачу `TelegramBotPoller` (RunLevel Highest). **Локальные постеры вычищены 14.10** (см. «Закрыто 14.10»).
 2. **Freelancehunt:** верификация через Дію → первая ставка (iqsc.fund 3000 ₴, или B2B-контакты 1700 ₴ — минимум конкурентов).
 3. Остальное: **Bot Fight Mode** (не хватает права токену), **SEO**-свип (дубль `privacy.html` в sitemap), **FL.ru** (ждёт верификации), **Kabanchik.ua**.
 4. **Криптокошелёк — НЕ создан.** Trust Wallet → Create new wallet (12 слов — никому) → USDT **TRON/TRC-20** (адрес на `T`, 34 симв.) → тест 1–2 USDT → привязать к Plisio.
-5. **Dev.to — очередь пополнена 14.10, сейчас снова пуста.** Добавлена статья **«Telegram Bot or Website in 2026»** (`devto-telegram-bot-vs-website.md`) → опубликована: `https://dev.to/astap/telegram-bot-or-website-in-2026-how-to-choose-and-when-you-need-both-3ggn`. Всего 11 статей. Готовить следующую.
+5. **Dev.to — очередь снова пуста (после публикации 14.10).** Всего **13 статей**. Опубликовано 14.10: «Telegram Bot or Website in 2026» (`.../telegram-bot-or-website-in-2026-how-to-choose-and-when-you-need-both-3ggn`), «SEO for Beginners in 2026» (`.../seo-for-beginners-in-2026-where-to-actually-start-without-wasting-months-4c6e`), «Website Maintenance in 2026» (`.../website-maintenance-in-2026-what-youre-actually-paying-for-38io`). Готовить следующую.
 6. **Трафик сайта** (14.10): 1 заход (краулер); сайт «спит», бэкенд жив.
 
 ### ✅ Закрыто 14.10.2026
@@ -19,6 +19,8 @@
 - **Найдено:** новый бот @NevChatAI_bot **не админ** канала @webstudio_chanel → `posts.yml` падает `403 bot is not a member of the channel chat`. Старый @NevWebStudio_bot был админом канала (его токен ещё жив/утёкший).
 - **Постинг в канал — авто-откат (обход).** `posts.yml` теперь пробует `TELEGRAM_TOKEN` (новый бот), а при 403 — `TELEGRAM_CHANNEL_TOKEN` (**новый секрет** = старый бот). Проверено `workflow_dispatch`: пост ушёл (`TELEGRAM_TOKEN failed: 403` → `Sent post via TELEGRAM_CHANNEL_TOKEN`). Когда @NevChatAI_bot станет админом канала — сам переключится на нового; тогда старый токен отозвать, секрет `TELEGRAM_CHANNEL_TOKEN` удалить.
 - **Dev.to: очередь пополнена.** Добавлена статья «Telegram Bot or Website in 2026» → опубликована: `https://dev.to/astap/telegram-bot-or-website-in-2026-how-to-choose-and-when-you-need-both-3ggn` (state обновлён коммитом `6c1d2ab`).
+- **Dev.to: ещё 2 статьи опубликованы 14.10.** «SEO for Beginners in 2026» → `https://dev.to/astap/seo-for-beginners-in-2026-where-to-actually-start-without-wasting-months-4c6e` и «Website Maintenance in 2026» → `https://dev.to/astap/website-maintenance-in-2026-what-youre-actually-paying-for-38io`. Итого **13 статей**.
+- **Локальные постеры Telegram отключены (дубли постинга в канал).** Найдены живой цикл `scheduler-launcher.ps1` (автозапуск через `Startup\WebStudioPostGen.bat`) + 3 задачи, постившие параллельно с `posts.yml`; `WebStudioPostGenerator` тащил **старый токен в открытом виде**. Процесс убит; `.bat` → `Documents\site\disabled-startup\`; задачи `WebStudioPostGen`/`WebStudioPostGenerator`/`TelegramPoster` → **Disabled**; `TG_BOT_TOKEN` (User) удалён; мёртвый Run-ключ `TelegramBotPoller` удалён. Осталась инертная задача `TelegramBotPoller` (Ready, только с админом).
 - **PA API v0:** файлы `GET/POST /api/v0/user/Astap/files/path/...` с `Authorization: Token`; reload — `POST .../webapps/Astap.pythonanywhere.com/reload/` (со слэшем).
 
 ### ✅ Закрыто 13.10.2026
@@ -840,12 +842,15 @@
 - ✅ Бэкенд PA: `/api/stats` 200 (0.7s, с ключом), без ключа 403, `/pixel` 200
 - ✅ Внешние ссылки: dev.to #8/#7 200, t.me/uriy_as59 200
 
-## TelegramPoster
-- График: пн, ср, пт, сб в 8:10
-- Состояние: `C:\Users\Admin\.telegram-poster-state.json`
-- Опубликованы индексы 0-8, state: `used:[0,1,2,3,4,5,6,7,8]`
-- ⚠️ **Задача отключена 16.08** (`schtasks /change /tn "TelegramPoster" /disable`)
-- Единственный постер: GitHub Actions `site/posts.yml` (пн/ср/пт/сб 05:10 UTC)
+## Постеры в Telegram (локальные) — НЕЙТРАЛИЗОВАНЫ 14.10.2026
+- **Единственный постер: GitHub Actions `site/posts.yml`** (пн/ср/пт/сб 05:10 UTC = 08:10 Киев), индекс по номеру недели.
+- ⚠️ Ранее параллельно работали ЛОКАЛЬНЫЕ постеры (дубли в канал + старый токен) — вычищены 14.10:
+  - `scheduler-launcher.ps1` — живой цикл, постил 1×/день в пн/ср/пт/сб; автозапуск через `Startup\WebStudioPostGen.bat`. **Процесс убит**, `.bat` перенесён в `C:\Users\Admin\Documents\site\disabled-startup\`.
+  - Задачи `WebStudioPostGen`, `WebStudioPostGenerator`, `TelegramPoster` — **Disabled**.
+  - В задаче `WebStudioPostGenerator` **старый токен в открытом виде** в аргументах.
+  - `TG_BOT_TOKEN` (переменная среды User) = **старый токен** → **удалена**.
+  - `HKCU\...\Run\TelegramBotPoller` (ссылка на отсутствующий `telegram-bot-poller.ps1`) → **удалён**; одноимённая задача `Ready` — отключается только с админом, инертна.
+- Локальный state `C:\Users\Admin\.telegram-poster-state.json` (`used:[0..38]`) — больше не используется.
 ## ЧТО СДЕЛАНО (03.10.2026) — ПАРСЕР + СТАТЬЯ ПО ЦЕНАМ
 
 ### Парсер — 33 → **54 цены**, все подписи теперь настоящие
