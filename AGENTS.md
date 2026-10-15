@@ -1,15 +1,21 @@
 # ⚠️ ЗАПРЕТ — НЕ ТРОГАТЬ КОМП БЕЗ РАЗРЕШЕНИЯ ⚠️
 ## НИЧЕГО НЕ МЕНЯТЬ — НИ ФАЙЛОВ, НИ КОДА, НИ КОНФИГОВ — ПОКА НЕ СПРОШУ И НЕ СКАЖУ «ДА»
 
-## 🔔 НАПОМИНАНИЕ ПРИ ВКЛЮЧЕНИИ КОМПА (15.10.2026)
+## 🔔 НАПОМИНАНИЕ ПРИ ВКЛЮЧЕНИИ КОМПА (16.10.2026)
 
 ### 🔴 План на 15.10 (главное)
 1. **Ротация ключей — В РАБОТЕ.** Сделано 14.10: секреты `GH_PAT`+`TELEGRAM_TOKEN` обновлены, бэкенд на новом боте @NevChatAI_bot, remote → SSH. **ОСТАЛОСЬ (вручную):** (а) добавить @NevChatAI_bot админом в канал @webstudio_chanel (иначе `posts.yml` = 403); (б) отозвать старые PAT `ghp_hVJBU4…`/`ghp_3YTJ…`; (в) отозвать старый токен @NevWebStudio_bot; (г) отключить с админом инертную задачу `TelegramBotPoller` (RunLevel Highest). **Локальные постеры вычищены 14.10** (см. «Закрыто 14.10»).
 2. **Freelancehunt:** верификация через Дію → первая ставка (iqsc.fund 3000 ₴, или B2B-контакты 1700 ₴ — минимум конкурентов).
 3. Остальное: **Bot Fight Mode** (не хватает права токену), **SEO**-свип (дубль `privacy.html` в sitemap), **FL.ru** (ждёт верификации), **Kabanchik.ua**.
 4. **Криптокошелёк — НЕ создан.** Trust Wallet → Create new wallet (12 слов — никому) → USDT **TRON/TRC-20** (адрес на `T`, 34 симв.) → тест 1–2 USDT → привязать к Plisio.
-5. **Dev.to — очередь снова пуста (после публикации 14.10).** Всего **13 статей**. Опубликовано 14.10: «Telegram Bot or Website in 2026» (`.../telegram-bot-or-website-in-2026-how-to-choose-and-when-you-need-both-3ggn`), «SEO for Beginners in 2026» (`.../seo-for-beginners-in-2026-where-to-actually-start-without-wasting-months-4c6e`), «Website Maintenance in 2026» (`.../website-maintenance-in-2026-what-youre-actually-paying-for-38io`). Готовить следующую.
+5. **Dev.to — очередь снова пуста (после публикации 14.10).** Всего **13 статей**. Опубликовано 14.10: «Telegram Bot or Website in 2026» (`.../telegram-bot-or-website-in-2026-how-to-choose-and-when-you-need-both-3ggn`), «SEO for Beginners in 2026» (`.../seo-for-beginners-in-2026-where-to-actually-start-without-wasting-months-4c6e`), «Website Maintenance in 2026» (`.../website-maintenance-in-2026-what-youre-actually-paying-for-38io`). Готовить следующую. **15.10: 263 просмотра, во все 13 добавлен CTA+вопрос (см. «Закрыто 15.10»).**
 6. **Трафик сайта** (14.10): 1 заход (краулер); сайт «спит», бэкенд жив.
+
+### ✅ Закрыто 15.10.2026
+- **Проверка сайта:** `/`, `sitemap.xml`, `stats.html` → 200; бэкенд `/api/stats` отвечает. Свежие workflow (Daily Stats, Deploy, Price Monitor, Dev.to, Medium, Indexing) — success.
+- **Трафик:** первый заход из поиска (15.10 09:57, `/en/blog/competitor-prices-2026.html`, ref=search); 14.10 — заходы на `/en/blog/seo-for-beginners.html`. Всего 136 реальных / 110 IP.
+- **Dev.to: 263 просмотра, 0 реакций, 3 коммента.** Лидеры: «Site in 5 Days» 65, «10 Mistakes» 52, «Bot vs Website» 52, «Content Marketing» 30, «Prices UA» 20; «SEO for Beginners» — 10 за 1 день.
+- **CTA-блок во все 13 статей** (Dev.to API `PUT /api/articles/{id}`): единый футер «**Your turn.** …» (вопрос + просьба лайкнуть/подписаться). Маркер `**Your turn.**` — повторный прогон не дублирует. Скрипты: `%TEMP%\opencode\srv\devto_stats.py`, `devto_add_cta.py`; API-ключ Dev.to `X6ruf1e9STj6s7GpMETQPLpy`.
 
 ### ✅ Закрыто 14.10.2026
 - **Ротация ключей (частично).** Пользователь создал нового бота **@NevChatAI_bot** (`8674834844`) и новый PAT (`ghp_vYM…`, scopes repo+workflow).
