@@ -1418,3 +1418,23 @@ body {
 }
 .form__consent a { color: var(--muted); text-decoration: underline; }
 .form__consent a:hover { color: var(--accent); }
+
+/* === P1 2026-10-26: конверсионный блок услуг === */
+.svc-cta { padding: 56px 0; background: var(--card-bg, #fafaff); border-top: 1px solid var(--border, #eee); }
+.svc-cta h2 { font-size: 1.5rem; margin: 0 0 .35rem; }
+.svc-cta__sub { color: var(--muted, #666); margin: 0 0 1.4rem; }
+.svc-cta__row { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+.svc-cta__card {
+  display: flex; flex-direction: column; gap: .35rem;
+  padding: 16px 18px; border: 1px solid var(--border, #eee); border-radius: 12px;
+  background: #fff; text-decoration: none; color: var(--text, #111); transition: all .2s;
+}
+.svc-cta__card:hover { border-color: var(--accent, #6c63ff); transform: translateY(-2px); }
+.svc-cta__card strong { font-size: .98rem; }
+.svc-cta__card span { font-size: .86rem; color: var(--muted, #666); }
+.svc-cta__card--main { border-color: var(--accent, #6c63ff); background: var(--accent, #6c63ff); color: #fff; }
+.svc-cta__card--main span { color: rgba(255,255,255,.85); }
+@media (max-width: 640px) {
+  .svc-cta { padding: 40px 0; }
+  .svc-cta__row { grid-template-columns: 1fr; }
+}
