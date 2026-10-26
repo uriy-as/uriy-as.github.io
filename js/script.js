@@ -81,6 +81,8 @@ if (form && modal && modalClose) {
         var phone = form.querySelector('[name="phone"]')?.value?.trim() || '';
         var message = form.querySelector('[name="message"]')?.value?.trim() || '';
         var website = form.querySelector('[name="website"]')?.value || '';
+        var consent = form.querySelector('[name="consent"]');
+        if (consent && !consent.checked) { consent.focus(); return; }
         if (!name) { form.querySelector('[name="name"]').focus(); return; }
         if (!message) { form.querySelector('[name="message"]').focus(); return; }
         if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { form.querySelector('[name="email"]').focus(); return; }

@@ -1380,3 +1380,41 @@ body {
 .article-source a {
     color: var(--accent);
 }
+
+/* === P0 2026-10-26: мобильные таблицы + согласие ПД === */
+@media (max-width: 760px) {
+  .article-content table,
+  .blog-content table,
+  table.price-table {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-collapse: collapse;
+  }
+  .article-content table td,
+  .article-content table th,
+  .blog-content table td,
+  .blog-content table th,
+  table.price-table td,
+  table.price-table th { white-space: nowrap; }
+}
+.form__consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0 0 16px;
+  font-size: .82rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.form__consent input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 2px 0 0;
+  flex-shrink: 0;
+  accent-color: var(--accent);
+}
+.form__consent a { color: var(--muted); text-decoration: underline; }
+.form__consent a:hover { color: var(--accent); }
