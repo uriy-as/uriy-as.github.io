@@ -8,8 +8,8 @@
     <link rel="icon" type="image/svg+xml" href="/images/logo.svg">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <title>Как выбрать хостинг для сайта — WebStudio</title>
-    <meta name="description" content="Гайд по выбору хостинга: сравнение shared-хостинга, VPS и облачных серверов. Критерии выбора, цены и рекомендации.">
+    <title>Как выбрать хостинг для сайта: 7 критериев и этапы для новичков | WebStudio</title>
+    <meta name="description" content="Как выбрать хостинг для сайта и не переплатить: 7 критериев, этапы выбора для новичков, сравнение тарифов от 1 500 ₴ в год, частые ошибки и наш опыт.">
     <meta property="og:title" content="Как выбрать хостинг для сайта — WebStudio">
     <meta property="og:description" content="Гайд по выбору хостинга: сравнение shared-хостинга, VPS и облачных серверов. Критерии выбора, цены и рекомендации.">
     <meta property="og:type" content="article">
@@ -47,7 +47,7 @@
         "author": { "@type": "Organization", "name": "WebStudio", "url": "https://uriy-as.org" },
         "publisher": { "@type": "Organization", "name": "WebStudio", "url": "https://uriy-as.org" },
         "datePublished": "2026-06-03",
-        "dateModified": "2026-06-26",
+        "dateModified": "2026-10-27",
         "mainEntityOfPage": "https://uriy-as.org/blog/kak-vybrat-hosting.html"
     }
     </script>
@@ -80,7 +80,7 @@
 
     
     <script type="application/ld+json">
-    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Какой хостинг самый дешёвый?", "acceptedAnswer": {"@type": "Answer", "text": "Shared-хостинг от $3-5/мес. Подходит для визиток."}}, {"@type": "Question", "name": "Когда нужен VPS?", "acceptedAnswer": {"@type": "Answer", "text": "Когда 1000+ посетителей в день, нужна настройка сервера, или важна скорость."}}, {"@type": "Question", "name": "Нужен ли SSL?", "acceptedAnswer": {"@type": "Answer", "text": "Обязателен. SSL — фактор Google. Бесплатный Let's Encrypt."}}]}
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Как выбрать хостинг для сайта новичку?", "acceptedAnswer": {"@type": "Answer", "text": "Определите тип и размер проекта, берите европейские серверы, проверьте наличие автобэкапов и лимитов, и считайте полную стоимость за 3 года, а не цену промо-тарифа на месяц."}}, {"@type": "Question", "name": "Какие параметры хостинга важны при выборе?", "acceptedAnswer": {"@type": "Answer", "text": "CPU и RAM, расположение серверов (Европа для СНГ), лимиты трафика и диска, наличие встроенного SSL, автобэкапы, скорость ответов сервера и качество поддержки."}}, {"@type": "Question", "name": "Сколько стоит хостинг для сайта в Украине?", "acceptedAnswer": {"@type": "Answer", "text": "Для сайта-визитки — от 1 500 ₴ в год, для корпоративного сайта — 2 500–4 500 ₴ в год, для интернет-магазина — 4 000–8 000 ₽/год. Плюс домен 300–600 ₴/год."}}, {"@type": "Question", "name": "Какой тип хостинга подходит для небольшого сайта?", "acceptedAnswer": {"@type": "Answer", "text": "Обычный shared-хостинг с 1 CPU и 1 ГБ RAM — этого достаточно для сайта до 1 000 посетителей в сутки. Переходить на VPS стоит, когда страниц больше 50 или появился интернет-магазин."}}, {"@type": "Question", "name": "Нужно ли отдельно покупать SSL-сертификат?", "acceptedAnswer": {"@type": "Answer", "text": "Нет, для большинства сайтов достаточно бесплатного Let's Encrypt с автопродлением. Платный сертификат нужен только крупным компаниям — для доверия в браузере или EV-сертификата."}}, {"@type": "Question", "name": "Чем отличается VPS от shared-хостинга?", "acceptedAnswer": {"@type": "Answer", "text": "На VPS у вас отдельный сервер и полный доступ к настройкам, но вы сами обслуживаете систему. Shared дешевле и проще, но вы делите ресурсы с другими клиентами хостинга."}}]}
     </script>
 <script type="application/ld+json">
     {
@@ -117,14 +117,28 @@
     <section class="article-hero">
         <div class="container">
             <a href="/articles.html" class="article-back" data-i18n="article-back">← Все статьи</a>
-            <h1>Как выбрать хостинг для сайта</h1>
-            <div class="meta">3 июня 2026</div>
+            <h1>Как выбрать хостинг для сайта: пошагово для новичков</h1>
+            <div class="meta">27 октября 2026 · обновлено 27 октября 2026</div>
         </div>
     </section>
 
     <section class="article-content">
         <div class="container">
             <img src="/images/blog-kak-vybrat-hosting.svg" alt="Как выбрать хостинг" width="400" height="200" loading="lazy" style="width:100%;max-width:600px;height:auto;border-radius:12px;margin-bottom:1rem;">
+            <h2>Этапы выбора хостинга: пошаговый план</h2>
+<p>Выбор хостинга редко бывает сложным — сложно потом понять, что именно выбрали. Ниже — рабочая последовательность, которой мы пользуемся, когда настраиваем хостинг для клиентов в Украине и за рубежом.</p>
+<ol>
+<li><strong>Определите тип проекта.</strong> Лендинг на 5 страниц, корпоративный сайт, интернет-магазин на 2 000 товаров и онлайн-школа с видео требуют разных ресурсов. Ошибка на этом шаге — самая дорогая: слабый тариф «умирает» при росте трафика.</li>
+<li><strong>Посчитайте нагрузку, а не «на глаз».</strong> Для сайта до 1 000 посетителей в сутки хватит тарифа с 1 CPU и 1 ГБ RAM. Магазину с 50 000+ товаров нужно 2 CPU, 4 ГБ RAM и обязательно Redis или кэш объектов.</li>
+<li><strong>Проверьте скорость и географию серверов.</strong> Для аудитории из Украины и СНГ важны серверы в Европе (Германия, Нидерланды, Польша) — задержка до 20–40 мс. Сервер в США даёт 120–180 мс и заметно просаживает Core Web Vitals.</li>
+<li><strong>Оцените встроенный SSL и автобэкапы.</strong> Let's Encrypt бесплатен и выдаётся автоматически, но у добросовестных хостеров бэкапы должны храниться отдельно от сервера — иначе взлом или ошибка в CMS удалят сайт вместе с копией.</li>
+<li><strong>Проверьте лимиты и то, как считается трафик.</strong> Квоты на диск, базы данных, CPU-минуты, число одновременных соединений. «Безлимит» почти всегда означает лимит на 30–50 ГБ и 5 000 запросов в час.</li>
+<li><strong>Считайте полную стоимость на 3 года.</strong> Домен 300–600 ₴/год, SSL 0–2 000 ₴/год, хостинг 1 500–6 000 ₴/год, почта 0–500 ₴/год. Наша рекомендация для украинского бизнеса — 2 500–4 000 ₴/год за хостинг с доменом.</li>
+<li><strong>Проверьте, есть ли поддержка и ремонт.</strong> Живые ответы в течение рабочего дня и возможность самостоятельно сбросить пароль/восстановить сайт важнее дешёвого тарифа на полгода.</li>
+</ol>
+<table class="price-table"><thead><tr><th>Проект</th><th>Минимальные ресурсы</th><th>Трафик</th><th>Хостинг в год</th></tr></thead><tbody><tr><td>Лендинг / сайт-визитка</td><td>1 CPU, 1 ГБ</td><td>до 10 000 ₴/мес</td><td>1 500–2 500 ₴/год</td></tr><tr><td>Корпоративный сайт до 100 страниц</td><td>1–2 CPU, 2–4 ГБ</td><td>до 50 000 ₴/мес</td><td>2 500–4 500 ₴/год</td></tr><tr><td>Интернет-магазин до 5 000 товаров</td><td>2–4 CPU, 4–8 ГБ + Redis</td><td>100 000+ ₴/мес</td><td>4 000–8 000 ₽/год</td></tr><tr><td>Онлайн-школа с видео</td><td>2 CPU, 4 ГБ + CDN</td><td>средние</td><td>4 000–7 000 ₴/год</td></tr></tbody></table>
+<p>Мы не продаём хостинг как отдельный «товар» — мы настраиваем сервер, ставим SSL, переносим сайт, настраиваем бэкапы и мониторинг, чтобы клиент не думал об этом вообще. <a href="/services.html">Услуги технического сопровождения</a> и <a href="/podderzhka-sayta-cena.html">цены на обслуживание сайта</a> — в одном месте.</p>
+
             <h2>Хостинг — фундамент вашего сайта</h2>
 <p>От качества хостинга зависят скорость загрузки, стабильность работы и безопасность сайта.</p>
 <h2>Типы хостинга</h2>
@@ -143,17 +157,30 @@
 
             <h2>Часто задаваемые вопросы</h2>
 <details style="margin-bottom:1rem;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;background:var(--card-bg);">
-<summary style="font-weight:600;cursor:pointer;">Какой хостинг самый дешёвый?</summary>
-<p style="margin-top:0.8rem;color:var(--muted);">Shared-хостинг от $3-5/мес. Подходит для визиток.</p>
+<summary style="font-weight:600;cursor:pointer;">Как выбрать хостинг для сайта новичку?</summary>
+<p style="margin-top:0.8rem;color:var(--muted);">Определите тип и размер проекта, берите европейские серверы, проверьте наличие автобэкапов и лимитов, и считайте полную стоимость за 3 года, а не цену промо-тарифа на месяц.</p>
 </details>
 <details style="margin-bottom:1rem;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;background:var(--card-bg);">
-<summary style="font-weight:600;cursor:pointer;">Когда нужен VPS?</summary>
-<p style="margin-top:0.8rem;color:var(--muted);">Когда 1000+ посетителей в день, нужна настройка сервера, или важна скорость.</p>
+<summary style="font-weight:600;cursor:pointer;">Какие параметры хостинга важны при выборе?</summary>
+<p style="margin-top:0.8rem;color:var(--muted);">CPU и RAM, расположение серверов (Европа для СНГ), лимиты трафика и диска, наличие встроенного SSL, автобэкапы, скорость ответов сервера и качество поддержки.</p>
 </details>
 <details style="margin-bottom:1rem;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;background:var(--card-bg);">
-<summary style="font-weight:600;cursor:pointer;">Нужен ли SSL?</summary>
-<p style="margin-top:0.8rem;color:var(--muted);">Обязателен. SSL — фактор Google. Бесплатный Let's Encrypt.</p>
+<summary style="font-weight:600;cursor:pointer;">Сколько стоит хостинг для сайта в Украине?</summary>
+<p style="margin-top:0.8rem;color:var(--muted);">Для сайта-визитки — от 1 500 ₴ в год, для корпоративного сайта — 2 500–4 500 ₴ в год, для интернет-магазина — 4 000–8 000 ₽/год. Плюс домен 300–600 ₴/год.</p>
 </details>
+<details style="margin-bottom:1rem;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;background:var(--card-bg);">
+<summary style="font-weight:600;cursor:pointer;">Какой тип хостинга подходит для небольшого сайта?</summary>
+<p style="margin-top:0.8rem;color:var(--muted);">Обычный shared-хостинг с 1 CPU и 1 ГБ RAM — этого достаточно для сайта до 1 000 посетителей в сутки. Переходить на VPS стоит, когда страниц больше 50 или появился интернет-магазин.</p>
+</details>
+<details style="margin-bottom:1rem;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;background:var(--card-bg);">
+<summary style="font-weight:600;cursor:pointer;">Нужно ли отдельно покупать SSL-сертификат?</summary>
+<p style="margin-top:0.8rem;color:var(--muted);">Нет, для большинства сайтов достаточно бесплатного Let's Encrypt с автопродлением. Платный сертификат нужен только крупным компаниям — для доверия в браузере или EV-сертификата.</p>
+</details>
+<details style="margin-bottom:1rem;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;background:var(--card-bg);">
+<summary style="font-weight:600;cursor:pointer;">Чем отличается VPS от shared-хостинга?</summary>
+<p style="margin-top:0.8rem;color:var(--muted);">На VPS у вас отдельный сервер и полный доступ к настройкам, но вы сами обслуживаете систему. Shared дешевле и проще, но вы делите ресурсы с другими клиентами хостинга.</p>
+</details>
+<p>Смежные темы: <a href="/cena-sayta-pod-klyuch.html">сколько стоит сайт под ключ</a>, <a href="/services.html">техническое сопровождение сайтов</a>.</p>
             <p class="article-source">Оригинал этой статьи — <a href="https://uriy-as.org">uriy-as.org</a>. Для подтверждения авторства обращайтесь к сайту или в <a href="https://t.me/uriy_as59" target="_blank" rel="noopener">Telegram</a>.</p>
 
             <div class="share-btns">
