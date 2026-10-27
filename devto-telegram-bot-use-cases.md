@@ -2,7 +2,7 @@
 title: "Telegram Bots for Business: 7 Use Cases With Real Prices (2026)"
 published: true
 description: "Seven Telegram bot scenarios that make money — lead capture, bookings, shop in Telegram, AI consultant, sales automation, listing monitor, internal assistant — with 2026 prices and payback math."
-tags: telegram, chatbot, business, automation, sales
+tags: telegram, chatbot, business, automation
 canonical_url: https://uriy-as.org/blog/chat-bot-dlya-biznesa-kaysy.html
 ---
 
