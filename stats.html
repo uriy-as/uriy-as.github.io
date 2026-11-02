@@ -43,7 +43,6 @@ a:hover { text-decoration:underline; }
 #retry-count { color:#888; font-size:0.8rem; margin-top:4px; }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://uriy-as.org/"}, {"@type": "ListItem", "position": 2, "name": "Stats", "item": "https://uriy-as.org/stats.html"}]}</script>
-stats.html
 </head>
 <body>
 <h1>&#x1f4ca; Статистика WebStudio</h1>
@@ -55,7 +54,8 @@ stats.html
 
 <script>
 const API = 'https://astap.pythonanywhere.com/api/stats';
-const MAX_RETRIES = 30;
+const MAX_RETRIES = 5;
+const FETCH_TIMEOUT = 15000;
 let retries = 0;
 
 function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
@@ -112,7 +112,7 @@ function render(data) {
     document.getElementById('content').innerHTML = html;
     
     // Cache for offline
-    try { localStorage.setItem('stats_cache', JSON.stringify(data)); } catch(e) {}
+    try { localStorage.setItem('stats_cache', JSON.stringify(data)); localStorage.setItem('stats_cache_time', new Date().toLocaleString('ru-RU')); } catch(e) {}
 }
 
 function showError(msg) {
@@ -121,33 +121,52 @@ function showError(msg) {
     document.getElementById('status-text').innerHTML = '&#x26a0;&#xfe0f; ' + msg;
 }
 
-async function load() {
+async function fetchWithTimeout(url, timeout) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeout);
     try {
-        const resp = await fetch(API, { mode: 'cors', cache: 'no-store' });
+        const resp = await fetch(url, { mode: 'cors', cache: 'no-store', signal: controller.signal });
+        clearTimeout(timer);
         if (!resp.ok) throw new Error('HTTP ' + resp.status);
-        const data = await resp.json();
+        return await resp.json();
+    } catch(e) {
+        clearTimeout(timer);
+        throw e;
+    }
+}
+
+async function load() {
+    // Show cached data immediately if available
+    try {
+        const cached = localStorage.getItem('stats_cache');
+        if (cached) {
+            const cdata = JSON.parse(cached);
+            document.getElementById('status').style.display = 'none';
+            render(cdata);
+            document.getElementById('retry-count').textContent = 'Кэш от ' + (localStorage.getItem('stats_cache_time') || 'неизвестно') + ' · обновление...';
+        }
+    } catch(e) {}
+
+    try {
+        const data = await fetchWithTimeout(API, FETCH_TIMEOUT);
         const s = document.getElementById('status');
         s.style.display = 'none';
         render(data);
+        document.getElementById('retry-count').textContent = '';
+        return;
     } catch(e) {
         retries++;
-        if (retries >= MAX_RETRIES) {
-            showError('Сервер не отвечает. Попробуйте позже.');
-            document.getElementById('retry-count').textContent = 'Попыток: ' + retries;
-            // Fallback: try cached data
-            try {
-                const cached = localStorage.getItem('stats_cache');
-                if (cached) {
-                    document.getElementById('status').style.display = 'none';
-                    render(JSON.parse(cached));
-                    document.getElementById('retry-count').textContent = 'Показаны кэшированные данные от ' + new Date().toLocaleString('ru-RU');
-                }
-            } catch(e2) {}
+        if (retries < MAX_RETRIES) {
+            document.getElementById('status-text').textContent =
+                'Сервер не отвечает... попытка ' + (retries + 1) + '/' + MAX_RETRIES;
+            setTimeout(load, 5000);
             return;
         }
-        document.getElementById('status-text').textContent =
-            'Сервер просыпается... попытка ' + (retries + 1) + '/' + MAX_RETRIES;
-        setTimeout(load, 3000);
+        // All retries exhausted
+        const s = document.getElementById('status');
+        s.className = 'status-bar error';
+        document.getElementById('status-text').innerHTML = '&#x26a0;&#xfe0f; Сервер статистики недоступен. Данные могут быть устаревшими.';
+        document.getElementById('retry-count').innerHTML = '<button class="retry-btn" onclick="retries=0;load();">Повторить</button>';
     }
 }
 
