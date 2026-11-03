@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://static.cloudflareinsights.com https://mc.yandex.ru https://mc.yandex.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src https://fonts.gstatic.com; connect-src 'self' https://astap.pythonanywhere.com https://stats.g.doubleclick.net https://mc.yandex.ru https://www.googletagmanager.com https://*.google-analytics.com https://mc.yandex.com; form-action 'self' https://astap.pythonanywhere.com; frame-src 'self' https://mc.yandex.ru">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/images/logo.svg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <title>Влияние SSL-сертификата на SEO и продвижение сайта | WebStudio</title>
+    <meta name="description" content="Как SSL-сертификат влияет на SEO: позиции в Google, доверие пользователей, Core Web Vitals. Бесплатный SSL за 5 минут (Let's Encrypt).">
+    <meta property="og:title" content="SSL-сертификат для сайта: зачем нужен и как получить бесплатно — WebStudio">
+    <meta property="og:description" content="SSL-сертификат для сайта: что это, зачем нужен, как влияет на SEO и доверие клиентов. Получите бесплатный SSL через Let's Encrypt и защитите сайт за 10 минут.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://uriy-as.org/blog/vliyanie-ssl-na-seo.html">
+    <meta property="og:image" content="https://uriy-as.org/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="WebStudio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SSL-сертификат для сайта: зачем нужен и как получить бесплатно — WebStudio">
+    <meta name="twitter:description" content="SSL-сертификат для сайта: что это, зачем нужен, как влияет на SEO и доверие клиентов. Получите бесплатный SSL через Let's Encrypt и защитите сайт за 10 минут.">
+    <meta name="twitter:image" content="https://uriy-as.org/og-image.png">
+    <link rel="canonical" href="https://uriy-as.org/blog/vliyanie-ssl-na-seo.html">
+    <link rel="alternate" hreflang="x-default" href="https://uriy-as.org/blog/vliyanie-ssl-na-seo.html">
+    <link rel="alternate" hreflang="ru" href="https://uriy-as.org/blog/vliyanie-ssl-na-seo.html">
+    <link rel="alternate" hreflang="en" href="https://uriy-as.org/en/blog/ssl-certificate-guide.html">
+    <link rel="dns-prefetch" href="https://Astap.pythonanywhere.com">
+    <link rel="preconnect" href="https://Astap.pythonanywhere.com" crossorigin>
+    <link rel="dns-prefetch" href="https://mc.yandex.ru">
+    <link rel="preconnect" href="https://mc.yandex.ru" crossorigin>
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MY48PMFD5M"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-MY48PMFD5M')</script>
+    <link rel="stylesheet" href="/css/style.css?v=p1-20261026">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Нужен ли SSL-сертификат для сайта?", "acceptedAnswer": {"@type": "Answer", "text": "Да, в 2026 году это фактически обязательное условие: без HTTPS браузер предупреждает посетителей, а поисковики и рекламные площадки ограничивают размещение. Для большинства сайтов подходит бесплатный Let's Encrypt."}}, {"@type": "Question", "name": "Как получить сертификат HTTPS для сайта?", "acceptedAnswer": {"@type": "Answer", "text": "Самый простой путь — через панель хостинга: раздел SSL-сертификаты → Let's Encrypt → выпустить для домена и www, затем включить 301-редирект с http на https и HSTS. Takes 5–10 минут."}}, {"@type": "Question", "name": "Влияет ли SSL-сертификат на продвижение сайта?", "acceptedAnswer": {"@type": "Answer", "text": "Прямого фактора ранжирования нет, но Google подтверждает, что безопасные страницы получают больше кликов. Кроме того, без HTTPS не работают часть аналитики, рекламных пикселей и оплата картой — это прямые потери денег."}}, {"@type": "Question", "name": "Чем отличается SSL от HTTPS?", "acceptedAnswer": {"@type": "Answer", "text": "SSL — протокол шифрования (сегодня используется его современная версия TLS), HTTPS — способ передачи данных по этому протоколу. В быту «SSL-сертификат» и «сертификат HTTPS» означают одно и то же."}}, {"@type": "Question", "name": "Сколько стоит SSL-сертификат для сайта?", "acceptedAnswer": {"@type": "Answer", "text": "Let's Encrypt — бесплатно с автопродлением. Платные DV-сертификаты — 1 500–4 000 ₴ в год, Wildcard — 6 000–15 000 ₴/год. Для сайта компании чаще всего хватает бесплатного."}}, {"@type": "Question", "name": "Что делать, если сайт показывает «небезопасно» после установки сертификата?", "acceptedAnswer": {"@type": "Answer", "text": "Проверьте, что сертификат выдан на ваш домен, срок действия не истёк, а цепочка доверия настроена. Проверка на ssllabs.com покажет точную причину; чаще всего дело в просроченном сертификате или в том, что HSTS включили до установки."}}]}
+    </script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://uriy-as.org/"}, {"@type": "ListItem", "position": 2, "name": "Статьи", "item": "https://uriy-as.org/articles.html"}, {"@type": "ListItem", "position": 3, "name": "Ssl Sertifikat", "item": "https://uriy-as.org/blog/vliyanie-ssl-na-seo.html"}]}</script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="/" class="logo"><img src="/images/logo.svg" alt="WebStudio" class="logo__img"></a>
+                <nav class="nav">
+                    <a href="/#services" data-i18n="nav-services">Услуги</a>
+                    <a href="/portfolio.html" data-i18n="nav-portfolio" data-en="Portfolio">Портфолио</a>
+                    <a href="/#about" data-i18n="nav-about">О нас</a>
+                    <a href="/articles.html" data-i18n="nav-articles">Статьи</a>
+                    <a href="/#contact" data-i18n="nav-contacts">Контакты</a>
+                    <a href="#" class="nav__bot" data-i18n="nav-chat" onclick="event.preventDefault();document.getElementById('chatBtn').click();this.blur();return false;">AI-чат</a>
+                </nav>
+                <button class="burger" id="burger" aria-label="Меню">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="article-hero">
+        <div class="container">
+            <a href="/articles.html" class="article-back" data-i18n="article-back">← Все статьи</a>
+            <h1>Влияние SSL-сертификата на SEO и продвижение сайта</h1>
+            <div class="meta">27 октября 2026 · обновлено 27 октября 2026</div>
+        </div>
+    </section>
+
+    <section class="article-content">
+        <div class="container">
+            <img src="/images/blog-ssl-sertifikat.svg" alt="SSL-сертификат " width="400" height="200" loading="lazy" style="width:100%;max-width:600px;height:auto;border-radius:12px;margin-bottom:1rem;">
+            <h2>Как получить сертификат HTTPS для сайта: 4 шага</h2>
+<p>Сертификат HTTPS (он же SSL-сертификат) шифрует трафик между посетителем и сервером: адрес в браузере становится <code>https://</code>, а данные защищены от перехвата. Ниже — самый короткий и надёжный путь для сайта на любом хостинге.</p>
+<ol>
+<li><strong>Проверьте текущее состояние.</strong> Откройте сайт и посмотрите на замок в адресной строке. Если его нет или браузер пишет «Небезопасно» — сертификат нужно выпустить заново.</li>
+<li><strong>Выпустите сертификат.</strong> У большинства хостингов (панели ISPmanager, Hestia, cPanel, Plesk) есть кнопка «SSL-сертификаты → Let's Encrypt → Получить» и автопродление на 90 дней. Для WordPress часто есть плагин в один клик.</li>
+<li><strong>Принудительно переведите сайт на HTTPS.</strong> В настройках сервера включите редирект 301 с <code>http://</code> на <code>https://</code> и включите HSTS, чтобы браузеры больше не возвращались на нешифрованную версию.</li>
+<li><strong>Обновите ссылки и проверьте.</strong> Замените внутренние адреса на <code>https://</code>, обновите карту сайта и веб-аналитику, проверьте сайт на https://www.ssllabs.com/ssltest/ — оценка A+ означает, что сертификат и цепочка настроены правильно.</li>
+</ol>
+<table class="price-table"><thead><tr><th>Тип сертификата</th><th>Цена</th><th>Срок</th><th>Кому подходит</th></tr></thead><tbody><tr><td>Let's Encrypt (бесплатно)</td><td>0 ₴</td><td>90 дней с автопродлением</td><td>Сайты, блоги, магазины — 95% случаев</td></tr><tr><td>Comodo / Sectigo DV</td><td>1 500–4 000 ₴/год</td><td>1 год</td><td>Нужен гарантийный сервис, страховка</td></tr><tr><td>Wildcard (*.domain.ru)</td><td>6 000–15 000 ₴/год</td><td>1 год</td><td>Много субдоменов, SSL на каждый отдельно неудобно</td></tr><tr><td>EV-сертификат</td><td>15 000–40 000 ₴/год</td><td>1 год</td><td>Только ради зелёной строки в адресной строке, для SEO не нужно</td></tr></tbody></table>
+<p>Влияние SSL на продвижение: сам по себе сертификат не является фактором ранжирования, но Google подтвердил, что страницы с <code>https://</code> и безопасным соединением получают больше кликов в результатах. Кроме того, без сертификата браузер помечает сайт как «небезопасный», а это отсекает часть трафика и мешает установке аналитики, пикселей рекламы и оплате картой. <a href="/services.html">Настроим SSL и переведём сайт на HTTPS</a> — в рамках технического сопровождения или разовой задачи.</p>
+
+            <h2>Что такое SSL-сертификат</h2>
+<p>SSL (Secure Sockets Layer) шифрует данные между сервером и браузером. Когда сайт имеет SSL, в адресной строке отображается значок замка, а адрес начинается с HTTPS.</p>
+<h2>Почему SSL обязателен</h2>
+<p>Браузеры помечают сайты без HTTPS как «Не защищён». 85% пользователей не совершают покупки на таких сайтах. Google использует HTTPS как фактор ранжирования.</p>
+<h2>Как получить SSL бесплатно</h2>
+<p>Let's Encrypt выдаёт бесплатные SSL-сертификаты. На GitHub Pages SSL включается автоматически при подключении кастомного домена.</p>
+<h2>Типы SSL-сертификатов</h2>
+<p>DV (Domain Validation) — базовый, бесплатный. OV (Organization Validation) — с проверкой компании. EV (Extended Validation) — зелёная строка адреса.</p>
+<h2>Как WebStudio настраивает SSL</h2>
+<p>SSL — обязательная часть каждого проекта. Настраиваем Let's Encrypt, редирект с HTTP на HTTPS.</p>
+<h2>Как проверить SSL-сертификат</h2>
+<p>Проще всего посмотреть на адресную строку: если адрес начинается с https:// и рядом есть значок замка — соединение защищено. Для детальной проверки (срок действия, цепочка сертификатов, покрытие поддоменов) используйте бесплатный сервис SSL Labs: он покажет оценку от A до T и объяснит, что нужно исправить.</p>
+<h2>Что делать, если SSL не работает</h2>
+<p>Самые частые проблемы — истёкший сертификат (Let's Encrypt обновляет его автоматически раз в 90 дней, но только если настроено обновление) и смешанный контент, когда часть ресурсов страницы загружается по http://. Проверьте, что все скрипты, шрифты и изображения отдаются по https://, и настройте редирект с http:// на https://. Если браузер всё ещё предупреждает об опасности, свяжитесь с нами — настроим SSL правильно в течение одного дня.</p>
+
+            
+            <h2>Часто задаваемые вопросы</h2>
+<details style="margin-bottom:1rem;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;background:var(--card-bg);">
+<summary style="font-weight:600;cursor:pointer;">Нужен ли SSL-сертификат для сайта?</summary>
+<p style="margin-top:0.8rem;color:var(--muted);">Да, в 2026 году это фактически обязательное условие: без HTTPS браузер предупреждает посетителей, а поисковики и рекламные площадки ограничивают размещение. Для большинства сайтов подходит бесплатный Let's Encrypt.</p>
+</details>
+<details style="margin-bottom:1rem;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;background:var(--card-bg);">
+<summary style="font-weight:600;cursor:pointer;">Как получить сертификат HTTPS для сайта?</summary>
+<p style="margin-top:0.8rem;color:var(--muted);">Самый простой путь — через панель хостинга: раздел SSL-сертификаты → Let's Encrypt → выпустить для домена и www, затем включить 301-редирект с http на https и HSTS. Takes 5–10 минут.</p>
+</details>
+<details style="margin-bottom:1rem;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;background:var(--card-bg);">
+<summary style="font-weight:600;cursor:pointer;">Влияет ли SSL-сертификат на продвижение сайта?</summary>
+<p style="margin-top:0.8rem;color:var(--muted);">Прямого фактора ранжирования нет, но Google подтверждает, что безопасные страницы получают больше кликов. Кроме того, без HTTPS не работают часть аналитики, рекламных пикселей и оплата картой — это прямые потери денег.</p>
+</details>
+<details style="margin-bottom:1rem;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;background:var(--card-bg);">
+<summary style="font-weight:600;cursor:pointer;">Чем отличается SSL от HTTPS?</summary>
+<p style="margin-top:0.8rem;color:var(--muted);">SSL — протокол шифрования (сегодня используется его современная версия TLS), HTTPS — способ передачи данных по этому протоколу. В быту «SSL-сертификат» и «сертификат HTTPS» означают одно и то же.</p>
+</details>
+<details style="margin-bottom:1rem;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;background:var(--card-bg);">
+<summary style="font-weight:600;cursor:pointer;">Сколько стоит SSL-сертификат для сайта?</summary>
+<p style="margin-top:0.8rem;color:var(--muted);">Let's Encrypt — бесплатно с автопродлением. Платные DV-сертификаты — 1 500–4 000 ₴ в год, Wildcard — 6 000–15 000 ₴/год. Для сайта компании чаще всего хватает бесплатного.</p>
+</details>
+<details style="margin-bottom:1rem;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;background:var(--card-bg);">
+<summary style="font-weight:600;cursor:pointer;">Что делать, если сайт показывает «небезопасно» после установки сертификата?</summary>
+<p style="margin-top:0.8rem;color:var(--muted);">Проверьте, что сертификат выдан на ваш домен, срок действия не истёк, а цепочка доверия настроена. Проверка на ssllabs.com покажет точную причину; чаще всего дело в просроченном сертификате или в том, что HSTS включили до установки.</p>
+</details>
+<p>Смежные темы: <a href="/blog/kak-vybrat-hosting.html">как выбрать хостинг</a>, <a href="/podderzhka-sayta-cena.html">поддержка сайта: цена</a>.</p>
+            <p class="article-source">Оригинал этой статьи — <a href="https://uriy-as.org">uriy-as.org</a>. Для подтверждения авторства обращайтесь к сайту или в <a href="https://t.me/uriy_as59" target="_blank" rel="noopener">Telegram</a>.</p>
+
+            <div class="share-btns">
+                <a href="https://t.me/uriy_as59" target="_blank" class="share-btn share-btn--tg" data-i18n="article-share-tg">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.26.76a1.73 1.73 0 0 0-1.76-.35L1.84 9.58a1.66 1.66 0 0 0 .05 3.08l4.88 1.9 2.94 8.86a1.38 1.38 0 0 0 .9.87 1.32 1.32 0 0 0 1.2-.21l4.23-3.46a1.8 1.8 0 0 1 2.05-.12l4.85 3.52a1.35 1.35 0 0 0 1.45.12 1.38 1.38 0 0 0 .78-1.15L23.7 2.47a1.73 1.73 0 0 0-1.44-1.71z"/></svg>
+                    Telegram
+                </a>
+                <a href="mailto:?subject=WebStudio%3A%20SSL-%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%3A%20%D0%B7%D0%B0%D1%87%D0%B5%D0%BC%20%D0%BE%D0%BD%20%D0%BD%D1%83%D0%B6%D0%B5%D0%BD%20%D1%81%D0%B0%D0%B9%D1%82%D1%83&body=https://uriy-as.org/blog/vliyanie-ssl-na-seo.html" class="share-btn share-btn--email" data-i18n="article-share-email">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+                    Email
+                </a>
+            </div>
+            <div class="related-articles">
+                <h3>Читайте также</h3>
+                <ul>
+                    <li><a href="/blog/kak-vybrat-hosting.html">Как выбрать хостинг для сайта</a></li>
+                    <li><a href="/blog/seo-optimizatsiya-sayta.html">Что такое SEO и почему оно важно</a></li>
+                </ul>
+            </div>
+
+            <p style="margin-top:1.5rem"><a href="/services.html" class="btn btn--primary btn--sm">Заказать сайт</a></p>
+        </div>
+    </section>
+
+        <section class="section">
+        <div class="container">
+            <h2 style="margin-bottom:1.5rem;font-size:1.5rem;">📖 Читайте также</h2>
+            <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:0.75rem;">
+                <li><a href="/blog/kak-vybrat-hosting.html" style="color:var(--accent);font-weight:500;">Как выбрать хостинг для сайта</a> <span style="color:var(--muted);font-size:0.85rem;">— где разместить сайт после настройки SSL</span></li>
+                <li><a href="/blog/seo-optimizatsiya-sayta.html" style="color:var(--accent);font-weight:500;">Что такое SEO и почему оно важно для сайта</a> <span style="color:var(--muted);font-size:0.85rem;">— SSL — один из факторов ранжирования Google</span></li>
+                <li><a href="/blog/5-priznakov-plohogo-sayta.html" style="color:var(--accent);font-weight:500;">5 признаков плохого сайта</a> <span style="color:var(--muted);font-size:0.85rem;">— отсутствие SSL — один из признаков</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="tg-promo section">
+        <div class="container">
+            <div class="tg-promo__inner">
+                <h2 data-i18n="tg-promo-title">Подпишитесь на наш Telegram-канал</h2>
+                <p data-i18n="tg-promo-desc">Кейсы, статьи и инсайты по разработке сайтов, Telegram-ботов и контент-маркетингу. Публикуем полезный контент каждый понедельник, среду, пятницу и субботу в 08:10.</p>
+                <a href="https://t.me/uriy_as59" target="_blank" class="btn btn--tg" data-i18n="tg-promo-btn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.26.76a1.73 1.73 0 0 0-1.76-.35L1.84 9.58a1.66 1.66 0 0 0 .05 3.08l4.88 1.9 2.94 8.86a1.38 1.38 0 0 0 .9.87 1.32 1.32 0 0 0 1.2-.21l4.23-3.46a1.8 1.8 0 0 1 2.05-.12l4.85 3.52a1.35 1.35 0 0 0 1.45.12 1.38 1.38 0 0 0 .78-1.15L23.7 2.47a1.73 1.73 0 0 0-1.44-1.71z"/></svg>
+                    Подписаться в Telegram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="author-box" style="margin:2rem 0;padding:1.5rem;background:#f8f9fa;border-radius:8px;border-left:4px solid #0066cc;">
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <div style="width:64px;height:64px;border-radius:50%;background:#0066cc;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:bold;flex-shrink:0;">ЮА</div>
+    <div>
+      <p style="margin:0;font-weight:600;font-size:1.1rem;">Юрий Астапьев</p>
+      <p style="margin:0.25rem 0 0;color:#555;font-size:0.9rem;">Основатель WebStudio. Разработка сайтов, Telegram-ботов и SEO-продвижение с 2019 года. Портфолио: <a href="https://uriy-as.org/portfolio.html">uriy-as.org/portfolio</a></p>
+    </div>
+  </div>
+</section>
+<section class="svc-cta">
+        <div class="container">
+            <h2>Нужна услуга?</h2>
+            <p class="svc-cta__sub">Работаю по Харькову и по всей Украине — фиксирую объём, сроки и цену до старта.</p>
+            <div class="svc-cta__row">
+            <a class="svc-cta__card svc-cta__card--main" href="/sozdanie-saytov-kharkov.html"><strong>Сайт под ключ в Харькове</strong><span>Цены и сроки — от 12 000 ₽, 5–10 дней</span></a>
+            <a class="svc-cta__card" href="/telegram-bot-pod-klyuch.html"><strong>Telegram-бот для заявок</strong><span>От 4 000 ₽, 3–6 дней</span></a>
+            <a class="svc-cta__card" href="/podderzhka-sayta-cena.html"><strong>Поддержка сайта</strong><span>Тарифы — от 3 000 ₽/мес</span></a>
+            <a class="svc-cta__card" href="/services.html"><strong>Все услуги</strong><span>Каталог: сайты, боты, SEO, вёрстка</span></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__left">
+                    <a href="/" class="logo"><img src="/images/logo.svg" alt="WebStudio" class="logo__img"></a>
+                    <p data-i18n="footer-copyright">© 2026 WebStudio. Все права защищены.</p>
+                    <p style="margin-top:8px;font-size:0.85rem;" data-i18n="footer-bot"><a href="https://t.me/uriy_as59" target="_blank" style="color:var(--accent);">@uriy_as59</a> — наш Telegram-канал: кейсы, разборы, задайте вопрос в комментариях</p>
+                    <p style="margin-top:4px;font-size:0.8rem;"><a href="/privacy.html" style="color:var(--muted);" data-i18n="footer-privacy">Политика конфиденциальности</a></p>
+                </div>
+                <div class="footer__social">
+                    <a href="https://t.me/uriy_as59" target="_blank" aria-label="Telegram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.26.76a1.73 1.73 0 0 0-1.76-.35L1.84 9.58a1.66 1.66 0 0 0 .05 3.08l4.88 1.9 2.94 8.86a1.38 1.38 0 0 0 .9.87 1.32 1.32 0 0 0 1.2-.21l4.23-3.46a1.8 1.8 0 0 1 2.05-.12l4.85 3.52a1.35 1.35 0 0 0 1.45.12 1.38 1.38 0 0 0 .78-1.15L23.7 2.47a1.73 1.73 0 0 0-1.44-1.71z"/></svg>
+                    </a>
+                    <a href="https://medium.com/@uriy.as59" target="_blank" aria-label="Medium"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13.54 12a6.8 6.8 0 0 1-6.77 6.82A6.8 6.8 0 0 1 0 12a6.8 6.8 0 0 1 6.77-6.82A6.8 6.8 0 0 1 13.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42zM24 12c0 3.1-.53 5.62-1.19 5.62S21.62 15.1 21.62 12s.53-5.62 1.19-5.62S24 8.9 24 12z"/></svg></a>
+<a href="https://youtube.com/@%D0%AE%D1%81%D1%82%D0%B0%D1%81-%D0%B34%D1%8B" target="_blank" aria-label="YouTube">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a2.96 2.96 0 0 0-2.08-2.1C19.55 3.5 12 3.5 12 3.5s-7.55 0-9.42.6A2.96 2.96 0 0 0 .5 6.2 30.9 30.9 0 0 0 0 12a30.9 30.9 0 0 0 .5 5.8 2.96 2.96 0 0 0 2.08 2.1c1.87.6 9.42.6 9.42.6s7.55 0 9.42-.6a2.96 2.96 0 0 0 2.08-2.1 30.9 30.9 0 0 0 .5-5.8 30.9 30.9 0 0 0-.5-5.8zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://t.me/uriy_as59" target="_blank" class="tg-float" aria-label="Telegram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.26.76a1.73 1.73 0 0 0-1.76-.35L1.84 9.58a1.66 1.66 0 0 0 .05 3.08l4.88 1.9 2.94 8.86a1.38 1.38 0 0 0 .9.87 1.32 1.32 0 0 0 1.2-.21l4.23-3.46a1.8 1.8 0 0 1 2.05-.12l4.85 3.52a1.35 1.35 0 0 0 1.45.12 1.38 1.38 0 0 0 .78-1.15L23.7 2.47a1.73 1.73 0 0 0-1.44-1.71z"/></svg>
+        <span data-i18n="article-share-tg">Telegram</span>
+    </a>
+
+    <div class="lang-widget" id="langWidget">
+        <button class="lang-btn-floating" id="langBtnFloat" aria-label="Switch language" onclick="toggleLang()">EN</button>
+    </div>
+
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-btn" id="chatBtn" aria-label="Чат">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span data-i18n="chat-btn-text">Чат</span>
+        </button>
+        <div class="chat-popup" id="chatPopup">
+            <div class="chat-popup__header">
+                <h4 data-i18n="chat-title">Чат с WebStudio</h4>
+                <button class="chat-popup__close" id="chatClose">&times;</button>
+            </div>
+            <div class="chat-popup__body" id="chatBody">
+                <div class="chat-msg chat-msg--bot" data-i18n="chat-error" style="display:none;"></div>
+            </div>
+            <form class="chat-popup__form" id="chatForm">
+                <input type="text" placeholder="Ваше сообщение..." autocomplete="off" autocorrect="off" spellcheck="false" required data-i18n="chat-placeholder" aria-label="Сообщение для AI-ассистента">
+                                <button type="submit">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script defer src="/js/script.js?v=p0-20261026"></script>
+    <noscript><img src="https://Astap.pythonanywhere.com/pixel?page=/blog/vliyanie-ssl-na-seo.html&ref=" style="position:absolute;left:-9999px" alt="" /></noscript>
+    <noscript><div><img src="https://mc.yandex.ru/watch/109350815" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109350815,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
+</body>
+</html>
+
+

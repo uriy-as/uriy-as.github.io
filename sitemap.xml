@@ -227,6 +227,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/en/blog/how-to-choose-hosting.html" />
   </url>
   <url>
+    <loc>https://uriy-as.org/vliyanie-ssl-na-seo.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://uriy-as.org/blog/ssl-sertifikat.html</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
@@ -580,6 +586,12 @@
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ru" href="https://uriy-as.org/bot-prodazh-telegram.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://uriy-as.org/bot-prodazh-telegram.html" />
+  </url>
+  <url>
+    <loc>https://uriy-as.org/telegram-bot-crm.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://uriy-as.org/integraciya-crm-telegram-bota.html</loc>
