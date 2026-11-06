@@ -89,7 +89,19 @@
         .service-card ul { padding-left: 1.2rem; color: var(--muted); line-height: 2; }
         .service-card .btn { margin-top: 1rem; }
 
-    </style>
+    
+    /* --- блок метрик --- */
+    .metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1rem; margin:2.5rem 0 3rem; }
+    .metric { background:var(--card-bg); border:1px solid var(--border); border-radius:14px; padding:1.25rem; text-align:center; }
+    .metric b { display:block; font-size:1.9rem; line-height:1.1; color:var(--accent); }
+    .metric span { display:block; margin-top:.4rem; font-size:.85rem; color:var(--muted); }
+    /* --- блок доверия --- */
+    .trust { margin:3rem 0; padding:2rem; background:var(--card-bg); border:1px solid var(--border); border-radius:16px; }
+    .trust h2 { margin:0 0 1.25rem; font-size:1.35rem; }
+    .trust-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; }
+    .trust-item h3 { margin:0 0 .5rem; font-size:1.02rem; color:var(--accent); }
+    .trust-item p { margin:0; font-size:.93rem; color:var(--muted); line-height:1.65; }
+</style>
 
     <script type="application/ld+json">
     {"@context":"https://schema.org","itemListElement":[{"position":1,"name":"Главная","item":"https://uriy-as.org/","@type":"ListItem"},{"position":2,"name":"Услуги","item":"https://uriy-as.org/services.html","@type":"ListItem"}],"@type":"BreadcrumbList"}
@@ -248,7 +260,49 @@
     </section>
 
     <!-- Telegram Promo -->
-    <section class="tg-promo section">
+    
+            <!-- Метрики вместо отзывов: конкретные цифры по нашим проектам -->
+            <div class="metrics">
+                <div class="metric"><b>70</b><span>страниц в sitemap,<br>все отдают 200</span></div>
+                <div class="metric"><b>21</b><span>статья на Dev.to<br>с беклинками на сайт</span></div>
+                <div class="metric"><b>439</b><span>просмотров<br>наших статей</span></div>
+                <div class="metric"><b>0</b><span>битых внутренних<br>ссылок</span></div>
+                <div class="metric"><b>5</b><span>групп в схеме<br>Schema.org</span></div>
+                <div class="metric"><b>24/7</b><span>AI-чат с резервной<br>цепочкой моделей</span></div>
+            </div>
+
+            <!-- Как я работаю: заменяет отзывы, которых пока нет -->
+            <div class="trust">
+                <h2>Как я работаю</h2>
+                <div class="trust-grid">
+                    <div class="trust-item">
+                        <h3>1. Разбор задачи до оценки</h3>
+                        <p>Смотрю ваш текущий код, а не только описание. Говорю прямо, если вижу, что задача решается проще, чем кажется, — и называю цену после разбора, а не «по факту».</p>
+                    </div>
+                    <div class="trust-item">
+                        <h3>2. Демо до полной оплаты</h3>
+                        <p>Первый этап — рабочий прототип: один сценарий, одна страница, один бот. Вы видите результат до того, как платите за остальное. Предоплата 30–50%, остальное — по приёмке.</p>
+                    </div>
+                    <div class="trust-item">
+                        <h3>3. Передача прав и доступов</h3>
+                        <p>Код, домен, аккаунты и документация — ваши. Никакой привязки к себе: через месяц сможете передать задачу другому разработчику без потери контекста.</p>
+                    </div>
+                    <div class="trust-item">
+                        <h3>4. Ответ в течение часа</h3>
+                        <p>Работаю в Telegram <a href="https://t.me/uriy_as59">@uriy_as59</a>. Отвечаю в рабочее время за час, задаю уточняющие вопросы сразу, а не через день.</p>
+                    </div>
+                    <div class="trust-item">
+                        <h3>5. Поддержка после сдачи</h3>
+                        <p>30 дней на гарантийные правки бесплатно. Если после сдачи что-то ломается — чиню без нового счёта.</p>
+                    </div>
+                    <div class="trust-item">
+                        <h3>6. Сначала заказ — потом отзыв</h3>
+                        <p>Отзывы оставляют клиенты после реальной работы, поэтому их у меня пока мало. Вместо пустых отзывов — цифры по проектам и открытое портфолио: <a href="/stats.html">статистика</a> и <a href="https://github.com/uriy-as/site" target="_blank">исходный код</a>.</p>
+                    </div>
+                </div>
+            </div>
+
+<section class="tg-promo section">
         <div class="container">
             <div class="tg-promo__inner">
                 <h2 data-i18n="tg-promo-title" data-en="Subscribe to our Telegram Channel">Подпишитесь на наш Telegram-канал</h2>
