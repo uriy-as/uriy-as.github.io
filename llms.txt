@@ -7,13 +7,14 @@
 - AI Telegram bots: customer support, sales automation, lead collection
 - Science articles for Telegram channels
 - SEO promotion and content marketing
+- Automation: n8n / Make, API integrations with CRM, webhooks, scripts
 
 ## Tech Stack
 - HTML5, CSS3, JavaScript (vanilla)
 - Python Flask for backend/API
 - GitHub Pages for hosting
-- Schema.org JSON-LD (FAQPage, BreadcrumbList, Organization)
-- AI/LLM integration for chatbot
+- Schema.org JSON-LD (Article, FAQPage, BreadcrumbList, HowTo, LocalBusiness)
+- AI/LLM integration with automatic model fallback chain
 
 ## Pricing
 - Website from $250
@@ -21,24 +22,16 @@
 - Science articles from $50
 - SEO promotion from $70/month
 
+## Key pages
+- Website development: https://uriy-as.org/services.html
+- Portfolio and cases: https://uriy-as.org/portfolio.html
+- Blog (21+ articles): https://uriy-as.org/articles.html
+- Telegram bot pricing: https://uriy-as.org/cena-telegram-bota.html
+- Website pricing: https://uriy-as.org/cena-sayta-pod-klyuch.html
+- Live site statistics: https://uriy-as.org/stats.html
+
 ## Contact
 - Website: https://uriy-as.org
 - Telegram: https://t.me/uriy_as59
 - Bot: https://t.me/NevWebStudio_bot
 - Email: uriy.as59@yandex.com
-
-## Blog Articles
-- Turnkey website development: https://uriy-as.org/blog/sozdanie-saytov-pod-klyuch.html
-- How to order a Telegram bot: https://uriy-as.org/blog/kak-zakazat-telegram-bota.html
-- How much does a website cost in 2026: https://uriy-as.org/blog/skolko-stoit-sait.html
-- SEO optimization guide: https://uriy-as.org/blog/seo-optimizatsiya-sayta.html
-- Telegram bot vs website: https://uriy-as.org/blog/telegram-bot-ili-sayt.html
-- How to choose hosting: https://uriy-as.org/blog/kak-vybrat-hosting.html
-- AI bots capabilities: https://uriy-as.org/blog/ai-boty-vozmozhnosti.html
-- Telegram bot automation: https://uriy-as.org/blog/telegram-bot-avtomatizatsiya-prodazh.html
-- Website in 5 days: https://uriy-as.org/blog/sayt-za-5-dney.html
-- Formatting Telegram articles: https://uriy-as.org/blog/formatirovanie-statey-telegram.html
-- SSL certificate guide: https://uriy-as.org/blog/ssl-sertifikat.html
-- 5 mistakes in content strategy: https://uriy-as.org/blog/5-oshibok-kontent-strategii-telegram.html
-- 5 signs of bad website: https://uriy-as.org/blog/5-priznakov-plohogo-sayta.html
-- Website maintenance cost: https://uriy-as.org/blog/skolko-stoit-podderzhka-sayta.html
