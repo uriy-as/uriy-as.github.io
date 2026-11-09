@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" as="image" href="/images/logo.svg" fetchpriority="high">
+    <link rel="icon" type="image/svg+xml" href="/images/logo.svg">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <title>robots.txt для сайта: что это, пример и 7 ошибок 2026 | WebStudio</title>
+    <meta name="description" content="robots.txt для сайта 2026: что это, примеры директив, таблица Allow/Disallow, 7 ошибок, проверка в GSC. Настройка за 5 минут.">
+    <meta property="og:title" content="robots.txt для сайта: что это, пример и ошибки 2026 | WebStudio">
+    <meta property="og:description" content="Как написать robots.txt: базовый пример, таблица директив, 7 частых ошибок. Файл 15 строк для сайта из 70 страниц.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://uriy-as.org/robots-txt-dlya-sayta.html">
+    <meta property="og:image" content="https://uriy-as.org/og-image.png">
+    <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+    <meta property="og:locale" content="ru_RU"><meta property="og:site_name" content="WebStudio">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://uriy-as.org/robots-txt-dlya-sayta.html">
+    <link rel="alternate" hreflang="ru" href="https://uriy-as.org/cena-telegram-bota.html">
+    <link rel="alternate" hreflang="x-default" href="https://uriy-as.org/cena-telegram-bota.html">
+    <link rel="dns-prefetch" href="https://astap.pythonanywhere.com">
+    <link rel="preconnect" href="https://astap.pythonanywhere.com" crossorigin>
+    <link rel="dns-prefetch" href="https://mc.yandex.ru">
+    <link rel="preconnect" href="https://mc.yandex.ru" crossorigin>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MY48PMFD5M"></script>
+    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-MY48PMFD5M')</script>
+    <link rel="stylesheet" href="/css/style.css?v=p2-20261106">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://uriy-as.org/"}, {"@type": "ListItem", "position": 2, "name": "Услуги", "item": "https://uriy-as.org/services.html"}, {"@type": "ListItem", "position": 3, "name": "Telegram-бот: цена разработки в 2026 году"}]}
+    </script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Что такое robots.txt простыми словами?", "acceptedAnswer": {"@type": "Answer", "text": "Файл в корне сайта с правилами для поисковиков: что сканировать, а что нет. Ошибка в нём может полностью убрать сайт из выдачи."}}, {"@type": "Question", "name": "Может ли robots.txt улучшить позиции в Google?", "acceptedAnswer": {"@type": "Answer", "text": "Напрямую — нет. Он только управляет сканированием. Но правильный robots.txt не мешает индексации и экономит краулинговый бюджет."}}, {"@type": "Question", "name": "Что будет, если закрыть всё через Disallow: /?", "acceptedAnswer": {"@type": "Answer", "text": "Сайт полностью выпадет из индекса. Это самая частая причина жалоб «пропали из Google»."}}, {"@type": "Question", "name": "Нужно ли закрывать /parser/ и служебные страницы?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Служебные разделы (/parser/, /stats, /api/) не нужны в выдаче и тратят краулинговый бюджет."}}, {"@type": "Question", "name": "Как часто Google обновляет robots.txt?", "acceptedAnswer": {"@type": "Answer", "text": "При каждом обходе сайта. После правки обычно 1–3 дня."}}, {"@type": "Question", "name": "robots.txt или meta noindex — что лучше?", "acceptedAnswer": {"@type": "Answer", "text": "Для служебных страниц — robots.txt. Для отдельной статьи — meta noindex. Disallow не убирает страницу из индекса, только запрещает сканирование."}}]}</script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://uriy-as.org/"},{"@type":"ListItem","position":2,"name":"Услуги","item":"https://uriy-as.org/services.html"},{"@type":"ListItem","position":3,"name":"Создание сайтов в Харькове"}]}
+    </script>
+    <style>
+        .article-hero{padding:140px 0 40px;text-align:center}.article-hero h1{font-size:2rem;margin-bottom:.5rem}
+        .article-content{max-width:800px;margin:0 auto;padding-bottom:40px;line-height:1.8;font-size:1.05rem}
+        .article-content p{margin-bottom:1.2rem;color:var(--muted)}.article-content h2{font-size:1.4rem;margin:2rem 0 1rem;color:var(--accent)}
+        .article-content h3{font-size:1.15rem;margin:1.5rem 0 .8rem}
+        .article-content ul,.article-content ol{margin-bottom:1.2rem;padding-left:1.5rem;color:var(--muted)}
+        .article-content li{margin-bottom:.5rem}
+        .price-table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.95rem}
+        .price-table th,.price-table td{padding:.75rem 1rem;text-align:left;border-bottom:1px solid var(--border)}
+        .price-table th{background:var(--card-bg);font-weight:600;color:var(--text)}.price-table td{color:var(--muted)}
+        .price-highlight{font-weight:700;color:var(--accent)}
+        .checklist{list-style:none;padding:0;margin:1.5rem 0}.checklist li{padding:.5rem 0;padding-left:2rem;position:relative;color:var(--muted)}
+        .checklist li::before{content:"";position:absolute;left:0;top:.7rem;width:16px;height:16px;background:var(--accent);border-radius:50%}
+        .local-cta{margin:2rem 0;padding:2rem;background:linear-gradient(135deg,#667eea,#764ba2);border-radius:16px;color:#fff;text-align:center}
+        .local-cta h2{color:#fff;margin-top:0}.local-cta a{display:inline-block;margin-top:1rem;padding:.9rem 2rem;background:#fff;color:#4c1d95;border-radius:10px;font-weight:700;text-decoration:none}
+        .related-articles{margin-top:2rem;padding:1.5rem;background:var(--card-bg,#f8f9fa);border-radius:12px;border:1px solid var(--border,#eee)}
+        .related-articles h3{font-size:1.1rem;margin-bottom:1rem;color:var(--accent,#2563eb)}
+        .related-articles ul{list-style:none;padding:0;margin:0}.related-articles li{margin-bottom:.6rem}
+        .related-articles li a{color:var(--accent,#2563eb);text-decoration:none;font-size:.95rem}
+    </style>
+</head>
+<body>
+    <header class="header"><div class="container"><div class="header__inner">
+        <a href="/" class="logo"><img src="/images/logo.svg" alt="WebStudio" class="logo__img"></a>
+        <nav class="nav">
+            <a href="/services.html">Услуги</a><a href="/portfolio.html">Портфолио</a><a href="/articles.html">Статьи</a><a href="/#contact">Контакты</a>
+            <a href="#" class="nav__bot" onclick="event.preventDefault();document.getElementById('chatBtn').click();this.blur();return false;">AI-чат</a>
+        </nav>
+        <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div></div></header>
+
+    <section class="article-hero"><div class="container">
+        <h1>robots.txt для сайта: что это, пример и 7 ошибок 2026 года</h1>
+        <p style="max-width:700px;margin:0 auto;color:var(--muted)">Файл robots.txt из 15 строк управляет всей индексацией. Разбираем директивы Allow/Disallow, пример для сайта на 70 страниц и 7 ошибок, из-за которых сайт пропадает из Google.</p>
+    </div></section>
+
+<section class="article-content"><div class="container">
+
+<h2>Что такое robots.txt</h2>
+<p>Файл robots.txt — это текстовый файл в корне сайта, который подсказывает поисковикам, какие страницы можно сканировать, а какие закрыты. Он <strong>не влияет напрямую на позиции</strong>, но неправильный robots.txt может полностью исключить сайт из индекса. Google читает его при каждом обходе сайта, поэтому файл должен быть корректным.</p>
+<p>Расположение: <strong>https://uriy-as.org/robots.txt</strong>. Пустые директивы Disallow игнорируются — закрывать страницы «на всякий случай» нельзя.</p>
+
+<table class="price-table">
+<thead><tr><th>Директива</th><th>Что делает</th><th>Пример</th></tr></thead>
+<tbody>
+<tr><td><strong>User-agent: *</strong></td><td>Правила для всех поисковиков</td><td>User-agent: *</td></tr>
+<tr><td><strong>Disallow:</strong></td><td>Запрежает доступ к пути</td><td>Disallow: /parser/</td></tr>
+<tr><td><strong>Allow:</strong></td><td>Разрешает доступ к пути (исключение)</td><td>Allow: /blog/</td></tr>
+<tr><td><strong>Sitemap:</strong></td><td>Указывает путь к карте сайта</td><td>Sitemap: https://uriy-as.org/sitemap.xml</td></tr>
+<tr><td><strong>Crawl-delay:</strong></td><td>Задержка (устарело, игнорируется Google)</td><td>Не использовать</td></tr>
+<tr><td><strong>Noindex в robots.txt</strong></td><td>Плохая практика — страница не исчезнет из индекса</td><td>Используйте meta noindex</td></tr>
+</tbody>
+</table>
+
+<h2>Пример базового robots.txt</h2>
+<p>Для корпоративного сайта из 70+ страниц достаточно 15–20 строк:</p>
+<div style="background:#1e1e2e;color:#cdd6f4;padding:1.2rem;border-radius:12px;font-family:monospace;font-size:.85rem;white-space:pre-line;margin:1.5rem 0;">User-agent: *
+Allow: /
+
+# Служебные разделы
+Disallow: /parser/
+Disallow: /stats.html
+Disallow: /gh-stats.html
+
+# AI-краулеры (трафик из AI-ответов)
+User-agent: GPTBot
+Allow: /
+
+Sitemap: https://uriy-as.org/sitemap.xml</div>
+
+<h2>7 ошибок в robots.txt</h2>
+<ul>
+<li><strong>Disallow: /</strong> — закрывает весь сайт. Самая частая причина «пропал из Google».</li>
+<li><strong>Закрытие CSS/JS</strong> — поисковик не видит стили и ранжирует «слепую».</li>
+<li><strong>Disallow для служебных URL без нужды</strong> — /parser/, /api/, /stats — да; контент — нет.</li>
+<li><strong>Отсутствие Sitemap:</strong> — мелочь, но помогает индексации.</li>
+<li><strong>Дубли директив без User-agent</strong> — каждая группа правил начинается с User-agent.</li>
+<li><strong>Проверка по Google Search Console</strong> — раздел «Файл robots.txt» покажет ошибки.</li>
+<li><strong>Закрытие сайта на время разработки</strong> — не забыть открыть до релиза.</li>
+</ul>
+
+<h2>Как проверить файл</h2>
+<ul>
+<li>Откройте <strong>https://uriy-as.org/robots.txt</strong> в браузере — должен быть текст, а не 404.</li>
+<li>GSC → Настройки → Файл robots.txt: должен отображаться без ошибок.</li>
+<li>Робот: <strong>Googlebot и YandexBot получают 200</strong> на всех страницах.</li>
+<li>После правки — подождите 1–3 дня, Google перечитает файл.</li>
+</ul>
+
+<h2>Что делает WebStudio</h2>
+<p>При разработке сайта robots.txt создаётся автоматически под структуру проекта: служебные разделы закрыты, AI-краулеры разрешены, sitemap подключён. Если ваш robots.txt блокирует индексацию — напишите в Telegram, проверю за 5 минут.</p>
+
+<h2>Частые вопросы</h2>
+<details style="margin-bottom:1rem;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;background:var(--card-bg);">
+<summary style="font-weight:600;cursor:pointer;">Что такое robots.txt простыми словами?</summary>
+<p style="margin-top:0.8rem;color:var(--muted);">Файл в корне сайта с правилами для поисковиков: что сканировать, а что нет. Ошибка в нём может полностью убрать сайт из выдачи.</p>
+</details>
+<details style="margin-bottom:1rem;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;background:var(--card-bg);">
+<summary style="font-weight:600;cursor:pointer;">Может ли robots.txt улучшить позиции в Google?</summary>
+<p style="margin-top:0.8rem;color:var(--muted);">Напрямую — нет. Он только управляет сканированием. Но правильный robots.txt не мешает индексации и экономит краулинговый бюджет.</p>
+</details>
+<details style="margin-bottom:1rem;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;background:var(--card-bg);">
+<summary style="font-weight:600;cursor:pointer;">Что будет, если закрыть всё через Disallow: /?</summary>
+<p style="margin-top:0.8rem;color:var(--muted);">Сайт полностью выпадет из индекса. Это самая частая причина жалоб «пропали из Google».</p>
+</details>
+<details style="margin-bottom:1rem;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;background:var(--card-bg);">
+<summary style="font-weight:600;cursor:pointer;">Нужно ли закрывать /parser/ и служебные страницы?</summary>
+<p style="margin-top:0.8rem;color:var(--muted);">Да. Служебные разделы (/parser/, /stats, /api/) не нужны в выдаче и тратят краулинговый бюджет.</p>
+</details>
+<div class="related-articles">
+<h3>Читайте также</h3>
+<ul>
+<li><a href="/blog/seo-optimizatsiya-sayta.html">SEO-оптимизация сайта: полное руководство</a></li><li><a href="/blog/kak-vybrat-hosting.html">Как выбрать хостинг для сайта</a></li><li><a href="/blog/ssl-sertifikat.html">SSL-сертификат для сайта</a></li><li><a href="/vliyanie-ssl-na-seo.html">Влияние SSL на SEO</a></li><li><a href="/services.html">SEO-продвижение</a></li>
+</ul>
+</div>
+        <p style="margin-top:1.5rem"><a href="/services.html" class="btn btn--primary btn--sm">Смотреть все услуги</a></p>
+    </div></section>
+<section class="tg-promo section"><div class="container"><div class="tg-promo__inner">
+        <h2>Подпишитесь на наш Telegram-канал</h2>
+        <p>Кейсы, статьи и инсайты по разработке сайтов, Telegram-ботов и контент-маркетингу.</p>
+        <a href="https://t.me/uriy_as59" target="_blank" class="btn btn--tg">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.26.76a1.73 1.73 0 0 0-1.76-.35L1.84 9.58a1.66 1.66 0 0 0 .05 3.08l4.88 1.9 2.94 8.86a1.38 1.38 0 0 0 .9.87 1.32 1.32 0 0 0 1.2-.21l4.23-3.46a1.8 1.8 0 0 1 2.05-.12l4.85 3.52a1.35 1.35 0 0 0 1.45.12 1.38 1.38 0 0 0 .78-1.15L23.7 2.47a1.73 1.73 0 0 0-1.44-1.71z"/></svg>
+            Подписаться в Telegram
+        </a>
+    </div></div></section>
+
+    <section class="author-box" style="margin:2rem 0;padding:1.5rem;background:#f8f9fa;border-radius:8px;border-left:4px solid #0066cc;">
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <div style="width:64px;height:64px;border-radius:50%;background:#0066cc;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:bold;flex-shrink:0;">ЮА</div>
+    <div>
+      <p style="margin:0;font-weight:600;font-size:1.1rem;">Юрий Астапьев</p>
+      <p style="margin:0.25rem 0 0;color:#555;font-size:0.9rem;">Основатель WebStudio. Разработка сайтов, Telegram-ботов и SEO-продвижение с 2019 года. Портфолио: <a href="https://uriy-as.org/portfolio.html">uriy-as.org/portfolio</a></p>
+    </div>
+  </div>
+</section>
+<footer class="footer"><div class="container"><div class="footer__inner">
+        <div class="footer__left">
+            <a href="/" class="logo"><img src="/images/logo.svg" alt="WebStudio" class="logo__img" loading="lazy"></a>
+            <p>&copy; 2026 WebStudio. Все права защищены.</p>
+            <p style="margin-top:8px;font-size:0.85rem;"><a href="https://t.me/NevWebStudio_bot" target="_blank" style="color:var(--accent);">@NevWebStudio_bot</a> — бот ответит на все вопросы</p>
+            <p style="margin-top:4px;font-size:0.8rem;"><a href="/privacy.html" style="color:var(--muted);">Политика конфиденциальности</a></p>
+            <p style="margin-top:4px;font-size:0.8rem;"><a href="/stats.html" style="color:var(--muted);">Статистика</a></p>
+        </div>
+        <div class="footer__social">
+            <a href="https://t.me/uriy_as59" target="_blank" aria-label="Telegram"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.26.76a1.73 1.73 0 0 0-1.76-.35L1.84 9.58a1.66 1.66 0 0 0 .05 3.08l4.88 1.9 2.94 8.86a1.38 1.38 0 0 0 .9.87 1.32 1.32 0 0 0 1.2-.21l4.23-3.46a1.8 1.8 0 0 1 2.05-.12l4.85 3.52a1.35 1.35 0 0 0 1.45.12 1.38 1.38 0 0 0 .78-1.15L23.7 2.47a1.73 1.73 0 0 0-1.44-1.71z"/></svg></a>
+            <a href="https://youtube.com/@%D0%AE%D1%81%D1%82%D0%B0%D1%81-%D0%B34%D1%8B" target="_blank" aria-label="YouTube"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a2.96 2.96 0 0 0-2.08-2.1C19.55 3.5 12 3.5 12 3.5s-7.55 0-9.42.6A2.96 2.96 0 0 0 .5 6.2 30.9 30.9 0 0 0 0 12a30.9 30.9 0 0 0 .5 5.8 2.96 2.96 0 0 0 2.08 2.1c1.87.6 9.42.6 9.42.6s7.55 0 9.42-.6a2.96 2.96 0 0 0 2.08-2.1 30.9 30.9 0 0 0 .5-5.8 30.9 30.9 0 0 0-.5-5.8zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></a>
+        </div>
+    </div></div></footer>
+
+    <a href="https://t.me/uriy_as59" target="_blank" class="tg-float" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.26.76a1.73 1.73 0 0 0-1.76-.35L1.84 9.58a1.66 1.66 0 0 0 .05 3.08l4.88 1.9 2.94 8.86a1.38 1.38 0 0 0 .9.87 1.32 1.32 0 0 0 1.2-.21l4.23-3.46a1.8 1.8 0 0 1 2.05-.12l4.85 3.52a1.35 1.35 0 0 0 1.45.12 1.38 1.38 0 0 0 .78-1.15L23.7 2.47a1.73 1.73 0 0 0-1.44-1.71z"/></svg></a>
+    <div class="lang-widget" id="langWidget"><button class="lang-btn-floating" id="langBtnFloat" aria-label="Switch language" onclick="toggleLang()">EN</button></div>
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-btn" id="chatBtn" aria-label="Чат"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span>Чат</span></button>
+        <div class="chat-popup" id="chatPopup">
+            <div class="chat-popup__header"><h4>Чат с WebStudio</h4><button class="chat-popup__close" id="chatClose">&times;</button></div>
+            <div class="chat-popup__body" id="chatBody"></div>
+            <form class="chat-popup__form" id="chatForm"><input type="text" placeholder="Ваше сообщение..." autocomplete="off" required><button type="submit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg></button></form>
+        </div>
+    </div>
+    <script defer src="/js/script.js?v=p0-20261026"></script>
+    <noscript><img src="https://astap.pythonanywhere.com/pixel?page=/robots-txt-dlya-sayta.html&ref=" style="position:absolute;left:-9999px" alt="" / loading="lazy"></noscript>
+    <noscript><div><img src="https://mc.yandex.ru/watch/109350815" style="position:absolute;left:-9999px;" alt="" / loading="lazy"></div></noscript>
+    <script>(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(109350815,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
+</body>
+</html>

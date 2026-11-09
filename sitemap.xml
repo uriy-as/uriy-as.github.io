@@ -624,4 +624,14 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://uriy-as.org/robots-txt-dlya-sayta.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://uriy-as.org/kak-vybrat-domen.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <priority>0.6</priority>
+  </url>
 </urlset>
