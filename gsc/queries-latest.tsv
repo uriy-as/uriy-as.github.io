@@ -1,12 +1,12 @@
-###META###	sc-domain:uriy-as.org	2026-08-13	2026-11-11
+###META###	sc-domain:uriy-as.org	2026-08-14	2026-11-12
 ###QUERIES_90###
-GSCQ	90	поддержка сайтов стоимость	49	0	70.6
-GSCQ	90	сертификат https для сайта	40	0	62.1
+GSCQ	90	поддержка сайтов стоимость	51	0	71.0
+GSCQ	90	сертификат https для сайта	35	0	62.2
 GSCQ	90	чат боты для бизнеса	31	0	95.1
 GSCQ	90	сколько стоит поддержка сайта в месяц	30	6	53.8
-GSCQ	90	ssl сертификат для сайта	27	0	74.3
 GSCQ	90	сколько стоит поддержка сайта	26	2	68.8
-GSCQ	90	как выбрать хостинг для своего сайта	25	0	97
+GSCQ	90	ssl сертификат для сайта	25	0	73.8
+GSCQ	90	как выбрать хостинг для своего сайта	24	0	97.2
 GSCQ	90	сайт под ключ что это	24	0	73.2
 GSCQ	90	поддержка сайта цена	18	1	79.5
 GSCQ	90	website mistakes	17	0	65.3
@@ -26,19 +26,18 @@ GSCQ	90	этапы выбора хостинга для новичков	8	0	90.
 GSCQ	90	учет особенностей сайта при выборе хостинга	7	0	98.4
 GSCQ	90	поддержка сайтов цена	6	1	65.7
 GSCQ	90	сайт под ключ это	6	0	82
+GSCQ	90	seo url что это	5	0	93.8
 GSCQ	90	бот для продаж в телеграм с ии	5	0	99
 GSCQ	90	создание сайтов ключ	5	0	99
 GSCQ	90	стоимость поддержки сайта в месяц рублей	5	0	91.8
 GSCQ	90	how much does website maintenance cost	4	0	92.5
 GSCQ	90	seo ir	4	0	46.2
 GSCQ	90	seo se	4	0	85.2
-GSCQ	90	seo url что это	4	0	92.2
 GSCQ	90	website and seo	4	0	46.5
 GSCQ	90	как выбрать хостинг	4	0	84.8
 GSCQ	90	сео что это такое	4	0	90.2
 GSCQ	90	inurl mistakes	3	0	94
 GSCQ	90	seo	3	0	67.7
-GSCQ	90	telegram bot crm	3	0	72.7
 GSCQ	90	automated telegram messaging for businesses	2	0	90
 GSCQ	90	average cost of website maintenance	2	0	92
 GSCQ	90	how much is website maintenance	2	0	98.5
@@ -79,6 +78,7 @@ GSCQ	90	seo оптимизация сайта что это такое	1	0	91
 GSCQ	90	seo сайта	1	0	90
 GSCQ	90	seo что означает	1	0	92
 GSCQ	90	seo что это означает	1	0	88
+GSCQ	90	telegram bot crm	1	0	72
 GSCQ	90	telegram bot marketing	1	0	69
 GSCQ	90	telegram lead	1	0	51
 GSCQ	90	telegram lead generation	1	0	58
@@ -124,7 +124,7 @@ GSCQ	90	что значит сайт под ключ	1	0	72
 GSCQ	90	что такое seo сайта	1	0	94
 GSCQ	90	что такое seo это	1	0	75
 ###QUERIES_28###
-GSCQ	28	поддержка сайтов стоимость	49	0	70.6
+GSCQ	28	поддержка сайтов стоимость	51	0	71.0
 GSCQ	28	сколько стоит поддержка сайта в месяц	30	6	53.8
 GSCQ	28	сколько стоит поддержка сайта	26	2	68.8
 GSCQ	28	поддержка сайта цена	18	1	79.5
@@ -134,10 +134,10 @@ GSCQ	28	seo web	10	0	61.8
 GSCQ	28	website maintenance cost	10	0	92.5
 GSCQ	28	website seo optimization	7	0	44
 GSCQ	28	поддержка сайтов цена	6	1	65.7
+GSCQ	28	seo url что это	5	0	93.8
 GSCQ	28	стоимость поддержки сайта в месяц рублей	5	0	91.8
 GSCQ	28	how much does website maintenance cost	4	0	92.5
 GSCQ	28	seo ir	4	0	46.2
-GSCQ	28	seo url что это	4	0	92.2
 GSCQ	28	website and seo	4	0	46.5
 GSCQ	28	average cost of website maintenance	2	0	92
 GSCQ	28	how much is website maintenance	2	0	98.5
@@ -204,25 +204,22 @@ GSCQ	28	чат боты	1	0	13
 GSCQ	28	чат-бот с продаж	1	0	49
 GSCQ	28	что такое seo сайта	1	0	94
 ###QUERIES_7###
-GSCQ	7	поддержка сайтов стоимость	14	0	78
+GSCQ	7	поддержка сайтов стоимость	14	0	79.7
 GSCQ	7	сколько стоит поддержка сайта в месяц	10	6	58.7
 GSCQ	7	website maintenance cost	10	0	92.5
-GSCQ	7	поддержка сайта тарифы	9	7	64.8
 GSCQ	7	сколько стоит поддержка сайта	9	2	71.4
-GSCQ	7	сайт за 5 дней	6	5	8.8
+GSCQ	7	поддержка сайта тарифы	7	6	59.9
 GSCQ	7	поддержка сайта цена	4	1	88
 GSCQ	7	how much does website maintenance cost	4	0	92.5
+GSCQ	7	seo url что это	3	0	95.7
 GSCQ	7	поддержка сайтов цена	2	1	81
 GSCQ	7	average cost of website maintenance	2	0	92
 GSCQ	7	how much is website maintenance	2	0	98.5
 GSCQ	7	price for website maintenance	2	0	88.5
-GSCQ	7	seo url что это	2	0	93.5
 GSCQ	7	разработка сайтов харьков	2	0	93
-GSCQ	7	разработка сайтов харьков цена	2	0	77
 GSCQ	7	сайт под ключ харьков	2	0	57
 GSCQ	7	чат-боты искусственный интеллект	2	0	59.5
 GSCQ	7	что такое seo оптимизация сайта	2	0	87
-GSCQ	7	deepnude bot	1	1	74
 GSCQ	7	average website maintenance cost	1	0	97
 GSCQ	7	best telegram nudify bots	1	0	62
 GSCQ	7	search engine optimization что это	1	0	93
@@ -232,7 +229,6 @@ GSCQ	7	seo сайта	1	0	90
 GSCQ	7	seo сайту	1	0	76
 GSCQ	7	telegram nude bot	1	0	71
 GSCQ	7	telegram nudify bot	1	0	77
-GSCQ	7	website maintenance charges	1	0	93
 GSCQ	7	website maintenance costs	1	0	87
 GSCQ	7	website maintenance pricing	1	0	89
 GSCQ	7	website maintenance rates	1	0	95
@@ -242,10 +238,9 @@ GSCQ	7	заказать сайт харьков	1	0	59
 GSCQ	7	как выбрать хостинг	1	0	83
 GSCQ	7	поддержка сайта цены	1	0	66
 GSCQ	7	продажа чат ботов в телеграмме	1	0	41
+GSCQ	7	разработка сайтов харьков цена	1	0	81
 GSCQ	7	разработка чат ботов	1	0	11
 GSCQ	7	сео что это такое	1	0	89
-GSCQ	7	создание сайта харьков цена	1	0	73
-GSCQ	7	создание сайтов харьков цена	1	0	86
 GSCQ	7	создать сайт харьков	1	0	97
 GSCQ	7	створити сайт харків	1	0	58
 GSCQ	7	стоимость поддержки сайта в месяц рублей	1	0	93
@@ -254,38 +249,38 @@ GSCQ	7	чат-бот с продаж	1	0	49
 GSCQ	7	что такое seo сайта	1	0	94
 GSCQ	7	что такое сео оптимизация сайта	1	0	77
 ###PAGES_90###
-GSCP	https://uriy-as.org/blog/skolko-stoit-podderzhka-sayta.html	154	11	69.2
+GSCP	https://uriy-as.org/blog/skolko-stoit-podderzhka-sayta.html	156	11	69.4
 GSCP	https://uriy-as.org/blog/chat-bot-dlya-biznesa-kaysy.html	96	0	95.0
-GSCP	https://uriy-as.org/blog/ssl-sertifikat.html	72	0	63.8
-GSCP	https://uriy-as.org/blog/kak-vybrat-hosting.html	54	0	86.7
+GSCP	https://uriy-as.org/blog/ssl-sertifikat.html	64	0	64.4
+GSCP	https://uriy-as.org/blog/kak-vybrat-hosting.html	52	0	88.0
 GSCP	https://uriy-as.org/blog/sozdanie-saytov-pod-klyuch.html	50	0	73.5
 GSCP	https://uriy-as.org/en/blog/seo-optimization-guide.html	49	0	48.7
-GSCP	https://uriy-as.org/blog/seo-optimizatsiya-sayta.html	45	0	68.0
+GSCP	https://uriy-as.org/blog/seo-optimizatsiya-sayta.html	45	0	70.1
 GSCP	https://uriy-as.org/blog/sayt-za-5-dney.html	44	5	11.0
 GSCP	https://uriy-as.org/en/blog/10-website-mistakes.html	41	0	65.7
 GSCP	https://uriy-as.org/en/blog/formatting-telegram-articles.html	40	1	19.5
 GSCP	https://uriy-as.org/en/blog/how-much-website-maintenance-cost.html	32	0	77.6
-GSCP	https://uriy-as.org/en/blog/telegram-bot-sales-automation.html	32	0	67.3
-GSCP	https://uriy-as.org/blog/formatirovanie-statey-telegram.html	29	1	12.9
 GSCP	https://uriy-as.org/blog/telegram-bot-avtomatizatsiya-prodazh.html	29	0	58.7
-GSCP	https://uriy-as.org/	26	2	5.4
-GSCP	https://uriy-as.org/en/blog/how-to-order-telegram-bot.html	22	0	42.9
-GSCP	https://uriy-as.org/podderzhka-sayta-cena.html	19	8	63.2
+GSCP	https://uriy-as.org/	25	2	5.6
+GSCP	https://uriy-as.org/blog/formatirovanie-statey-telegram.html	25	1	7.7
+GSCP	https://uriy-as.org/en/blog/telegram-bot-sales-automation.html	25	0	68.8
+GSCP	https://uriy-as.org/en/blog/how-to-order-telegram-bot.html	23	0	41.3
+GSCP	https://uriy-as.org/podderzhka-sayta-cena.html	20	8	64
 GSCP	https://uriy-as.org/blog/skolko-stoit-sait.html	18	0	38.2
 GSCP	https://uriy-as.org/en/blog/telegram-bot-vs-website.html	17	0	12.6
-GSCP	https://uriy-as.org/en/	16	0	8
-GSCP	https://uriy-as.org/en/blog/telegram-bot-with-ai-for-200.html	16	0	20.6
+GSCP	https://uriy-as.org/en/	15	0	8.4
 GSCP	https://uriy-as.org/en/portfolio.html	15	0	7.1
 GSCP	https://uriy-as.org/en/blog/ai-bots-capabilities.html	13	1	57.3
 GSCP	https://uriy-as.org/blog/ai-boty-vozmozhnosti.html	12	0	46.3
+GSCP	https://uriy-as.org/en/blog/telegram-bot-with-ai-for-200.html	12	0	10.7
 GSCP	https://uriy-as.org/sozdanie-saytov-kharkov.html	12	0	75.3
 GSCP	https://uriy-as.org/en/articles.html	11	0	5
-GSCP	https://uriy-as.org/articles.html	10	0	8.4
 GSCP	https://uriy-as.org/en/blog/telegram-channel-strategy.html	10	0	58
+GSCP	https://uriy-as.org/articles.html	9	0	9
 GSCP	https://uriy-as.org/blog/5-priznakov-plohogo-sayta.html	9	0	29.2
 GSCP	https://uriy-as.org/en/services.html	9	0	5.7
-GSCP	https://uriy-as.org/privacy.html	9	0	5.4
 GSCP	https://uriy-as.org/en/blog/website-in-5-days.html	8	0	16.6
+GSCP	https://uriy-as.org/privacy.html	8	0	5.6
 GSCP	https://uriy-as.org/portfolio.html	7	0	4
 GSCP	https://uriy-as.org/blog/kak-zakazat-telegram-bota.html	6	1	38.5
 GSCP	https://uriy-as.org/blog/telegram-bot-ili-sayt.html	5	0	7.8
@@ -294,8 +289,8 @@ GSCP	https://uriy-as.org/en/blog/ssl-certificate-guide.html	4	0	5.8
 GSCP	https://uriy-as.org/blog/ekspertnye-stati-prodazhi.html	3	0	13.3
 GSCP	https://uriy-as.org/en/blog/5-mistakes-telegram-content-strategy.html	3	0	9
 GSCP	https://uriy-as.org/en/blog/competitor-prices-2026.html	3	0	4
+GSCP	https://uriy-as.org/en/blog/seo-for-beginners.html	3	0	4.7
 GSCP	https://uriy-as.org/blog/10-oshibok-sozdaniya-saita.html	2	0	9.5
-GSCP	https://uriy-as.org/en/blog/seo-for-beginners.html	2	0	2.5
 GSCP	https://uriy-as.org/en/blog/turnkey-website-development.html	2	0	2
 GSCP	http://uriy-as.org/	1	0	1
 GSCP	https://uriy-as.org/blog/5-oshibok-kontent-strategii-telegram.html	1	0	11
@@ -303,16 +298,15 @@ GSCP	https://uriy-as.org/blog/ceny-konkurentov-2026.html	1	0	3
 GSCP	https://uriy-as.org/blog/nauchnye-stati-prodazhi.html	1	0	8
 GSCP	https://uriy-as.org/blog/seo-dlya-nachinayushchikh.html	1	0	7
 GSCP	https://uriy-as.org/cena-internet-magazina.html	1	0	9
-GSCP	https://uriy-as.org/en/blog/chatbot-for-business-cases.html	1	0	5
 GSCP	https://uriy-as.org/en/blog/how-to-choose-hosting.html	1	0	2
 ###QPAGE_90###
-GSCQP	поддержка сайтов стоимость	https://uriy-as.org/blog/skolko-stoit-podderzhka-sayta.html	49	0	71.0
-GSCQP	сертификат https для сайта	https://uriy-as.org/blog/ssl-sertifikat.html	40	0	62.1
+GSCQP	поддержка сайтов стоимость	https://uriy-as.org/blog/skolko-stoit-podderzhka-sayta.html	51	0	71.5
+GSCQP	сертификат https для сайта	https://uriy-as.org/blog/ssl-sertifikat.html	35	0	62.2
 GSCQP	чат боты для бизнеса	https://uriy-as.org/blog/chat-bot-dlya-biznesa-kaysy.html	31	0	95.1
 GSCQP	сколько стоит поддержка сайта в месяц	https://uriy-as.org/blog/skolko-stoit-podderzhka-sayta.html	30	5	56.4
-GSCQP	ssl сертификат для сайта	https://uriy-as.org/blog/ssl-sertifikat.html	27	0	74.3
 GSCQP	сколько стоит поддержка сайта	https://uriy-as.org/blog/skolko-stoit-podderzhka-sayta.html	26	2	68.8
-GSCQP	как выбрать хостинг для своего сайта	https://uriy-as.org/blog/kak-vybrat-hosting.html	25	0	97
+GSCQP	ssl сертификат для сайта	https://uriy-as.org/blog/ssl-sertifikat.html	25	0	73.8
+GSCQP	как выбрать хостинг для своего сайта	https://uriy-as.org/blog/kak-vybrat-hosting.html	24	0	97.2
 GSCQP	сайт под ключ что это	https://uriy-as.org/blog/sozdanie-saytov-pod-klyuch.html	24	0	73.2
 GSCQP	поддержка сайта цена	https://uriy-as.org/blog/skolko-stoit-podderzhka-sayta.html	18	1	79.5
 GSCQP	website mistakes	https://uriy-as.org/en/blog/10-website-mistakes.html	17	0	65.3
@@ -329,24 +323,23 @@ GSCQP	seo web	https://uriy-as.org/en/blog/seo-optimization-guide.html	10	0	61.8
 GSCQP	website maintenance cost	https://uriy-as.org/en/blog/how-much-website-maintenance-cost.html	10	0	92.5
 GSCQP	website seo optimization	https://uriy-as.org/en/blog/seo-optimization-guide.html	9	0	43.7
 GSCQP	этапы выбора хостинга для новичков	https://uriy-as.org/blog/kak-vybrat-hosting.html	8	0	90.9
+GSCQP	поддержка сайтов стоимость	https://uriy-as.org/podderzhka-sayta-cena.html	7	0	75.1
 GSCQP	учет особенностей сайта при выборе хостинга	https://uriy-as.org/blog/kak-vybrat-hosting.html	7	0	98.4
 GSCQP	поддержка сайта тарифы	https://uriy-as.org/podderzhka-sayta-cena.html	6	6	65.8
 GSCQP	поддержка сайтов цена	https://uriy-as.org/blog/skolko-stoit-podderzhka-sayta.html	6	1	65.7
-GSCQP	поддержка сайтов стоимость	https://uriy-as.org/podderzhka-sayta-cena.html	6	0	74.5
 GSCQP	сайт под ключ это	https://uriy-as.org/blog/sozdanie-saytov-pod-klyuch.html	6	0	82
 GSCQP	сколько стоит поддержка сайта в месяц	https://uriy-as.org/podderzhka-sayta-cena.html	5	2	51.6
+GSCQP	seo url что это	https://uriy-as.org/blog/seo-optimizatsiya-sayta.html	5	0	93.8
 GSCQP	бот для продаж в телеграм с ии	https://uriy-as.org/blog/telegram-bot-avtomatizatsiya-prodazh.html	5	0	99
 GSCQP	создание сайтов ключ	https://uriy-as.org/blog/sozdanie-saytov-pod-klyuch.html	5	0	99
 GSCQP	стоимость поддержки сайта в месяц рублей	https://uriy-as.org/blog/skolko-stoit-podderzhka-sayta.html	5	0	91.8
 GSCQP	how much does website maintenance cost	https://uriy-as.org/en/blog/how-much-website-maintenance-cost.html	4	0	92.5
 GSCQP	seo ir	https://uriy-as.org/en/blog/seo-optimization-guide.html	4	0	46.2
 GSCQP	seo se	https://uriy-as.org/blog/seo-optimizatsiya-sayta.html	4	0	85.2
-GSCQP	seo url что это	https://uriy-as.org/blog/seo-optimizatsiya-sayta.html	4	0	92.2
 GSCQP	website and seo	https://uriy-as.org/en/blog/seo-optimization-guide.html	4	0	46.5
 GSCQP	как выбрать хостинг	https://uriy-as.org/blog/kak-vybrat-hosting.html	4	0	84.8
 GSCQP	сео что это такое	https://uriy-as.org/blog/seo-optimizatsiya-sayta.html	4	0	90.2
 GSCQP	inurl mistakes	https://uriy-as.org/en/blog/10-website-mistakes.html	3	0	94
-GSCQP	telegram bot crm	https://uriy-as.org/en/blog/telegram-bot-sales-automation.html	3	0	72.7
 GSCQP	automated telegram messaging for businesses	https://uriy-as.org/en/blog/telegram-bot-sales-automation.html	2	0	90
 GSCQP	average cost of website maintenance	https://uriy-as.org/en/blog/how-much-website-maintenance-cost.html	2	0	92
 GSCQP	how much is website maintenance	https://uriy-as.org/en/blog/how-much-website-maintenance-cost.html	2	0	98.5
@@ -390,6 +383,7 @@ GSCQP	seo оптимизация сайта что это такое	https://uri
 GSCQP	seo сайта	https://uriy-as.org/blog/seo-optimizatsiya-sayta.html	1	0	90
 GSCQP	seo что означает	https://uriy-as.org/blog/seo-optimizatsiya-sayta.html	1	0	92
 GSCQP	seo что это означает	https://uriy-as.org/blog/seo-optimizatsiya-sayta.html	1	0	88
+GSCQP	telegram bot crm	https://uriy-as.org/en/blog/telegram-bot-sales-automation.html	1	0	72
 GSCQP	telegram bot marketing	https://uriy-as.org/en/blog/telegram-bot-sales-automation.html	1	0	69
 GSCQP	telegram lead	https://uriy-as.org/en/blog/telegram-bot-sales-automation.html	1	0	51
 GSCQP	telegram lead generation	https://uriy-as.org/en/blog/telegram-bot-sales-automation.html	1	0	58
