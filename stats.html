@@ -8,9 +8,9 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <title>Статистика WebStudio</title>
-<meta name="description" content="Статистика посещений сайта uriy-as.org: визиты, устройства, источники трафика, популярные страницы. Данные Google Analytics и Яндекс.Метрики в реальном времени.">
+<meta name="description" content="Статистика посещений сайта uriy-as.org в реальном времени.">
 <meta property="og:title" content="Статистика WebStudio">
-<meta property="og:description" content="Статистика посещений: визиты, устройства, популярные страницы">
+<meta property="og:description" content="Статистика посещений uriy-as.org в реальном времени.">
 <meta property="og:url" content="https://uriy-as.org/stats.html">
 <link rel="canonical" href="https://uriy-as.org/stats.html">
 <meta name="robots" content="noindex, nofollow">
@@ -31,6 +31,7 @@ h1 { font-size:1.4rem; margin-bottom:4px; color:#333; }
 .spinner { width:16px; height:16px; border:2px solid #2196f3; border-top-color:transparent; border-radius:50%; animation:spin 0.8s linear infinite; }
 @keyframes spin { to { transform:rotate(360deg); } }
 h2 { font-size:1.1rem; margin:20px 0 10px; color:#444; }
+.table-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; margin-bottom:10px; }
 table { width:100%; border-collapse:collapse; background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.1); }
 th, td { padding:8px 12px; text-align:left; border-bottom:1px solid #eee; font-size:0.88rem; }
 th { background:#f8f9fa; color:#555; font-weight:600; }
@@ -41,6 +42,7 @@ a:hover { text-decoration:underline; }
 .retry-btn { margin-top:8px; padding:8px 20px; background:#2563eb; color:#fff; border:none; border-radius:6px; cursor:pointer; font-size:0.9rem; }
 .retry-btn:hover { background:#1d4ed8; }
 #retry-count { color:#888; font-size:0.8rem; margin-top:4px; }
+@media (max-width: 600px) { body { padding:12px; } .card { min-width:140px; padding:12px 14px; } .card .num { font-size:1.3rem; } th, td { padding:7px 8px; font-size:0.82rem; } h1 { font-size:1.2rem; } }
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://uriy-as.org/"}, {"@type": "ListItem", "position": 2, "name": "Stats", "item": "https://uriy-as.org/stats.html"}]}</script>
 </head>
@@ -48,7 +50,7 @@ a:hover { text-decoration:underline; }
 <h1>&#x1f4ca; Статистика WebStudio</h1>
 <div class="status-bar loading" id="status">
     <div class="spinner"></div>
-    <span id="status-text">Подключение к серверу...</span>
+    <span id="status-text">Загрузка данных...</span>
 </div>
 <div id="content"></div>
 
@@ -63,56 +65,55 @@ function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').re
 
 function render(data) {
     const now = new Date().toLocaleString('ru-RU');
-    const today = data.today_real;
-    const total = data.total_real;
+    const today = data.today_real ?? 0;
+    const total = data.total_real ?? 0;
     const pages = data.pages || [];
     const devices = data.devices || [];
     const leads = data.leads_count || 0;
 
-    let html = '<p class="meta">Данные в реальном времени &middot; Обновлено: ' + now + '</p>';
-    
+    let html = '<p class="meta">Данные в реальном времени &middot; Обновлено: ' + esc(now) + '</p>';
+
     html += '<div class="grid">';
-    html += '<div class="card green"><div class="num">' + today + '</div><div class="label">Реальных сегодня</div></div>';
-    html += '<div class="card"><div class="num">' + total + '</div><div class="label">Реальных всего</div></div>';
-    html += '<div class="card"><div class="num">' + data.real_ips + '</div><div class="label">Уникальных IP</div></div>';
-    html += '<div class="card"><div class="num">' + data.days_recorded + '</div><div class="label">Дней в записи</div></div>';
+    html += '<div class="card green"><div class="num">' + today + '</div><div class="label">Сегодня (реальные)</div></div>';
+    html += '<div class="card"><div class="num">' + total + '</div><div class="label">Всего (реальные)</div></div>';
+    html += '<div class="card"><div class="num">' + (data.real_ips ?? 0) + '</div><div class="label">Уникальных IP</div></div>';
+    html += '<div class="card"><div class="num">' + (data.days_recorded ?? 0) + '</div><div class="label">Дней сбора</div></div>';
     html += '</div>';
-    
+
     html += '<div class="grid">';
-    html += '<div class="card orange"><div class="num">' + data.total_raw + '</div><div class="label">Всего визитов (с тех.)</div></div>';
-    html += '<div class="card"><div class="num">' + data.today_raw + '</div><div class="label">Сегодня всего</div></div>';
-    html += '<div class="card"><div class="num">' + leads + '</div><div class="label">Заявок</div></div>';
+    html += '<div class="card orange"><div class="num">' + (data.total_raw ?? 0) + '</div><div class="label">Всего хитов</div></div>';
+    html += '<div class="card"><div class="num">' + (data.today_raw ?? 0) + '</div><div class="label">Хитов сегодня</div></div>';
+    html += '<div class="card"><div class="num">' + leads + '</div><div class="label">Заявки</div></div>';
     html += '</div>';
 
     if (pages.length) {
-        html += '<h2>&#x1f4cc; Посещения по страницам</h2><table><thead><tr><th>Страница</th><th>Визитов</th></tr></thead><tbody>';
+        html += '<h2>&#x1f4cc; Популярные страницы</h2><div class="table-wrap"><table><thead><tr><th>Страница</th><th>Визиты</th></tr></thead><tbody>';
         for (let p of pages) {
             html += '<tr><td>' + esc(p.path) + '</td><td>' + p.count + '</td></tr>';
         }
-        html += '</tbody></table>';
+        html += '</tbody></table></div>';
     }
 
     if (devices.length) {
-        html += '<h2>&#x1f4f1; По устройствам</h2><table><thead><tr><th>Тип</th><th>Визитов</th></tr></thead><tbody>';
+        html += '<h2>&#x1f4f1; Устройства</h2><div class="table-wrap"><table><thead><tr><th>Тип</th><th>Визиты</th></tr></thead><tbody>';
         for (let d of devices) {
             html += '<tr><td>' + esc(d.type) + '</td><td>' + d.count + '</td></tr>';
         }
-        html += '</tbody></table>';
+        html += '</tbody></table></div>';
     }
 
     if (data.last_10 && data.last_10.length) {
-        html += '<h2>&#x1f4c4; Последние 10 визитов</h2><table><thead><tr><th>Дата</th><th>Страница</th><th>Устройство</th></tr></thead><tbody>';
+        html += '<h2>&#x1f4c4; Последние 10 визитов</h2><div class="table-wrap"><table><thead><tr><th>Дата</th><th>Страница</th><th>Устройство</th></tr></thead><tbody>';
         for (let v of data.last_10) {
             html += '<tr><td>' + esc(v.date) + '</td><td>' + esc(v.page) + '</td><td>' + esc(v.device) + '</td></tr>';
         }
-        html += '</tbody></table>';
+        html += '</tbody></table></div>';
     }
 
-    html += '<p class="note">&#x1f517; Полная статистика (с заявками): <a href="https://astap.pythonanywhere.com/stats" target="_blank">astap.pythonanywhere.com/stats</a> &middot; <a href="gh-stats.html">GitHub Traffic</a></p>';
+    html += '<p class="note">&#x1f517; Полная статистика: <a href="https://astap.pythonanywhere.com/stats" target="_blank" rel="noopener">astap.pythonanywhere.com/stats</a> &middot; <a href="gh-stats.html">GitHub Traffic</a></p>';
 
     document.getElementById('content').innerHTML = html;
-    
-    // Cache for offline
+
     try { localStorage.setItem('stats_cache', JSON.stringify(data)); localStorage.setItem('stats_cache_time', new Date().toLocaleString('ru-RU')); } catch(e) {}
 }
 
