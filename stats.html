@@ -54,9 +54,10 @@ a:hover { text-decoration:underline; }
 
 <script>
 const API = 'https://astap.pythonanywhere.com/api/stats';
-const MAX_RETRIES = 5;
-const FETCH_TIMEOUT = 15000;
+const MAX_FAST_RETRIES = 5;
+const FETCH_TIMEOUT = 30000;
 let retries = 0;
+let everLoaded = false;
 
 function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
@@ -115,10 +116,15 @@ function render(data) {
     try { localStorage.setItem('stats_cache', JSON.stringify(data)); localStorage.setItem('stats_cache_time', new Date().toLocaleString('ru-RU')); } catch(e) {}
 }
 
-function showError(msg) {
+function setStatus(kind, html) {
     const s = document.getElementById('status');
-    s.className = 'status-bar error';
-    document.getElementById('status-text').innerHTML = '&#x26a0;&#xfe0f; ' + msg;
+    s.className = 'status-bar ' + kind;
+    s.style.display = 'flex';
+    if (kind === 'loading') {
+        s.innerHTML = '<div class="spinner"></div><span id="status-text">' + html + '</span>';
+    } else {
+        s.innerHTML = '<span id="status-text">' + html + '</span>';
+    }
 }
 
 async function fetchWithTimeout(url, timeout) {
@@ -135,42 +141,58 @@ async function fetchWithTimeout(url, timeout) {
     }
 }
 
-async function load() {
-    // Show cached data immediately if available
-    try {
-        const cached = localStorage.getItem('stats_cache');
-        if (cached) {
-            const cdata = JSON.parse(cached);
-            document.getElementById('status').style.display = 'none';
-            render(cdata);
-            document.getElementById('retry-count').textContent = 'Кэш от ' + (localStorage.getItem('stats_cache_time') || 'неизвестно') + ' · обновление...';
-        }
-    } catch(e) {}
+function scheduleRetry(delay) {
+    setTimeout(function(){ load(true); }, delay);
+}
+
+async function load(isRetry) {
+    const cached = localStorage.getItem('stats_cache');
+    const cachedTime = localStorage.getItem('stats_cache_time') || '';
+
+    if (!everLoaded && cached) {
+        try {
+            render(JSON.parse(cached));
+            everLoaded = true;
+        } catch(e) {}
+    }
+
+    if (everLoaded && cached) {
+        setStatus('loading', 'Обновление данных... (показаны сохранённые: ' + esc(cachedTime) + ')');
+    } else if (isRetry) {
+        setStatus('loading', 'Сервер недоступен, повторная попытка... (' + (retries + 1) + ')');
+    } else {
+        setStatus('loading', 'Загрузка данных...');
+    }
 
     try {
         const data = await fetchWithTimeout(API, FETCH_TIMEOUT);
-        const s = document.getElementById('status');
-        s.style.display = 'none';
         render(data);
+        everLoaded = true;
+        retries = 0;
+        document.getElementById('status').style.display = 'none';
         document.getElementById('retry-count').textContent = '';
         return;
     } catch(e) {
         retries++;
-        if (retries < MAX_RETRIES) {
-            document.getElementById('status-text').textContent =
-                'Сервер не отвечает... попытка ' + (retries + 1) + '/' + MAX_RETRIES;
-            setTimeout(load, 5000);
+        if (!everLoaded) {
+            if (retries <= MAX_FAST_RETRIES) {
+                setStatus('loading', 'Сервер просыпается, попытка ' + (retries + 1) + '/' + (MAX_FAST_RETRIES + 1) + '...');
+                scheduleRetry(5000);
+                return;
+            }
+            setStatus('error', '&#x26a0;&#xfe0f; Сервер статистики временно недоступен. Автоповтор каждые 30 сек.');
+            document.getElementById('retry-count').innerHTML = '<button class="retry-btn" onclick="retries=0;load(true);">Повторить сейчас</button>';
+            scheduleRetry(30000);
             return;
         }
-        // All retries exhausted
-        const s = document.getElementById('status');
-        s.className = 'status-bar error';
-        document.getElementById('status-text').innerHTML = '&#x26a0;&#xfe0f; Сервер статистики недоступен. Данные могут быть устаревшими.';
-        document.getElementById('retry-count').innerHTML = '<button class="retry-btn" onclick="retries=0;load();">Повторить</button>';
+        const wait = retries <= 3 ? 10000 : (retries <= 10 ? 30000 : 60000);
+        setStatus('loading', 'Не удалось обновить, автоповтор через ' + Math.round(wait/1000) + ' сек. Показаны сохранённые данные: ' + esc(cachedTime));
+        document.getElementById('retry-count').innerHTML = '<button class="retry-btn" onclick="retries=0;load(true);">Обновить сейчас</button>';
+        scheduleRetry(wait);
     }
 }
 
-load();
+load(false);
 </script>
 <div id="retry-count"></div>
 </body>
