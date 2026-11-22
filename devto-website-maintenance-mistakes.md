@@ -3,7 +3,6 @@ title: 5 Website Maintenance Mistakes That Quietly Drain Your Budget
 published: false
 description: Website maintenance isn't just "updates." These 5 common mistakes quietly increase costs, create downtime risks, and hurt conversions - plus a simple checklist to fix them.
 tags: webdev, website, business, seo
-canonical_url: https://uriy-as.org/en/blog/how-much-website-maintenance-cost.html
 ---
 
 Most small business websites don't break in one dramatic moment. They leak money quietly.
