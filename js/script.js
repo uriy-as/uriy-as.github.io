@@ -271,7 +271,7 @@ if (form && modal && modalClose) {
         'nav-chat': { ru: 'AI-чат', en: 'AI Chat' },
         'hero-badge': { ru: 'Ваш цифровой партнёр', en: 'Your Digital Partner' },
         'hero-title': { ru: 'Создаём цифровые продукты <span class="gradient-text">для вашего бизнеса</span>', en: 'We create digital products <span class="gradient-text">for your business</span>' },
-        'hero-subtitle': { ru: 'Веб-сайты, чат-боты и Telegram-каналы с научным контентом — под ключ', en: 'Websites, chatbots, and Telegram channels with science content — turnkey' },
+        'hero-subtitle': { ru: 'Веб-сайты, чат-боты, Telegram-каналы с научным контентом и тексты — под ключ', en: 'Websites, chatbots, Telegram channels with science content, and text content — turnkey' },
         'hero-btn-contact': { ru: 'Связаться с нами', en: 'Contact us' },
         'hero-btn-services': { ru: 'Наши услуги', en: 'Our services' },
         'section-services': { ru: 'Наши услуги', en: 'Our Services' },
