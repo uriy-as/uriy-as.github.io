@@ -56,6 +56,21 @@
         .related-articles h3{font-size:1.1rem;margin-bottom:1rem;color:var(--accent,#2563eb)}
         .related-articles ul{list-style:none;padding:0;margin:0}.related-articles li{margin-bottom:.6rem}
         .related-articles li a{color:var(--accent,#2563eb);text-decoration:none;font-size:.95rem}
+        .hero-cta{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem}
+        .hero-proof{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:1.25rem}
+        .hero-proof__item{background:var(--card-bg,#f8fafc);border:1px solid var(--border,#dbe4ee);border-radius:999px;padding:.45rem .9rem;font-size:.88rem;color:var(--muted)}
+        .hero-proof__item strong{color:var(--text,#1e293b)}
+        .cta-box{margin:2rem 0;padding:1.5rem;border:1px solid var(--border,#dbe4ee);border-radius:14px;background:var(--card-bg,#f8fafc)}
+        .cta-box h3{margin-top:0}
+        .cta-box__note{margin-top:.75rem;font-size:.9rem;color:var(--muted)}
+        .cta-box__actions{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center;margin-top:.5rem}
+        .cta-box__link{color:var(--accent);text-decoration:none;font-weight:500}
+        .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1.2rem 0 1.8rem}
+        .step{padding:1rem;border:1px solid var(--border,#dbe4ee);border-radius:12px;background:var(--card-bg,#f8fafc)}
+        .step__num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent,#2563eb);color:#fff;font-size:.85rem;font-weight:700;margin-bottom:.5rem}
+        .step h3{font-size:1rem;margin:.1rem 0 .35rem;color:var(--text,#1e293b)}
+        .step p{margin:0;font-size:.92rem;line-height:1.55;color:var(--muted)}
+        @media(max-width:720px){.hero-cta{flex-direction:column;align-items:stretch}.hero-cta .btn{text-align:center}}
     </style>
 </head>
 <body>
@@ -71,7 +86,17 @@
     <section class="article-hero"><div class="container">
         <a href="/services.html" class="article-back" style="display:inline-block;margin-bottom:2rem;color:var(--accent);text-decoration:none;">&larr; Все услуги</a>
         <h1>Создание сайтов в Харькове — цена и сроки 2026</h1>
-        <div class="meta" style="font-size:.85rem;color:var(--muted)">Обновлено 19 октября 2026</div>
+        <p style="max-width:760px;margin:1rem auto 0;color:var(--muted);font-size:1.08rem;line-height:1.7">Разрабатываю сайты под ключ для бизнеса в Харькове и по всей Украине: лендинги, визитки, корпоративные сайты и магазины. От <strong>$250</strong>, срок от 5 дней, фиксированная смета до старта.</p>
+        <div class="hero-cta">
+            <a href="/#contact" class="btn btn--primary">Получить расчёт сайта</a>
+            <a href="/portfolio.html" class="btn btn--outline">Посмотреть работы</a>
+        </div>
+        <div class="hero-proof">
+            <span class="hero-proof__item"><strong>От $250</strong> за лендинг</span>
+            <span class="hero-proof__item"><strong>От 5 дней</strong> до запуска</span>
+            <span class="hero-proof__item"><strong>SEO + адаптив</strong> в базовой сборке</span>
+        </div>
+        <div class="meta" style="font-size:.85rem;color:var(--muted);margin-top:1rem">Обновлено 27 ноября 2026</div>
     </div></section>
 
     <section class="article-content"><div class="container">
@@ -89,6 +114,15 @@
         </table>
         <p>Цены указаны в USD. Возможна оплата в гривне, EUR, USDT или криптовалюте по курсу на день сделки. Первым 5 клиентам — скидка 30%.</p>
 
+        <div class="cta-box">
+            <h3>Какой сайт подойдёт под вашу задачу?</h3>
+            <p>Опишите бизнес, цель сайта и примерный срок. Подскажу формат (лендинг, визитка, каталог/магазин) и назову стоимость до старта.</p>
+            <div class="cta-box__actions">
+                <a href="/#contact" class="btn btn--primary btn--sm">Получить расчёт</a>
+                <a href="https://t.me/uriy_as59" target="_blank" class="cta-box__link">Написать в Telegram →</a>
+            </div>
+        </div>
+
         <h2>Что входит в сайт под ключ</h2>
         <ul class="checklist">
             <li><strong>Аналитика и ТЗ</strong> — изучаем бизнес, аудиторию и конкурентов в Харькове.</li>
@@ -102,6 +136,22 @@
             <li><strong>Поддержка</strong> — бесплатные правки первый месяц.</li>
         </ul>
 
+        <h2>Как проходит работа</h2>
+        <div class="steps">
+            <div class="step"><span class="step__num">1</span><h3>Бриф</h3><p>Уточняем задачу бизнеса, целевое действие и структуру будущего сайта.</p></div>
+            <div class="step"><span class="step__num">2</span><h3>Смета и план</h3><p>Согласовываем формат сайта, объём работ, срок и фиксированную стоимость.</p></div>
+            <div class="step"><span class="step__num">3</span><h3>Разработка</h3><p>Делаем дизайн, адаптивную вёрстку, формы, базовое SEO и аналитику.</p></div>
+            <div class="step"><span class="step__num">4</span><h3>Запуск</h3><p>Проверяем сайт, подключаем домен/хостинг по задаче и передаём доступы.</p></div>
+        </div>
+
+        <h2>Что нужно для расчёта</h2>
+        <ul>
+            <li><strong>Тип сайта:</strong> лендинг, визитка, корпоративный сайт или магазин.</li>
+            <li><strong>Цель:</strong> заявки, звонки, каталог, продажа или презентация компании.</li>
+            <li><strong>Материалы:</strong> тексты, фото, логотип, примеры — можно начать без полного комплекта.</li>
+            <li><strong>Дополнительно:</strong> языки, интеграции, CRM, бот, SEO-задачи, срочность.</li>
+        </ul>
+
         <h2>Почему заказывают у нас</h2>
         <ul>
             <li>Полный цикл без посредников — от аналитики до запуска;</li>
@@ -113,8 +163,11 @@
 
         <div class="local-cta">
             <h2>Нужен сайт в Харькове?</h2>
-            <p style="color:#f3e8ff">Напишите — рассчитаем стоимость и сроки бесплатно в день обращения.</p>
-            <a href="/#contact">Заказать сайт</a>
+            <p style="color:#f3e8ff">Опишите задачу — предложу формат сайта, сроки и фиксированную смету до старта. Работаем с Харьковом и всей Украиной дистанционно.</p>
+            <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:1rem">
+                <a href="/#contact" style="display:inline-block;padding:.9rem 2rem;background:#fff;color:#4c1d95;border-radius:10px;font-weight:700;text-decoration:none">Получить расчёт</a>
+                <a href="https://t.me/uriy_as59" target="_blank" style="display:inline-block;padding:.9rem 2rem;background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:10px;font-weight:700;text-decoration:none">Написать в Telegram</a>
+            </div>
         </div>
 
         <h2>Частые вопросы</h2>
@@ -140,7 +193,7 @@
                 <li><a href="/podderzhka-sayta-cena.html">Сколько стоит поддержка сайта в месяц</a></li>
             </ul>
         </div>
-        <p style="margin-top:1.5rem"><a href="/services.html" class="btn btn--primary btn--sm">Заказать сайт под ключ</a></p>
+        <p style="margin-top:1.5rem"><a href="/#contact" class="btn btn--primary btn--sm">Получить расчёт сайта</a></p>
     </div></section>
 
     <section class="tg-promo section"><div class="container"><div class="tg-promo__inner">
@@ -156,7 +209,7 @@
         <div class="footer__left">
             <a href="/" class="logo"><img src="/images/logo.svg" alt="WebStudio" class="logo__img" loading="lazy"></a>
             <p>&copy; 2026 WebStudio. Все права защищены.</p>
-            <p style="margin-top:8px;font-size:0.85rem;"><a href="https://t.me/NevWebStudio_bot" target="_blank" style="color:var(--accent);">@NevWebStudio_bot</a> — бот ответит на все вопросы</p>
+            <p style="margin-top:8px;font-size:0.85rem;"><a href="https://t.me/uriy_as59" target="_blank" style="color:var(--accent);">@uriy_as59</a> — наш Telegram-канал</p>
             <p style="margin-top:4px;font-size:0.8rem;"><a href="/privacy.html" style="color:var(--muted);">Политика конфиденциальности</a></p>
             <p style="margin-top:4px;font-size:0.8rem;"><a href="/stats.html" style="color:var(--muted);">Статистика</a></p>
         </div>
