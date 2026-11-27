@@ -65,7 +65,19 @@
         .faq summary{font-weight:600;cursor:pointer}.faq p{margin:.8rem 0 0;color:var(--muted)}
         .related-articles{margin-top:2rem;padding:1.5rem;background:var(--card-bg,#f8f9fa);border-radius:12px;border:1px solid var(--border,#eee)}
         .related-articles ul{list-style:none;padding:0;margin:0}.related-articles li{margin-bottom:.6rem}.related-articles a{color:var(--accent,#2563eb);text-decoration:none}
-        @media(max-width:720px){.article-hero h1{font-size:1.7rem}.price-table{display:block;overflow-x:auto}}
+        .hero-cta{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem}
+        .hero-proof{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:1.25rem}
+        .hero-proof__item{background:var(--card-bg,#f8fafc);border:1px solid var(--border,#dbe4ee);border-radius:999px;padding:.45rem .9rem;font-size:.88rem;color:var(--muted)}
+        .hero-proof__item strong{color:var(--text,#1e293b)}
+        .cta-box__note{margin-top:.75rem;font-size:.9rem;color:var(--muted)}
+        .cta-box__actions{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center;margin-top:.5rem}
+        .cta-box__link{color:var(--accent);text-decoration:none;font-weight:500}
+        .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1.2rem 0 1.8rem}
+        .step{padding:1rem;border:1px solid var(--border,#dbe4ee);border-radius:12px;background:var(--card-bg,#f8fafc)}
+        .step__num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--accent,#2563eb);color:#fff;font-size:.85rem;font-weight:700;margin-bottom:.5rem}
+        .step h3{font-size:1rem;margin:.1rem 0 .35rem;color:var(--text,#1e293b)}
+        .step p{margin:0;font-size:.92rem;line-height:1.55}
+        @media(max-width:720px){.article-hero h1{font-size:1.7rem}.price-table{display:block;overflow-x:auto}.hero-cta{flex-direction:column;align-items:stretch}.hero-cta .btn{text-align:center}}
     </style>
 </head>
 <body>
@@ -81,14 +93,27 @@
     <section class="article-hero"><div class="container">
         <a href="/services.html" class="article-back">← К услугам</a>
         <h1>Лендинг под ключ: цена, сроки и что входит</h1>
-        <p class="article-hero__lead">Разработка лендинга под ключ — от <strong>$110</strong> и 3–7 рабочих дней. Посадочная страница с понятной структурой, формой заявки, адаптивом и аналитикой — чтобы не просто «быть в интернете», а получать обращения.</p>
+        <p class="article-hero__lead">Разработка лендинга под ключ — от <strong>$110</strong> и 3–7 рабочих дней. Делаю посадочную страницу с понятной структурой, формой заявки, адаптивом и аналитикой — чтобы страница приносила обращения, а не просто «была в интернете».</p>
+        <div class="hero-cta">
+            <a href="/#contact" class="btn btn--primary">Получить расчёт лендинга</a>
+            <a href="/portfolio.html" class="btn btn--outline">Посмотреть работы</a>
+        </div>
+        <div class="hero-proof">
+            <span class="hero-proof__item"><strong>От $110</strong> фиксируем смету до старта</span>
+            <span class="hero-proof__item"><strong>3–7 дней</strong> типовой срок</span>
+            <span class="hero-proof__item"><strong>Форма + аналитика</strong> включены в базу</span>
+        </div>
     </div></section>
 
     <section class="article-content"><div class="container">
         <div class="cta-box">
             <h3>Короткий ответ</h3>
             <p><strong>Цена лендинга под ключ:</strong> от $110. <strong>Срок:</strong> обычно 3–7 рабочих дней. В стоимость входит структура, дизайн, адаптивная вёрстка, форма заявки, базовая SEO/аналитика и запуск.</p>
-            <a href="/#contact" class="btn btn--primary btn--sm">Рассчитать лендинг</a>
+            <div class="cta-box__actions">
+                <a href="/#contact" class="btn btn--primary btn--sm">Получить расчёт</a>
+                <a href="https://t.me/uriy_as59" target="_blank" class="cta-box__link">Или написать в Telegram →</a>
+            </div>
+            <p class="cta-box__note">Отвечу с вопросами по задаче и назову стоимость до старта работы.</p>
         </div>
 
         <h2>Сколько стоит лендинг под ключ</h2>
@@ -110,13 +135,33 @@
             <li><strong>Аналитика:</strong> подключение счётчиков и событий по кликам/формам по задаче.</li>
         </ul>
 
+        <h2>Как проходит работа</h2>
+        <div class="steps">
+            <div class="step"><span class="step__num">1</span><h3>Бриф</h3><p>Уточняем услугу, аудиторию, оффер и какое действие должен сделать посетитель.</p></div>
+            <div class="step"><span class="step__num">2</span><h3>Структура и смета</h3><p>Предлагаю блоки страницы и фиксирую стоимость/срок до старта.</p></div>
+            <div class="step"><span class="step__num">3</span><h3>Дизайн и вёрстка</h3><p>Собираю страницу, адаптирую под мобильные и подключаю формы.</p></div>
+            <div class="step"><span class="step__num">4</span><h3>Запуск</h3><p>Проверяю форму, аналитику, базовое SEO и передаю готовую страницу.</p></div>
+        </div>
+
+        <h2>Что нужно от вас для расчёта</h2>
+        <ul>
+            <li><strong>Что продаёте:</strong> услуга/продукт и для кого лендинг.</li>
+            <li><strong>Цель:</strong> заявка, звонок, запись, регистрация или покупка.</li>
+            <li><strong>Материалы:</strong> тексты, фото, логотип, примеры — если чего-то нет, помогу собрать основу.</li>
+            <li><strong>Сроки/интеграции:</strong> нужен ли CRM, Telegram, квиз, платёжка или нестандартные блоки.</li>
+        </ul>
+
         <h2>Когда лендинг — правильный выбор</h2>
         <p>Лендинг под ключ подходит, когда нужно протестировать оффер, запустить рекламу, собрать заявки на одну услугу или продукт. Если нужен большой каталог, личный кабинет или сложная логика — лучше смотреть в сторону <a href="/razrabotka-veb-prilozheniy.html">веб-приложения</a> или многостраничного сайта.</p>
 
         <div class="cta-box">
             <h3>Нужен лендинг, который приносит заявки?</h3>
-            <p>Опишите услугу, аудиторию и цель (заявки, звонки, запись). Предложу структуру и фиксированную смету до старта.</p>
-            <a href="/#contact" class="btn btn--primary btn--sm">Обсудить лендинг</a>
+            <p>Опишите услугу, аудиторию и цель (заявки, звонки, запись). Предложу структуру страницы, сроки и фиксированную смету до старта.</p>
+            <div class="cta-box__actions">
+                <a href="/#contact" class="btn btn--primary btn--sm">Обсудить лендинг</a>
+                <a href="https://t.me/uriy_as59" target="_blank" class="cta-box__link">Написать в Telegram →</a>
+            </div>
+            <p class="cta-box__note">Можно прислать краткий бриф в форме на сайте или в Telegram — достаточно 3-4 пунктов.</p>
         </div>
 
         <h2>Частые вопросы</h2>
